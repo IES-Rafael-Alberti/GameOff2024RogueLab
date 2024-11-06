@@ -1,5 +1,6 @@
 extends CharacterBody2D
 # variables
+var interactionObject
 
 # variables para diseñador
 @export var SPEED = 130
@@ -9,6 +10,8 @@ extends CharacterBody2D
 
 #apartado de fisicas
 func _physics_process(delta):
+	
+	#region movimiento
 	
 	# Obtiene la dirección de entrada y maneja el movimiento/desaceleración
 	var directionLateral = Input.get_axis("ui_left2", "ui_right2")
@@ -35,5 +38,17 @@ func _physics_process(delta):
 		# Desacelera el personaje cuando no hay entrada
 		velocity.y = move_toward(velocity.x, 0, SPEED)
 
+#endregion
+
+	#region interaccion
+	
+	if not interactionObject:
+		pass
+		
+	elif Input.is_action_just_pressed("ui_interancion2"):
+		print("interactuastes")
+	
+	
+	#endregion
 	# Mueve al personaje usando la física
 	move_and_slide()
