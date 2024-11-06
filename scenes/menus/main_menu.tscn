@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c81cochri1mrt"]
+
+[ext_resource type="Theme" uid="uid://cvmak1jhnujhy" path="res://assets/materials/theme.tres" id="1_dwp0q"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_au0p8"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dwp0q")
+script = ExtResource("2_au0p8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 0, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = -240
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit"

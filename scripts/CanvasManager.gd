@@ -4,8 +4,9 @@ var glitch_tv_effect:bool
 var vignet_effect:bool
 var vignet_effect_amount:int
 
-@export var main_menu:PanelContainer
-@export var pause_menu:PanelContainer
+@onready var main_menu:Control
+@onready var pause_menu:Control
+@onready var option_menu:Control
 
 func set_glitch_effect(action:bool):
 	glitch_tv_effect=action
