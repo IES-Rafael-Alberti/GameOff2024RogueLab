@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqq6shoxeay2t"]
+[gd_scene load_steps=3 format=3 uid="uid://dqq6shoxeay2t"]
 
 [ext_resource type="PackedScene" uid="uid://bumaujc3plt5v" path="res://scenes/jugador.tscn" id="1_pxey0"]
+[ext_resource type="Script" path="res://scripts/CanvasManager.gd" id="2_jw1im"]
 
 [node name="prueva movimiento" type="Node2D"]
 
 [node name="jugador" parent="." instance=ExtResource("1_pxey0")]
 position = Vector2(20, 29)
+
+[node name="Canvas" type="PanelContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_jw1im")
