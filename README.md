@@ -1,42 +1,32 @@
-# Stellar Stallion
+# Secrets (GameOff 2024)
 
-- Equinos espaciales en un mundo de ciencia ficción.
-- Disfruta de un mundo que combina tecnología futurista y Steampunk.
-- Un shoot'em up roguelike con combates totalmente frenéticos.
-- Controles totalmente intuitivos y sencillos de aprender.
-- Combina tus disparos con cientos de habilidades diferentes.
+- Thriller psicológico de misterio.
+- Resuelve el crimen y descubre quién eres.
+- Soluciona los puzles y acertijos para averiguar todo y salir.
 
 ## Identidad / Mantra
 
-Shoot 'em up rougelike ambientado en el espacio con tecnología steampunk y futurista con un equino de protagonista.
+Thriller psicológico de misterio y rompecabezas.
 
 ## Pilares de diseño
 
-- Frenesí
-- Superación
-- Incertidumbre
+- Thriller
+- Misterio
+- Puzles
 
 ## Género
 
-Shoot 'em up rougelike
-
-Ciencia ficción bélica
+Thriller, rompecabezas, misterio
 
 ## Historia
 
-Tras una guerrra intergaláctica que ha dejado a la galaxia en ruinas, un escuadrón militar de la facción Equus decide poner en marcha una incursión de venganza para acabar con la tiranía de la Federación Monoceros.
+Tras despertar en un apartamento no recuerdas quién eres y descubres que estás atrapado junto a un cadaver. Tu misión es salir del apartamento, desvelando los secretos que este oculta.
 
 ## Mecánicas
 
-- Movimiento libre en 2D
-- Apuntado libre
-- Power-ups
-  - Permanentes
-  - Consumibles
-- Disparo manual
-- Elección de rutas en mapas generados proceduralmente
-- Tienda de mejoras para la nave
-- Boss fights
+- Movimiento top down libre en 2D.
+- Interacción con el escenario.
+- Diferentes acertijos y rompecabezas.
 
 ## Moodboard/Bocetos/Artstyle
 
@@ -44,53 +34,42 @@ Tras una guerrra intergaláctica que ha dejado a la galaxia en ruinas, un escuad
 
 ## Juegos similares
 
-- Touhou Project
-- The Biding of Isaac
-- Star Fox
-- Enter the Gungeon
-- Galaga
-- Space Invaders
-- Gladius
-- Darius Burst: Another Chronicles
+- 12 minutos
+- 60 seconds
+- Cluedo
+- Corpse party
+- Misao
 
 ## Audiencia
 
 Fans de:
 
-- Roguelikes
-- Shoot 'em ups
-- Ciencia ficción
+- Puzles
+- Terror
+- Thriller
+- Misterio
+- Narrativa
 
-Jugadores casuales y hardcore. Edades a partir de 7 años.
+Jugadores casuales. Edades a partir de 16 años.
 
 ## Plataformas
 
-Las plataformas a las que irá dirigido el proyecto serán principalmente Android y iOS, haciendo también una adaptación para Windows, macOS, Linux y Web mediante WebGL.
+Las plataformas a las que irá dirigido el proyecto serán principalmente Windows, Linux, Mac* y Web mediante WebGL.
 Para ordenador nos centraremos principalmente en teclado y ratón como periféricos de control principales.
 
 ## Interfaz de usuario
 
-![Interfaz de usuario](assets/UI.png)
-
-1. Barra de vida: Muestra la vida restante de la nave.
-2. Score: Puntuación del jugador. y Pausa: Botón para pausar el juego.
-3. Botones de consumibles: Muestra los consumibles y permite su uso.
-4. Botón de disparo: Mientras se mantiene presionado la nave dispara automáticamente. A su vez al mantenerlo y arrastrar se puede apuntar en cualquier dirección.
-5. Avatar del jugador: Muestra la nave del jugador.
-6. Zona de movimiento: Al pulsar y arrastrar en esta zona se mueve la nave.
+Interfaz de usuario mínima donde solo se mostrarán pequeños iconos de interacción.
 
 ## Objetivos del juego
 
 - Avanzar en los diferentes niveles para completar la historia.
-- Acabar con tus enemigos.
-- Obtener la máxima puntuación posible.
+- Descubrir todos los finales.
 - Divertirse.
 
 ## Requerimientos del sistema
 
 - **Mínimos**
-  - Android 10
-  - iOS 9
   - Windows 7
   - macOS 10.9
   - Linux Ubuntu 14.04
