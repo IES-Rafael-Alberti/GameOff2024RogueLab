@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://nw56a4737rpo"]
+
+[ext_resource type="Texture2D" uid="uid://cdo4iis3hfitt" path="res://assets/sprites/knight.png" id="1_qov45"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8swl"]
+
+[node name="Jugador" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l8swl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qov45")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 40)
