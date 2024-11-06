@@ -1,18 +1,38 @@
-extends PanelContainer
+extends Control
 
-var glitch_tv_effect:bool
+var glitch_tv_effect:bool 
 var vignet_effect:bool
 var vignet_effect_amount:int
 
-func glich_tv_effect_enable():
+@export var main_menu:PanelContainer
+@export var pause_menu:PanelContainer
+
+func set_glitch_effect(action:bool):
+	glitch_tv_effect=action
 	pass
 	
-func vignet_effect_enable(amount: int):
+func set_vignet_effect(action:bool,amount:bool):
+	vignet_effect=action
+	vignet_effect_amount=amount
 	pass
+
+func play_main_menu():
 	
-func glitch_tv_disable():
 	pass
+
+func play_pause_menu():
 	
-func vignet_effect_disable():
 	pass
+
+func _process(delta: float) -> void:
 	
+	if(glitch_tv_effect):
+		pass
+	
+	if(vignet_effect):
+		pass
+		
+	
+	
+	
+	pass
