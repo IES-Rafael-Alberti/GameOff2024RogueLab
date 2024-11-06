@@ -1,6 +1,5 @@
 extends Node
 #variables
-@export var pausa = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
