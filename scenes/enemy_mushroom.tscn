@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnpqsiia7jqt7"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_63vve"]
+animation = &"default"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vdcev"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_b4klk"]
+states/Start/position = Vector2(198, 100)
+states/default/node = SubResource("AnimationNodeAnimation_63vve")
+states/default/position = Vector2(376, 66)
+states/walk/node = SubResource("AnimationNodeAnimation_vdcev")
+states/walk/position = Vector2(663, 57)
+
+[sub_resource type="Animation" id="Animation_87gid"]
+length = 1.4
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_b0bjw"]
+resource_name = "new_animation"
+
+[sub_resource type="Animation" id="Animation_c3t40"]
+length = 1.6
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_77qm5"]
+_data = {
+"default": SubResource("Animation_87gid"),
+"new_animation": SubResource("Animation_b0bjw"),
+"walk": SubResource("Animation_c3t40")
+}
+
+[node name="EnemyMushroom" type="CharacterBody2D"]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath(".")
+tree_root = SubResource("AnimationNodeStateMachine_b4klk")
+anim_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree"]
+libraries = {
+"": SubResource("AnimationLibrary_77qm5")
+}
+autoplay = "new_animation"

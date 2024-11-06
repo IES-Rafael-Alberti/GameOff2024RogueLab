@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdo4iis3hfitt"
-path="res://.godot/imported/knight.png-7c67c83d34932624952797d9e971a644.ctex"
+uid="uid://c6jpcejmgw33n"
+path="res://.godot/imported/Worker_C.png-0d4a9fb56dd6ab15bc81ab2009d67738.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/knight.png"
-dest_files=["res://.godot/imported/knight.png-7c67c83d34932624952797d9e971a644.ctex"]
+source_file="res://resources/Adventure Character 16x16/Worker_C.png"
+dest_files=["res://.godot/imported/Worker_C.png-0d4a9fb56dd6ab15bc81ab2009d67738.ctex"]
 
 [params]
 

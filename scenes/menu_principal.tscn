@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwyfxbw61idbh"]
+
+[ext_resource type="Script" path="res://scripts/menu_principal.gd" id="1_1m8ui"]
+
+[node name="MenuPrincipal" type="CanvasLayer"]
+script = ExtResource("1_1m8ui")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.92, 16.2)
+
+[node name="escena1" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 16.2171
+offset_top = 9.87654
+offset_right = 83.2171
+offset_bottom = 40.8765
+scale = Vector2(0.0607777, 0.144644)
+text = "Scene 1"
+
+[node name="escena2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 16.1134
+offset_top = 16.8519
+offset_right = 83.1134
+offset_bottom = 47.8519
+scale = Vector2(0.0607777, 0.144644)
+text = "Scene 2"
+
+[node name="exit" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0443
+offset_top = 24.7531
+offset_right = 83.0443
+offset_bottom = 55.7531
+scale = Vector2(0.0607777, 0.144644)
+text = "EXIT"
+
+[connection signal="pressed" from="Panel/escena1" to="." method="_on_escena_1_pressed"]
+[connection signal="pressed" from="Panel/escena2" to="." method="_on_escena_2_pressed"]
+[connection signal="pressed" from="Panel/exit" to="." method="_on_exit_pressed"]

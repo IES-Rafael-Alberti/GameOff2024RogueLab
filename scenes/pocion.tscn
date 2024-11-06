@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://moh4swnumckv"]
+
+[ext_resource type="Script" path="res://scripts/pocion.gd" id="1_1e6ti"]
+[ext_resource type="Texture2D" uid="uid://cf1nmamxp83tt" path="res://resources/sprites/world_tileset.png" id="1_mp61b"]
+[ext_resource type="AudioStream" uid="uid://brpv1cdklb8in" path="res://resources/sounds/power_up.wav" id="3_0yrh8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syy2d"]
+size = Vector2(6, 12)
+
+[node name="pocion" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_1e6ti")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mp61b")
+region_enabled = true
+region_rect = Rect2(16, 128, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_syy2d")
+
+[node name="sonidoPocion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0yrh8")
+bus = &"efectos de sonido"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="sonidoPocion" to="." method="_on_sonido_pocion_finished"]
