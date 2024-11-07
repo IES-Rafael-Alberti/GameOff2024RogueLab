@@ -7,6 +7,7 @@ var glow_effect:bool
 var black_and_white_effect:bool
 
 var current_menu
+var pause_menu
 
 const MAIN_MENU = preload("res://scenes/menus/main_menu.tscn")
 const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
@@ -42,8 +43,20 @@ func play_main_menu():
 
 func play_pause_menu():
 	current_menu="PAUSE_MENU"
-	get_tree().change_scene_to_packed(PAUSE_MENU)
+	
+	if pause_menu == null:
+		pause_menu = PAUSE_MENU.instantiate()
+		get_tree().current_scene.add_child(pause_menu)
+		pass
+	
+	pause_menu.visible=true
+	
+	#cambiar escena de pausa completamente
+	#get_tree().change_scene_to_packed(PAUSE_MENU)
 	pass
+	
+func play_resume_pause_menu():
+	pause_menu.visible=false 
 	
 func play_options_menu():
 	get_tree().change_scene_to_packed(OPTION_MENU)
@@ -52,9 +65,9 @@ func play_options_menu():
 	
 func play_current_menu():
 	if current_menu == "MAIN_MENU":
-		get_tree().change_scene_to_packed(MAIN_MENU)
+		play_main_menu()
 	elif  current_menu == "PAUSE_MENU":
-		get_tree().change_scene_to_packed(PAUSE_MENU)
+		play_pause_menu()
 	pass
 
 func play_main_scene():

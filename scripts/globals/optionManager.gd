@@ -14,6 +14,7 @@ var vsync: bool:
 
 
 func onChangeVSync():
+	print("Changed VSync")
 	if vsync:
 		DisplayServer.VSyncMode.VSYNC_ENABLED
 	else:
