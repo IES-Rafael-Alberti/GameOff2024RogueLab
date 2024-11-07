@@ -58,6 +58,7 @@ func play_current_menu():
 func _process(delta: float) -> void:
 	
 	if(glitch_tv_effect):
+		get_tree().current_scene.get_node()
 		pass
 	
 	if(vignet_effect):

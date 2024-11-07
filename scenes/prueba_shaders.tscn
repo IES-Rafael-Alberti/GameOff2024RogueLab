@@ -1,3 +1,78 @@
-[gd_scene format=3 uid="uid://bnpnpi2np76p8"]
+[gd_scene load_steps=15 format=3 uid="uid://bnpnpi2np76p8"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/Grayscale .gdshader" id="1_lq7pq"]
+[ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="2_y4n4r"]
+[ext_resource type="Shader" path="res://scripts/shaders/azulOscuro.gdshader" id="3_u2m1k"]
+[ext_resource type="Texture2D" uid="uid://6g3dlp4wlq3f" path="res://assets/sprites/knight.png" id="4_61adf"]
+[ext_resource type="Shader" path="res://scripts/shaders/distorsion.gdshader" id="5_510kb"]
+[ext_resource type="Shader" path="res://scripts/shaders/sangre.gdshader" id="6_ojtsw"]
+[ext_resource type="Shader" path="res://scripts/shaders/vinieta.gdshader" id="7_hm5pf"]
+[ext_resource type="Shader" path="res://scripts/shaders/periodico.gdshader" id="7_m4xk4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tdfm5"]
+shader = ExtResource("1_lq7pq")
+shader_parameter/grayscaleIntesity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08dac"]
+shader = ExtResource("3_u2m1k")
+shader_parameter/darkness = 0.5
+shader_parameter/tint_color = Vector4(0, 0.1, 0.3, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2r4co"]
+shader = ExtResource("5_510kb")
+shader_parameter/scanline_intensity = 0.5
+shader_parameter/noise_intensity = 0.2
+shader_parameter/distortion = 0.05
+shader_parameter/time = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r3n16"]
+shader = ExtResource("6_ojtsw")
+shader_parameter/blood_intensity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l76rn"]
+shader = ExtResource("7_hm5pf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpvnf"]
+shader = ExtResource("7_m4xk4")
 
 [node name="prueba shaders" type="Node"]
+
+[node name="GodotIcon" type="Sprite2D" parent="."]
+position = Vector2(82, 85)
+texture = ExtResource("2_y4n4r")
+
+[node name="Grayscale" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tdfm5")
+position = Vector2(244, 86)
+texture = ExtResource("2_y4n4r")
+
+[node name="azulOscuro" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_08dac")
+position = Vector2(407, 138)
+texture = ExtResource("2_y4n4r")
+
+[node name="azulOscuro" type="Sprite2D" parent="azulOscuro"]
+material = SubResource("ShaderMaterial_08dac")
+position = Vector2(18.0001, 249)
+scale = Vector2(1.12414, 1.07807)
+texture = ExtResource("4_61adf")
+
+[node name="distorsion" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2r4co")
+position = Vector2(590, 96)
+texture = ExtResource("2_y4n4r")
+
+[node name="sangre" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_r3n16")
+position = Vector2(760, 87)
+texture = ExtResource("2_y4n4r")
+
+[node name="viñeta" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_l76rn")
+position = Vector2(1073, 96)
+texture = ExtResource("2_y4n4r")
+
+[node name="periodico" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tpvnf")
+position = Vector2(908, 113)
+texture = ExtResource("2_y4n4r")
