@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbr2fn21jjgan"]
+
+[ext_resource type="Script" path="res://scripts/menus/option_menu.gd" id="1_58sjs"]
+
+[node name="OptionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_58sjs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VolumeMasterContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VolumeMasterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/VolumeMasterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Volume Master"
+
+[node name="VolumeMasterSlider" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/VolumeMasterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VolumeMusicContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VolumeMusicContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/VolumeMusicContainer/HBoxContainer"]
+layout_mode = 2
+text = "Volume Music"
+
+[node name="VolumeMusicSlider" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/VolumeMusicContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VolumeSFXContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VolumeSFXContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/VolumeSFXContainer/HBoxContainer"]
+layout_mode = 2
+text = "Volume SFX"
+
+[node name="VolumeSFXSlider" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/VolumeSFXContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="VSyncContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VSyncContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/VSyncContainer/HBoxContainer"]
+layout_mode = 2
+text = "VSync"
+
+[node name="VSyncCheckButton" type="CheckButton" parent="MarginContainer/HBoxContainer/VBoxContainer/VSyncContainer/HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
