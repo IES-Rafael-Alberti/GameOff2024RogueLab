@@ -1,8 +1,6 @@
 ## INICIO
 
-Empieza el jugador junto al sofá y dice:
-
--Ahh, Estoy hecho mierda. Necesito algo para este dolor de cabeza.
+**Empieza el jugador junto al sofá y dice:** -Ahh, Estoy hecho mierda. Necesito algo para este dolor de cabeza.
 
 
 Libertad para moverse por el mapa hasta que entre a la habitación. Cuando entra a la habitación:
