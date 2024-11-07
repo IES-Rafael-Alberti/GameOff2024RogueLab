@@ -30,7 +30,7 @@ func set_black_and_white_effect(action:bool):
 	pass
 
 func _ready() -> void:
-	play_main_menu()
+	#play_main_menu()
 	pass
 
 func play_main_menu():
@@ -58,7 +58,7 @@ func play_current_menu():
 func _process(delta: float) -> void:
 	
 	if(glitch_tv_effect):
-		get_tree().current_scene.get_node()
+		#get_tree().current_scene.get_node()
 		pass
 	
 	if(vignet_effect):
