@@ -1,5 +1,16 @@
 extends Node
+
 #variables
+var flag1 = false
+var flag2 = false
+var flag3 = false
+var flag4 = false
+var flag5 = false
+
+
+
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,7 +1,8 @@
 extends CharacterBody2D
 # variables
-var interactionObject
-var flagInteractuando = false
+var interactionObject #objeto que se recive
+var flagInteractuando = false #indicador si se esta interactuando o no
+
 
 # variables para diseñador
 @export var SPEED = 130
@@ -11,14 +12,43 @@ var flagInteractuando = false
 
 #apartado de fisicas
 func _physics_process(delta):
+
+	#region menu de pausa
 	
+	if Input.is_action_just_pressed("escape"):
+		if OptionManager.flagMenuPausa:
+			OptionManager.flagMenuPausa = false
+			print("MenuPausa: " + str(OptionManager.flagMenuPausa) )
+		else:
+			OptionManager.flagMenuPausa = true
+			print("MenuPausa: " + str(OptionManager.flagMenuPausa))
+
+	#endregion
+
+	#region interaccion
+	
+	
+	if !not interactionObject: #cambia de !not a not (esta en !not para provar que funciona)
+		flagInteractuando = false
+		print("no hay objeto ")
+		
+	elif Input.is_action_just_pressed("interancion"):
+		flagInteractuando = true
+		print("Estoy Interactuando: " + str(flagInteractuando))
+	
+	
+	#endregion
+
 	#region movimiento
 
-	if !flagInteractuando:
+	if OptionManager.flagMenuPausa or flagInteractuando:
+		pass
+	
+	else :
 		
 		# Obtiene la dirección de entrada y maneja el movimiento/desaceleración
-		var directionLateral = Input.get_axis("ui_left2", "ui_right2")
-		var directionVertical = Input.get_axis("ui_up2", "ui_down2")
+		var directionLateral = Input.get_axis("left", "right")
+		var directionVertical = Input.get_axis("up", "down")
 		
 		# Cambia la dirección del sprite según la dirección que toma el personaje
 		if directionLateral > 0:
@@ -39,22 +69,14 @@ func _physics_process(delta):
 		else:
 			# Desacelera el personaje cuando no hay entrada
 			velocity.y = move_toward(velocity.x, 0, SPEED)
-	
-	else :
-		pass
 
-#endregion
-
-	#region interaccion
-	
-	if not interactionObject:
-		flagInteractuando = false
-		
-	elif Input.is_action_just_pressed("ui_interancion2"):
-		flagInteractuando = true
-		print("interactuastes")
-	
-	
 	#endregion
+	
+	
+	
+	
+	
+	
+	
 	# Mueve al personaje usando la física
 	move_and_slide()
