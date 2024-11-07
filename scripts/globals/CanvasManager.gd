@@ -62,7 +62,7 @@ func play_options_menu():
 	if option_menu == null:
 		option_menu = OPTION_MENU.instantiate()
 		get_tree().current_scene.add_child(option_menu)
-		option_menu.get_parent().move_child(option_menu,12)
+		option_menu.get_parent().move_child(option_menu,1)
 	
 	option_menu.visible = true
 	
