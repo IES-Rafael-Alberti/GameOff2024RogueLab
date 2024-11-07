@@ -95,4 +95,8 @@ text = "VSync"
 [node name="VSyncCheckButton" type="CheckButton" parent="MarginContainer/HBoxContainer/VBoxContainer/VSyncContainer/HBoxContainer"]
 layout_mode = 2
 
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/VBoxContainer/VolumeMasterContainer/HBoxContainer/VolumeMasterSlider" to="." method="_on_volume_master_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/VBoxContainer/VolumeMusicContainer/HBoxContainer/VolumeMusicSlider" to="." method="_on_volume_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/VBoxContainer/VolumeSFXContainer/HBoxContainer/VolumeSFXSlider" to="." method="_on_volume_sfx_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/VSyncContainer/HBoxContainer/VSyncCheckButton" to="." method="_on_v_sync_check_button_toggled"]

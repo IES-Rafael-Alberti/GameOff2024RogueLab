@@ -12,6 +12,8 @@ const MAIN_MENU = preload("res://scenes/menus/main_menu.tscn")
 const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
 const OPTION_MENU = preload("res://scenes/menus/option_menu.tscn")
 
+const MAIN_SCENE= preload("res://scenes/prueva_movimiento.tscn")
+
 func set_glitch_effect(action:bool):
 	glitch_tv_effect=action
 	pass
@@ -53,6 +55,10 @@ func play_current_menu():
 		get_tree().change_scene_to_packed(MAIN_MENU)
 	elif  current_menu == "PAUSE_MENU":
 		get_tree().change_scene_to_packed(PAUSE_MENU)
+	pass
+
+func play_main_scene():
+	get_tree().change_scene_to_packed(MAIN_SCENE)
 	pass
 
 func _process(delta: float) -> void:
