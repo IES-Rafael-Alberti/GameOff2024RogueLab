@@ -1,53 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://duy3qiitluf1l"]
+[gd_scene load_steps=3 format=3 uid="uid://duy3qiitluf1l"]
 
 [ext_resource type="Script" path="res://scripts/menus/pause_menu.gd" id="1_w0y23"]
+[ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_pq523"]
 
-[node name="PauseMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_w0y23")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 1, 1, 1)
-
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -95.5
+offset_right = 77.5
+offset_bottom = 95.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource("2_pq523")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 125
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 125
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="ResumeButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Resume"
 
-[node name="OptionsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

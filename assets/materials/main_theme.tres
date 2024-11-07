@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ctp12ftleux8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5dax"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+expand_margin_left = 25.0
+expand_margin_top = 5.0
+expand_margin_right = 25.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vuwdi"]
+
+[resource]
+Button/font_sizes/font_size = 38
+Button/styles/normal = SubResource("StyleBoxFlat_h5dax")
+Label/font_sizes/font_size = 35
+checkButtonVariant/base_type = &"CheckButton"
+checkButtonVariant/styles/normal = SubResource("StyleBoxEmpty_vuwdi")

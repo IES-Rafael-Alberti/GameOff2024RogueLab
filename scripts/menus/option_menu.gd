@@ -1,8 +1,8 @@
-extends Control
+extends CanvasLayer
 
 
 func _on_back_button_pressed() -> void:
-	CanvasManager.play_current_menu()
+	CanvasManager.back_options_menu()
 	pass # Replace with function body.
 
 

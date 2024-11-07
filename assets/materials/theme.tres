@@ -1,7 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cvmak1jhnujhy"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph12y"]
-bg_color = Color(0.980896, 0.000487083, 0.922399, 1)
-
-[resource]
-MarginContainer/styles/po = SubResource("StyleBoxFlat_ph12y")
