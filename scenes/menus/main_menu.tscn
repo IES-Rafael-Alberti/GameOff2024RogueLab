@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c81cochri1mrt"]
 
 [ext_resource type="Theme" uid="uid://cvmak1jhnujhy" path="res://assets/materials/theme.tres" id="1_dwp0q"]
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_au0p8"]
+[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="2_au0p8"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -50,3 +50,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
