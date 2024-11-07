@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://scripts/gameManager.gd"
-OptionManager="*res://scripts/optionManager.gd"
+GameManager="*res://scripts/globals/gameManager.gd"
+OptionManager="*res://scripts/globals/optionManager.gd"
 CanvasManager="*res://scripts/globals/CanvasManager.gd"
 
 [input]
