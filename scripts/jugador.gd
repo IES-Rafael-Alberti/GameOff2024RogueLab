@@ -1,5 +1,8 @@
 extends CharacterBody2D
 # variables
+var interactionObject #objeto que se recive
+var flagInteractuando = false #indicador si se esta interactuando o no
+
 
 # variables para diseñador
 @export var SPEED = 130
@@ -9,31 +12,71 @@ extends CharacterBody2D
 
 #apartado de fisicas
 func _physics_process(delta):
+
+	#region menu de pausa
 	
-	# Obtiene la dirección de entrada y maneja el movimiento/desaceleración
-	var directionLateral = Input.get_axis("ui_left2", "ui_right2")
-	var directionVertical = Input.get_axis("ui_up2", "ui_down2")
+	if Input.is_action_just_pressed("escape"):
+		if OptionManager.flagMenuPausa:
+			OptionManager.flagMenuPausa = false
+			print("MenuPausa: " + str(OptionManager.flagMenuPausa) )
+		else:
+			OptionManager.flagMenuPausa = true
+			print("MenuPausa: " + str(OptionManager.flagMenuPausa))
+
+	#endregion
+
+	#region interaccion
 	
-	# Cambia la dirección del sprite según la dirección que toma el personaje
-	if directionLateral > 0:
-		animated_sprite_2d.flip_h = false  # No voltear el sprite
-	elif directionLateral < 0:
-		animated_sprite_2d.flip_h = true  # Voltear el sprite horizontalmente
+	
+	if !not interactionObject: #cambia de !not a not (esta en !not para provar que funciona)
+		flagInteractuando = false
+		print("no hay objeto ")
 		
+	elif Input.is_action_just_pressed("interancion"):
+		flagInteractuando = true
+		print("Estoy Interactuando: " + str(flagInteractuando))
 	
-	# Controla el movimiento horizontal del personaje
-	if directionLateral:
-		velocity.x = directionLateral * SPEED  # Movimiento basado en la dirección de entrada
-	else:
-		# Desacelera el personaje cuando no hay entrada
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	#endregion
 
-# Controla el movimiento vertical del personaje
-	if directionVertical:
-		velocity.y = directionVertical * SPEED  # Movimiento basado en la dirección de entrada
-	else:
-		# Desacelera el personaje cuando no hay entrada
-		velocity.y = move_toward(velocity.x, 0, SPEED)
+	#region movimiento
 
+	if OptionManager.flagMenuPausa or flagInteractuando:
+		pass
+	
+	else :
+		
+		# Obtiene la dirección de entrada y maneja el movimiento/desaceleración
+		var directionLateral = Input.get_axis("left", "right")
+		var directionVertical = Input.get_axis("up", "down")
+		
+		# Cambia la dirección del sprite según la dirección que toma el personaje
+		if directionLateral > 0:
+			animated_sprite_2d.flip_h = false  # No voltear el sprite
+		elif directionLateral < 0:
+			animated_sprite_2d.flip_h = true  # Voltear el sprite horizontalmente
+		
+		# Controla el movimiento horizontal del personaje
+		if directionLateral:
+			velocity.x = directionLateral * SPEED  # Movimiento basado en la dirección de entrada
+		else:
+			# Desacelera el personaje cuando no hay entrada
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	# Controla el movimiento vertical del personaje
+		if directionVertical:
+			velocity.y = directionVertical * SPEED  # Movimiento basado en la dirección de entrada
+		else:
+			# Desacelera el personaje cuando no hay entrada
+			velocity.y = move_toward(velocity.x, 0, SPEED)
+
+	#endregion
+	
+	
+	
+	
+	
+	
+	
 	# Mueve al personaje usando la física
 	move_and_slide()
