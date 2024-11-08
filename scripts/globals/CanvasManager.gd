@@ -86,6 +86,8 @@ func back_options_menu():
 
 func play_main_scene():
 	get_tree().change_scene_to_packed(MAIN_SCENE)
+	get_tree().current_scene.add_child(GameManager.player)
+	
 	inGame=true
 	pass
 
