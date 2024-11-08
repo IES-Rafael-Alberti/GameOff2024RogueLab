@@ -50,21 +50,21 @@ func _physics_process(delta):
 		var directionLateral = Input.get_axis("left", "right")
 		var directionVertical = Input.get_axis("up", "down")
 		
-		if directionLateral != 0:
-			directionVertical = 0
+		
+		# Controla el movimiento horizontal del personaje
+		if directionLateral:
 			velocity.x = directionLateral * SPEED  # Movimiento basado en la dirección de entrada
-			velocity.y = move_toward(velocity.y, 0, SPEED)
-			
-			
-		if directionVertical != 0:
-				directionLateral = 0
-				velocity.y = directionVertical * SPEED  # Movimiento basado en la dirección de entrada
-				velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-			
-			
+		else:
+			# Desacelera el personaje cuando no hay entrada
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		
+	# Controla el movimiento vertical del personaje
+		if directionVertical:
+			velocity.y = directionVertical * SPEED  # Movimiento basado en la dirección de entrada
+		else:
+			# Desacelera el personaje cuando no hay entrada
+			velocity.y = move_toward(velocity.x, 0, SPEED)
 		
 		
 		# Cambia la dirección del sprite según la dirección que toma el personaje
