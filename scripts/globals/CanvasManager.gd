@@ -9,6 +9,7 @@ var black_and_white_effect:bool
 var inGame:bool=false
 var pause_menu
 var option_menu
+var main_scene
 
 const MAIN_MENU = preload("res://scenes/menus/main_menu.tscn")
 const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
@@ -34,7 +35,7 @@ func set_black_and_white_effect(action:bool):
 	pass
 
 func _ready() -> void:
-	#play_main_menu()
+	play_main_menu()
 	pass
 
 func play_main_menu():
@@ -50,8 +51,6 @@ func play_pause_menu():
 	
 	pause_menu.visible=true
 	
-	#cambiar escena de pausa completamente
-	#get_tree().change_scene_to_packed(PAUSE_MENU)
 	pass
 	
 func play_resume_pause_menu():
@@ -85,9 +84,9 @@ func back_options_menu():
 	
 
 func play_main_scene():
+	var player = GameManager.get_player()
+	CameraManager.add_camera(player)
 	get_tree().change_scene_to_packed(MAIN_SCENE)
-	get_tree().current_scene.add_child(GameManager.player)
-	
 	inGame=true
 	pass
 

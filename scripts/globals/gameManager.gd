@@ -1,6 +1,6 @@
 extends Node
 
-var player
+var player:CharacterBody2D
 const JUGADOR = preload("res://scenes/jugador.tscn")
 
 var initSpeed = 130
@@ -13,17 +13,15 @@ var flag4 = false
 var flag5 = false
 
 
-
-
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	player = JUGADOR.instantiate()
-	player.SPEED = initSpeed
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	pass
+
+func get_player():
+	
+	if(player == null):
+		player = JUGADOR.instantiate()
+		player.SPEED = initSpeed
+	
+	return player
 	pass
