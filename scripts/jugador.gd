@@ -69,6 +69,11 @@ func _physics_process(delta):
 			# Desacelera el personaje cuando no hay entrada
 			velocity.y = move_toward(velocity.x, 0, SPEED)
 		
+		if	directionLateral != 0:
+			velocity.y = move_toward(velocity.y, 0, SPEED)
+		 
+		if directionVertical != 0:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		# Cambia la dirección del sprite según la dirección que toma el personaje
 		if directionLateral > 0:
