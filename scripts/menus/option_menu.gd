@@ -8,17 +8,17 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_volume_master_slider_value_changed(value: float) -> void:
-	OptionManager.volumenMaster = value
+	OptionManager.volumeMaster = value
 	pass # Replace with function body.
 
 
 func _on_volume_music_slider_value_changed(value: float) -> void:
-	OptionManager.volumenMusic=value
+	OptionManager.volumeMusic=value
 	pass # Replace with function body.
 
 
 func _on_volume_sfx_slider_value_changed(value: float) -> void:
-	OptionManager.volumenSFX = value
+	OptionManager.volumeSFX = value
 	pass # Replace with function body.
 
 

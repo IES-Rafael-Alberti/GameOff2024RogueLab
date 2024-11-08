@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_pq523"]
 
 [node name="PauseMenu" type="CanvasLayer"]
+layer = 0
 script = ExtResource("1_w0y23")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
