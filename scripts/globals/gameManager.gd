@@ -1,5 +1,7 @@
 extends Node
 
+var positionPlayer:Vector2
+
 #variables
 var flag1 = false
 var flag2 = false

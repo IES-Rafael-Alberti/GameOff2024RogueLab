@@ -1,7 +1,9 @@
-extends Control
+extends CanvasLayer
 
 
 func _on_resume_button_pressed() -> void:
+	OptionManager.flagMenuPausa = false
+	CanvasManager.play_resume_pause_menu()
 	pass # Replace with function body.
 
 
