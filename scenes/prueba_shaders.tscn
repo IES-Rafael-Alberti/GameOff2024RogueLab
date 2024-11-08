@@ -10,7 +10,7 @@
 [ext_resource type="Shader" path="res://scripts/shaders/vinieta.gdshader" id="7_hm5pf"]
 [ext_resource type="Shader" path="res://scripts/shaders/periodico.gdshader" id="7_m4xk4"]
 [ext_resource type="Material" uid="uid://b67o6d42cenrq" path="res://assets/materials/sangre.tres" id="10_iioe6"]
-[ext_resource type="Texture2D" uid="uid://bwghbrnhgrtda" path="res://assets/materials/blood-background.png" id="11_wm5d2"]
+[ext_resource type="Texture2D" uid="uid://dpgfyd6v8ifd0" path="res://assets/materials/white-background.png" id="11_2fou1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tdfm5"]
 shader = ExtResource("1_lq7pq")
@@ -30,10 +30,10 @@ shader_parameter/time = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r3n16"]
 shader = ExtResource("6_ojtsw")
+shader_parameter/blood_color = null
 shader_parameter/blood_intensity = 0.5
 shader_parameter/internal_limit = 0.3
 shader_parameter/external_limit = 0.6
-shader_parameter/blood_color = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tpvnf"]
 shader = ExtResource("7_m4xk4")
@@ -71,7 +71,7 @@ texture = ExtResource("4_61adf")
 
 [node name="distorsion" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_2r4co")
-position = Vector2(590, 96)
+position = Vector2(606, 121)
 texture = ExtResource("2_y4n4r")
 
 [node name="sangre" type="Sprite2D" parent="."]
@@ -96,10 +96,12 @@ material = ExtResource("10_iioe6")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer"]
 material = ExtResource("10_iioe6")
 layout_mode = 2
-texture = ExtResource("11_wm5d2")
+texture = ExtResource("11_2fou1")

@@ -1,10 +1,9 @@
 shader_type canvas_item;
 
+uniform vec4 blood_color: source_color; //color al que se le aplica los efectos
 uniform float blood_intensity : hint_range(0.0, 1.0) = 0.5; // Controla la intensidad del efecto de sangre
-uniform float internal_limit : hint_range(0.0, 1.0) = 0.3; // Controla la intensidad del efecto de sangre
-uniform float external_limit : hint_range(0.0, 1.0) = 0.6; // Controla la intensidad del efecto de sangre
-//uniform float blood_intensity : hint_range(0.0, 1.0) = 0.5; // Controla la intensidad del efecto de sangre
-uniform vec4 blood_color: source_color;
+uniform float internal_limit : hint_range(0.0, 1.0) = 0.3; // Controla el limite interior del radio del efecto de sangre
+uniform float external_limit : hint_range(0.0, 1.0) = 0.6; // Controla el limite exterior del radio del efecto de sangre
 
 void fragment() {
     // Obtén las coordenadas UV actuales
@@ -22,9 +21,5 @@ void fragment() {
 	color.rgba = blood_tint;
     // Mezcla el color de la sangre con el color original
     color.rgba = mix(color.rgba, blood_tint, blood_intensity * vignette);
-	//color.a = vignette * 0.7;
-	//if(dist_from_center>0.4)
-	//	color.a = blood_intensity;
-    // Establece el color final
     COLOR = color;
 }
