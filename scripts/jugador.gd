@@ -31,7 +31,7 @@ func _physics_process(delta):
 	#region interaccion
 	
 	
-	if !not interactionObject: #cambia de !not a not (esta en !not para provar que funciona)
+	if GameManager.interactive == null: #cambia de !not a not (esta en !not para provar que funciona)
 		flagInteractuando = false
 		print("no hay objeto ")
 		

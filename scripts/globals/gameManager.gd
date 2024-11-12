@@ -1,17 +1,15 @@
 extends Node
-
+ 
 var player:CharacterBody2D
 const JUGADOR = preload("res://scenes/jugador.tscn")
 
 var initSpeed = 130
+var interactive:Node2D
+
 
 #variables
-var flag1 = false
-var flag2 = false
-var flag3 = false
-var flag4 = false
-var flag5 = false
-
+var flagList: Array[Flag] = [] 
+##Cargar todas las flags en la lista 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,3 +23,6 @@ func get_player():
 	
 	return player
 	pass
+
+func setInteractive(body:Node2D):
+	interactive=body
