@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://dqq6shoxeay2t"]
+[gd_scene load_steps=9 format=4 uid="uid://dqq6shoxeay2t"]
 
 [ext_resource type="PackedScene" uid="uid://bumaujc3plt5v" path="res://scenes/jugador.tscn" id="1_pxey0"]
 [ext_resource type="Texture2D" uid="uid://d3vpgj14n75bt" path="res://assets/assets/A4.png" id="2_vh4uo"]
 [ext_resource type="Texture2D" uid="uid://dio3acuttcete" path="res://assets/assets/Inside_C.png" id="3_d2vf6"]
 [ext_resource type="PackedScene" uid="uid://csu31rwdb46rv" path="res://scenes/encimera.tscn" id="4_y7fcn"]
+[ext_resource type="PackedScene" uid="uid://bifiob62aodmk" path="res://scenes/canvas_puzzle_estanteria.tscn" id="5_813c0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_adcy8"]
 texture = ExtResource("2_vh4uo")
@@ -1957,3 +1958,5 @@ tile_set = SubResource("TileSet_ccr7y")
 [node name="encimera" parent="." instance=ExtResource("4_y7fcn")]
 position = Vector2(70, 165)
 scale = Vector2(0.291701, 0.237475)
+
+[node name="CanvasPuzzleEstanteria" parent="." instance=ExtResource("5_813c0")]
