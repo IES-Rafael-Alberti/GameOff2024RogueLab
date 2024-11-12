@@ -11,10 +11,15 @@ var interactive:Node2D
 var flagList: Array[Flag] = [] 
 ##Cargar todas las flags en la lista 
 
+const ALL_FLAGS = preload("res://data/all_flags.tres")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
+func _ready() -> void:
+	ALL_FLAGS.load_all_into(flagList)
+	print(flagList)
 func get_player():
 	
 	if(player == null):
