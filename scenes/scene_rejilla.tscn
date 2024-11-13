@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhs180cnfuqmr"]
+[gd_scene load_steps=9 format=3 uid="uid://dhs180cnfuqmr"]
 
-[ext_resource type="Texture2D" uid="uid://dcapjn8rskxkx" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-con-todo.png" id="1_nmjaa"]
+[ext_resource type="Texture2D" uid="uid://clbi4qkjf8o6n" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-pastis.png" id="1_hxnju"]
+[ext_resource type="Script" path="res://scripts/scene_rejilla.gd" id="1_xbcu3"]
+[ext_resource type="Texture2D" uid="uid://cgv3tvwfyjeew" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-rejilla.png" id="2_33vbf"]
+[ext_resource type="Texture2D" uid="uid://dixpu7d04o707" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-tornillos.png" id="2_sn6kt"]
 [ext_resource type="PackedScene" uid="uid://bfdrof1bnnufs" path="res://scenes/tornillo_izquierdo.tscn" id="3_wdoqd"]
 [ext_resource type="PackedScene" uid="uid://2jvwv2uig8ff" path="res://scenes/tornillo_derecho.tscn" id="4_ilg24"]
+[ext_resource type="Texture2D" uid="uid://bos20tu47tqxw" path="res://assets/assets/Puzles/puzle2-rejilla/pastillas64x64.png" id="7_o75do"]
+[ext_resource type="PackedScene" uid="uid://bvqggbfc7gi6d" path="res://scenes/pastillas.tscn" id="8_ldqr3"]
 
 [node name="SceneRejilla" type="CanvasLayer"]
+script = ExtResource("1_xbcu3")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -13,23 +19,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Rejilla-con-todo" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(474.8, 262.95)
-scale = Vector2(3.94, 3.94)
-texture = ExtResource("1_nmjaa")
+[node name="Rejilla-sin-pastis" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(480, 273)
+scale = Vector2(4, 4)
+texture = ExtResource("1_hxnju")
+
+[node name="Rejilla-sin-rejilla" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(481, 273)
+scale = Vector2(4, 4)
+texture = ExtResource("2_33vbf")
+
+[node name="pastillas" parent="MarginContainer" instance=ExtResource("8_ldqr3")]
+position = Vector2(401, 387)
+scale = Vector2(4, 4)
+
+[node name="Rejilla-sin-tornillos" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(479, 272)
+scale = Vector2(4, 4)
+texture = ExtResource("2_sn6kt")
 
 [node name="tornilloDerecho" parent="MarginContainer" instance=ExtResource("4_ilg24")]
-position = Vector2(734, 131)
+position = Vector2(745, 137)
 scale = Vector2(4, 4)
 
 [node name="tornilloDerecho2" parent="MarginContainer" instance=ExtResource("4_ilg24")]
-position = Vector2(734, 431)
+position = Vector2(745, 442)
 scale = Vector2(4, 4)
 
 [node name="tornilloIzquierdo" parent="MarginContainer" instance=ExtResource("3_wdoqd")]
-position = Vector2(226, 131)
+position = Vector2(227, 137)
 scale = Vector2(4, 4)
 
 [node name="tornilloIzquierdo2" parent="MarginContainer" instance=ExtResource("3_wdoqd")]
-position = Vector2(226, 430)
+position = Vector2(227, 442)
 scale = Vector2(4, 4)
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Pastillas64x64" type="Sprite2D" parent="MarginContainer/PanelContainer"]
+position = Vector2(488, 314)
+scale = Vector2(4, 4)
+texture = ExtResource("7_o75do")

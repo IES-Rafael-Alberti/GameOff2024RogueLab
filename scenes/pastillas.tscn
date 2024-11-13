@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvqggbfc7gi6d"]
+
+[ext_resource type="Texture2D" uid="uid://cgv3tvwfyjeew" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-rejilla.png" id="1_l3ehx"]
+[ext_resource type="Script" path="res://scripts/pastillas.gd" id="2_ostin"]
+
+[node name="pastillas" type="Sprite2D"]
+texture = ExtResource("1_l3ehx")
+region_enabled = true
+region_rect = Rect2(80, 80, 40, 32)
+script = ExtResource("2_ostin")
