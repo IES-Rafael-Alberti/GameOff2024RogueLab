@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfqslgosqo0lk"
-path="res://.godot/imported/boy-32-64-idele_acabado.png-2c4fa0e10aa0299881eb72c7b55b8601.ctex"
+uid="uid://dkbuuavhxhoxr"
+path="res://.godot/imported/tornillo-derecha.png-5dc49cd578dad4a001f64a667d2de83e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets/Player/boy-32-64-idele_acabado.png"
-dest_files=["res://.godot/imported/boy-32-64-idele_acabado.png-2c4fa0e10aa0299881eb72c7b55b8601.ctex"]
+source_file="res://assets/assets/Puzles/puzle2-rejilla/tornillo-derecha.png"
+dest_files=["res://.godot/imported/tornillo-derecha.png-5dc49cd578dad4a001f64a667d2de83e.ctex"]
 
 [params]
 
