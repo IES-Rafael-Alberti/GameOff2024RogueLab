@@ -37,6 +37,7 @@ func _physics_process(delta):
 		
 	elif Input.is_action_just_pressed("interancion"):
 		flagInteractuando = true
+		GameManager.interactive.on_triggered()
 		print("Estoy Interactuando: " + str(flagInteractuando))
 	
 	

@@ -32,6 +32,7 @@ GameManager="*res://scripts/globals/gameManager.gd"
 OptionManager="*res://scripts/globals/optionManager.gd"
 CanvasManager="*res://scripts/globals/CanvasManager.gd"
 CameraManager="*res://scripts/globals/CameraManager.gd"
+SignalBus="*res://scripts/SignalBus.gd"
 
 [display]
 
@@ -42,7 +43,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg")
 
 [global_group]
 

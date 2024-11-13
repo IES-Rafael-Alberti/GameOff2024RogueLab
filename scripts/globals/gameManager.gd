@@ -8,19 +8,15 @@ var interactive:Node2D
 
 
 #variables
-var flagList: Array[Flag] = [] 
-##Cargar todas las flags en la lista 
-
-const ALL_FLAGS = preload("res://data/all_flags.tres")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 func _ready() -> void:
-	ALL_FLAGS.load_all_into(flagList)
-	for f in flagList:
-		print(f.name.name)
+	SignalBus.execute_event.connect(_on_event_execute)
+	pass
+
 func get_player():
 	
 	if(player == null):
@@ -28,7 +24,17 @@ func get_player():
 		player.SPEED = initSpeed
 	
 	return player
-	pass
 
 func setInteractive(body:Node2D):
 	interactive=body
+	
+func _on_event_execute(event_id):
+	#Buscar evento en csv y estraer ¿Recurso o clase?
+	# ejecutar opciones canvas
+	# ejecutar opciones camara
+	# si ejecuta puzles mandar "next" al puzle para que pueda continuar el arbol
+	# si depende de un trigger mandar al trigger "next" esperarlo
+	# si no tiene señal de puzle ni de triger ejecuta la siguiente escena 
+	# si no tiene next finaliza esa rama de dialogo
+	
+	pass
