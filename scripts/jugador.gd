@@ -4,8 +4,10 @@ var interactionObject #objeto que se recive
 var flagInteractuando = false #indicador si se esta interactuando o no
 
 
+
 # variables para diseñador
 @export var SPEED = 130
+@export var numFotosObtenidas = 0
 
 # Variables para nodos
 @onready var animated_sprite_2d = $AnimatedSprite2D  # Nodo para el sprite animado del personaje

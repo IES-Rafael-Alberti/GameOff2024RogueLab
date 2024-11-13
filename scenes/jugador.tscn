@@ -21,40 +21,46 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_e4isf")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ie77m"]
+load_path = "res://.godot/imported/boy-32-64-walkt.png-399f9ea22a2e6b33f015faaa908df01e.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ydwwy"]
-atlas = ExtResource("3_paatl")
+atlas = SubResource("CompressedTexture2D_ie77m")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bk3x4"]
-atlas = ExtResource("3_paatl")
+atlas = SubResource("CompressedTexture2D_ie77m")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_prukc"]
-atlas = ExtResource("3_paatl")
+atlas = SubResource("CompressedTexture2D_ie77m")
 region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3211"]
-atlas = ExtResource("3_paatl")
+atlas = SubResource("CompressedTexture2D_ie77m")
 region = Rect2(96, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dplf"]
-atlas = ExtResource("3_paatl")
+atlas = SubResource("CompressedTexture2D_ie77m")
 region = Rect2(128, 0, 32, 64)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ipib"]
+load_path = "res://.godot/imported/boy-32-64-idele_acabado.png-2c4fa0e10aa0299881eb72c7b55b8601.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_brhs7"]
-atlas = ExtResource("4_atq1o")
+atlas = SubResource("CompressedTexture2D_0ipib")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryovx"]
-atlas = ExtResource("4_atq1o")
+atlas = SubResource("CompressedTexture2D_0ipib")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lh06m"]
-atlas = ExtResource("4_atq1o")
+atlas = SubResource("CompressedTexture2D_0ipib")
 region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sk7yi"]
-atlas = ExtResource("4_atq1o")
+atlas = SubResource("CompressedTexture2D_0ipib")
 region = Rect2(96, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqmju"]
@@ -142,23 +148,23 @@ atlas = ExtResource("1_e4isf")
 region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_peh5y"]
-atlas = ExtResource("3_paatl")
+atlas = SubResource("CompressedTexture2D_ie77m")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpcpu"]
-atlas = ExtResource("3_paatl")
+atlas = SubResource("CompressedTexture2D_ie77m")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgtwu"]
-atlas = ExtResource("3_paatl")
+atlas = SubResource("CompressedTexture2D_ie77m")
 region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ayd2"]
-atlas = ExtResource("3_paatl")
+atlas = SubResource("CompressedTexture2D_ie77m")
 region = Rect2(96, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n3jth"]
-atlas = ExtResource("3_paatl")
+atlas = SubResource("CompressedTexture2D_ie77m")
 region = Rect2(128, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tr3ah"]
@@ -321,7 +327,7 @@ motion_mode = 1
 script = ExtResource("1_iaisd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -31)
+position = Vector2(-3, -18)
 sprite_frames = SubResource("SpriteFrames_tr3ah")
 animation = &"walFran"
 autoplay = "walFran"
