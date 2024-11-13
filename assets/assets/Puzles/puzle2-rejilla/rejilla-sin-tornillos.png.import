@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://igrbf51qwndx"
-path="res://.godot/imported/boy-32-64-walkt.png-399f9ea22a2e6b33f015faaa908df01e.ctex"
+uid="uid://dixpu7d04o707"
+path="res://.godot/imported/rejilla-sin-tornillos.png-07eae014df04f4c56a4d049b087b2bef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets/Player/boy-32-64-walkt.png"
-dest_files=["res://.godot/imported/boy-32-64-walkt.png-399f9ea22a2e6b33f015faaa908df01e.ctex"]
+source_file="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-tornillos.png"
+dest_files=["res://.godot/imported/rejilla-sin-tornillos.png-07eae014df04f4c56a4d049b087b2bef.ctex"]
 
 [params]
 

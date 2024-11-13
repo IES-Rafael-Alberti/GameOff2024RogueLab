@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://2jvwv2uig8ff"]
+
+[ext_resource type="Texture2D" uid="uid://dkbuuavhxhoxr" path="res://assets/assets/Puzles/puzle2-rejilla/tornillo-derecha.png" id="1_a4pc4"]
+[ext_resource type="Script" path="res://scripts/tornillo_derecho.gd" id="2_gwsew"]
+
+[sub_resource type="Animation" id="Animation_w02yb"]
+resource_name = "rotar"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 25.1327]
+}
+
+[sub_resource type="Animation" id="Animation_4rhqy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y5fjk"]
+_data = {
+"RESET": SubResource("Animation_4rhqy"),
+"rotar": SubResource("Animation_w02yb")
+}
+
+[node name="tornilloDerecho" type="Sprite2D"]
+texture = ExtResource("1_a4pc4")
+script = ExtResource("2_gwsew")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y5fjk")
+}

@@ -1,27 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhs180cnfuqmr"]
+[gd_scene load_steps=4 format=3 uid="uid://dhs180cnfuqmr"]
 
-[ext_resource type="Shader" path="res://scripts/shaders/sangre.gdshader" id="1_h1xh1"]
-[ext_resource type="Texture2D" uid="uid://dpgfyd6v8ifd0" path="res://assets/materials/white-background.png" id="2_3iljv"]
-[ext_resource type="Texture2D" uid="uid://dio3acuttcete" path="res://assets/assets/Inside_C.png" id="3_fncax"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vbigl"]
-shader = ExtResource("1_h1xh1")
-shader_parameter/blood_color = null
-shader_parameter/blood_intensity = 0.5
-shader_parameter/internal_limit = 0.3
-shader_parameter/external_limit = 0.6
+[ext_resource type="Texture2D" uid="uid://dcapjn8rskxkx" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-con-todo.png" id="1_nmjaa"]
+[ext_resource type="PackedScene" uid="uid://bfdrof1bnnufs" path="res://scenes/tornillo_izquierdo.tscn" id="3_wdoqd"]
+[ext_resource type="PackedScene" uid="uid://2jvwv2uig8ff" path="res://scenes/tornillo_derecho.tscn" id="4_ilg24"]
 
 [node name="SceneRejilla" type="CanvasLayer"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_vbigl")
-position = Vector2(478, 270.5)
-scale = Vector2(1.2025, 0.908333)
-texture = ExtResource("2_3iljv")
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="estanteria" type="Sprite2D" parent="."]
-position = Vector2(473, 334)
-scale = Vector2(12.3906, 10.3958)
-texture = ExtResource("3_fncax")
-region_enabled = true
-region_rect = Rect2(688, 144, 64, 48)
+[node name="Rejilla-con-todo" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(474.8, 262.95)
+scale = Vector2(3.94, 3.94)
+texture = ExtResource("1_nmjaa")
+
+[node name="tornilloDerecho" parent="MarginContainer" instance=ExtResource("4_ilg24")]
+position = Vector2(734, 131)
+scale = Vector2(4, 4)
+
+[node name="tornilloDerecho2" parent="MarginContainer" instance=ExtResource("4_ilg24")]
+position = Vector2(734, 431)
+scale = Vector2(4, 4)
+
+[node name="tornilloIzquierdo" parent="MarginContainer" instance=ExtResource("3_wdoqd")]
+position = Vector2(226, 131)
+scale = Vector2(4, 4)
+
+[node name="tornilloIzquierdo2" parent="MarginContainer" instance=ExtResource("3_wdoqd")]
+position = Vector2(226, 430)
+scale = Vector2(4, 4)
