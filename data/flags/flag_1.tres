@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Flag" load_steps=2 format=3 uid="uid://chp0525mqcycf"]
+[gd_resource type="Resource" script_class="Flag" load_steps=3 format=3 uid="uid://cinuq63126jv3"]
 
 [ext_resource type="Script" path="res://data/flag.gd" id="1_8dgyp"]
+[ext_resource type="Resource" uid="uid://c35om55rtseiv" path="res://data/flag_name/flag_1_name.tres" id="1_eudyf"]
 
 [resource]
 script = ExtResource("1_8dgyp")
-name = "FLAG_1"
-active = true
+name = ExtResource("1_eudyf")
+active = false

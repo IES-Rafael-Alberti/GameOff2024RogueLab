@@ -4,7 +4,9 @@ extends Marker2D
 @export var CameraShader: ShaderMaterial
 @export_multiline var DialogText: String
 @export var PuzzleName:String
-@export var flagsList:Array[Flag]
+@export var flagsList:Array[FlagName]
+
+@export var ModifiedFlag:Flag
 
 ##Cargar una lista de todas las flags en un mapa con un booleano
 

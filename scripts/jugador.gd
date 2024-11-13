@@ -33,7 +33,7 @@ func _physics_process(delta):
 	
 	if GameManager.interactive == null: #cambia de !not a not (esta en !not para provar que funciona)
 		flagInteractuando = false
-		print("no hay objeto ")
+		#print("no hay objeto ")
 		
 	elif Input.is_action_just_pressed("interancion"):
 		flagInteractuando = true
@@ -54,8 +54,8 @@ func _physics_process(delta):
 		var directionVertical = Input.get_axis("up", "down")
 		var ultima_direccion
 		
-		print("vertical: "+str(directionVertical))
-		print("horizontal: "+str(direccionHorizontal))
+		#print("vertical: "+str(directionVertical))
+		#print("horizontal: "+str(direccionHorizontal))
 		
 			
 		# Registra la última entrada cuando se detecta un cambio en alguna dirección

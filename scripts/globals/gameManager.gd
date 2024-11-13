@@ -19,7 +19,8 @@ func _process(delta):
 
 func _ready() -> void:
 	ALL_FLAGS.load_all_into(flagList)
-	print(flagList)
+	for f in flagList:
+		print(f.name.name)
 func get_player():
 	
 	if(player == null):
