@@ -28,11 +28,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SignalBus="*res://scripts/globals/SignalBus.gd"
+CameraManager="*res://scripts/globals/CameraManager.gd"
 GameManager="*res://scripts/globals/gameManager.gd"
 OptionManager="*res://scripts/globals/optionManager.gd"
 CanvasManager="*res://scripts/globals/CanvasManager.gd"
-CameraManager="*res://scripts/globals/CameraManager.gd"
-SignalBus="*res://scripts/SignalBus.gd"
+DataManager="*res://scripts/globals/DataManager.gd"
 
 [display]
 

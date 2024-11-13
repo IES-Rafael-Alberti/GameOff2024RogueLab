@@ -6,7 +6,6 @@ const JUGADOR = preload("res://scenes/jugador.tscn")
 var initSpeed = 130
 var interactive:Node2D
 
-
 #variables
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,7 +28,15 @@ func setInteractive(body:Node2D):
 	interactive=body
 	
 func _on_event_execute(event_id):
-	#Buscar evento en csv y estraer ¿Recurso o clase?
+	print("Ejecutando evento: "+event_id)
+	#Buscar evento en csv
+	var evento = DataManager.scriptData.get(event_id)
+	
+	if evento == null:
+		print("Clave de evento no encontrada")
+	else:
+		SignalBus.event_waiting.emit(evento["NEXT"])
+
 	# ejecutar opciones canvas
 	# ejecutar opciones camara
 	# si ejecuta puzles mandar "next" al puzle para que pueda continuar el arbol

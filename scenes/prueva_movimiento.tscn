@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://dqq6shoxeay2t"]
+[gd_scene load_steps=10 format=4 uid="uid://dqq6shoxeay2t"]
 
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_k1qke"]
 [ext_resource type="Texture2D" uid="uid://d3vpgj14n75bt" path="res://assets/assets/A4.png" id="2_vh4uo"]
 [ext_resource type="Texture2D" uid="uid://dio3acuttcete" path="res://assets/assets/Inside_C.png" id="3_d2vf6"]
 [ext_resource type="Material" uid="uid://rkl0qeb66rdc" path="res://assets/materials/sangre.tres" id="4_tk8hf"]
 [ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="5_jpwx1"]
+[ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/trigger.tscn" id="6_eq056"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_adcy8"]
 texture = ExtResource("2_vh4uo")
@@ -1937,3 +1938,8 @@ grow_vertical = 2
 material = ExtResource("4_tk8hf")
 layout_mode = 2
 texture = ExtResource("5_jpwx1")
+
+[node name="Trigger" parent="." instance=ExtResource("6_eq056")]
+position = Vector2(289, 145)
+scale = Vector2(5.33347, -4.77697)
+event_id = "TXT_TEST_1"

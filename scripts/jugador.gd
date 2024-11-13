@@ -32,13 +32,13 @@ func _physics_process(delta):
 	
 	
 	if GameManager.interactive == null: #cambia de !not a not (esta en !not para provar que funciona)
-		flagInteractuando = false
+		#flagInteractuando = false
 		#print("no hay objeto ")
-		
+		pass
 	elif Input.is_action_just_pressed("interancion"):
-		flagInteractuando = true
+		#flagInteractuando = true
 		GameManager.interactive.on_triggered()
-		print("Estoy Interactuando: " + str(flagInteractuando))
+		#print("Estoy Interactuando: " + str(flagInteractuando))
 	
 	
 	#endregion
