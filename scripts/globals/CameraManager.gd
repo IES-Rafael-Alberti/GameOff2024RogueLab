@@ -12,6 +12,7 @@ func add_camera(player:CharacterBody2D):
 	
 	if(Camera == null):
 		Camera = Camera2D.new()
+		Camera.zoom = Vector2(2.5,2.5)
 	
 	player.add_child(Camera)
 	

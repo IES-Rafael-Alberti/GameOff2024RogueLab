@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 func on_triggered():
-	if(event_id!=null):
+	if(event_id!=""):
 		SignalBus.execute_event.emit(event_id)
 	pass
 

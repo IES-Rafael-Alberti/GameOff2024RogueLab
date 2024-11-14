@@ -12,6 +12,12 @@ var flagInteractuando = false #indicador si se esta interactuando o no
 # Variables para nodos
 @onready var animated_sprite_2d = $AnimatedSprite2D  # Nodo para el sprite animado del personaje
 
+func _ready() -> void:
+	
+	SignalBus.input_required.connect(_on_input_required)
+	
+	pass
+
 #apartado de fisicas
 func _physics_process(delta):
 
@@ -33,15 +39,18 @@ func _physics_process(delta):
 	#region interaccion
 	
 	
-	if GameManager.interactive == null: #cambia de !not a not (esta en !not para provar que funciona)
+	
+	if GameManager.interactive == null and flagInteractuando==false: #cambia de !not a not (esta en !not para provar que funciona)
 		#flagInteractuando = false
 		#print("no hay objeto ")
 		pass
-	elif Input.is_action_just_pressed("interancion"):
+	elif flagInteractuando==false and Input.is_action_just_pressed("interancion"):
 		#flagInteractuando = true
 		GameManager.interactive.on_triggered()
 		#print("Estoy Interactuando: " + str(flagInteractuando))
-	
+	elif  flagInteractuando == true and Input.is_action_just_pressed("interancion"):
+		SignalBus.wait_input.emit()
+		flagInteractuando = false
 	
 	#endregion
 
@@ -110,3 +119,8 @@ func _physics_process(delta):
 	
 	# Mueve al personaje usando la física
 	move_and_slide()
+
+
+func  _on_input_required():
+	flagInteractuando=true
+	pass

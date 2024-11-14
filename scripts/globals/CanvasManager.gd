@@ -10,10 +10,13 @@ var inGame:bool=false
 var pause_menu
 var option_menu
 var main_scene
+var dialog_canvas
 
-const MAIN_MENU = preload("res://scenes/menus/main_menu.tscn")
-const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
-const OPTION_MENU = preload("res://scenes/menus/option_menu.tscn")
+const MAIN_MENU = preload("res://scenes/UI/main_menu.tscn")
+const PAUSE_MENU = preload("res://scenes/UI/pause_menu.tscn")
+const OPTION_MENU = preload("res://scenes/UI/option_menu.tscn")
+
+const DIALOGS = preload("res://scenes/UI/dialogs.tscn")
 
 const MAIN_SCENE= preload("res://scenes/prueva_movimiento.tscn")
 
@@ -52,7 +55,14 @@ func play_pause_menu():
 	pause_menu.visible=true
 	
 	pass
-	
+
+func instanciate_dialog():
+	if dialog_canvas == null:
+		dialog_canvas = DIALOGS.instantiate()
+		get_tree().current_scene.add_child(dialog_canvas)
+		pass
+	dialog_canvas.hide()
+
 func play_resume_pause_menu():
 	pause_menu.visible=false 
 	

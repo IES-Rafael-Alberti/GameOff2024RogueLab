@@ -4,7 +4,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "TRIGGER",
 	"NEXT": "TXT_TEST_2",
-	"ES": "Hola esto es una prueba de si funciona",
+	"ES": "Hola esto es una prueba de si funciona ahora esto es un texto largo para poder comprobar si al pasar de linea funciona correctamente aunque estoy seguro de que si porque soy un crack",
 	"EN": "Hello this is a test"
   },
   "TXT_TEST_2": {

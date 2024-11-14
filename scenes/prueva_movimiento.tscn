@@ -1945,18 +1945,6 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_adcy8")
 sources/1 = SubResource("TileSetAtlasSource_mc307")
 
-[sub_resource type="GDScript" id="GDScript_xvu4b"]
-script/source = "extends CanvasLayer
-
-
-
-
-
-
-
-
-"
-
 [node name="prueva movimiento" type="Node2D"]
 script = ExtResource("1_k1qke")
 
