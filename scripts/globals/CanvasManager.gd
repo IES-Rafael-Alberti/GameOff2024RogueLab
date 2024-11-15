@@ -20,7 +20,7 @@ const OPTION_MENU = preload("res://scenes/UI/option_menu.tscn")
 
 const DIALOGS = preload("res://scenes/UI/dialogs.tscn")
 
-const MAIN_SCENE= preload("res://scenes/prueva_movimiento.tscn")
+const MAIN_SCENE= preload("res://scenes/Principal.tscn")
 
 func set_glitch_effect(action:bool):
 	glitch_tv_effect=action
