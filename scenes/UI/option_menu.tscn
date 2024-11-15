@@ -6,6 +6,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e64n"]
 
 [node name="OptionMenu" type="CanvasLayer"]
+layer = 25
 script = ExtResource("1_58sjs")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -118,7 +119,7 @@ theme = ExtResource("2_p15js")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4e64n")
 
 [node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(1000, 50)
+custom_minimum_size = Vector2(640, 30)
 layout_mode = 2
 size_flags_horizontal = 0
 
@@ -127,8 +128,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Back"
 
+[connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VolumeMasterSlider" to="." method="_on_volume_master_slider_ready"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VolumeMasterSlider" to="." method="_on_volume_master_slider_value_changed"]
+[connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VolumeMusicSlider" to="." method="_on_volume_music_slider_ready"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VolumeMusicSlider" to="." method="_on_volume_music_slider_value_changed"]
+[connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/VolumeSFXSlider" to="." method="_on_volume_sfx_slider_ready"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/VolumeSFXSlider" to="." method="_on_volume_sfx_slider_value_changed"]
+[connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VSyncCheckButton" to="." method="_on_v_sync_check_button_ready"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VSyncCheckButton" to="." method="_on_v_sync_check_button_toggled"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

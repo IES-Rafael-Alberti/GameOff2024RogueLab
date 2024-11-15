@@ -1,7 +1,10 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b67o6d42cenrq"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://rkl0qeb66rdc"]
 
-[ext_resource type="Shader" path="res://scripts/shaders/Grayscale .gdshader" id="1_j3ygy"]
+[ext_resource type="Shader" path="res://scripts/shaders/sangre.gdshader" id="1_d582i"]
 
 [resource]
-shader = ExtResource("1_j3ygy")
-shader_parameter/grayscaleIntesity = 1.0
+shader = ExtResource("1_d582i")
+shader_parameter/blood_color = Color(5.2643e-08, 0, 0.0951902, 1)
+shader_parameter/blood_intensity = 0.465
+shader_parameter/internal_limit = 0.05
+shader_parameter/external_limit = 0.651

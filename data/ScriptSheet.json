@@ -1,0 +1,18 @@
+{
+  "TXT_TEST_1": {
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "TRIGGER",
+	"NEXT": "TXT_TEST_2",
+	"ES": "Esto es una puerta muy bonita y espectacular wow que increible puerta me encanta, yo tenia una igul cuando xico",
+	"EN": "Hello this is a test"
+  },
+  "TXT_TEST_2": {
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Sigue siendo una puerta xd",
+	"EN": "It's working"
+  }
+}
