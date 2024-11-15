@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bnpnpi2np76p8"]
+[gd_scene load_steps=19 format=3 uid="uid://bnpnpi2np76p8"]
 
 [ext_resource type="Shader" path="res://scripts/shaders/Grayscale .gdshader" id="1_lq7pq"]
 [ext_resource type="Script" path="res://scripts/prueba_shaders.gd" id="1_lv4km"]
@@ -46,6 +46,13 @@ shader_parameter/vignette_strength = 0.5
 shader_parameter/vignette_radius = 0.6
 shader_parameter/vignette_color = Vector3(0, 0, 0)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hvrxb"]
+shader = ExtResource("6_ojtsw")
+shader_parameter/blood_color = null
+shader_parameter/blood_intensity = 0.5
+shader_parameter/internal_limit = 0.3
+shader_parameter/external_limit = 0.6
+
 [node name="prueba shaders" type="Node2D"]
 script = ExtResource("1_lv4km")
 
@@ -55,7 +62,7 @@ texture = ExtResource("2_y4n4r")
 
 [node name="Grayscale" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_tdfm5")
-position = Vector2(244, 86)
+position = Vector2(1190, 443)
 texture = ExtResource("2_y4n4r")
 
 [node name="azulOscuro" type="Sprite2D" parent="."]
@@ -102,6 +109,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer"]
-material = ExtResource("10_iioe6")
+material = SubResource("ShaderMaterial_hvrxb")
 layout_mode = 2
 texture = ExtResource("11_2fou1")
