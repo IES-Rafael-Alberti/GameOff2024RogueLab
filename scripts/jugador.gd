@@ -29,20 +29,17 @@ func _physics_process(delta):
 	#endregion
 
 	#region interaccion
-	
-	
-	
-	if GameManager.interactive == null and flagInteractuando==false: #cambia de !not a not (esta en !not para provar que funciona)
-		#flagInteractuando = false
-		#print("no hay objeto ")
-		pass
-	elif flagInteractuando==false and Input.is_action_just_pressed("interancion"):
-		#flagInteractuando = true
-		GameManager.interactive.on_triggered()
-		#print("Estoy Interactuando: " + str(flagInteractuando))
-	elif  flagInteractuando == true and Input.is_action_just_pressed("interancion"):
-		SignalBus.wait_input.emit()
-		flagInteractuando = false
+		
+	if GameManager.interactive != null:
+		if Input.is_action_just_pressed("interaccion"):
+			if flagInteractuando == true:
+				SignalBus.wait_input.emit()
+				flagInteractuando = false
+				pass
+			else:
+				GameManager.interactive.on_triggered()
+				pass
+			pass
 	
 	#endregion
 
@@ -63,9 +60,9 @@ func _physics_process(delta):
 		
 			
 		# Registra la última entrada cuando se detecta un cambio en alguna dirección
-		if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
+		if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 			ultima_direccion = "horizontal"
-		elif Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down"):
+		elif Input.is_action_pressed("up") or Input.is_action_pressed("down"):
 			ultima_direccion = "vertical"
 
 		# Controla el movimiento basado en la última dirección de entrada
