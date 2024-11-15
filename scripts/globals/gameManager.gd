@@ -20,6 +20,7 @@ func get_player():
 	
 	if(player == null):
 		player = JUGADOR.instantiate()
+		player.position.y = player.position.y+50
 		player.SPEED = initSpeed
 	
 	return player

@@ -4,7 +4,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "TRIGGER",
 	"NEXT": "TXT_TEST_2",
-	"ES": "Hola esto es una prueba de si funciona ahora esto es un texto largo para poder comprobar si al pasar de linea funciona correctamente aunque estoy seguro de que si porque soy un crack y estoy seguro que para nada me ha fallado y estoy añadiendo mas caracteres a partir del anterior por nada",
+	"ES": "Esto es una puerta muy bonita y espectacular wow que increible puerta me encanta, yo tenia una igul cuando xico",
 	"EN": "Hello this is a test"
   },
   "TXT_TEST_2": {
@@ -12,7 +12,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "Sigue funcionando perfectamente",
+	"ES": "Sigue siendo una puerta xd",
 	"EN": "It's working"
   }
 }
