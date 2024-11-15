@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cl7gbx7qj5o30" path="res://assets/sprites/Player/player-32-64-front-walk.png" id="2_0y32a"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
 [ext_resource type="Texture2D" uid="uid://cynq8fhvk5sgd" path="res://assets/assets/mariofinal.png" id="3_fqhnc"]
-[ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/trigger.tscn" id="5_omke0"]
+[ext_resource type="PackedScene" path="res://scenes/trigger.tscn" id="5_omke0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntdln"]
 texture = ExtResource("1_c4xtu")
