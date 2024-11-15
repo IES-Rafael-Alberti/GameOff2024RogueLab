@@ -70,7 +70,10 @@ func _physics_process(delta):
 		if ultima_direccion == "horizontal":
 			# Si la última entrada fue horizontal, mueve solo en el eje X
 			if direccionHorizontal != 0:
-				velocity.x = direccionHorizontal * SPEED
+				if direccionHorizontal > 0: #el if este esta implementado por el movimiento con el joistic
+					velocity.x = 1 * SPEED
+				else:
+					velocity.x = -1 * SPEED
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 			# Desacelera el eje Y para mantener solo el movimiento en X
@@ -79,7 +82,10 @@ func _physics_process(delta):
 		elif ultima_direccion == "vertical":
 			# Si la última entrada fue vertical, mueve solo en el eje Y
 			if directionVertical != 0:
-				velocity.y = directionVertical * SPEED
+				if directionVertical > 0: #el if este esta implementado por el movimiento con el joistic
+					velocity.y = 1 * SPEED
+				else:
+					velocity.y = -1 * SPEED
 			else:
 				velocity.y = move_toward(velocity.y, 0, SPEED)
 			
