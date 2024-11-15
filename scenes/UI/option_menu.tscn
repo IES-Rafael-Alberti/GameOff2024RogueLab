@@ -6,6 +6,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e64n"]
 
 [node name="OptionMenu" type="CanvasLayer"]
+layer = 25
 script = ExtResource("1_58sjs")
 
 [node name="ColorRect" type="ColorRect" parent="."]

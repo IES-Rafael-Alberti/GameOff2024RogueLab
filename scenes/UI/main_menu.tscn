@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_ucl2a"]
 
 [node name="MainMenu" type="CanvasLayer"]
-layer = 0
+layer = 5
 script = ExtResource("2_au0p8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
