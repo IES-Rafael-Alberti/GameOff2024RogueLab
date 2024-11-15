@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dqq6shoxeay2t"]
+[gd_scene load_steps=7 format=4 uid="uid://dqq6shoxeay2t"]
 
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_k1qke"]
 [ext_resource type="Texture2D" uid="uid://d3vpgj14n75bt" path="res://assets/assets/A4.png" id="2_vh4uo"]
@@ -1970,3 +1970,4 @@ texture = ExtResource("5_jpwx1")
 position = Vector2(289, 145)
 scale = Vector2(5.33347, -4.77697)
 event_id = "TXT_TEST_1"
+[node name="interacciones" type="Node" parent="."]
