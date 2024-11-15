@@ -7,14 +7,20 @@ var glow_effect:bool
 var black_and_white_effect:bool
 
 var inGame:bool=false
+var inPause:bool=false
+
 var pause_menu
 var option_menu
+var main_scene
+var dialog_canvas
 
-const MAIN_MENU = preload("res://scenes/menus/main_menu.tscn")
-const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
-const OPTION_MENU = preload("res://scenes/menus/option_menu.tscn")
+const MAIN_MENU = preload("res://scenes/UI/main_menu.tscn")
+const PAUSE_MENU = preload("res://scenes/UI/pause_menu.tscn")
+const OPTION_MENU = preload("res://scenes/UI/option_menu.tscn")
 
-const MAIN_SCENE= preload("res://scenes/prueva_movimiento.tscn")
+const DIALOGS = preload("res://scenes/UI/dialogs.tscn")
+
+const MAIN_SCENE= preload("res://scenes/Principal.tscn")
 
 func set_glitch_effect(action:bool):
 	glitch_tv_effect=action
@@ -34,7 +40,7 @@ func set_black_and_white_effect(action:bool):
 	pass
 
 func _ready() -> void:
-	#play_main_menu()
+	play_main_menu()
 	pass
 
 func play_main_menu():
@@ -50,10 +56,15 @@ func play_pause_menu():
 	
 	pause_menu.visible=true
 	
-	#cambiar escena de pausa completamente
-	#get_tree().change_scene_to_packed(PAUSE_MENU)
 	pass
-	
+
+func instanciate_dialog():
+	if dialog_canvas == null:
+		dialog_canvas = DIALOGS.instantiate()
+		get_tree().current_scene.add_child(dialog_canvas)
+		pass
+	dialog_canvas.hide()
+
 func play_resume_pause_menu():
 	pause_menu.visible=false 
 	
@@ -85,14 +96,26 @@ func back_options_menu():
 	
 
 func play_main_scene():
+	var player = GameManager.get_player()
+	CameraManager.add_camera(player)
 	get_tree().change_scene_to_packed(MAIN_SCENE)
 	inGame=true
+	pass
+
+func alternate_pause():
+	
+	if inGame:
+		if inPause:
+			play_resume_pause_menu()
+		else:
+			play_pause_menu()
+	
 	pass
 
 func _process(delta: float) -> void:
 	
 	if(glitch_tv_effect):
-		#get_tree().current_scene.get_node()
+		
 		pass
 	
 	if(vignet_effect):

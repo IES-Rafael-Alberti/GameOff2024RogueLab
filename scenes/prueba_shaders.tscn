@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bnpnpi2np76p8"]
 
-[ext_resource type="Shader" path="res://scripts/shaders/Grayscale .gdshader" id="1_lq7pq"]
+[ext_resource type="Shader" path="res://scripts/shaders/Grayscale.gdshader" id="1_lq7pq"]
 [ext_resource type="Script" path="res://scripts/prueba_shaders.gd" id="1_lv4km"]
 [ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="2_y4n4r"]
 [ext_resource type="Shader" path="res://scripts/shaders/azulOscuro.gdshader" id="3_u2m1k"]
@@ -9,7 +9,7 @@
 [ext_resource type="Shader" path="res://scripts/shaders/sangre.gdshader" id="6_ojtsw"]
 [ext_resource type="Shader" path="res://scripts/shaders/vinieta.gdshader" id="7_hm5pf"]
 [ext_resource type="Shader" path="res://scripts/shaders/periodico.gdshader" id="7_m4xk4"]
-[ext_resource type="Material" uid="uid://b67o6d42cenrq" path="res://assets/materials/sangre.tres" id="10_iioe6"]
+[ext_resource type="Material" uid="uid://rkl0qeb66rdc" path="res://assets/materials/sangre.tres" id="10_iioe6"]
 [ext_resource type="Texture2D" uid="uid://dpgfyd6v8ifd0" path="res://assets/materials/white-background.png" id="11_2fou1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tdfm5"]
