@@ -24,15 +24,7 @@ func _physics_process(delta):
 	#region menu de pausa
 	
 	if Input.is_action_just_pressed("escape"):
-		if OptionManager.flagMenuPausa:
-			OptionManager.flagMenuPausa = false
-			CanvasManager.play_resume_pause_menu()
-			print("MenuPausa: " + str(OptionManager.flagMenuPausa) )
-		else:
-			OptionManager.flagMenuPausa = true
-			GameManager.positionPlayer=position
-			CanvasManager.play_pause_menu()
-			print("MenuPausa: " + str(OptionManager.flagMenuPausa))
+		CanvasManager.alternate_pause()
 
 	#endregion
 
@@ -56,7 +48,7 @@ func _physics_process(delta):
 
 	#region movimiento
 
-	if OptionManager.flagMenuPausa or flagInteractuando:
+	if flagInteractuando:
 		pass
 	
 	else :

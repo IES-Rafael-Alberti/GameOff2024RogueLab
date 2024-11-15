@@ -7,6 +7,8 @@ var glow_effect:bool
 var black_and_white_effect:bool
 
 var inGame:bool=false
+var inPause:bool=false
+
 var pause_menu
 var option_menu
 var main_scene
@@ -100,10 +102,20 @@ func play_main_scene():
 	inGame=true
 	pass
 
+func alternate_pause():
+	
+	if inGame:
+		if inPause:
+			play_resume_pause_menu()
+		else:
+			play_pause_menu()
+	
+	pass
+
 func _process(delta: float) -> void:
 	
 	if(glitch_tv_effect):
-		#get_tree().current_scene.get_node()
+		
 		pass
 	
 	if(vignet_effect):

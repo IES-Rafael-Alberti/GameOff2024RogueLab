@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var label: Label = $PanelContainer/Label
 var DialogVisible:bool
-var maxCharacters:int = 300
+var maxCharacters:int = 240
 
 var visbleCharacters:float
 
@@ -42,7 +42,7 @@ func _on_execute_dialog(text:String):
 
 func _on_input_recived():
 	label.lines_skipped+=1
-	label.visible_characters=maxCharacters/2
+	label.visible_characters=label.lines_skipped*maxCharacters
 	
 	if label.visible_characters >= label.text.length():
 		hide()
