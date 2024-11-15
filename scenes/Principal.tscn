@@ -573,10 +573,6 @@ texture = ExtResource("2_0y32a")
 position = Vector2(360, 21)
 texture = ExtResource("3_fqhnc")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(176, 0)
-zoom = Vector2(2, 2)
-
 [node name="Trigger" parent="." instance=ExtResource("5_omke0")]
 position = Vector2(67, -6)
 scale = Vector2(2.38952, 2.19651)
