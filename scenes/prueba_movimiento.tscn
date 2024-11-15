@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=4 uid="uid://dqq6shoxeay2t"]
 
-[ext_resource type="PackedScene" uid="uid://bumaujc3plt5v" path="res://scenes/jugador.tscn" id="1_pxey0"]
-[ext_resource type="Texture2D" uid="uid://d3vpgj14n75bt" path="res://assets/assets/A4.png" id="2_vh4uo"]
-[ext_resource type="Texture2D" uid="uid://dio3acuttcete" path="res://assets/assets/Inside_C.png" id="3_d2vf6"]
-[ext_resource type="PackedScene" uid="uid://csu31rwdb46rv" path="res://scenes/encimera.tscn" id="4_y7fcn"]
-[ext_resource type="PackedScene" uid="uid://bifiob62aodmk" path="res://scenes/canvas_puzzle_Mover_Objeto.tscn" id="5_813c0"]
+[ext_resource type="PackedScene" uid="uid://bumaujc3plt5v" path="res://scenes/jugador.tscn" id="1_w5qxj"]
+[ext_resource type="Texture2D" uid="uid://d3vpgj14n75bt" path="res://assets/assets/A4.png" id="2_bxje8"]
+[ext_resource type="Texture2D" uid="uid://dio3acuttcete" path="res://assets/assets/Inside_C.png" id="3_8he2r"]
+[ext_resource type="PackedScene" uid="uid://csu31rwdb46rv" path="res://scenes/encimera.tscn" id="4_w2sie"]
+[ext_resource type="PackedScene" uid="uid://bifiob62aodmk" path="res://scenes/canvas_puzzle_Mover_Objeto.tscn" id="5_01qvf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_adcy8"]
-texture = ExtResource("2_vh4uo")
+texture = ExtResource("2_bxje8")
 0:14/0 = 0
 0:15/0 = 0
 1:15/0 = 0
@@ -473,7 +473,7 @@ texture = ExtResource("2_vh4uo")
 23:35/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mc307"]
-texture = ExtResource("3_d2vf6")
+texture = ExtResource("3_8he2r")
 35:0/0 = 0
 36:0/0 = 0
 39:0/0 = 0
@@ -1958,7 +1958,7 @@ script/source = "extends CanvasLayer
 
 [node name="prueva movimiento" type="Node2D"]
 
-[node name="jugador" parent="." instance=ExtResource("1_pxey0")]
+[node name="jugador" parent="." instance=ExtResource("1_w5qxj")]
 position = Vector2(135, 96)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -1967,9 +1967,9 @@ tile_set = SubResource("TileSet_ccr7y")
 
 [node name="interacciones" type="Node" parent="."]
 
-[node name="encimera" parent="." instance=ExtResource("4_y7fcn")]
+[node name="encimera" parent="." instance=ExtResource("4_w2sie")]
 position = Vector2(70, 165)
 scale = Vector2(0.291701, 0.237475)
 
-[node name="CanvasPuzzleEstanteria" parent="." instance=ExtResource("5_813c0")]
+[node name="CanvasPuzzleEstanteria" parent="." instance=ExtResource("5_01qvf")]
 script = SubResource("GDScript_xvu4b")
