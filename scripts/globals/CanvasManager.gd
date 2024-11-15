@@ -107,8 +107,10 @@ func alternate_pause():
 	if inGame:
 		if inPause:
 			play_resume_pause_menu()
+			inPause=false
 		else:
 			play_pause_menu()
+			inPause=true
 	
 	pass
 
