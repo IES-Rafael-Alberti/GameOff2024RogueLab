@@ -1970,3 +1970,5 @@ texture = ExtResource("5_jpwx1")
 position = Vector2(289, 145)
 scale = Vector2(5.33347, -4.77697)
 event_id = "TXT_TEST_1"
+
+[node name="interacciones" type="Node" parent="."]
