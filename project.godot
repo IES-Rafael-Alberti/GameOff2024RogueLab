@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SecretsProject"
-run/main_scene="res://scenes/prueva_movimiento.tscn"
+run/main_scene="res://scenes/prueba_movimiento.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
