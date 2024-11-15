@@ -17,7 +17,8 @@ func on_triggered():
 	pass
 
 func _on_event_wating(event_id:String):
-	self.event_id = event_id
+	if GameManager.interactive==self:
+		self.event_id = event_id
 	pass
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -28,7 +29,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	
 	if GameManager.player == body:
 		GameManager.setInteractive(null)
 	

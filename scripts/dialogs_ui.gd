@@ -41,6 +41,7 @@ func _on_execute_dialog(text:String):
 	pass
 
 func _on_input_recived():
+	
 	label.lines_skipped+=1
 	label.visible_characters=label.lines_skipped*maxCharacters
 	

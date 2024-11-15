@@ -45,7 +45,9 @@ func _physics_process(delta):
 
 	#region movimiento
 
-	if flagInteractuando:
+	if flagInteractuando or CanvasManager.inPause:
+		velocity.x=0
+		velocity.y=0
 		pass
 	
 	else :

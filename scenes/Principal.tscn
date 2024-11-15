@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=9 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://dcdph4436g11n" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Texture2D" uid="uid://cl7gbx7qj5o30" path="res://assets/sprites/Player/player-32-64-front-walk.png" id="2_0y32a"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
 [ext_resource type="Texture2D" uid="uid://cynq8fhvk5sgd" path="res://assets/assets/mariofinal.png" id="3_fqhnc"]
-[ext_resource type="PackedScene" path="res://scenes/trigger.tscn" id="5_omke0"]
+[ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/Prefabs/trigger.tscn" id="5_omke0"]
+[ext_resource type="PackedScene" uid="uid://j2kel3e4mudp" path="res://scenes/Prefabs/zoom_item.tscn" id="6_youc5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntdln"]
 texture = ExtResource("1_c4xtu")
@@ -573,7 +574,19 @@ texture = ExtResource("2_0y32a")
 position = Vector2(360, 21)
 texture = ExtResource("3_fqhnc")
 
-[node name="Trigger" parent="." instance=ExtResource("5_omke0")]
+[node name="Shaders" type="CanvasLayer" parent="."]
+
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="PuertaPruebas" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(67, -6)
 scale = Vector2(2.38952, 2.19651)
 event_id = "TXT_TEST_1"
+
+[node name="Corpse" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(360, 29)
+scale = Vector2(2.48689, 2.65507)
+event_id = "Ev_Corpse1"
+
+[node name="ZoomItem" parent="." instance=ExtResource("6_youc5")]
+visible = false

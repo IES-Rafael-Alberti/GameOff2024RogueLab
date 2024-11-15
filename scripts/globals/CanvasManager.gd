@@ -44,6 +44,10 @@ func _ready() -> void:
 	pass
 
 func play_main_menu():
+	call_deferred("changeScene")
+	pass
+
+func changeScene():
 	get_tree().change_scene_to_packed(MAIN_MENU)
 	pass
 
