@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bnpnpi2np76p8"]
 
-[ext_resource type="Shader" path="res://scripts/shaders/Grayscale .gdshader" id="1_lq7pq"]
+[ext_resource type="Shader" path="res://scripts/shaders/Grayscale.gdshader" id="1_lq7pq"]
 [ext_resource type="Script" path="res://scripts/prueba_shaders.gd" id="1_lv4km"]
 [ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="2_y4n4r"]
 [ext_resource type="Shader" path="res://scripts/shaders/azulOscuro.gdshader" id="3_u2m1k"]
