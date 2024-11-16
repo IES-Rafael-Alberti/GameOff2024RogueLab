@@ -6,7 +6,7 @@ var flagInteractuando = false #indicador si se esta interactuando o no
 
 
 # variables para diseñador
-@export var SPEED = 130
+@export var SPEED = 50
 @export var numFotosObtenidas = 0
 
 # Variables para nodos
