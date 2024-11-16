@@ -10,8 +10,8 @@
   "TXT_TEST_2": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "TRIGGER",
-	"NEXT": "TXT_TEST_2",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
 	"ES": "Sigue funcionando perfectamente",
 	"EN": "It's working"
   },
@@ -20,16 +20,16 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "TRIGGER",
 	"NEXT": "Ev_02",
-	"ES": "Ahh, estoy hecho mierda. Necesito algo para este dolor de cabeza. ¿Dónde coño estoy?",
-	"EN": "Ahh, I feel like shit. I need something for this headache. Where the hell am I?"
+	"ES": "Ahh, estoy hecho mierda... Necesito algo para este dolor de cabeza... \n...\n¿Dónde coño estoy?",
+	"EN": "Ahh, I feel like shit... I need something for this headache... \n...\nWhere the hell am I?"
   },
   "Ev_02": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "!¿ QUÉ MIERDA ?! ¿QUÉ ES ESTO? ¿QUIÉN ES ESTE TÍO?…",
-	"EN": "Damn?! What is this? Who is this dude?…"
+	"ES": "¿Qué mierda?... ¿Qué esto? ¿Un cadáver?…",
+	"EN": "Damn?! What is this? is a corpse?…"
   },
   "Ev_02_TV1": {
 	"SHADER_OPTIONS": "TV",

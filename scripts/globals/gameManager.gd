@@ -3,7 +3,7 @@ extends Node
 var player:CharacterBody2D
 const JUGADOR = preload("res://scenes/jugador.tscn")
 
-var initSpeed = 130
+var initSpeed = 100
 var interactive:Node2D
 
 var evento
@@ -19,6 +19,7 @@ var zoomItem:bool=false
 
 #variables
 var key:bool=false
+var startEvent:bool=false
 
 
 
@@ -91,7 +92,7 @@ func _on_event_execute(event_id):
 func _on_input_recived():
 	if !zoomItem:
 		if event_id == "Ev_Corpse2":
-			print("LLave")
+			print("Llave")
 			ItemTexture="res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png"
 			ItemMaxScale=64*3
 			ItemMinScale=64

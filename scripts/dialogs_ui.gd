@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var label: Label = $PanelContainer/Label
+@onready var label: Label = $PanelContainer/MarginContainer/Label
 var DialogVisible:bool
-var maxCharacters:int = 240
+var maxCharacters:int = 62
 
 var visbleCharacters:float
 
@@ -16,12 +16,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if DialogVisible:
-		visbleCharacters = label.visible_characters + 1
-		label.visible_characters=visbleCharacters
+		
 		if label.visible_characters >= maxCharacters:
 			SignalBus.input_required.emit()
 
-		pass
+		else:
+			visbleCharacters = label.visible_characters + 1
+			label.visible_characters=visbleCharacters
 		
 		if label.visible_characters >= label.text.length():
 			SignalBus.input_required.emit()
@@ -34,6 +35,7 @@ func _process(delta: float) -> void:
 func _on_execute_dialog(text:String):
 	print("Dialogo: "+text)
 	label.text=text
+	print(label.text)
 	label.lines_skipped=0
 	label.visible_characters=1
 	show()
@@ -42,10 +44,11 @@ func _on_execute_dialog(text:String):
 
 func _on_input_recived():
 	
-	label.lines_skipped+=1
+	label.lines_skipped+=2
 	label.visible_characters=label.lines_skipped*maxCharacters
 	
 	if label.visible_characters >= label.text.length():
+		print(label.text.length())
 		hide()
 		DialogVisible = false
 		
