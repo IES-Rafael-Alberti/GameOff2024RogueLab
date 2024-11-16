@@ -123,11 +123,6 @@ func _physics_process(delta):
 	#endregion
 	
 	
-	
-	
-	
-	
-	
 	# Mueve al personaje usando la física
 	move_and_slide()
 

@@ -29,7 +29,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if GameManager.player == body:
+	if GameManager.player == body and GameManager.interactive==self:
 		GameManager.setInteractive(null)
 	
 	pass 

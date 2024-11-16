@@ -1,7 +1,9 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://rkl0qeb66rdc"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://sigfe7tvl3sf"]
 
-[sub_resource type="Shader" id="Shader_b5x60"]
+[sub_resource type="Shader" id="Shader_g2yis"]
 code = "shader_type canvas_item;
+render_mode blend_mix;
+
 
 uniform vec4 blood_color: source_color; //color al que se le aplica los efectos
 uniform float blood_intensity : hint_range(0.0, 1.0) = 0.5; // Controla la intensidad del efecto de sangre
@@ -26,11 +28,12 @@ void fragment() {
     color.rgba = mix(color.rgba, blood_tint, blood_intensity * vignette);
     COLOR = color;
 }
+
 "
 
 [resource]
-shader = SubResource("Shader_b5x60")
-shader_parameter/blood_color = Color(0, 1, 0.0941176, 1)
-shader_parameter/blood_intensity = 0.465
-shader_parameter/internal_limit = 0.05
-shader_parameter/external_limit = 0.651
+shader = SubResource("Shader_g2yis")
+shader_parameter/blood_color = null
+shader_parameter/blood_intensity = 0.816
+shader_parameter/internal_limit = 1.0
+shader_parameter/external_limit = 0.386

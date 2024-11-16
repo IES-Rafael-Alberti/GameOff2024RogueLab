@@ -10,7 +10,7 @@
   "TXT_TEST_2": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "TRIGGER",
+	"EVENT_CONDITION": "NONE",
 	"NEXT": "TXT_TEST_2",
 	"ES": "Sigue funcionando perfectamente",
 	"EN": "It's working"
