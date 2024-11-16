@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 @onready var label: Label = $PanelContainer/MarginContainer/Label
-@onready var puzzle_rejilla: CanvasLayer = $PuzzleRejilla
 
 var DialogVisible:bool
 var maxCharacters:int = 120
