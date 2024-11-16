@@ -620,6 +620,12 @@ position = Vector2(360, 29)
 scale = Vector2(2.48689, 2.65507)
 event_id = "Ev_Corpse1"
 
+[node name="TriggerInicio" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(-37, 28)
+scale = Vector2(1.09295, 0.395017)
+event_id = "Ev_01"
+isTriggered = true
+
 [node name="Shaders" type="CanvasLayer" parent="."]
 layer = 11
 script = ExtResource("6_31grw")
@@ -649,11 +655,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("7_1dy4f")
 expand_mode = 1
-[node name="TriggerInicio" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(-37, 28)
-scale = Vector2(1.09295, 0.395017)
-event_id = "Ev_01"
-isTriggered = true
 
 [node name="ZoomItem" parent="." instance=ExtResource("6_youc5")]
 visible = false

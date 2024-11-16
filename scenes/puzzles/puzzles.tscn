@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdtljaux3f3i1"]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzles.gd" id="1_d3p88"]
+[ext_resource type="PackedScene" uid="uid://b7o2r2hgpxo7e" path="res://scenes/puzzles/puzzle_fotos_estanteria.tscn" id="1_jbvj8"]
+
+[node name="Puzzles" type="Node"]
+script = ExtResource("1_d3p88")
+
+[node name="PuzzleFotosEstanteria" parent="." instance=ExtResource("1_jbvj8")]
+visible = false
