@@ -1,9 +1,10 @@
 extends CanvasLayer
 
-@onready var rejilla_sin_tornillos = $"MarginContainer/Rejilla-sin-tornillos"
-@onready var rejilla_sin_rejilla = $"MarginContainer/Rejilla-sin-rejilla"
-@onready var panel_container = $MarginContainer/PanelContainer
+@onready var rejilla_sin_tornillos = $"Rejilla-sin-tornillos"
+@onready var rejilla_sin_rejilla = $"Rejilla-sin-rejilla"
+@onready var panel_container = $PanelContainer
 
+@export var evento_id=""
 
 #eliminar estos
 var tornillosQuitados = 0
@@ -13,15 +14,10 @@ var rejilla_sin_tornillos_existe = true
 var rejilla_sin_rejilla_existe = true
 var pastillas = true
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if GameManager.flag1 :
+	if GameManager.screwdriver:
 		pastillasQuitadas = 1
 		print("pastillasQuitadas: " + str(pastillasQuitadas))
 	

@@ -48,7 +48,7 @@ grow_vertical = 2
 texture = ExtResource("2_ht76q")
 
 [node name="FrancescoFotoButton" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 40.0
@@ -70,7 +70,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y1ra2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1vroj")
 
 [node name="MarioFotoButton" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 352.0
@@ -92,7 +92,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y1ra2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1vroj")
 
 [node name="FotoRotaButton" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 660.0
