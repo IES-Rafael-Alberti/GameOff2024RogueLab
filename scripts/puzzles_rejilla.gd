@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var rejilla_sin_rejilla = $"Rejilla-sin-rejilla"
 @onready var panel_container = $PanelContainer
 
-@export var evento_id=""
+@export var event_id=""
 
 #eliminar estos
 var tornillosQuitados = 0

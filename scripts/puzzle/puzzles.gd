@@ -6,16 +6,18 @@ var childrens
 func _ready() -> void:
 	
 	SignalBus.execute_puzzle.connect(_on_puzzle_execute)
-	
+	SignalBus.puzzle_exit.connect(_exit_puzzle)
 	childrens = get_children()
 	
 	pass
 	
 	
 func _on_puzzle_execute(event_id):
+	print("Puzzle")
 	for child in childrens:
 		if child.event_id == event_id:
 			child.show()
+			SignalBus.puzzle_enter.emit(child)
 			pass
 		pass
 	pass

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://2jvwv2uig8ff" path="res://scenes/Prefabs/tornillo_derecho.tscn" id="7_fxspc"]
 [ext_resource type="PackedScene" uid="uid://bfdrof1bnnufs" path="res://scenes/Prefabs/tornillo_izquierdo.tscn" id="8_y0syt"]
 
-[node name="SceneRejilla" type="CanvasLayer"]
+[node name="PuzzleRejilla" type="CanvasLayer"]
 script = ExtResource("1_se3rp")
 
 [node name="Rejilla-sin-pastis" type="Sprite2D" parent="."]
@@ -40,7 +40,6 @@ scale = Vector2(4, 4)
 texture = ExtResource("6_vp1ph")
 
 [node name="tornilloDerecho" parent="." instance=ExtResource("7_fxspc")]
-anchors_preset = 0
 offset_left = 224.0
 offset_top = 131.0
 offset_right = 234.0
@@ -48,7 +47,6 @@ offset_bottom = 141.0
 scale = Vector2(4, 4)
 
 [node name="tornilloDerecho2" parent="." instance=ExtResource("7_fxspc")]
-anchors_preset = 0
 offset_left = 224.0
 offset_top = 433.0
 offset_right = 234.0

@@ -19,7 +19,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "TRIGGER",
-	"NEXT": "Ev_02",
+	"NEXT": "",
 	"ES": "Ahh, estoy hecho mierda... Necesito algo para este dolor de cabeza... \n...\n¿Dónde coño estoy?",
 	"EN": "Ahh, I feel like shit... I need something for this headache... \n...\nWhere the hell am I?"
   },
@@ -198,5 +198,13 @@
 	"NEXT": "",
 	"ES": "Parecen los planos de un robo.",
 	"EN": "Looks like the thieves' plan."
-  }
+  },
+  "Ev_Screwdriver": {
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "PUZZLE",
+	"NEXT": "Ev_Screwdriver",
+	"ES": "Que raro... parece que hay algo ahí... \nCreo que necesitaré un destornillador para esto.",
+	"EN": "That weird... seems that there is something... \nI think that I need a screwdriver for this."
+  },
 }

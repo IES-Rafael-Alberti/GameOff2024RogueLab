@@ -4,7 +4,7 @@ const FOTO_MARIO_PEQUE_O = "res://assets/sprites/Puzles/puzle4_fotos/foto_mario_
 const FOTO_ROTA = "res://assets/sprites/Puzles/puzle4_fotos/foto_rota.png"
 const FOTO_FRAN_PEQUE_O = "res://assets/sprites/Puzles/puzle4_fotos/foto_fran_pequeño.png"
 
-@export var evento_id=""
+@export var event_id=""
 
 func _ready() -> void:
 	

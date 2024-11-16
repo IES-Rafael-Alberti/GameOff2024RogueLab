@@ -41,7 +41,6 @@ _data = {
 }
 
 [node name="tornilloDerecho" type="TextureButton"]
-anchors_preset = -1
 offset_right = 10.0
 offset_bottom = 10.0
 pivot_offset = Vector2(5, 5)
