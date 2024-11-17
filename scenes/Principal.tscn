@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=15 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://dcdph4436g11n" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Texture2D" uid="uid://cl7gbx7qj5o30" path="res://assets/sprites/Player/player-32-64-front-walk.png" id="2_0y32a"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
+[ext_resource type="Texture2D" uid="uid://dbissnkhlqyyb" path="res://assets/sprites/Escenario/TV Animation.png" id="3_4vgx2"]
 [ext_resource type="Texture2D" uid="uid://cynq8fhvk5sgd" path="res://assets/assets/mariofinal.png" id="3_fqhnc"]
-[ext_resource type="PackedScene" path="res://scenes/trigger.tscn" id="5_omke0"]
+[ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/trigger.tscn" id="5_omke0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntdln"]
 texture = ExtResource("1_c4xtu")
@@ -528,6 +529,49 @@ texture = ExtResource("1_c4xtu")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ntdln")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3mfr"]
+atlas = ExtResource("3_4vgx2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8x1w"]
+atlas = ExtResource("3_4vgx2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ankw"]
+atlas = ExtResource("3_4vgx2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icenf"]
+atlas = ExtResource("3_4vgx2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kadgv"]
+atlas = ExtResource("3_4vgx2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqbmx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3mfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8x1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ankw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icenf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kadgv")
+}],
+"loop": true,
+"name": &"TV",
+"speed": 15.0
+}]
+
 [node name="TileMap" type="TileMap"]
 position = Vector2(64, -112)
 tile_set = SubResource("TileSet_10sko")
@@ -563,6 +607,13 @@ layer_9/name = "Columnas v"
 layer_9/z_index = -1
 layer_9/tile_data = PackedInt32Array(-327668, 393217, 10, -262132, 393217, 11, -196596, 393217, 12, -131060, 393217, 13, -65524, 393217, 14, -327667, 458753, 10, -262131, 458753, 11, -196595, 458753, 12, -131059, 458753, 13, -65523, 458753, 14, 12, 393217, 10, 65548, 393217, 11, 131084, 393217, 12, 196620, 393217, 13, 13, 458753, 10, 65549, 458753, 11, 131085, 458753, 12, 196621, 458753, 13, -65518, 393217, 14, 18, 393217, 11, 65554, 393217, 12, 131090, 393217, 13, 196626, 393217, 14, -65517, 458753, 14, 19, 458753, 11, 65555, 458753, 12, 131091, 458753, 13, 196627, 458753, 14, -327662, 393217, 10, -262126, 393217, 11, -196590, 393217, 12, -131054, 393217, 13, -327661, 458753, 10, -262125, 458753, 11, -196589, 458753, 12, -131053, 458753, 13, 262162, 393217, 14, 262163, 458753, 14, -327655, 393217, 10, -262119, 393217, 11, -196583, 393217, 12, -131047, 393217, 13, -65511, 393217, 14, -327654, 458753, 10, -262118, 458753, 11, -196582, 458753, 12, -131046, 458753, 13, -65510, 458753, 14, 25, 393217, 10, 65561, 393217, 11, 131097, 393217, 10, 196633, 393217, 11, 262169, 393217, 12, 26, 458753, 10, 65562, 458753, 11, 131098, 458753, 10, 196634, 458753, 11, 262170, 458753, 12, 327705, 393217, 13, 393241, 393217, 14, 327706, 458753, 13, 393242, 458753, 14, 196603, 393217, 10, 262139, 393217, 11, 327675, 393217, 12, 393211, 393217, 13, 458747, 393217, 14, 196604, 458753, 10, 262140, 458753, 11, 327676, 458753, 12, 393212, 458753, 13, 458748, 458753, 14, -131077, 393217, 12, -65541, 393217, 13, -5, 393217, 14, 65531, 393217, 13, 131067, 393217, 14, -131076, 458753, 12, -65540, 458753, 13, -4, 458753, 14, 65532, 458753, 13, 131068, 458753, 14, -262149, 393217, 10, -196613, 393217, 11, -262148, 458753, 10, -196612, 458753, 11)
 script = ExtResource("2_iqy1m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -24)
+sprite_frames = SubResource("SpriteFrames_gqbmx")
+animation = &"TV"
+autoplay = "TV"
+frame_progress = 0.668204
 
 [node name="Player-32-64-front-walk" type="Sprite2D" parent="."]
 visible = false

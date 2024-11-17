@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dio3acuttcete" path="res://assets/assets/Inside_C.png" id="3_d2vf6"]
 [ext_resource type="Material" uid="uid://rkl0qeb66rdc" path="res://assets/materials/sangre.tres" id="4_tk8hf"]
 [ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="5_jpwx1"]
-[ext_resource type="PackedScene" path="res://scenes/trigger.tscn" id="6_eq056"]
+[ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/trigger.tscn" id="6_eq056"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_adcy8"]
 texture = ExtResource("2_vh4uo")
