@@ -7,6 +7,8 @@ var glow_effect:bool
 var black_and_white_effect:bool
 
 var inGame:bool=false
+var inPause:bool=false
+
 var pause_menu
 var option_menu
 var main_scene
@@ -18,7 +20,7 @@ const OPTION_MENU = preload("res://scenes/UI/option_menu.tscn")
 
 const DIALOGS = preload("res://scenes/UI/dialogs.tscn")
 
-const MAIN_SCENE= preload("res://scenes/prueva_movimiento.tscn")
+const MAIN_SCENE= preload("res://scenes/Principal.tscn")
 
 func set_glitch_effect(action:bool):
 	glitch_tv_effect=action
@@ -38,10 +40,14 @@ func set_black_and_white_effect(action:bool):
 	pass
 
 func _ready() -> void:
-	play_main_menu()
+	#play_main_menu()
 	pass
 
 func play_main_menu():
+	call_deferred("changeScene")
+	pass
+
+func changeScene():
 	get_tree().change_scene_to_packed(MAIN_MENU)
 	pass
 
@@ -100,10 +106,22 @@ func play_main_scene():
 	inGame=true
 	pass
 
+func alternate_pause():
+	
+	if inGame:
+		if inPause:
+			play_resume_pause_menu()
+			inPause=false
+		else:
+			play_pause_menu()
+			inPause=true
+	
+	pass
+
 func _process(delta: float) -> void:
 	
 	if(glitch_tv_effect):
-		#get_tree().current_scene.get_node()
+		
 		pass
 	
 	if(vignet_effect):

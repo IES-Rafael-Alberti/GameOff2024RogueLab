@@ -1,6 +1,4 @@
 extends Node
-#variables
-var flagMenuPausa
 
 var busNameMaster = "Master"
 var busNameMusic = "Music"
@@ -38,7 +36,14 @@ var vsync: bool:
 		vsync = value
 		onChangeVSync()
 
-
+func _ready() -> void:
+	
+	volumeMaster=1
+	volumeMusic=1
+	volumeSFX=1
+	vsync=false
+	
+	pass
 
 func onChangeVSync():
 	print("Changed VSync")
