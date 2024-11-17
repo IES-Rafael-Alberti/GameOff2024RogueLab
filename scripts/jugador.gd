@@ -1,9 +1,7 @@
 extends CharacterBody2D
 # variables
-var interactionObject #objeto que se recive
-var flagInteractuando = false #indicador si se esta interactuando o no
 
-
+var required
 
 # variables para diseñador
 @export var SPEED = 130
@@ -37,6 +35,7 @@ func _physics_process(delta):
 	#endregion
 
 	#region interaccion
+<<<<<<< Updated upstream
 	
 	
 	
@@ -51,12 +50,24 @@ func _physics_process(delta):
 	elif  flagInteractuando == true and Input.is_action_just_pressed("interancion"):
 		SignalBus.wait_input.emit()
 		flagInteractuando = false
+=======
+		
+	if Input.is_action_just_pressed("interaccion"):	
+		SignalBus.wait_input.emit()
+		pass
+>>>>>>> Stashed changes
 	
 	#endregion
 
 	#region movimiento
 
+<<<<<<< Updated upstream
 	if OptionManager.flagMenuPausa or flagInteractuando:
+=======
+	if (GameManager.puzzleLayer!=null or GameManager.DialogVisible) or CanvasManager.inPause:
+		velocity.x=0
+		velocity.y=0
+>>>>>>> Stashed changes
 		pass
 	
 	else :
@@ -122,5 +133,5 @@ func _physics_process(delta):
 
 
 func  _on_input_required():
-	flagInteractuando=true
+	required=true
 	pass
