@@ -1,11 +1,103 @@
-[gd_scene format=3 uid="uid://e6vos4yr7bpq"]
+[gd_scene load_steps=3 format=3 uid="uid://e6vos4yr7bpq"]
+
+[ext_resource type="Texture2D" uid="uid://dxver8p2uw1kx" path="res://assets/sprites/Puzles/puzle_atraco_roto2.png" id="1_18mt2"]
+[ext_resource type="Script" path="res://scripts/MecanicaDeArrastrarObjeto.gd" id="2_cdxww"]
 
 [node name="puzzle_mapa_atraco" type="CanvasLayer"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -80
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.435294, 1, 0.243137, 1)
+
+[node name="piezas" type="Node2D" parent="."]
+
+[node name="EsquinaSuperiorHizquierda" type="Sprite2D" parent="piezas"]
+z_index = 1
+position = Vector2(328, 463)
+scale = Vector2(2, 2)
+texture = ExtResource("1_18mt2")
+region_enabled = true
+region_rect = Rect2(0, 0, 88, 48)
+script = ExtResource("2_cdxww")
+
+[node name="Marker2DEsquinaSuperiorHizquierda" type="Marker2D" parent="piezas"]
+position = Vector2(620, 188)
+scale = Vector2(2, 2)
+
+[node name="EsquinaSuperiorDerecha" type="Sprite2D" parent="piezas"]
+position = Vector2(132, 453)
+scale = Vector2(2, 2)
+texture = ExtResource("1_18mt2")
+region_enabled = true
+region_rect = Rect2(224, 0, 80, 56)
+script = ExtResource("2_cdxww")
+
+[node name="Marker2DEsquinaSuperiorDerecha" type="Marker2D" parent="piezas"]
+position = Vector2(841, 196)
+scale = Vector2(2, 2)
+
+[node name="EsquinaInferiorDerecha" type="Sprite2D" parent="piezas"]
+position = Vector2(134, 296)
+scale = Vector2(2, 2)
+texture = ExtResource("1_18mt2")
+region_enabled = true
+region_rect = Rect2(0, 96, 64, 72)
+script = ExtResource("2_cdxww")
+
+[node name="Marker2DEsquinaInferiorDerecha" type="Marker2D" parent="piezas"]
+position = Vector2(595, 286)
+scale = Vector2(2, 2)
+
+[node name="EsquinaInferiorHizquierda" type="Sprite2D" parent="piezas"]
+position = Vector2(295, 307)
+scale = Vector2(2, 2)
+texture = ExtResource("1_18mt2")
+region_enabled = true
+region_rect = Rect2(232, 136, 80, 72)
+script = ExtResource("2_cdxww")
+
+[node name="Marker2DEsquinaInferiorHizquierda" type="Marker2D" parent="piezas"]
+position = Vector2(844, 286)
+scale = Vector2(2, 2)
+
+[node name="Superior" type="Sprite2D" parent="piezas"]
+position = Vector2(125, 174)
+scale = Vector2(2, 2)
+texture = ExtResource("1_18mt2")
+region_enabled = true
+region_rect = Rect2(104, 0, 80, 48)
+script = ExtResource("2_cdxww")
+
+[node name="Marker2DSuperior" type="Marker2D" parent="piezas"]
+position = Vector2(718, 189)
+scale = Vector2(2, 2)
+
+[node name="Inferior" type="Sprite2D" parent="piezas"]
+position = Vector2(222, 43)
+scale = Vector2(2, 2)
+texture = ExtResource("1_18mt2")
+region_enabled = true
+region_rect = Rect2(64, 168, 144, 56)
+script = ExtResource("2_cdxww")
+
+[node name="Marker2DInferior" type="Marker2D" parent="piezas"]
+position = Vector2(705, 314)
+scale = Vector2(2, 2)
+
+[node name="Centro" type="Sprite2D" parent="piezas"]
+position = Vector2(286, 187)
+scale = Vector2(2, 2)
+texture = ExtResource("1_18mt2")
+region_enabled = true
+region_rect = Rect2(96, 80, 88, 72)
+script = ExtResource("2_cdxww")
+
+[node name="Marker2DCentro" type="Marker2D" parent="piezas"]
+position = Vector2(699, 261)
+scale = Vector2(2, 2)
