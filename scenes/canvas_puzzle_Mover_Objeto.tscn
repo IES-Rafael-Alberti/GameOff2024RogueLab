@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bifiob62aodmk"]
+[gd_scene load_steps=8 format=3 uid="uid://bifiob62aodmk"]
 
-[ext_resource type="Script" path="res://scripts/MecanicaDeArrastrarObjeto.gd" id="1_3da2b"]
 [ext_resource type="Shader" path="res://scripts/shaders/sangre.gdshader" id="1_4ylk4"]
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_mapa_atraco.gd" id="1_rjcyk"]
 [ext_resource type="Texture2D" uid="uid://dpgfyd6v8ifd0" path="res://assets/materials/white-background.png" id="2_bfdec"]
 [ext_resource type="Texture2D" uid="uid://dio3acuttcete" path="res://assets/assets/Inside_C.png" id="3_xo6g8"]
 [ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="4_enplm"]
+[ext_resource type="PackedScene" uid="uid://cqeulcfun6yx7" path="res://scenes/Prefabs/pieza_mapa_atraco.tscn" id="6_vcpju"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bphmv"]
 shader = ExtResource("1_4ylk4")
@@ -14,6 +15,7 @@ shader_parameter/internal_limit = 0.3
 shader_parameter/external_limit = 0.6
 
 [node name="CanvasPuzzleMoverObjetos" type="CanvasLayer"]
+script = ExtResource("1_rjcyk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_bphmv")
@@ -28,16 +30,16 @@ texture = ExtResource("3_xo6g8")
 region_enabled = true
 region_rect = Rect2(688, 144, 64, 48)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="button scene" type="Node2D" parent="."]
 
-[node name="MarkerSprite2D2" type="Marker2D" parent="Node2D"]
-position = Vector2(741, 169)
+[node name="pieza_Mapa_Atraco" parent="button scene" instance=ExtResource("6_vcpju")]
+offset_left = 227.0
+offset_top = 150.0
+offset_right = 355.0
+offset_bottom = 278.0
 
-[node name="Sprite2D3" type="Sprite2D" parent="Node2D/MarkerSprite2D2"]
-position = Vector2(-23, 8)
+[node name="Marker2D" type="Marker2D" parent="button scene"]
+position = Vector2(519, 182)
+
+[node name="Sprite2D" type="Sprite2D" parent="button scene/Marker2D"]
 texture = ExtResource("4_enplm")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
-position = Vector2(239, 194)
-texture = ExtResource("4_enplm")
-script = ExtResource("1_3da2b")
