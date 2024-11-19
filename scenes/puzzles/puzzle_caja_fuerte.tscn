@@ -1,10 +1,130 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqm6q0g8uqrjn"]
+[gd_scene load_steps=15 format=3 uid="uid://dqm6q0g8uqrjn"]
 
-[ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="1_dveer"]
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_caja_fuerte.gd" id="1_7dboa"]
+[ext_resource type="Texture2D" uid="uid://c0f4w82r8i16a" path="res://assets/sprites/Puzles/caja fuerte/caja_fuerte.png" id="1_73d0e"]
+[ext_resource type="Texture2D" uid="uid://djn2nrodw742b" path="res://assets/sprites/Puzles/caja fuerte/0.png" id="2_m4mxc"]
+[ext_resource type="Texture2D" uid="uid://dvoqj3xo30q3p" path="res://assets/sprites/Puzles/caja fuerte/1.png" id="3_7rk61"]
+[ext_resource type="Texture2D" uid="uid://yhxxy21n8ol4" path="res://assets/sprites/Puzles/caja fuerte/2.png" id="4_o8a1u"]
+[ext_resource type="Texture2D" uid="uid://cn0uf15q4x7sx" path="res://assets/sprites/Puzles/caja fuerte/3.png" id="5_cvjcl"]
+[ext_resource type="Texture2D" uid="uid://b0cbw7u7yib8i" path="res://assets/sprites/Puzles/caja fuerte/4.png" id="6_8ahjd"]
+[ext_resource type="Texture2D" uid="uid://c3svm87clv1pt" path="res://assets/sprites/Puzles/caja fuerte/5.png" id="7_tiwdv"]
+[ext_resource type="Texture2D" uid="uid://dyeo1pcegame8" path="res://assets/sprites/Puzles/caja fuerte/6.png" id="8_wogye"]
+[ext_resource type="Texture2D" uid="uid://0x31jcilx2wt" path="res://assets/sprites/Puzles/caja fuerte/7.png" id="9_jwndm"]
+[ext_resource type="Texture2D" uid="uid://bnekf1imch2ad" path="res://assets/sprites/Puzles/caja fuerte/8.png" id="10_neuye"]
+[ext_resource type="Texture2D" uid="uid://cvdfcghob2tf8" path="res://assets/sprites/Puzles/caja fuerte/9.png" id="11_j4r61"]
+[ext_resource type="Texture2D" uid="uid://colnrs6j4nrak" path="res://assets/sprites/Puzles/caja fuerte/borrar.png" id="12_t33hh"]
+[ext_resource type="Texture2D" uid="uid://xv7ayq4ghika" path="res://assets/sprites/Puzles/caja fuerte/enter.png" id="13_8j640"]
 
 [node name="Puzzle_caja_fuerte" type="CanvasLayer"]
+script = ExtResource("1_7dboa")
 
 [node name="fondo" type="Sprite2D" parent="."]
-position = Vector2(480, 272)
-scale = Vector2(7.46875, 4.23438)
-texture = ExtResource("1_dveer")
+position = Vector2(479.938, 268.09)
+scale = Vector2(4.00885, 3.96904)
+texture = ExtResource("1_73d0e")
+
+[node name="0" type="TextureButton" parent="."]
+offset_left = 568.0
+offset_top = 448.0
+offset_right = 577.0
+offset_bottom = 458.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("2_m4mxc")
+
+[node name="1" type="TextureButton" parent="."]
+offset_left = 503.0
+offset_top = 270.0
+offset_right = 512.0
+offset_bottom = 280.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("3_7rk61")
+
+[node name="2" type="TextureButton" parent="."]
+offset_left = 568.0
+offset_top = 269.0
+offset_right = 577.0
+offset_bottom = 279.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_o8a1u")
+
+[node name="3" type="TextureButton" parent="."]
+offset_left = 632.0
+offset_top = 270.0
+offset_right = 641.0
+offset_bottom = 280.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("5_cvjcl")
+
+[node name="4" type="TextureButton" parent="."]
+offset_left = 504.0
+offset_top = 329.0
+offset_right = 513.0
+offset_bottom = 339.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("6_8ahjd")
+
+[node name="5" type="TextureButton" parent="."]
+offset_left = 569.0
+offset_top = 329.0
+offset_right = 578.0
+offset_bottom = 339.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("7_tiwdv")
+
+[node name="6" type="TextureButton" parent="."]
+offset_left = 632.0
+offset_top = 330.0
+offset_right = 641.0
+offset_bottom = 340.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("8_wogye")
+
+[node name="7" type="TextureButton" parent="."]
+offset_left = 503.0
+offset_top = 388.0
+offset_right = 512.0
+offset_bottom = 398.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("9_jwndm")
+
+[node name="8" type="TextureButton" parent="."]
+offset_left = 568.0
+offset_top = 388.0
+offset_right = 577.0
+offset_bottom = 398.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("10_neuye")
+
+[node name="9" type="TextureButton" parent="."]
+offset_left = 632.0
+offset_top = 389.0
+offset_right = 641.0
+offset_bottom = 399.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("11_j4r61")
+
+[node name="E" type="TextureButton" parent="."]
+offset_left = 504.0
+offset_top = 447.0
+offset_right = 513.0
+offset_bottom = 457.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("12_t33hh")
+
+[node name="ENTER" type="TextureButton" parent="."]
+offset_left = 633.0
+offset_top = 448.0
+offset_right = 642.0
+offset_bottom = 458.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("13_8j640")
+
+[node name="resultado" type="Label" parent="."]
+offset_left = 521.0
+offset_top = 218.0
+offset_right = 592.0
+offset_bottom = 262.0
+scale = Vector2(1.79249, 0.710957)
+theme_override_font_sizes/font_size = 31
+text = "1233"
+uppercase = true
