@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=16 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://dcdph4436g11n" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
@@ -6,11 +6,12 @@
 [ext_resource type="Script" path="res://scenes/bath_room_light.gd" id="4_4yf2j"]
 [ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/Prefabs/trigger.tscn" id="5_omke0"]
 [ext_resource type="Script" path="res://scenes/shaders_control.gd" id="6_31grw"]
-[ext_resource type="Material" uid="uid://dvrclko8um8kj" path="res://assets/materials/vignette_materia.tres" id="6_pug0m"]
+[ext_resource type="Material" path="res://assets/materials/vignette_materia.tres" id="6_pug0m"]
 [ext_resource type="PackedScene" uid="uid://j2kel3e4mudp" path="res://scenes/Prefabs/zoom_item.tscn" id="6_youc5"]
 [ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="7_1dy4f"]
-[ext_resource type="Material" uid="uid://b0wmofx38qqu2" path="res://assets/materials/blood_materia.tres" id="8_op68h"]
+[ext_resource type="Material" path="res://assets/materials/blood_materia.tres" id="8_op68h"]
 [ext_resource type="Material" uid="uid://cm1iq0isxjdqv" path="res://assets/materials/bathroom_shader.tres" id="9_n7lhl"]
+[ext_resource type="PackedScene" uid="uid://cdtljaux3f3i1" path="res://scenes/puzzles/puzzles.tscn" id="12_c3sp8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntdln"]
 texture = ExtResource("1_c4xtu")
@@ -610,6 +611,12 @@ expand_mode = 1
 
 [node name="Triggers" type="Node2D" parent="."]
 
+[node name="TriggerInicio" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(-10, 54)
+scale = Vector2(1.09295, 0.395017)
+event_id = "Ev_01"
+isTriggered = true
+
 [node name="PuertaPruebas" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(67, -6)
 scale = Vector2(2.38952, 2.19651)
@@ -624,17 +631,6 @@ event_id = "Ev_Corpse1"
 position = Vector2(257, -4)
 scale = Vector2(1.43894, 0.921395)
 event_id = "Ev_Screwdriver"
-
-[node name="Estanteria" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(-44, 17)
-scale = Vector2(1.98031, 0.921395)
-event_id = "Ev_Picture_01"
-
-[node name="TriggerInicio" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(-7, 57)
-scale = Vector2(1.09295, 0.395017)
-event_id = "Ev_01"
-isTriggered = true
 
 [node name="Shaders" type="CanvasLayer" parent="."]
 layer = 11
@@ -668,6 +664,8 @@ expand_mode = 1
 
 [node name="ZoomItem" parent="." instance=ExtResource("6_youc5")]
 visible = false
+
+[node name="Puzzles" parent="." instance=ExtResource("12_c3sp8")]
 
 [connection signal="body_entered" from="BathRoomLight/Area2D" to="BathRoomLight" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="BathRoomLight/Area2D" to="BathRoomLight" method="_on_area_2d_body_exited"]

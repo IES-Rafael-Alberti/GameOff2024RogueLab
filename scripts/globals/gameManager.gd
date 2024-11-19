@@ -17,12 +17,12 @@ var ItemSpeed
 
 var zoomItem:bool=false
 
-#variables
+#variables objetos
 var key:bool=false
+var screwdriver:bool=false
+
+#auto triggers
 var startEvent:bool=false
-
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

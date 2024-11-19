@@ -40,7 +40,7 @@ func set_black_and_white_effect(action:bool):
 	pass
 
 func _ready() -> void:
-	play_main_menu()
+	#play_main_menu()
 	pass
 
 func play_main_menu():

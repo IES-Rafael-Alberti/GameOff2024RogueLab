@@ -43,6 +43,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if GameManager.player == body and GameManager.interactive==self:
 		GameManager.setInteractive(null)
-		if(trigger_inicio != null):
-			trigger_inicio.queue_free()
+		if isTriggered:
+			if trigger_inicio != null:
+				trigger_inicio.queue_free()
 	pass 
