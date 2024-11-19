@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ced8ckhykuu3g"]
+
+[ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="1_y7opw"]
+
+[node name="Puzzle_dni" type="CanvasLayer"]
+
+[node name="mesa" type="Sprite2D" parent="."]
+position = Vector2(480, 270.5)
+scale = Vector2(7.48438, 4.22656)
+texture = ExtResource("1_y7opw")
+
+[node name="DNI" type="Sprite2D" parent="."]
+position = Vector2(472, 367)
+texture = ExtResource("1_y7opw")
