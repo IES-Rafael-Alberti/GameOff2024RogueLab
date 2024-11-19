@@ -43,7 +43,7 @@ jobs:
 
       - name: Zip HTML Export
         run: |
-          cd exports/html
+          cd build/web
           zip $PROJECT_NAME-html.zip -r -m *
           mv $PROJECT_NAME-html.zip ..
           cd -
@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: exports
-          path: exports
+          path: build
 
   Publish:
     needs: Build
@@ -62,7 +62,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: exports
-          path: exports
+          path: build
 
       - name: Download Butler
         run: |
