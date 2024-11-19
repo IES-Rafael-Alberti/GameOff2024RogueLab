@@ -76,6 +76,6 @@ jobs:
 
       - name: Push To Itch
         run: |
-          ./butler push ./exports/$PROJECT_NAME-html.zip $ITCHIO_USERNAME/$PROJECT_NAME:html
-          ./butler push ./exports/$PROJECT_NAME-linux.zip $ITCHIO_USERNAME/$PROJECT_NAME:linux
-          ./butler push ./exports/$PROJECT_NAME-windows.exe $ITCHIO_USERNAME/$PROJECT_NAME:windows
+          ./butler push ./build/web/$PROJECT_NAME-html.zip $ITCHIO_USERNAME/$PROJECT_NAME:html
+          ./butler push ./build/linux/$PROJECT_NAME-linux.zip $ITCHIO_USERNAME/$PROJECT_NAME:linux
+          ./butler push ./build/windows/$PROJECT_NAME-windows.exe $ITCHIO_USERNAME/$PROJECT_NAME:windows
