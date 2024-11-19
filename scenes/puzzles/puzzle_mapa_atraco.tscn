@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://e6vos4yr7bpq"]
+[gd_scene load_steps=6 format=3 uid="uid://e6vos4yr7bpq"]
 
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_mapa_atraco.gd" id="1_4km8f"]
 [ext_resource type="PackedScene" uid="uid://cqeulcfun6yx7" path="res://scenes/Prefabs/pieza_mapa_atraco.tscn" id="1_hp64i"]
 [ext_resource type="Texture2D" uid="uid://d0v77lp7weeo8" path="res://assets/sprites/Puzles/EsquinaSuperiorHizquierda.png" id="3_dcfgc"]
 [ext_resource type="Texture2D" uid="uid://oe3gw6tfky7p" path="res://assets/sprites/Puzles/Marcador.png" id="4_jn5q5"]
+[ext_resource type="Texture2D" uid="uid://h1b7pw0p6t71" path="res://assets/sprites/Puzles/puzle_atraco.png" id="5_oudsq"]
 
 [node name="puzzle_mapa_atraco" type="CanvasLayer"]
 script = ExtResource("1_4km8f")
@@ -111,3 +112,9 @@ scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DCentro"]
 texture = ExtResource("4_jn5q5")
+
+[node name="mapaCompletado" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(481, 272.5)
+scale = Vector2(4, 4.02222)
+texture = ExtResource("5_oudsq")

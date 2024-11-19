@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var distanciaDeInteraccion: float = 50
+@onready var mapa_completado = $mapaCompletado
 
 # Arrays para las piezas y sus marcadores correspondientes
 @onready var piezas: Array = [
@@ -23,13 +24,39 @@ extends CanvasLayer
 	$piezas/Marker2DCentro
 ]
 
+var condiciones: Array = [
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false
+]
+
 # Lógica principal
 func _process(delta: float) -> void:
+	
+	#region condiciones del completado
+	if not condiciones.has(false):  # Verifica que no haya ningún `false`
+		print("¡Todas las condiciones son verdaderas!")
+		mapa_completado.visible
+		
+	#endregion
+	
+	
+	#region colocacion
+	#posiciona las piezzas en su sitio correspondiente
 	for i in piezas.size():
 		var pieza = piezas[i]
 		var marker = markers[i]
 		
+		
 		# Verifica si la pieza no está siendo presionada y está cerca del marcador
 		if not pieza.pesionando and pieza.global_position.distance_to(marker.global_position) < distanciaDeInteraccion:
 			pieza.global_position = marker.global_position
+			condiciones[i] = true
 			print("Pieza %d colocada correctamente" % (i + 1))
+		else:
+			condiciones[i] = false
+	#endregion
