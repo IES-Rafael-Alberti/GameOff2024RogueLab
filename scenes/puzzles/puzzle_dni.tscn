@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ced8ckhykuu3g"]
+[gd_scene load_steps=3 format=3 uid="uid://ced8ckhykuu3g"]
 
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_dni.gd" id="1_hnytm"]
 [ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="1_y7opw"]
 
 [node name="Puzzle_dni" type="CanvasLayer"]
+script = ExtResource("1_hnytm")
 
 [node name="mesa" type="Sprite2D" parent="."]
 position = Vector2(480, 270.5)
@@ -10,5 +12,16 @@ scale = Vector2(7.48438, 4.22656)
 texture = ExtResource("1_y7opw")
 
 [node name="DNI" type="Sprite2D" parent="."]
-position = Vector2(472, 367)
+visible = false
+position = Vector2(473.5, 271)
+scale = Vector2(5.57031, 2.92188)
 texture = ExtResource("1_y7opw")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 410.0
+offset_top = 338.0
+offset_right = 538.0
+offset_bottom = 466.0
+texture_normal = ExtResource("1_y7opw")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
