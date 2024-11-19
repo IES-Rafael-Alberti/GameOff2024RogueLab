@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b3v5d5sx7k744"
+path="res://.godot/imported/open-doors-114615.ogg-7a487be798d5c7ccc756ef8ab2809eb5.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/open-doors-114615.ogg"
+dest_files=["res://.godot/imported/open-doors-114615.ogg-7a487be798d5c7ccc756ef8ab2809eb5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
