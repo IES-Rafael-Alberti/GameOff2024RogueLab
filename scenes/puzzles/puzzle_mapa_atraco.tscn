@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://e6vos4yr7bpq"]
+[gd_scene load_steps=13 format=3 uid="uid://e6vos4yr7bpq"]
 
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_mapa_atraco.gd" id="1_4km8f"]
 [ext_resource type="PackedScene" uid="uid://cqeulcfun6yx7" path="res://scenes/Prefabs/pieza_mapa_atraco.tscn" id="1_hp64i"]
+[ext_resource type="Texture2D" uid="uid://py3fg01ncaem" path="res://assets/sprites/Puzles/puzle_atraco/mesa.png" id="2_qsfei"]
 [ext_resource type="Texture2D" uid="uid://bs7jkvnxmhvxc" path="res://assets/sprites/Puzles/puzle_atraco/trozo 1.png" id="3_dd8kb"]
 [ext_resource type="Texture2D" uid="uid://oe3gw6tfky7p" path="res://assets/sprites/Puzles/puzle_atraco/Marcador.png" id="4_jn5q5"]
 [ext_resource type="Texture2D" uid="uid://j65oafcttl5g" path="res://assets/sprites/Puzles/puzle_atraco/trozo 5.png" id="4_p5a80"]
@@ -14,112 +15,115 @@
 
 [node name="puzzle_mapa_atraco" type="CanvasLayer"]
 script = ExtResource("1_4km8f")
+distanciaDeInteraccion = 200.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-z_index = -80
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.435294, 1, 0.243137, 1)
+[node name="Mesa" type="Sprite2D" parent="."]
+position = Vector2(483, 273)
+scale = Vector2(4.00417, 4.04815)
+texture = ExtResource("2_qsfei")
 
 [node name="piezas" type="Node2D" parent="."]
 
-[node name="EsquinaSuperiorHizquierda" parent="piezas" instance=ExtResource("1_hp64i")]
-offset_left = 45.0
-offset_top = 85.0
-offset_right = 126.0
-offset_bottom = 136.0
-texture_normal = ExtResource("3_dd8kb")
-
-[node name="EsquinaSuperiorDerecha" parent="piezas" instance=ExtResource("1_hp64i")]
-offset_left = 20.0
-offset_top = 351.0
-offset_right = 100.0
-offset_bottom = 412.0
-texture_normal = ExtResource("4_p5a80")
-
-[node name="EsquinaInferiorDerecha" parent="piezas" instance=ExtResource("1_hp64i")]
-offset_left = 155.0
-offset_top = 46.0
-offset_right = 228.0
-offset_bottom = 118.0
-texture_normal = ExtResource("5_ef8x4")
-
-[node name="EsquinaInferiorHizquierda" parent="piezas" instance=ExtResource("1_hp64i")]
-offset_left = 28.0
-offset_top = 195.0
-offset_right = 95.0
-offset_bottom = 265.0
-texture_normal = ExtResource("6_c6vf8")
-
 [node name="Superior" parent="piezas" instance=ExtResource("1_hp64i")]
-offset_left = 132.0
-offset_top = 160.0
-offset_right = 218.0
-offset_bottom = 207.0
+offset_left = 615.0
+offset_top = 346.0
+offset_right = 701.0
+offset_bottom = 393.0
+scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("7_ukur3")
 
 [node name="Inferior" parent="piezas" instance=ExtResource("1_hp64i")]
-offset_left = 86.0
-offset_top = 248.0
-offset_right = 235.0
-offset_bottom = 293.0
+offset_left = -14.0
+offset_top = -3.99994
+offset_right = 135.0
+offset_bottom = 41.0001
+scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("8_jgt2d")
 
 [node name="Centro" parent="piezas" instance=ExtResource("1_hp64i")]
-offset_left = 141.0
-offset_top = 324.0
-offset_right = 228.0
-offset_bottom = 389.0
+offset_left = -3.99997
+offset_top = 249.0
+offset_right = 83.0
+offset_bottom = 314.0
+scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("9_o403j")
 
+[node name="EsquinaSuperiorHizquierda" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = 289.0
+offset_top = 278.0
+offset_right = 370.0
+offset_bottom = 329.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("3_dd8kb")
+
+[node name="EsquinaSuperiorDerecha" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = 170.0
+offset_top = 158.0
+offset_right = 250.0
+offset_bottom = 219.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("4_p5a80")
+
+[node name="EsquinaInferiorDerecha" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = 450.0
+offset_top = -1.99998
+offset_right = 523.0
+offset_bottom = 70.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("5_ef8x4")
+
+[node name="EsquinaInferiorHizquierda" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = 684.0
+offset_top = 128.0
+offset_right = 751.0
+offset_bottom = 198.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("6_c6vf8")
+
 [node name="Marker2DEsquinaSuperiorHizquierda" type="Marker2D" parent="piezas"]
-position = Vector2(631, 343)
+position = Vector2(262, 149)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DEsquinaSuperiorHizquierda"]
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DEsquinaSuperiorDerecha" type="Marker2D" parent="piezas"]
-position = Vector2(841, 319)
+position = Vector2(640, 187)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DEsquinaSuperiorDerecha"]
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DEsquinaInferiorDerecha" type="Marker2D" parent="piezas"]
-position = Vector2(845, 442)
+position = Vector2(650, 327)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DEsquinaInferiorDerecha"]
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DEsquinaInferiorHizquierda" type="Marker2D" parent="piezas"]
-position = Vector2(613, 448)
+position = Vector2(232, 324)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DEsquinaInferiorHizquierda"]
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DSuperior" type="Marker2D" parent="piezas"]
-position = Vector2(734, 312)
+position = Vector2(437, 158)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DSuperior"]
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DInferior" type="Marker2D" parent="piezas"]
-position = Vector2(733, 450)
+position = Vector2(424, 365)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DInferior"]
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DCentro" type="Marker2D" parent="piezas"]
-position = Vector2(732, 382)
+position = Vector2(433, 270)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DCentro"]
