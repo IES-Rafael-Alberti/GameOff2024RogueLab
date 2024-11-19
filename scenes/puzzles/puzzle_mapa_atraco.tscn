@@ -15,7 +15,6 @@
 
 [node name="puzzle_mapa_atraco" type="CanvasLayer"]
 script = ExtResource("1_4km8f")
-distanciaDeInteraccion = 200.0
 
 [node name="Mesa" type="Sprite2D" parent="."]
 position = Vector2(483, 273)
@@ -81,6 +80,7 @@ scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("6_c6vf8")
 
 [node name="Marker2DEsquinaSuperiorHizquierda" type="Marker2D" parent="piezas"]
+visible = false
 position = Vector2(262, 149)
 scale = Vector2(2, 2)
 
@@ -88,6 +88,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DEsquinaSuperiorDerecha" type="Marker2D" parent="piezas"]
+visible = false
 position = Vector2(640, 187)
 scale = Vector2(2, 2)
 
@@ -95,6 +96,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DEsquinaInferiorDerecha" type="Marker2D" parent="piezas"]
+visible = false
 position = Vector2(650, 327)
 scale = Vector2(2, 2)
 
@@ -102,6 +104,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DEsquinaInferiorHizquierda" type="Marker2D" parent="piezas"]
+visible = false
 position = Vector2(232, 324)
 scale = Vector2(2, 2)
 
@@ -109,6 +112,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DSuperior" type="Marker2D" parent="piezas"]
+visible = false
 position = Vector2(437, 158)
 scale = Vector2(2, 2)
 
@@ -116,6 +120,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DInferior" type="Marker2D" parent="piezas"]
+visible = false
 position = Vector2(424, 365)
 scale = Vector2(2, 2)
 
@@ -123,6 +128,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_jn5q5")
 
 [node name="Marker2DCentro" type="Marker2D" parent="piezas"]
+visible = false
 position = Vector2(433, 270)
 scale = Vector2(2, 2)
 
