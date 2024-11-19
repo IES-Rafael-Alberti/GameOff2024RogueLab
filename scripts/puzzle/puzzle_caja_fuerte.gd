@@ -15,15 +15,27 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	print(resultado.text)
-	pass
+	
 
 
 
-
+#funcion para cada tecla
 func _on__pressed(numero):
 	print(numero)
-	if resultado.text.length() == tamanioCodigo:
+	if numero == "EXIT":#recarga el resultado
+		resultado.text = ""
+	elif numero == "ENTER":#comprueva el resultado
+		comprobarCodigo(resultado.text)
+	elif resultado.text.length() >= tamanioCodigo:#comprueva k no supere el limite
 		pass
 	else:
 		resultado.text += numero
-#
+
+#si el codigo es el correcto puesta la siguiente imagen #falta hacer
+func comprobarCodigo(resultado: String):
+	if resultado == "1234":
+		print("conseguido")#cambiar
+		
+	else:
+		print("Intentalo de nuevo")
+		_on__pressed("EXIT")
