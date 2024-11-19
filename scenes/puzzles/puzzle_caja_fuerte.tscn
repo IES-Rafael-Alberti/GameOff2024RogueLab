@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqm6q0g8uqrjn"]
+
+[ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="1_dveer"]
+
+[node name="Puzzle_caja_fuerte" type="CanvasLayer"]
+
+[node name="fondo" type="Sprite2D" parent="."]
+position = Vector2(480, 272)
+scale = Vector2(7.46875, 4.23438)
+texture = ExtResource("1_dveer")
