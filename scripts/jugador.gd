@@ -35,39 +35,20 @@ func _physics_process(delta):
 	#endregion
 
 	#region interaccion
-<<<<<<< Updated upstream
-	
-	
-	
-	if GameManager.interactive == null and flagInteractuando==false: #cambia de !not a not (esta en !not para provar que funciona)
-		#flagInteractuando = false
-		#print("no hay objeto ")
-		pass
-	elif flagInteractuando==false and Input.is_action_just_pressed("interancion"):
-		#flagInteractuando = true
-		GameManager.interactive.on_triggered()
-		#print("Estoy Interactuando: " + str(flagInteractuando))
-	elif  flagInteractuando == true and Input.is_action_just_pressed("interancion"):
-		SignalBus.wait_input.emit()
-		flagInteractuando = false
-=======
 		
 	if Input.is_action_just_pressed("interaccion"):	
-		SignalBus.wait_input.emit()
+		if required:
+			SignalBus.wait_input.emit()
+			required=false
 		pass
->>>>>>> Stashed changes
 	
 	#endregion
 
 	#region movimiento
 
-<<<<<<< Updated upstream
-	if OptionManager.flagMenuPausa or flagInteractuando:
-=======
 	if (GameManager.puzzleLayer!=null or GameManager.DialogVisible) or CanvasManager.inPause:
 		velocity.x=0
 		velocity.y=0
->>>>>>> Stashed changes
 		pass
 	
 	else :

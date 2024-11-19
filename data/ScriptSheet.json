@@ -2,7 +2,7 @@
   "TXT_TEST_1": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "TRIGGER",
+	"EVENT_CONDITION": "NONE",
 	"NEXT": "TXT_TEST_2",
 	"ES": "Hola esto es una prueba de si funciona ahora esto es un texto largo para poder comprobar si al pasar de linea funciona correctamente aunque estoy seguro de que si porque soy un crack",
 	"EN": "Hello this is a test"
@@ -14,10 +14,7 @@
 	"NEXT": "",
 	"ES": "Sigue funcionando perfectamente",
 	"EN": "It's working"
-<<<<<<< Updated upstream
-  }
-=======
-  },
+},
   "Ev_01": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
@@ -210,5 +207,5 @@
 	"ES": "Que raro... parece que hay algo ahí... \nCreo que necesitaré un destornillador para esto.",
 	"EN": "That weird... seems that there is something... \nI think that I need a screwdriver for this."
   },
->>>>>>> Stashed changes
+
 }

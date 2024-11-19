@@ -5,10 +5,9 @@ const JUGADOR = preload("res://scenes/jugador.tscn")
 
 var initSpeed = 130
 var interactive:Node2D
+var isTrigger:bool
 
-<<<<<<< Updated upstream
 #variables
-=======
 var evento
 var event_id
 
@@ -28,7 +27,6 @@ var screwdriver:bool=false
 
 #auto triggers
 var startEvent:bool=false
->>>>>>> Stashed changes
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -36,8 +34,6 @@ func _process(delta):
 
 func _ready() -> void:
 	SignalBus.execute_event.connect(_on_event_execute)
-<<<<<<< Updated upstream
-=======
 	SignalBus.wait_input.connect(_on_input_recived)
 	SignalBus.puzzle_enter.connect(_setPuzzleLayer)
 	SignalBus.puzzle_exit.connect(_exitPuzzle)
@@ -49,7 +45,6 @@ func _setPuzzleLayer(puzzleLayer: CanvasLayer):
 	
 func _exitPuzzle():
 	self.puzzleLayer=null
->>>>>>> Stashed changes
 	pass
 
 func get_player():
@@ -57,103 +52,70 @@ func get_player():
 	if(player == null):
 		player = JUGADOR.instantiate()
 		player.SPEED = initSpeed
+		player.position.y+=50
 	
 	return player
 
 func setInteractive(body:Node2D):
-	interactive=body
+	if body==null:
+		player.required=false
+	else:
+		interactive=body
+		get_event_from_interactive()
+		if evento !=null:
+			#Si es trigger saltar automaticamente
+			if evento["EVENT_CONDITION"] == "TRIGGER":
+				interactive.on_triggered()
+				isTrigger=true
+				player.required=false
+				pass
+			#Si no es trigger, esperar interaccion
+			elif evento["EVENT_CONDITION"] == "NONE" or evento["EVENT_CONDITION"] == "PUZZLE":
+				SignalBus.input_required.emit()
+				isTrigger=false
+				pass
+			pass
+		else:
+			print("Evento no encontrado")
+			pass
+		pass
+	
+func get_event_from_interactive():
+	
+	#Buscar evento en csv
+	evento = DataManager.scriptData.get(interactive.event_id)
+	
+	pass
 	
 func _on_event_execute(event_id):
-<<<<<<< Updated upstream
-	print("Ejecutando evento: "+event_id)
-	#Buscar evento en csv
-	var evento = DataManager.scriptData.get(event_id)
-=======
->>>>>>> Stashed changes
 	
-	if !zoomItem:
-	
-		print("Ejecutando evento: "+event_id)
-		#Buscar evento en csv
-		self.event_id=event_id
-		evento = DataManager.scriptData.get(event_id)
-		
-<<<<<<< Updated upstream
-		SignalBus.execute_dialog.emit(evento["ES"])
-		
-		if evento["NEXT"] != "":
-		
-			if evento["EVENT_CONDITION"] == "PUZZLE":
-				# si ejecuta puzles mandar "next" al puzle para que pueda continuar el arbol
-				SignalBus.execute_puzzle.emit(event_id)
-				pass
-			elif evento["EVENT_CONDITION"] == "TRIGGER":
-				# si depende de un trigger mandar al trigger "next" esperarlo
-				SignalBus.event_waiting.emit(evento["NEXT"])
-				pass
-			elif evento["EVENT_CONDITION"] == "NONE":
-				# si no tiene señal de puzle ni de triger ejecuta la siguiente escena 
-				
-				pass
-				
-=======
-		if evento == null:
-			print("Clave de evento no encontrada")
->>>>>>> Stashed changes
-		else:
-				# ejecutar opciones canvas
-			SignalBus.execute_canvas_option.emit(evento["SHADER_OPTIONS"])
-				# ejecutar opciones camara
-			SignalBus.execute_camera_option.emit(evento["CAMERA_OPTIONS"])
-			
-			SignalBus.execute_dialog.emit(evento["ES"])
-			
-			
-			
-			if evento["NEXT"] != "":
-				SignalBus.input_required.emit()
-			
-				if evento["EVENT_CONDITION"] == "PUZZLE":
-					# si ejecuta puzles mandar "next" al puzle para que pueda continuar el arbol
-					SignalBus.execute_puzzle.emit(event_id)
-					pass
-				elif evento["EVENT_CONDITION"] == "TRIGGER":
-					# si depende de un trigger mandar al trigger "next" esperarlo
-					SignalBus.event_waiting.emit(evento["NEXT"])
-					pass
-				elif evento["EVENT_CONDITION"] == "NONE":
-					# si no tiene señal de puzle ni de triger ejecuta la siguiente escena 
-					
-						pass
-					
-			else:
-					# si no tiene next finaliza esa rama de dialogo
-				SignalBus.event_waiting.emit("")
-				pass
-		
+	if !DialogVisible:
 
-	
+		print("Ejecutando evento: "+event_id)
+		
+		SignalBus.event_waiting.emit(evento["NEXT"])
+			
+			#Configuracion Shaders y Camera
+			
+		#Dependiendo del idioma ES o EN
+		SignalBus.execute_dialog.emit(evento["ES"])
+			
+			
+		#Si es puzzle ejecutar puzzle
+		if evento["EVENT_CONDITION"] == "PUZZLE":
+			SignalBus.execute_puzzle.emit()
+			pass
+			
 		
 	
 	pass
-<<<<<<< Updated upstream
-=======
+
 func _on_input_recived():
-	print("hoelsdfkk")	
 	if !DialogVisible and puzzleLayer==null:
-		
-		if interactive!=null:
-			
+		if interactive!=null and !isTrigger:
 			interactive.on_triggered()
-			
 			pass
-		
 		pass
-	
-	
-	
-	
-	
 	
 	if !zoomItem:
 		if event_id == "Ev_Corpse2":
@@ -167,17 +129,5 @@ func _on_input_recived():
 		elif event_id == "TXT_TEST_2" and key:
 			print("Sal")
 			pass
-			
-		if evento["EVENT_CONDITION"] == "PUZZLE":
-			# si ejecuta puzles mandar "next" al puzle para que pueda continuar el arbol
-			SignalBus.execute_puzzle.emit(event_id)
-			pass
-		elif evento["EVENT_CONDITION"] == "TRIGGER":
-				# si depende de un trigger mandar al trigger "next" esperarlo
-			SignalBus.event_waiting.emit(evento["NEXT"])
-			pass
-		elif evento["EVENT_CONDITION"] == "NONE":
-		# si no tiene señal de puzle ni de triger ejecuta la siguiente escena 
-			pass
+		
 	pass
->>>>>>> Stashed changes
