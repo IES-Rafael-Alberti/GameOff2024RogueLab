@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h1b7pw0p6t71"
-path="res://.godot/imported/puzle_atraco.png-4d2b8c24882dc8f910bb0ef985f417e3.ctex"
+uid="uid://02iycftkhajx"
+path="res://.godot/imported/trozo 7.png-e64e79c2e497970acc8cafbbacddbf37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/puzle_atraco.png"
-dest_files=["res://.godot/imported/puzle_atraco.png-4d2b8c24882dc8f910bb0ef985f417e3.ctex"]
+source_file="res://assets/sprites/Puzles/puzle_atraco/trozo 7.png"
+dest_files=["res://.godot/imported/trozo 7.png-e64e79c2e497970acc8cafbbacddbf37.ctex"]
 
 [params]
 

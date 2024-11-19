@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oe3gw6tfky7p"
-path="res://.godot/imported/Marcador.png-ba8bd2a498c72e7e7f49cdbb8faf82f4.ctex"
+uid="uid://j65oafcttl5g"
+path="res://.godot/imported/trozo 5.png-c1868fc6d9a15ccd20b625fa4f9b4522.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/Marcador.png"
-dest_files=["res://.godot/imported/Marcador.png-ba8bd2a498c72e7e7f49cdbb8faf82f4.ctex"]
+source_file="res://assets/sprites/Puzles/puzle_atraco/trozo 5.png"
+dest_files=["res://.godot/imported/trozo 5.png-c1868fc6d9a15ccd20b625fa4f9b4522.ctex"]
 
 [params]
 

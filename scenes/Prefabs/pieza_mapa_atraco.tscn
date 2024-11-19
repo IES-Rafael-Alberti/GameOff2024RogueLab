@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqeulcfun6yx7"]
 
-[ext_resource type="Script" path="res://scripts/MecanicaDeArrastrarObjeto2.gd" id="1_6spf2"]
+[ext_resource type="Script" path="res://scripts/pieza_atraco.gd" id="1_6spf2"]
 [ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="1_8r5ha"]
 
 [node name="pieza_Mapa_Atraco" type="TextureButton"]

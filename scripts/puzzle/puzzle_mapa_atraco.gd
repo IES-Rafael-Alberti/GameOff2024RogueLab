@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 	#region condiciones del completado
 	if not condiciones.has(false):  # Verifica que no haya ningún `false`
 		print("¡Todas las condiciones son verdaderas!")
-		mapa_completado.visible
+		mapa_completado.visible = true
 		
 	#endregion
 	
@@ -53,8 +53,8 @@ func _process(delta: float) -> void:
 		
 		
 		# Verifica si la pieza no está siendo presionada y está cerca del marcador
-		if not pieza.pesionando and pieza.global_position.distance_to(marker.global_position) < distanciaDeInteraccion:
-			pieza.global_position = marker.global_position
+		if not pieza.pesionando and pieza.global_position.distance_to(marker.global_position - (Vector2(pieza.size / 2))) < distanciaDeInteraccion:
+			pieza.global_position = marker.global_position - (Vector2(pieza.size / 2))
 			condiciones[i] = true
 			print("Pieza %d colocada correctamente" % (i + 1))
 		else:

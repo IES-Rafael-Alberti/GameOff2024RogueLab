@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0v77lp7weeo8"
-path="res://.godot/imported/EsquinaSuperiorHizquierda.png-c6d3304128ac698cd32cda402dfc75e8.ctex"
+uid="uid://guhenkfylwi5"
+path="res://.godot/imported/trozo 2.png-e5f992571747400f4478ca7cbed3bf9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/EsquinaSuperiorHizquierda.png"
-dest_files=["res://.godot/imported/EsquinaSuperiorHizquierda.png-c6d3304128ac698cd32cda402dfc75e8.ctex"]
+source_file="res://assets/sprites/Puzles/puzle_atraco/trozo 2.png"
+dest_files=["res://.godot/imported/trozo 2.png-e5f992571747400f4478ca7cbed3bf9f.ctex"]
 
 [params]
 
