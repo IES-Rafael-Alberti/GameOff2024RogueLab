@@ -37,9 +37,10 @@ func _physics_process(delta):
 	#region interaccion
 		
 	if Input.is_action_just_pressed("interaccion"):	
+		
 		if required:
-			SignalBus.wait_input.emit()
 			required=false
+			SignalBus.wait_input.emit()
 		pass
 	
 	#endregion
