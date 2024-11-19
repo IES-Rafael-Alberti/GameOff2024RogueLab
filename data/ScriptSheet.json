@@ -11,7 +11,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "",
+	"NEXT": "TXT_TEST_2",
 	"ES": "Sigue funcionando perfectamente",
 	"EN": "It's working"
 },

@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 
 
 func _on_execute_dialog(text:String):
-	print("Dialogo: "+text)
+	#print("Dialogo: "+text)
 	lines = text.split("\n")
 	label.text=lines[0]
 	label.lines_skipped=0
@@ -49,7 +49,7 @@ func _on_input_recived():
 			visibleCharacters = 0  # Reinicia los caracteres visibles para la nueva línea
 			
 			if currentLine >=lines.size():
-				print("Fin del diálogo.")
+				#print("Fin del diálogo.")
 				hide()
 				GameManager.DialogVisible = false
 				GameManager.go_to_next()

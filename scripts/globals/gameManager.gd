@@ -9,7 +9,6 @@ var isTrigger:bool
 
 #variables
 var evento
-var event_id
 
 var ItemTexture
 var ItemMaxScale
@@ -25,8 +24,6 @@ var puzzleLayer:CanvasLayer=null
 var key:bool=false
 var screwdriver:bool=false
 
-#auto triggers
-var startEvent:bool=false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -56,31 +53,37 @@ func get_player():
 	
 	return player
 
+func eventHandler():
+	
+	get_event_from_interactive()
+	if evento !=null:
+		#Si es trigger saltar automaticamente
+		if evento["EVENT_CONDITION"] == "TRIGGER":
+			isTrigger=true
+			player.required=false
+			interactive.on_triggered()
+			#go_to_next()
+			pass
+		#Si no es trigger, esperar interaccion
+		elif evento["EVENT_CONDITION"] == "NONE" or evento["EVENT_CONDITION"] == "PUZZLE":
+			isTrigger=false
+			SignalBus.input_required.emit()
+			pass
+		pass
+	else:
+		print("Evento no encontrado")
+		pass
+	pass
+	
+	pass
+
 func setInteractive(body:Node2D):
 	if body==null:
 		player.required=false
 		interactive=null
 	else:
 		interactive=body
-		get_event_from_interactive()
-		if evento !=null:
-			#Si es trigger saltar automaticamente
-			if evento["EVENT_CONDITION"] == "TRIGGER":
-				isTrigger=true
-				player.required=false
-				interactive.on_triggered()
-				#go_to_next()
-				pass
-			#Si no es trigger, esperar interaccion
-			elif evento["EVENT_CONDITION"] == "NONE" or evento["EVENT_CONDITION"] == "PUZZLE":
-				isTrigger=false
-				SignalBus.input_required.emit()
-				pass
-			pass
-		else:
-			print("Evento no encontrado")
-			pass
-		pass
+		eventHandler()
 	
 func get_event_from_interactive():
 	
@@ -90,14 +93,10 @@ func get_event_from_interactive():
 	pass
 	
 func go_to_next():
+	SignalBus.event_waiting.emit(evento["NEXT"])
 	if evento["NEXT"]!="":
-		get_event_from_interactive()
-		SignalBus.event_waiting.emit(evento["NEXT"])
-		isTrigger=false
-		SignalBus.input_required.emit()
-		#setInteractive(interactive)
-		pass
-	pass
+		eventHandler()
+	
 	
 func _on_event_execute(event_id):
 	
@@ -117,14 +116,14 @@ func _on_event_execute(event_id):
 	pass
 
 func _on_input_recived():
-	if !DialogVisible and puzzleLayer==null:
+	if !DialogVisible and puzzleLayer==null and !zoomItem:
 		if interactive!=null and !isTrigger:
 			interactive.on_triggered()
 			pass
 		pass
 	
 	if !zoomItem:
-		if event_id == "Ev_Corpse2":
+		if interactive.event_id == "Ev_Corpse2":
 			print("Llave")
 			ItemTexture=preload( "res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png")
 			ItemMaxScale=64*3
@@ -132,7 +131,7 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			key=true
-		elif event_id == "TXT_TEST_2" and key:
+		elif interactive.event_id == "TXT_TEST_2" and key:
 			print("Sal")
 			pass
 		
