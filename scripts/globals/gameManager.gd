@@ -59,20 +59,22 @@ func get_player():
 func setInteractive(body:Node2D):
 	if body==null:
 		player.required=false
+		interactive=null
 	else:
 		interactive=body
 		get_event_from_interactive()
 		if evento !=null:
 			#Si es trigger saltar automaticamente
 			if evento["EVENT_CONDITION"] == "TRIGGER":
-				interactive.on_triggered()
 				isTrigger=true
 				player.required=false
+				interactive.on_triggered()
+				#go_to_next()
 				pass
 			#Si no es trigger, esperar interaccion
 			elif evento["EVENT_CONDITION"] == "NONE" or evento["EVENT_CONDITION"] == "PUZZLE":
-				SignalBus.input_required.emit()
 				isTrigger=false
+				SignalBus.input_required.emit()
 				pass
 			pass
 		else:
@@ -87,26 +89,30 @@ func get_event_from_interactive():
 	
 	pass
 	
+func go_to_next():
+	if evento["NEXT"]!="":
+		get_event_from_interactive()
+		SignalBus.event_waiting.emit(evento["NEXT"])
+		isTrigger=false
+		SignalBus.input_required.emit()
+		#setInteractive(interactive)
+		pass
+	pass
+	
 func _on_event_execute(event_id):
 	
 	if !DialogVisible:
 
 		print("Ejecutando evento: "+event_id)
-		
-		SignalBus.event_waiting.emit(evento["NEXT"])
-			
 			#Configuracion Shaders y Camera
-			
-		#Dependiendo del idioma ES o EN
-		SignalBus.execute_dialog.emit(evento["ES"])
-			
 			
 		#Si es puzzle ejecutar puzzle
 		if evento["EVENT_CONDITION"] == "PUZZLE":
 			SignalBus.execute_puzzle.emit()
 			pass
 			
-		
+		#Dependiendo del idioma ES o EN
+		SignalBus.execute_dialog.emit(evento["ES"])
 	
 	pass
 

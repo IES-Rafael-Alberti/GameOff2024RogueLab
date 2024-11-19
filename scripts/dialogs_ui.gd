@@ -42,7 +42,7 @@ func _on_execute_dialog(text:String):
 	pass
 
 func _on_input_recived():
-	if GameManager.DialogVisible:
+	if GameManager.DialogVisible and waiting_input:
 		waiting_input=false
 		if currentLine < lines.size():
 			currentLine += 1  # Avanza a la siguiente línea
@@ -52,6 +52,8 @@ func _on_input_recived():
 				print("Fin del diálogo.")
 				hide()
 				GameManager.DialogVisible = false
+				GameManager.go_to_next()
+				
 			pass
 		
 	pass
