@@ -45,7 +45,6 @@ jobs:
         run: |
           cd build/web
           zip $PROJECT_NAME-html.zip -r -m *
-          mv $PROJECT_NAME-html.zip ..
           cd -
 
       - name: Save Artifacts for Next Job
