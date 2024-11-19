@@ -93,7 +93,7 @@ func _on_input_recived():
 	if !zoomItem:
 		if event_id == "Ev_Corpse2":
 			print("Llave")
-			ItemTexture="res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png"
+			ItemTexture= preload("res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png")
 			ItemMaxScale=64*3
 			ItemMinScale=64
 			ItemSpeed=150

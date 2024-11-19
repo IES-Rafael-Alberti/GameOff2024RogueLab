@@ -19,7 +19,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "TRIGGER",
-	"NEXT": "Ev_02",
+	"NEXT": "",
 	"ES": "Ahh, estoy hecho mierda... Necesito algo para este dolor de cabeza... \n...\n¿Dónde coño estoy?",
 	"EN": "Ahh, I feel like shit... I need something for this headache... \n...\nWhere the hell am I?"
   },

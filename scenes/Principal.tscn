@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="7_1dy4f"]
 [ext_resource type="Material" uid="uid://b0wmofx38qqu2" path="res://assets/materials/blood_materia.tres" id="8_op68h"]
 [ext_resource type="Material" uid="uid://cm1iq0isxjdqv" path="res://assets/materials/bathroom_shader.tres" id="9_n7lhl"]
-[ext_resource type="PackedScene" uid="uid://cdtljaux3f3i1" path="res://scenes/puzzles/puzzles.tscn" id="12_c3sp8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntdln"]
 texture = ExtResource("1_c4xtu")
@@ -631,6 +630,12 @@ position = Vector2(-44, 17)
 scale = Vector2(1.98031, 0.921395)
 event_id = "Ev_Picture_01"
 
+[node name="TriggerInicio" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(-7, 57)
+scale = Vector2(1.09295, 0.395017)
+event_id = "Ev_01"
+isTriggered = true
+
 [node name="Shaders" type="CanvasLayer" parent="."]
 layer = 11
 script = ExtResource("6_31grw")
@@ -660,11 +665,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("7_1dy4f")
 expand_mode = 1
-[node name="TriggerInicio" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(-37, 28)
-scale = Vector2(1.09295, 0.395017)
-event_id = "Ev_01"
-isTriggered = true
 
 [node name="ZoomItem" parent="." instance=ExtResource("6_youc5")]
 visible = false
