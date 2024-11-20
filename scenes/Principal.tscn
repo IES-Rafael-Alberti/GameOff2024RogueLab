@@ -6,10 +6,10 @@
 [ext_resource type="Script" path="res://scenes/bath_room_light.gd" id="4_4yf2j"]
 [ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/Prefabs/trigger.tscn" id="5_omke0"]
 [ext_resource type="Script" path="res://scenes/shaders_control.gd" id="6_31grw"]
-[ext_resource type="Material" path="res://assets/materials/vignette_materia.tres" id="6_pug0m"]
+[ext_resource type="Material" uid="uid://dvrclko8um8kj" path="res://assets/materials/vignette_materia.tres" id="6_pug0m"]
 [ext_resource type="PackedScene" uid="uid://j2kel3e4mudp" path="res://scenes/Prefabs/zoom_item.tscn" id="6_youc5"]
 [ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="7_1dy4f"]
-[ext_resource type="Material" path="res://assets/materials/blood_materia.tres" id="8_op68h"]
+[ext_resource type="Material" uid="uid://b0wmofx38qqu2" path="res://assets/materials/blood_materia.tres" id="8_op68h"]
 [ext_resource type="Material" uid="uid://cm1iq0isxjdqv" path="res://assets/materials/bathroom_shader.tres" id="9_n7lhl"]
 [ext_resource type="PackedScene" uid="uid://cdtljaux3f3i1" path="res://scenes/puzzles/puzzles.tscn" id="12_c3sp8"]
 
@@ -626,6 +626,11 @@ event_id = "TXT_TEST_1"
 position = Vector2(360, 29)
 scale = Vector2(2.48689, 2.65507)
 event_id = "Ev_Corpse1"
+
+[node name="Pictures" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(-47, 8)
+scale = Vector2(1.76689, 1.61507)
+event_id = "Ev_Picture_01"
 
 [node name="Rejilla" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(257, -4)

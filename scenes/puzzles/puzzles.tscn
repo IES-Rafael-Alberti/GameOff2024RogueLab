@@ -9,6 +9,7 @@ script = ExtResource("1_d3p88")
 
 [node name="PuzzleFotosEstanteria" parent="." instance=ExtResource("1_jbvj8")]
 visible = false
+event_id = "Ev_Picture_01"
 
 [node name="PuzzleRejilla" parent="." instance=ExtResource("3_b623p")]
 visible = false
