@@ -1,6 +1,6 @@
 extends CanvasLayer
 @onready var pistola = $pistola
-
+@export var event_id = ""
 @onready var CFpistola = $cajaFuerteAbierta/pistola
 @onready var caja_fuerte_abierta = $cajaFuerteAbierta
 @onready var resultado = $resultado
@@ -31,7 +31,8 @@ func _on__pressed(character):
 		comprobarCodigo(resultado.text)
 	elif character == "PISTOLA":#interactua con la pistola
 		CFpistola.queue_free()#eliminamos el boton
-		pistola.visible = true#muestra la puistola obtenida
+		SignalBus.zoom_item.emit(preload("res://icon.svg"),200,4,100)
+		#pistola.visible = true#muestra la puistola obtenida
 		##fin de scene
 	elif resultado.text.length() >= tamanioCodigo:#comprueva k no supere el limite
 		pass
