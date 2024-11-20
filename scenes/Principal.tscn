@@ -622,6 +622,11 @@ position = Vector2(67, -6)
 scale = Vector2(2.38952, 2.19651)
 event_id = "TXT_TEST_2"
 
+[node name="Mapa" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(11, 73)
+scale = Vector2(1.22952, 0.916509)
+event_id = "TXT_TEST_3"
+
 [node name="CajaFuerte" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(385, 91)
 scale = Vector2(2.38952, 2.19651)
