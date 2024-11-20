@@ -40,12 +40,12 @@ func _setPuzzleLayer(puzzleLayer: CanvasLayer):
 	self.puzzleLayer = puzzleLayer
 	pass
 	
-func _exitPuzzle():
-	self.puzzleLayer=null
+func _exitPuzzle(puzzleLayer):
+	if self.puzzleLayer==puzzleLayer:
+		self.puzzleLayer=null
 	pass
 
 func get_player():
-	
 	if(player == null):
 		player = JUGADOR.instantiate()
 		player.SPEED = initSpeed
@@ -54,7 +54,6 @@ func get_player():
 	return player
 
 func eventHandler():
-	
 	get_event_from_interactive()
 	if evento !=null:
 		#Si es trigger saltar automaticamente
@@ -107,7 +106,8 @@ func _on_event_execute(event_id):
 			
 		#Si es puzzle ejecutar puzzle
 		if evento["EVENT_CONDITION"] == "PUZZLE":
-			SignalBus.execute_puzzle.emit()
+			print("abriendo puzzle")
+			SignalBus.execute_puzzle.emit(event_id)
 			pass
 			
 		#Dependiendo del idioma ES o EN

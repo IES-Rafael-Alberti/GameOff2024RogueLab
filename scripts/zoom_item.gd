@@ -42,4 +42,5 @@ func _on_input_recieved():
 			GameManager.zoomItem=false
 			hide()
 			GameManager.player.required=true
+			SignalBus.exit_zoom_item.emit(texture_item.texture)
 	pass

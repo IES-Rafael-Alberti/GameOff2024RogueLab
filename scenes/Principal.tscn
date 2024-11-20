@@ -615,7 +615,6 @@ expand_mode = 1
 position = Vector2(-10, 54)
 scale = Vector2(1.09295, 0.395017)
 event_id = "Ev_01"
-isTriggered = true
 
 [node name="PuertaPruebas" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(67, -6)
@@ -630,7 +629,7 @@ event_id = "Ev_Corpse1"
 [node name="Pictures" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(-47, 8)
 scale = Vector2(1.76689, 1.61507)
-event_id = "Ev_Picture_01"
+event_id = "Ev_Shelve"
 
 [node name="Rejilla" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(257, -4)
