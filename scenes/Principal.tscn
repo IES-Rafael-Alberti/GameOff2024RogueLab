@@ -627,6 +627,11 @@ position = Vector2(360, 29)
 scale = Vector2(2.48689, 2.65507)
 event_id = "Ev_Corpse1"
 
+[node name="Pictures" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(-47, 8)
+scale = Vector2(1.76689, 1.61507)
+event_id = "Ev_Picture_01"
+
 [node name="Rejilla" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(257, -4)
 scale = Vector2(1.43894, 0.921395)
