@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqm6q0g8uqrjn"]
+[gd_scene load_steps=18 format=3 uid="uid://dqm6q0g8uqrjn"]
 
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_caja_fuerte.gd" id="1_7dboa"]
 [ext_resource type="Texture2D" uid="uid://c0f4w82r8i16a" path="res://assets/sprites/Puzles/caja fuerte/caja_fuerte.png" id="1_73d0e"]
-[ext_resource type="PackedScene" uid="uid://bfb3rby1lilfu" path="res://scenes/puzzles/texture_button.tscn" id="3_m2iiv"]
+[ext_resource type="PackedScene" uid="uid://bfb3rby1lilfu" path="res://scenes/Prefabs/button.tscn" id="3_m2iiv"]
 [ext_resource type="Texture2D" uid="uid://djn2nrodw742b" path="res://assets/sprites/Puzles/caja fuerte/0.png" id="4_4sq3f"]
 [ext_resource type="Texture2D" uid="uid://dvoqj3xo30q3p" path="res://assets/sprites/Puzles/caja fuerte/1.png" id="5_u808u"]
 [ext_resource type="Texture2D" uid="uid://yhxxy21n8ol4" path="res://assets/sprites/Puzles/caja fuerte/2.png" id="6_wcmy3"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://xv7ayq4ghika" path="res://assets/sprites/Puzles/caja fuerte/enter.png" id="13_8j640"]
 [ext_resource type="Texture2D" uid="uid://cvdfcghob2tf8" path="res://assets/sprites/Puzles/caja fuerte/9.png" id="13_dqnmf"]
 [ext_resource type="Texture2D" uid="uid://b7otmavrlv3af" path="res://assets/sprites/Puzles/caja fuerte/caja_fuerte_abierta.png" id="16_wtm5f"]
+[ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="17_clv4y"]
 
 [node name="Puzzle_caja_fuerte" type="CanvasLayer"]
 script = ExtResource("1_7dboa")
@@ -149,3 +150,18 @@ visible = false
 position = Vector2(479.938, 268.09)
 scale = Vector2(4.00885, 3.96904)
 texture = ExtResource("16_wtm5f")
+
+[node name="pistola" parent="cajaFuerteAbierta" instance=ExtResource("3_m2iiv")]
+offset_left = 7.00002
+offset_top = 34.2425
+offset_right = 135.0
+offset_bottom = 162.243
+scale = Vector2(0.19027, 0.154632)
+texture_normal = ExtResource("17_clv4y")
+numero = "PISTOLA"
+
+[node name="pistola" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(479.938, 268.09)
+scale = Vector2(4.00885, 3.96904)
+texture = ExtResource("17_clv4y")

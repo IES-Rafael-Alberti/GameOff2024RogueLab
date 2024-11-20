@@ -1,5 +1,7 @@
 extends CanvasLayer
+@onready var pistola = $pistola
 
+@onready var CFpistola = $cajaFuerteAbierta/pistola
 @onready var caja_fuerte_abierta = $cajaFuerteAbierta
 @onready var resultado = $resultado
 @export var tamanioCodigo: int = 4
@@ -21,16 +23,22 @@ func _process(delta):
 
 
 #funcion para cada tecla
-func _on__pressed(numero):
-	print(numero)
-	if numero == "EXIT":#recarga el resultado
+func _on__pressed(character):
+	print(character)
+	if character == "EXIT":#recarga el resultado
 		resultado.text = ""
-	elif numero == "ENTER":#comprueva el resultado
+	elif character == "ENTER":#comprueva el resultado
 		comprobarCodigo(resultado.text)
+	elif character == "PISTOLA":#interactua con la pistola
+		CFpistola.queue_free()#eliminamos el boton
+		pistola.visible = true#muestra la puistola obtenida
+		##fin de scene
 	elif resultado.text.length() >= tamanioCodigo:#comprueva k no supere el limite
 		pass
 	else:
-		resultado.text += numero
+		resultado.text += character
+		
+
 
 #si el codigo es el correcto puesta la siguiente imagen #falta hacer
 func comprobarCodigo(resultado: String):
