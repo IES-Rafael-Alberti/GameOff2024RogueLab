@@ -9,7 +9,7 @@ on:
 env:
   BUTLER_API_KEY: ${{secrets.ITCHIO_API_KEY}} # Repository Settings -> Secrets and variables -> Actions -> New repository secret
   ITCHIO_USERNAME: ${{secrets.ITCHIO_USERNAME}}
-  PROJECT_NAME: "secrets-proyect-in-development" # See README.md about project, channel, and export file naming conventions
+  PROJECT_NAME: "fragmented-memory" # See README.md about project, channel, and export file naming conventions
 
 jobs:
   Build:
