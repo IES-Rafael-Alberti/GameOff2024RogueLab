@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var resultado = $resultado
 @export var tamanioCodigo: int = 4
-
+var codigo: String = "1234" #cambiar por codigo de game manager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,7 +33,7 @@ func _on__pressed(numero):
 
 #si el codigo es el correcto puesta la siguiente imagen #falta hacer
 func comprobarCodigo(resultado: String):
-	if resultado == "1234":
+	if resultado == codigo:
 		print("conseguido")#cambiar
 		
 	else:
