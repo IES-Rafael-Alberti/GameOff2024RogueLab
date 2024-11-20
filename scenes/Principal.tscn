@@ -619,6 +619,11 @@ event_id = "Ev_01"
 [node name="PuertaPruebas" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(67, -6)
 scale = Vector2(2.38952, 2.19651)
+event_id = "TXT_TEST_2"
+
+[node name="CajaFuerte" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(385, 91)
+scale = Vector2(2.38952, 2.19651)
 event_id = "TXT_TEST_1"
 
 [node name="Corpse" parent="Triggers" instance=ExtResource("5_omke0")]

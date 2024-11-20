@@ -106,8 +106,9 @@ func _on_event_execute(event_id):
 			
 		#Si es puzzle ejecutar puzzle
 		if evento["EVENT_CONDITION"] == "PUZZLE":
-			print("abriendo puzzle")
+			print("puzzle entrando")
 			SignalBus.execute_puzzle.emit(event_id)
+			
 			pass
 			
 		#Dependiendo del idioma ES o EN

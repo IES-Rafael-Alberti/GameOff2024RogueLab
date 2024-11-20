@@ -1,0 +1,142 @@
+[gd_scene load_steps=13 format=3 uid="uid://e6vos4yr7bpq"]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_mapa_atraco.gd" id="1_4km8f"]
+[ext_resource type="PackedScene" uid="uid://cqeulcfun6yx7" path="res://scenes/Prefabs/pieza_mapa_atraco.tscn" id="1_hp64i"]
+[ext_resource type="Texture2D" uid="uid://py3fg01ncaem" path="res://assets/sprites/Puzles/puzle_atraco/mesa.png" id="2_qsfei"]
+[ext_resource type="Texture2D" uid="uid://bs7jkvnxmhvxc" path="res://assets/sprites/Puzles/puzle_atraco/trozo 1.png" id="3_dd8kb"]
+[ext_resource type="Texture2D" uid="uid://oe3gw6tfky7p" path="res://assets/sprites/Puzles/puzle_atraco/Marcador.png" id="4_jn5q5"]
+[ext_resource type="Texture2D" uid="uid://j65oafcttl5g" path="res://assets/sprites/Puzles/puzle_atraco/trozo 5.png" id="4_p5a80"]
+[ext_resource type="Texture2D" uid="uid://cfl34mwdi8jbg" path="res://assets/sprites/Puzles/puzle_atraco/trozo 4.png" id="5_ef8x4"]
+[ext_resource type="Texture2D" uid="uid://h1b7pw0p6t71" path="res://assets/sprites/Puzles/puzle_atraco/puzle_atraco.png" id="5_oudsq"]
+[ext_resource type="Texture2D" uid="uid://guhenkfylwi5" path="res://assets/sprites/Puzles/puzle_atraco/trozo 2.png" id="6_c6vf8"]
+[ext_resource type="Texture2D" uid="uid://cf2au71lpyvo" path="res://assets/sprites/Puzles/puzle_atraco/trozo 6.png" id="7_ukur3"]
+[ext_resource type="Texture2D" uid="uid://ccmrnx5ksw77p" path="res://assets/sprites/Puzles/puzle_atraco/trozo 3.png" id="8_jgt2d"]
+[ext_resource type="Texture2D" uid="uid://02iycftkhajx" path="res://assets/sprites/Puzles/puzle_atraco/trozo 7.png" id="9_o403j"]
+
+[node name="puzzle_mapa_atraco" type="CanvasLayer"]
+script = ExtResource("1_4km8f")
+
+[node name="Mesa" type="Sprite2D" parent="."]
+position = Vector2(483, 273)
+scale = Vector2(4.00417, 4.04815)
+texture = ExtResource("2_qsfei")
+
+[node name="piezas" type="Node2D" parent="."]
+
+[node name="Superior" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = 615.0
+offset_top = 346.0
+offset_right = 701.0
+offset_bottom = 393.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("7_ukur3")
+
+[node name="Inferior" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = -14.0
+offset_top = -3.99994
+offset_right = 135.0
+offset_bottom = 41.0001
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("8_jgt2d")
+
+[node name="Centro" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = -3.99997
+offset_top = 249.0
+offset_right = 83.0
+offset_bottom = 314.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("9_o403j")
+
+[node name="EsquinaSuperiorHizquierda" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = 289.0
+offset_top = 278.0
+offset_right = 370.0
+offset_bottom = 329.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("3_dd8kb")
+
+[node name="EsquinaSuperiorDerecha" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = 170.0
+offset_top = 158.0
+offset_right = 250.0
+offset_bottom = 219.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("4_p5a80")
+
+[node name="EsquinaInferiorDerecha" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = 450.0
+offset_top = -1.99998
+offset_right = 523.0
+offset_bottom = 70.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("5_ef8x4")
+
+[node name="EsquinaInferiorHizquierda" parent="piezas" instance=ExtResource("1_hp64i")]
+offset_left = 684.0
+offset_top = 128.0
+offset_right = 751.0
+offset_bottom = 198.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("6_c6vf8")
+
+[node name="Marker2DEsquinaSuperiorHizquierda" type="Marker2D" parent="piezas"]
+visible = false
+position = Vector2(262, 149)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DEsquinaSuperiorHizquierda"]
+texture = ExtResource("4_jn5q5")
+
+[node name="Marker2DEsquinaSuperiorDerecha" type="Marker2D" parent="piezas"]
+visible = false
+position = Vector2(640, 187)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DEsquinaSuperiorDerecha"]
+texture = ExtResource("4_jn5q5")
+
+[node name="Marker2DEsquinaInferiorDerecha" type="Marker2D" parent="piezas"]
+visible = false
+position = Vector2(650, 327)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DEsquinaInferiorDerecha"]
+texture = ExtResource("4_jn5q5")
+
+[node name="Marker2DEsquinaInferiorHizquierda" type="Marker2D" parent="piezas"]
+visible = false
+position = Vector2(232, 324)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DEsquinaInferiorHizquierda"]
+texture = ExtResource("4_jn5q5")
+
+[node name="Marker2DSuperior" type="Marker2D" parent="piezas"]
+visible = false
+position = Vector2(437, 158)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DSuperior"]
+texture = ExtResource("4_jn5q5")
+
+[node name="Marker2DInferior" type="Marker2D" parent="piezas"]
+visible = false
+position = Vector2(424, 365)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DInferior"]
+texture = ExtResource("4_jn5q5")
+
+[node name="Marker2DCentro" type="Marker2D" parent="piezas"]
+visible = false
+position = Vector2(433, 270)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="piezas/Marker2DCentro"]
+texture = ExtResource("4_jn5q5")
+
+[node name="mapaCompletado" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(481, 272.5)
+scale = Vector2(4, 4.02222)
+texture = ExtResource("5_oudsq")
