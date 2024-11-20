@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b7o2r2hgpxo7e" path="res://scenes/puzzles/puzzle_fotos_estanteria.tscn" id="1_jbvj8"]
 [ext_resource type="PackedScene" uid="uid://dhs180cnfuqmr" path="res://scenes/puzzles/puzzle_rejilla.tscn" id="3_b623p"]
 [ext_resource type="PackedScene" uid="uid://e6vos4yr7bpq" path="res://scenes/puzzles/puzzle_mapa_atraco.tscn" id="4_4i0f0"]
+[ext_resource type="PackedScene" uid="uid://dqm6q0g8uqrjn" path="res://scenes/puzzles/puzzle_caja_fuerte.tscn" id="4_ugdwm"]
 
 [node name="Puzzles" type="Node"]
 script = ExtResource("1_d3p88")
@@ -18,3 +19,6 @@ event_id = "Ev_Screwdriver"
 
 [node name="puzzle_mapa_atraco" parent="." instance=ExtResource("4_4i0f0")]
 visible = false
+[node name="Puzzle_caja_fuerte" parent="." instance=ExtResource("4_ugdwm")]
+visible = false
+event_id = "TXT_TEST_1"
