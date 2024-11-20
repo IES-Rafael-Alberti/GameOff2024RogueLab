@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var caja_fuerte_abierta = $cajaFuerteAbierta
 @onready var resultado = $resultado
 @export var tamanioCodigo: int = 4
 var codigo: String = "1234" #cambiar por codigo de game manager
@@ -34,7 +35,8 @@ func _on__pressed(numero):
 #si el codigo es el correcto puesta la siguiente imagen #falta hacer
 func comprobarCodigo(resultado: String):
 	if resultado == codigo:
-		print("conseguido")#cambiar
+		caja_fuerte_abierta.visible = true
+		print("conseguido")
 		
 	else:
 		print("Intentalo de nuevo")

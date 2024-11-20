@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dqm6q0g8uqrjn"]
+[gd_scene load_steps=17 format=3 uid="uid://dqm6q0g8uqrjn"]
 
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_caja_fuerte.gd" id="1_7dboa"]
 [ext_resource type="Texture2D" uid="uid://c0f4w82r8i16a" path="res://assets/sprites/Puzles/caja fuerte/caja_fuerte.png" id="1_73d0e"]
@@ -15,11 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://colnrs6j4nrak" path="res://assets/sprites/Puzles/caja fuerte/borrar.png" id="12_t33hh"]
 [ext_resource type="Texture2D" uid="uid://xv7ayq4ghika" path="res://assets/sprites/Puzles/caja fuerte/enter.png" id="13_8j640"]
 [ext_resource type="Texture2D" uid="uid://cvdfcghob2tf8" path="res://assets/sprites/Puzles/caja fuerte/9.png" id="13_dqnmf"]
+[ext_resource type="Texture2D" uid="uid://b7otmavrlv3af" path="res://assets/sprites/Puzles/caja fuerte/caja_fuerte_abierta.png" id="16_wtm5f"]
 
 [node name="Puzzle_caja_fuerte" type="CanvasLayer"]
 script = ExtResource("1_7dboa")
 
-[node name="fondo" type="Sprite2D" parent="."]
+[node name="cajaFuerteCerrada" type="Sprite2D" parent="."]
 position = Vector2(479.938, 268.09)
 scale = Vector2(4.00885, 3.96904)
 texture = ExtResource("1_73d0e")
@@ -142,3 +143,9 @@ offset_bottom = 262.0
 scale = Vector2(1.79249, 0.710957)
 theme_override_font_sizes/font_size = 31
 uppercase = true
+
+[node name="cajaFuerteAbierta" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(479.938, 268.09)
+scale = Vector2(4.00885, 3.96904)
+texture = ExtResource("16_wtm5f")
