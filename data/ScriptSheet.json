@@ -221,7 +221,7 @@
     "EVENT_CONDITION": "NONE",
     "NEXT": "",
     "ES": "Con esto puede que consiga abrir la rejilla.",
-    "EN": ""
+    "EN": "With this meaby i can open the grid."
   },
   "Ev_Door_01": {
     "SHADER_OPTIONS": "NONE",
@@ -229,7 +229,7 @@
     "EVENT_CONDITION": "NONE",
     "NEXT": "Ev_Door_02",
     "ES": "La puerta parece que está cerrada. La llave debe de estar por algún lado.",
-    "EN": ""
+    "EN": "The door is locked. The key must be somewhere."
   },
   "Ev_Door_02": {
     "SHADER_OPTIONS": "NONE",
@@ -237,7 +237,7 @@
     "EVENT_CONDITION": "NONE",
     "NEXT": "",
     "ES": "Por mucho que lo intente... sigue cerrada.",
-    "EN": ""
+    "EN": "Doesn't matter how many times I try... the door is loked."
   },
   "Ev_FirstWardrobe": {
     "SHADER_OPTIONS": "NONE",
@@ -245,7 +245,7 @@
     "EVENT_CONDITION": "PUZZLE",
     "NEXT": "",
     "ES": "¿Y esto...? Parece ser una caja fuerte...\nNecesitaré un código para abrirla.",
-    "EN": ""
+    "EN": "What is this?... It like and safe box.\nI will need the code to open it."
   },
   "Ev_SecondWardrobe": {
     "SHADER_OPTIONS": "NONE",
@@ -253,7 +253,7 @@
     "EVENT_CONDITION": "NONE",
     "NEXT": "",
     "ES": "Parece que aquí puede ir el código.",
-    "EN": ""
+    "EN": "It seem like i can use the code here."
   },
   "Ev_FirstCode": {
     "SHADER_OPTIONS": "NONE",
@@ -261,7 +261,7 @@
     "EVENT_CONDITION": "NONE",
     "NEXT": "",
     "ES": "Un papel con números... Tal vez pueda servirme de algo.",
-    "EN": ""
+    "EN": "A piece of paper with numbres... Maybe they can serve me later."
   },
   "Ev_SecondCode": {
     "SHADER_OPTIONS": "NONE",
@@ -269,7 +269,7 @@
     "EVENT_CONDITION": "NONE",
     "NEXT": "",
     "ES": "Parece que encontré la clave para abrir esa cajita de metal.",
-    "EN": ""
+    "EN": "I think I found the code for that little metal box."
   },
   "Ev_VaultSuccess": {
     "SHADER_OPTIONS": "NONE",
@@ -307,7 +307,7 @@
     "SHADER_OPTIONS": "NONE",
     "CAMERA_OPTIONS": "NONE",
     "EVENT_CONDITION": "NONE",
-    "NEXT": "",
+    "NEXT": "Ev_Sofa",
     "ES": "Que asco de sofá.",
     "EN": "This sofa is disgusting."
   },
@@ -315,7 +315,7 @@
     "SHADER_OPTIONS": "NONE",
     "CAMERA_OPTIONS": "NONE",
     "EVENT_CONDITION": "NONE",
-    "NEXT": "",
+    "NEXT": "Ev_Sink",
     "ES": "Alguien no ha limpiado los platos.",
     "EN": "Someone hasn't washed the dishes"
   },
@@ -323,7 +323,7 @@
     "SHADER_OPTIONS": "NONE",
     "CAMERA_OPTIONS": "NONE",
     "EVENT_CONDITION": "NONE",
-    "NEXT": "",
+    "NEXT": "Ev_WC",
     "ES": "Esperaré a un váter más limpio.",
     "EN": "I'll wait for another one more cleaner."
   },
@@ -331,7 +331,7 @@
     "SHADER_OPTIONS": "NONE",
     "CAMERA_OPTIONS": "NONE",
     "EVENT_CONDITION": "NONE",
-    "NEXT": "",
+    "NEXT": "Ev_Fridge",
     "ES": "No es momento de tomarse una energética.",
     "EN": "There is no time for a drink."
   },
@@ -339,7 +339,7 @@
     "SHADER_OPTIONS": "NONE",
     "CAMERA_OPTIONS": "NONE",
     "EVENT_CONDITION": "NONE",
-    "NEXT": "",
+    "NEXT": "Ev_TV",
     "ES": "La tele vuelve a no tener señal.",
     "EN": "The tv is broken again."
   },
@@ -347,7 +347,7 @@
     "SHADER_OPTIONS": "NONE",
     "CAMERA_OPTIONS": "NONE",
     "EVENT_CONDITION": "NONE",
-    "NEXT": "",
+    "NEXT": "Ev_Mirror",
     "ES": "¿Quién soy yo?",
     "EN": "Who am I?"
   },
@@ -355,7 +355,7 @@
     "SHADER_OPTIONS": "NONE",
     "CAMERA_OPTIONS": "NONE",
     "EVENT_CONDITION": "NONE",
-    "NEXT": "",
+    "NEXT": "Ev_DNI",
     "ES": "¿Qué es esto?",
     "EN": "What is this?"
   }
