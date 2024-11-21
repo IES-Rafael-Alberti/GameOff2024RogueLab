@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfb3rby1lilfu"]
+
+[ext_resource type="Script" path="res://scripts/puzzle/texture_button.gd" id="1_r6q1l"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_r6q1l")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

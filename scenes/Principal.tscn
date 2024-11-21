@@ -1,10 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=16 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://dcdph4436g11n" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
-[ext_resource type="Texture2D" uid="uid://cl7gbx7qj5o30" path="res://assets/sprites/Player/player-32-64-front-walk.png" id="2_0y32a"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
 [ext_resource type="Texture2D" uid="uid://cynq8fhvk5sgd" path="res://assets/assets/mariofinal.png" id="3_fqhnc"]
-[ext_resource type="PackedScene" path="res://scenes/trigger.tscn" id="5_omke0"]
+[ext_resource type="Script" path="res://scenes/bath_room_light.gd" id="4_4yf2j"]
+[ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/Prefabs/trigger.tscn" id="5_omke0"]
+[ext_resource type="Script" path="res://scenes/shaders_control.gd" id="6_31grw"]
+[ext_resource type="Material" uid="uid://dvrclko8um8kj" path="res://assets/materials/vignette_materia.tres" id="6_pug0m"]
+[ext_resource type="PackedScene" uid="uid://j2kel3e4mudp" path="res://scenes/Prefabs/zoom_item.tscn" id="6_youc5"]
+[ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="7_1dy4f"]
+[ext_resource type="Material" uid="uid://b0wmofx38qqu2" path="res://assets/materials/blood_materia.tres" id="8_op68h"]
+[ext_resource type="Material" uid="uid://cm1iq0isxjdqv" path="res://assets/materials/bathroom_shader.tres" id="9_n7lhl"]
+[ext_resource type="PackedScene" uid="uid://cdtljaux3f3i1" path="res://scenes/puzzles/puzzles.tscn" id="12_c3sp8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntdln"]
 texture = ExtResource("1_c4xtu")
@@ -528,6 +535,9 @@ texture = ExtResource("1_c4xtu")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ntdln")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8dvn"]
+size = Vector2(124.948, 141.909)
+
 [node name="TileMap" type="TileMap"]
 position = Vector2(64, -112)
 tile_set = SubResource("TileSet_10sko")
@@ -564,16 +574,112 @@ layer_9/z_index = -1
 layer_9/tile_data = PackedInt32Array(-327668, 393217, 10, -262132, 393217, 11, -196596, 393217, 12, -131060, 393217, 13, -65524, 393217, 14, -327667, 458753, 10, -262131, 458753, 11, -196595, 458753, 12, -131059, 458753, 13, -65523, 458753, 14, 12, 393217, 10, 65548, 393217, 11, 131084, 393217, 12, 196620, 393217, 13, 13, 458753, 10, 65549, 458753, 11, 131085, 458753, 12, 196621, 458753, 13, -65518, 393217, 14, 18, 393217, 11, 65554, 393217, 12, 131090, 393217, 13, 196626, 393217, 14, -65517, 458753, 14, 19, 458753, 11, 65555, 458753, 12, 131091, 458753, 13, 196627, 458753, 14, -327662, 393217, 10, -262126, 393217, 11, -196590, 393217, 12, -131054, 393217, 13, -327661, 458753, 10, -262125, 458753, 11, -196589, 458753, 12, -131053, 458753, 13, 262162, 393217, 14, 262163, 458753, 14, -327655, 393217, 10, -262119, 393217, 11, -196583, 393217, 12, -131047, 393217, 13, -65511, 393217, 14, -327654, 458753, 10, -262118, 458753, 11, -196582, 458753, 12, -131046, 458753, 13, -65510, 458753, 14, 25, 393217, 10, 65561, 393217, 11, 131097, 393217, 10, 196633, 393217, 11, 262169, 393217, 12, 26, 458753, 10, 65562, 458753, 11, 131098, 458753, 10, 196634, 458753, 11, 262170, 458753, 12, 327705, 393217, 13, 393241, 393217, 14, 327706, 458753, 13, 393242, 458753, 14, 196603, 393217, 10, 262139, 393217, 11, 327675, 393217, 12, 393211, 393217, 13, 458747, 393217, 14, 196604, 458753, 10, 262140, 458753, 11, 327676, 458753, 12, 393212, 458753, 13, 458748, 458753, 14, -131077, 393217, 12, -65541, 393217, 13, -5, 393217, 14, 65531, 393217, 13, 131067, 393217, 14, -131076, 458753, 12, -65540, 458753, 13, -4, 458753, 14, 65532, 458753, 13, 131068, 458753, 14, -262149, 393217, 10, -196613, 393217, 11, -262148, 458753, 10, -196612, 458753, 11)
 script = ExtResource("2_iqy1m")
 
-[node name="Player-32-64-front-walk" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(87, 15)
-texture = ExtResource("2_0y32a")
-
 [node name="Mariofinal" type="Sprite2D" parent="."]
 position = Vector2(360, 21)
 texture = ExtResource("3_fqhnc")
 
-[node name="Trigger" parent="." instance=ExtResource("5_omke0")]
+[node name="BathRoomLight" type="Node" parent="."]
+script = ExtResource("4_4yf2j")
+
+[node name="Area2D" type="Area2D" parent="BathRoomLight"]
+position = Vector2(274, -241)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BathRoomLight/Area2D"]
+position = Vector2(45.5312, 158.22)
+scale = Vector2(0.727806, 0.44)
+shape = SubResource("RectangleShape2D_x8dvn")
+
+[node name="BathRoomShader" type="TextureRect" parent="BathRoomLight"]
+z_index = 1
+material = ExtResource("9_n7lhl")
+offset_left = 274.0
+offset_top = -241.0
+offset_right = 367.0
+offset_bottom = -48.0
+texture = ExtResource("7_1dy4f")
+expand_mode = 1
+
+[node name="BackgroundShader" type="TextureRect" parent="."]
+z_index = -14
+material = ExtResource("9_n7lhl")
+offset_left = -277.0
+offset_top = -213.0
+offset_right = 693.0
+offset_bottom = 298.0
+texture = ExtResource("7_1dy4f")
+expand_mode = 1
+
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="TriggerInicio" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(-10, 54)
+scale = Vector2(1.09295, 0.395017)
+event_id = "Ev_01"
+
+[node name="PuertaPruebas" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(67, -6)
 scale = Vector2(2.38952, 2.19651)
-event_id = "TXT_TEST_1"
+event_id = "TXT_TEST_2"
+
+[node name="CajaFuerte" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(385, 91)
+scale = Vector2(2.38952, 2.19651)
+event_id = "Ev_FirstWardrobe"
+
+[node name="MapaAtraco" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(13, 71)
+scale = Vector2(0.459967, 1.21692)
+event_id = "TXT_TEST_3"
+
+[node name="Corpse" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(360, 29)
+scale = Vector2(2.48689, 2.65507)
+event_id = "Ev_Corpse_01"
+
+[node name="Pictures" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(-47, 8)
+scale = Vector2(1.76689, 1.61507)
+event_id = "Ev_Shelve"
+
+[node name="Rejilla" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(257, -4)
+scale = Vector2(1.43894, 0.921395)
+event_id = "Ev_Screwdriver_01"
+
+[node name="Shaders" type="CanvasLayer" parent="."]
+layer = 11
+script = ExtResource("6_31grw")
+
+[node name="VIGNETTE" type="TextureRect" parent="Shaders"]
+visible = false
+material = ExtResource("6_pug0m")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("7_1dy4f")
+expand_mode = 1
+
+[node name="Blood" type="TextureRect" parent="Shaders"]
+visible = false
+material = ExtResource("8_op68h")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("7_1dy4f")
+expand_mode = 1
+
+[node name="ZoomItem" parent="." instance=ExtResource("6_youc5")]
+visible = false
+
+[node name="Puzzles" parent="." instance=ExtResource("12_c3sp8")]
+
+[connection signal="body_entered" from="BathRoomLight/Area2D" to="BathRoomLight" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="BathRoomLight/Area2D" to="BathRoomLight" method="_on_area_2d_body_exited"]

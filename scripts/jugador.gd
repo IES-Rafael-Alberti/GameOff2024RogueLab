@@ -1,9 +1,7 @@
 extends CharacterBody2D
 # variables
-var interactionObject #objeto que se recive
-var flagInteractuando = false #indicador si se esta interactuando o no
 
-
+var required
 
 # variables para diseñador
 @export var SPEED = 130
@@ -24,32 +22,39 @@ func _physics_process(delta):
 	#region menu de pausa
 	
 	if Input.is_action_just_pressed("escape"):
-		CanvasManager.alternate_pause()
+		if OptionManager.flagMenuPausa:
+			OptionManager.flagMenuPausa = false
+			CanvasManager.play_resume_pause_menu()
+			print("MenuPausa: " + str(OptionManager.flagMenuPausa) )
+		else:
+			OptionManager.flagMenuPausa = true
+			GameManager.positionPlayer=position
+			CanvasManager.play_pause_menu()
+			print("MenuPausa: " + str(OptionManager.flagMenuPausa))
 
 	#endregion
 
 	#region interaccion
 		
-	if GameManager.interactive != null:
-		if Input.is_action_just_pressed("interaccion"):
-			if flagInteractuando == true:
-				SignalBus.wait_input.emit()
-				flagInteractuando = false
-				pass
-			else:
-				GameManager.interactive.on_triggered()
-				pass
-			pass
+	if Input.is_action_just_pressed("interaccion"):	
+		
+		if required:
+			required=false
+			SignalBus.wait_input.emit()
+		pass
 	
 	#endregion
 
 	#region movimiento
 
-	if flagInteractuando:
+	if (GameManager.puzzleLayer!=null or GameManager.DialogVisible) or CanvasManager.inPause:
+		velocity.x=0
+		velocity.y=0
 		pass
 	
 	else :
 		
+			
 		# Obtiene la dirección de entrada y maneja el movimiento/desaceleración
 		var direccionHorizontal = Input.get_axis("left", "right")
 		var directionVertical = Input.get_axis("up", "down")
@@ -121,15 +126,10 @@ func _physics_process(delta):
 	#endregion
 	
 	
-	
-	
-	
-	
-	
 	# Mueve al personaje usando la física
 	move_and_slide()
 
 
 func  _on_input_required():
-	flagInteractuando=true
+	required=true
 	pass

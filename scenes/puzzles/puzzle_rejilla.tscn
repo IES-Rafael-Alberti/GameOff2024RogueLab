@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhs180cnfuqmr"]
+
+[ext_resource type="Script" path="res://scripts/puzzles_rejilla.gd" id="1_se3rp"]
+[ext_resource type="Texture2D" uid="uid://clbi4qkjf8o6n" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-pastis.png" id="2_wa4i2"]
+[ext_resource type="Texture2D" uid="uid://cgv3tvwfyjeew" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-rejilla.png" id="3_1yc7b"]
+[ext_resource type="PackedScene" uid="uid://bvqggbfc7gi6d" path="res://scenes/pastillas.tscn" id="4_r06x1"]
+[ext_resource type="Texture2D" uid="uid://dixpu7d04o707" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-tornillos.png" id="5_tothm"]
+[ext_resource type="Texture2D" uid="uid://bos20tu47tqxw" path="res://assets/assets/Puzles/puzle2-rejilla/pastillas64x64.png" id="6_vp1ph"]
+[ext_resource type="PackedScene" uid="uid://2jvwv2uig8ff" path="res://scenes/Prefabs/tornillo_derecho.tscn" id="7_fxspc"]
+[ext_resource type="PackedScene" uid="uid://bfdrof1bnnufs" path="res://scenes/Prefabs/tornillo_izquierdo.tscn" id="8_y0syt"]
+
+[node name="PuzzleRejilla" type="CanvasLayer"]
+script = ExtResource("1_se3rp")
+
+[node name="Rejilla-sin-pastis" type="Sprite2D" parent="."]
+position = Vector2(481, 273)
+scale = Vector2(4, 4)
+texture = ExtResource("2_wa4i2")
+
+[node name="Rejilla-sin-rejilla" type="Sprite2D" parent="."]
+position = Vector2(481, 273)
+scale = Vector2(4, 4)
+texture = ExtResource("3_1yc7b")
+
+[node name="pastillas" parent="." instance=ExtResource("4_r06x1")]
+position = Vector2(401, 387)
+scale = Vector2(4, 4)
+
+[node name="Rejilla-sin-tornillos" type="Sprite2D" parent="."]
+position = Vector2(479, 272)
+scale = Vector2(4, 4)
+texture = ExtResource("5_tothm")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+
+[node name="Pastillas64x64" type="Sprite2D" parent="PanelContainer"]
+position = Vector2(488, 314)
+scale = Vector2(4, 4)
+texture = ExtResource("6_vp1ph")
+
+[node name="tornilloDerecho" parent="." instance=ExtResource("7_fxspc")]
+offset_left = 224.0
+offset_top = 131.0
+offset_right = 234.0
+offset_bottom = 141.0
+scale = Vector2(4, 4)
+
+[node name="tornilloDerecho2" parent="." instance=ExtResource("7_fxspc")]
+offset_left = 224.0
+offset_top = 433.0
+offset_right = 234.0
+offset_bottom = 443.0
+scale = Vector2(4, 4)
+
+[node name="tornilloIzquierdo" parent="." instance=ExtResource("8_y0syt")]
+offset_left = 734.0
+offset_top = 133.0
+offset_right = 744.0
+offset_bottom = 143.0
+scale = Vector2(4, 4)
+
+[node name="tornilloIzquierdo2" parent="." instance=ExtResource("8_y0syt")]
+offset_left = 734.0
+offset_top = 432.0
+offset_right = 744.0
+offset_bottom = 442.0
+scale = Vector2(4, 4)

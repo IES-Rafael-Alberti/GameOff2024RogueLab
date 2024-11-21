@@ -40,10 +40,14 @@ func set_black_and_white_effect(action:bool):
 	pass
 
 func _ready() -> void:
-	play_main_menu()
+	#play_main_menu()
 	pass
 
 func play_main_menu():
+	call_deferred("changeScene")
+	pass
+
+func changeScene():
 	get_tree().change_scene_to_packed(MAIN_MENU)
 	pass
 

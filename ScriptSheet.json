@@ -1,0 +1,202 @@
+{
+  "TXT_TEST_1": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "TRIGGER",
+    "NEXT": "TXT_TEST_2",
+    "ES": "Hola esto es una prueba de si funciona",
+    "EN": "Hello this is a test"
+  },
+  "TXT_TEST_2": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "NONE",
+    "NEXT": "",
+    "ES": "Sigue funcionando perfectamente",
+    "EN": "It's working"
+  },
+  "Ev_01": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "TRIGGER",
+    "NEXT": "Ev_02",
+    "ES": "Ahh, estoy hecho mierda. Necesito algo para este dolor de cabeza. ¿Dónde coño estoy?",
+    "EN": "Ahh, I feel like shit. I need something for this headache. Where the hell am I?"
+  },
+  "Ev_02": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "NONE",
+    "NEXT": "",
+    "ES": "!¿ QUÉ MIERDA ?! ¿QUÉ ES ESTO? ¿QUIÉN ES ESTE TÍO?…",
+    "EN": "Damn?! What is this? Who is this dude?…"
+  },
+  "Ev_02_TV1": {
+    "SHADER_OPTIONS": "TV",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "TRIGGER",
+    "NEXT": "Ev_02_TV2",
+    "ES": "¿Qué es ese ruido?",
+    "EN": "What is that noise?"
+  },
+  "Ev_02_TV2": {
+    "SHADER_OPTIONS": "TV",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "NONE",
+    "NEXT": "Ev_02_TV2",
+    "ES": "Siguen las búsquedas de los 2 atracadores a los que se les relaciona con 15 asesinatos... estas son las imágenes que nos ha proporcionado el departamento de policía…",
+    "EN": "The search continues for the two robbers linked to 15 murders... these are the images provided to us by the departament police..."
+  },
+  "Ev_02_TV3": {
+    "SHADER_OPTIONS": "TV",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "NONE",
+    "NEXT": "",
+    "ES": "Me van a cargar el muerto si me encuentran aquí…",
+    "EN": "They'll pin the blame on me if they find me here…"
+  },
+  "Ev_Corpse1": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "TRIGGER",
+    "NEXT": "Ev_Corpse2",
+    "ES": "El cuerpo tiene algo...",
+    "EN": "The corpse has something..."
+  },
+  "Ev_Corpse2": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "TRIGGER",
+    "NEXT": "Ev_Corpse3",
+    "ES": "No es nada personal...",
+    "EN": "It's nothing personal"
+  },
+  "Ev_Corpse3": {
+    "SHADER_OPTIONS": "VIGNETTE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "NONE",
+    "NEXT": "",
+    "ES": "Parece de la entrada del piso.",
+    "EN": "Look like flat’s entrance..."
+  },
+  "Ev_Grill_01": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "PUZZLE",
+    "NEXT": "Ev_Grill_02",
+    "ES": "¿Quién habrá escondido unas pastillas ahí?",
+    "EN": "This key seems to be for the apartment entrance…"
+  },
+  "Ev_Grill_02": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "PUZZLE",
+    "NEXT": "Ev_Grill_03",
+    "ES": "Necesito algo para poder abrirlo",
+    "EN": "I need something to open it..."
+  },
+  "Ev_Grill_03": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "PUZZLE",
+    "NEXT": "",
+    "ES": "Necesito callar las voces...",
+    "EN": "I need to silence the voices..."
+  },
+  "Ev_Shelve": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "TRIGGER",
+    "NEXT": "Ev_Picture_01",
+    "ES": "Que raro, me suenan sus caras...",
+    "EN": "That's weird… These faces look familiar to me."
+  },
+  "Ev_Picture_01": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "PUZZLE",
+    "NEXT": "Ev_Picture_02",
+    "ES": "Se le ven tan feliz…",
+    "EN": "He looks so happy…"
+  },
+  "Ev_Picture_02": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "PUZZLE",
+    "NEXT": "Ev_Picture_03",
+    "ES": "A este en cambio se le ve triste…",
+    "EN": "This one, on the other hand, looks sad…"
+  },
+  "Ev_Picture_03": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "PUZZLE",
+    "NEXT": "Ev_Picture_04",
+    "ES": "Este está roto...",
+    "EN": "This is broken…"
+  },
+  "Ev_Picture_04": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "PUZZLE",
+    "NEXT": "",
+    "ES": "¿Qué es eso que asoma?",
+    "EN": "What’s that sticking out?"
+  },
+  "Ev_FirstBrokenPicture_01": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "TRIGGER",
+    "NEXT": "Ev_FirstBrokenPicture_02",
+    "ES": "Parece que alguien la ha roto por la mitad.",
+    "EN": "It looks like someone broke it in two."
+  },
+  "Ev_FirstBrokenPicture_02": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "NONE",
+    "NEXT": "",
+    "ES": "La otra mitad debe estar por aquí.",
+    "EN": "The other half must be around here somewhere."
+  },
+  "Ev_SecondBrokenPicture_01": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "TRIGGER",
+    "NEXT": "Ev_SecondBrokenPicture_02",
+    "ES": "Esta parece la otra mitad de la foto.",
+    "EN": "This seems to be the other half of the picture."
+  },
+  "Ev_SecondBrokenPicture_02": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "NONE",
+    "NEXT": "Ev_SecondBrokenPicture_03",
+    "ES": "Ese tal Mario, lleva la misma ropa que yo...",
+    "EN": "That guy, Mario… He’s wearing the same clothes as me"
+  },
+  "Ev_SecondBrokenPicture_03": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "NONE",
+    "NEXT": "",
+    "ES": "Francesco y él… parecen cercanos.",
+    "EN": "Francesco and he… seem close."
+  },
+  "Ev_Blueprint_01": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "PUZZLE",
+    "NEXT": "Ev_Blueprint_02",
+    "ES": "Parece que forma algún tipo de plano.",
+    "EN": "Looks like some kind of blueprint."
+  },
+  "Ev_Blueprint_02": {
+    "SHADER_OPTIONS": "NONE",
+    "CAMERA_OPTIONS": "NONE",
+    "EVENT_CONDITION": "PUZZLE",
+    "NEXT": "",
+    "ES": "Parecen los planos de un robo.",
+    "EN": "Looks like the thieves' plan."
+  }
+}
