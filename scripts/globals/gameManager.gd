@@ -8,6 +8,8 @@ var initSpeed = 130
 var interactive:Node2D
 var isTrigger:bool
 
+var codigoCajaFuerte:String = "1234"
+
 #variables
 var evento
 
@@ -24,7 +26,14 @@ var puzzleLayer:CanvasLayer=null
 #variables objetos
 var key:bool=false
 var screwdriver:bool=false
+var dni:bool
 
+#variable de puzzles
+var rejilla:bool
+var foto_encimera:bool
+var foto_estanteria:bool
+var mapa:bool
+var caja_fuerte:bool
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -41,12 +50,12 @@ func _setPuzzleLayer(puzzleLayer: CanvasLayer):
 	self.puzzleLayer = puzzleLayer
 	pass
 	
-func _exitPuzzle():
-	self.puzzleLayer=null
+func _exitPuzzle(puzzleLayer):
+	if self.puzzleLayer==puzzleLayer:
+		self.puzzleLayer=null
 	pass
 
 func get_player():
-	
 	if(player == null):
 		player = JUGADOR.instantiate()
 		player.SPEED = initSpeed
@@ -55,7 +64,6 @@ func get_player():
 	return player
 
 func eventHandler():
-	
 	get_event_from_interactive()
 	if evento !=null:
 		#Si es trigger saltar automaticamente
@@ -108,7 +116,9 @@ func _on_event_execute(event_id):
 			
 		#Si es puzzle ejecutar puzzle
 		if evento["EVENT_CONDITION"] == "PUZZLE":
-			SignalBus.execute_puzzle.emit()
+			print("puzzle entrando")
+			SignalBus.execute_puzzle.emit(event_id)
+			
 			pass
 			
 		#Dependiendo del idioma ES o EN
@@ -124,7 +134,7 @@ func _on_input_recived():
 		pass
 	
 	if !zoomItem:
-		if interactive.event_id == "Ev_Corpse2":
+		if interactive.event_id == "Ev_Corpse_02":
 			print("Llave")
 			ItemTexture=preload( "res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png")
 			ItemMaxScale=64*3
@@ -132,6 +142,14 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			key=true
+		elif interactive.event_id == "Ev_Screwdriver_02":
+			print("Destornillador")
+			ItemTexture=preload("res://assets/sprites/Puzles/destornillador.png")
+			ItemMaxScale=64*3
+			ItemMinScale=64
+			ItemSpeed=150
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			screwdriver=true
 		elif interactive.event_id == "TXT_TEST_2" and key:
 			TransitionScreen.transition()
 			await SignalBus.on_transition_finished

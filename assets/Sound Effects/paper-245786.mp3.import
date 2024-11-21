@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cc1nx7v7m54kl"
+path="res://.godot/imported/paper-245786.mp3-958e032d61cc8656e7a7b2b12f089f48.mp3str"
+
+[deps]
+
+source_file="res://assets/Sound Effects/paper-245786.mp3"
+dest_files=["res://.godot/imported/paper-245786.mp3-958e032d61cc8656e7a7b2b12f089f48.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

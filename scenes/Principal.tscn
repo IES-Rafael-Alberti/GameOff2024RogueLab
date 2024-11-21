@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dxig44e2l1d1l"]
 
-[ext_resource type="Texture2D" uid="uid://dcdph4436g11n" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
+[ext_resource type="Texture2D" uid="uid://buei4x432v4a2" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
 [ext_resource type="Texture2D" uid="uid://cynq8fhvk5sgd" path="res://assets/assets/mariofinal.png" id="3_fqhnc"]
 [ext_resource type="Script" path="res://scenes/bath_room_light.gd" id="4_4yf2j"]
@@ -615,27 +615,41 @@ expand_mode = 1
 position = Vector2(-10, 54)
 scale = Vector2(1.09295, 0.395017)
 event_id = "Ev_01"
-isTriggered = true
 
 [node name="PuertaPruebas" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(67, -6)
 scale = Vector2(2.38952, 2.19651)
-event_id = "TXT_TEST_1"
+event_id = "TXT_TEST_2"
+
+[node name="Screwdriver" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(182, 12)
+scale = Vector2(1.74952, 1.19651)
+event_id = "Ev_Screwdriver_02"
+
+[node name="CajaFuerte" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(385, 91)
+scale = Vector2(2.38952, 2.19651)
+event_id = "Ev_FirstWardrobe"
+
+[node name="MapaAtraco" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(13, 71)
+scale = Vector2(0.459967, 1.21692)
+event_id = "Ev_Blueprint_01"
 
 [node name="Corpse" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(360, 29)
 scale = Vector2(2.48689, 2.65507)
-event_id = "Ev_Corpse1"
+event_id = "Ev_Corpse_01"
 
 [node name="Pictures" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(-47, 8)
 scale = Vector2(1.76689, 1.61507)
-event_id = "Ev_Picture_01"
+event_id = "Ev_Shelve"
 
 [node name="Rejilla" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(257, -4)
 scale = Vector2(1.43894, 0.921395)
-event_id = "Ev_Screwdriver"
+event_id = "Ev_Screwdriver_01"
 
 [node name="Shaders" type="CanvasLayer" parent="."]
 layer = 11
