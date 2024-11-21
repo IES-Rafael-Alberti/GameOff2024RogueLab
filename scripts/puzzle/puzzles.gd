@@ -13,13 +13,14 @@ func _ready() -> void:
 	
 	
 func _on_puzzle_execute(event_id):
-	print("Puzzle")
-	for child in childrens:
-		if child.event_id == event_id:
-			child.show()
-			SignalBus.puzzle_enter.emit(child)
+	if(GameManager.puzzleLayer==null):
+		for child in childrens:
+			if child.event_id == event_id:
+				child.show()
+				print("Show Puzzle")
+				SignalBus.puzzle_enter.emit(child)
+				pass
 			pass
-		pass
 	pass
 	
 func _exit_puzzle(puzzleLayer):

@@ -2,19 +2,19 @@
   "TXT_TEST_1": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "TRIGGER",
-	"NEXT": "TXT_TEST_2",
-	"ES": "Hola esto es una prueba de si funciona",
+	"EVENT_CONDITION": "PUZZLE",
+	"NEXT": "TXT_TEST_1",
+	"ES": "Hola esto es una prueba de si funciona ahora esto es un texto largo para poder comprobar si al pasar de linea funciona \ncorrectamente aunque estoy seguro de que si porque soy un crack",
 	"EN": "Hello this is a test"
   },
   "TXT_TEST_2": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "",
+	"NEXT": "TXT_TEST_2",
 	"ES": "Sigue funcionando perfectamente",
 	"EN": "It's working"
-  },
+},
   "Ev_01": {
     "SHADER_OPTIONS": "NONE",
     "CAMERA_OPTIONS": "NONE",
@@ -122,7 +122,7 @@
   "Ev_Picture_02": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "PUZZLE",
+	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Picture_03",
 	"ES": "A este en cambio se le ve triste…",
 	"EN": "This one, on the other hand, looks sad…"
