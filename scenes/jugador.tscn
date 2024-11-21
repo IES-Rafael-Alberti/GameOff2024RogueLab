@@ -79,6 +79,11 @@ region = Rect2(160, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tr3ah"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"WalkUp",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a0jyu")
@@ -159,7 +164,7 @@ script = ExtResource("1_iaisd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -18)
 sprite_frames = SubResource("SpriteFrames_tr3ah")
-animation = &"idle"
+animation = &"WalkUp"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
