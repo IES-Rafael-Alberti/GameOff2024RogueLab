@@ -131,7 +131,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "",
+	"NEXT": "Ev_Picture_04",
 	"ES": "Este está roto...",
 	"EN": "This is broken…"
   },

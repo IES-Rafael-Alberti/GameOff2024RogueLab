@@ -22,21 +22,20 @@ func _physics_process(delta):
 	#region menu de pausa
 	
 	if Input.is_action_just_pressed("escape"):
-		if OptionManager.flagMenuPausa:
-			OptionManager.flagMenuPausa = false
+		if CanvasManager.inPause:
+			CanvasManager.inPause = false
 			CanvasManager.play_resume_pause_menu()
-			print("MenuPausa: " + str(OptionManager.flagMenuPausa) )
+			print("MenuPausa: " + str(CanvasManager.inPause) )
 		else:
-			OptionManager.flagMenuPausa = true
-			GameManager.positionPlayer=position
+			CanvasManager.inPause = true
 			CanvasManager.play_pause_menu()
-			print("MenuPausa: " + str(OptionManager.flagMenuPausa))
+			print("MenuPausa: " + str(CanvasManager.inPause))
 
 	#endregion
 
 	#region interaccion
 		
-	if Input.is_action_just_pressed("interaccion"):	
+	if !CanvasManager.inPause and Input.is_action_just_pressed("interaccion"):	
 		
 		if required:
 			required=false
@@ -116,10 +115,8 @@ func _physics_process(delta):
 				animated_sprite_2d.flip_h = false  # Voltear el sprite horizontalmente
 		
 		elif ultima_direccion == "vertical":
-			if directionVertical > 0:
-				animated_sprite_2d.play("walkFront")
-			elif directionVertical < 0:
-				animated_sprite_2d.play("WalkUp")
+			animated_sprite_2d.play("walkFront")
+		
 		
 		#endregion
 		

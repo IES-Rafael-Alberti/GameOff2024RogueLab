@@ -100,14 +100,17 @@ func get_event_from_interactive():
 	
 	pass
 	
+func get_event(event_id):
+	return DataManager.scriptData.get(event_id)
+	pass
+
 func go_to_next():
 	SignalBus.event_waiting.emit(evento["NEXT"])
 	if evento["NEXT"]!="":
 		eventHandler()
 	
 	
-func _on_event_execute(event_id):
-	
+func _on_event_execute(event_id,aux):
 	if !DialogVisible:
 
 		print("Ejecutando evento: "+event_id)
@@ -119,10 +122,13 @@ func _on_event_execute(event_id):
 			SignalBus.execute_puzzle.emit(event_id)
 			
 			pass
-			
-		#Dependiendo del idioma ES o EN
-		SignalBus.execute_dialog.emit(evento["ES"])
-	
+		
+		if aux:
+			var aux_event = get_event(event_id)
+			#Dependiendo del idioma ES o EN
+			SignalBus.execute_dialog.emit(aux_event["ES"])
+		else:
+			SignalBus.execute_dialog.emit(evento["ES"])
 	pass
 
 func _on_input_recived():
@@ -132,7 +138,7 @@ func _on_input_recived():
 			pass
 		pass
 	
-	if !zoomItem:
+	if !zoomItem and interactive!=null and interactive.event_id!="":
 		if interactive.event_id == "Ev_Corpse_02":
 			print("Llave")
 			ItemTexture=preload( "res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png")
