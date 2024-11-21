@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 	if not condiciones.has(false):  # Verifica que no haya ningún `false`
 		print("¡Todas las condiciones son verdaderas!")
 		#mapa_completado.visible = true
-		SignalBus.zoom_item.emit(PUZLE_ATRACO,900,60,100)
+		SignalBus.zoom_item.emit(PUZLE_ATRACO,900,60,1000)
 		
 	#endregion
 	

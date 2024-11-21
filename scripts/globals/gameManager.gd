@@ -23,7 +23,7 @@ var puzzleLayer:CanvasLayer=null
 #variables objetos
 var key:bool=false
 var screwdriver:bool=false
-
+var codigoCajaFuerte:String = "1234"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

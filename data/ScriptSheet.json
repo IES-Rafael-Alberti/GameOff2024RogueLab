@@ -19,8 +19,8 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "PUZZLE",
-	"NEXT": "TXT_TEST_1",
-	"ES": "Hola esto es una prueba de si funciona ahora esto es un texto largo para poder comprobar si al pasar de linea funciona \ncorrectamente aunque estoy seguro de que si porque soy un crack",
+	"NEXT": "",
+	"ES": "Hola esto es una prueba de texto para el mapa",
 	"EN": "Hello this is a test"
   },
   "Ev_01": {

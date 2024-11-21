@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var caja_fuerte_abierta = $cajaFuerteAbierta
 @onready var resultado = $resultado
 @export var tamanioCodigo: int = 4
-var codigo: String = "1234" #cambiar por codigo de game manager
+var codigo: String = GameManager.codigoCajaFuerte
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
