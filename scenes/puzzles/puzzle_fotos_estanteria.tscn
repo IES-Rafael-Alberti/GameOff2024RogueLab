@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://b7o2r2hgpxo7e"]
 
-[ext_resource type="Texture2D" uid="uid://bpsh6qyhxu3p5" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_vacia_240x135.png" id="1_5h2ek"]
+[ext_resource type="Texture2D" uid="uid://deydup4oa6ss1" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_vacia_240x135.png" id="1_5h2ek"]
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_fotos_estanteria.gd" id="1_vdajd"]
-[ext_resource type="Texture2D" uid="uid://pj65hci8gy3s" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_240x135.png" id="2_ht76q"]
+[ext_resource type="Texture2D" uid="uid://x0qiakbruusr" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_240x135.png" id="2_ht76q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d8k48"]
 
