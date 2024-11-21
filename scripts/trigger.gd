@@ -2,24 +2,15 @@
 extends Marker2D
 
 @export var event_id:String = ""
-@onready var trigger_inicio: Marker2D = $"../TriggerInicio"
-
-@export var isTriggered:bool = false
-
 
 func _ready() -> void:
 	SignalBus.event_waiting.connect(_on_event_wating)
 	
 	pass 
 
-
-func _process(delta: float) -> void:
-	
-	pass
-
 func on_triggered():
 	if(event_id!=""):
-		SignalBus.execute_event.emit(event_id)		
+		SignalBus.execute_event.emit(event_id,false)		
 	pass
 
 func _on_event_wating(event_id:String):

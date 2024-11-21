@@ -1,5 +1,7 @@
 extends CanvasLayer
 @onready var pistola = $pistola
+const PISTOLA_DINERO = preload("res://assets/sprites/Puzles/caja fuerte/pistola_dinero.png")
+
 @export var event_id = ""
 @onready var CFpistola = $cajaFuerteAbierta/pistola
 @onready var caja_fuerte_abierta = $cajaFuerteAbierta
@@ -17,8 +19,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(resultado.text)
-	
+	#print(resultado.text)
+	pass
 
 
 
@@ -31,7 +33,8 @@ func _on__pressed(character):
 		comprobarCodigo(resultado.text)
 	elif character == "PISTOLA":#interactua con la pistola
 		CFpistola.queue_free()#eliminamos el boton
-		SignalBus.zoom_item.emit(preload("res://icon.svg"),200,4,100)
+		GameManager.caja_fuerte = true
+		SignalBus.zoom_item.emit(PISTOLA_DINERO,200,4,100)
 		#pistola.visible = true#muestra la puistola obtenida
 		##fin de scene
 	elif resultado.text.length() >= tamanioCodigo:#comprueva k no supere el limite

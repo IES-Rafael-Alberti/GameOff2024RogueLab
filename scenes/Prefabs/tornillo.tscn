@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://2jvwv2uig8ff"]
 
-[ext_resource type="Texture2D" uid="uid://dwyis0bvembc0" path="res://assets/sprites/Puzles/puzle2-rejilla/tornillo-derecha.png" id="1_sn0qk"]
-[ext_resource type="Script" path="res://scripts/tornillos.gd" id="2_gwsew"]
+[ext_resource type="Texture2D" uid="uid://dfejfq3crqtmb" path="res://assets/sprites/Puzles/puzle2-rejilla/tornillo.png" id="1_akwsm"]
+[ext_resource type="Script" path="res://scripts/tornillos.gd" id="2_xd6a6"]
 
 [sub_resource type="Animation" id="Animation_4rhqy"]
 length = 0.001
@@ -40,14 +40,14 @@ _data = {
 "rotar": SubResource("Animation_w02yb")
 }
 
-[node name="tornilloDerecho" type="TextureButton"]
+[node name="tornillo" type="TextureButton"]
 offset_right = 10.0
 offset_bottom = 10.0
 pivot_offset = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("1_sn0qk")
-script = ExtResource("2_gwsew")
+texture_normal = ExtResource("1_akwsm")
+script = ExtResource("2_xd6a6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
