@@ -1,4 +1,5 @@
 extends CanvasLayer
+@onready var rejilla_sin_pastis: Sprite2D = $"Rejilla-sin-pastis"
 
 @onready var rejilla_sin_tornillos = $"Rejilla-sin-tornillos"
 @onready var pastillasButton = $"Rejilla-sin-pastis/pastillas"
@@ -36,6 +37,7 @@ func _on__pressed(character):
 
 func comprobarTornillos():
 	if tornillosQuitados == 4:
+		rejilla_sin_pastis.visible = true
 		rejilla_sin_tornillos.queue_free()
 		#rejilla_sin_tornillos_existe = false
 		#print("rejilla_sin_tornillos: " + str(rejilla_sin_tornillos_existe))
