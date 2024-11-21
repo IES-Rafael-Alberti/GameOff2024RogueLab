@@ -1,5 +1,6 @@
 extends TextureButton
 
+@onready var puzzle_mapa_atraco: CanvasLayer = $"../.."
 
 
 var pesionando: bool = false
@@ -21,6 +22,7 @@ func _process(delta: float) -> void:
 
 func _on_button_up() -> void:
 	pesionando = false
+	puzzle_mapa_atraco.comprobarPosicion()
 	print("_on_button_up()")
 
 

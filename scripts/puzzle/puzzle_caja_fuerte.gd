@@ -33,6 +33,7 @@ func _on__pressed(character):
 		comprobarCodigo(resultado.text)
 	elif character == "PISTOLA":#interactua con la pistola
 		CFpistola.queue_free()#eliminamos el boton
+		GameManager.caja_fuerte = true
 		SignalBus.zoom_item.emit(PISTOLA_DINERO,200,4,100)
 		#pistola.visible = true#muestra la puistola obtenida
 		##fin de scene

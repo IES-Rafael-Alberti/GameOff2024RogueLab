@@ -40,33 +40,40 @@ var condiciones: Array = [
 # Lógica principal
 func _process(delta: float) -> void:
 	
-	#region condiciones del completado
-	if not condiciones.has(false):  # Verifica que no haya ningún `false`
-		print("¡Todas las condiciones son verdaderas!")
-		complete()
-		
-		
-		
-		
-	#endregion
-	
-	
-	#region colocacion
-	#posiciona las piezzas en su sitio correspondiente
-	for i in piezas.size():
-		var pieza = piezas[i]
-		var marker = markers[i]
-		
-		
-		# Verifica si la pieza no está siendo presionada y está cerca del marcador
-		if not pieza.pesionando and pieza.global_position.distance_to(marker.global_position - (Vector2(pieza.size*pieza.scale / 2))) < distanciaDeInteraccion:
-			pieza.global_position = marker.global_position - (Vector2(pieza.size*pieza.scale / 2))
-			condiciones[i] = true
-			print("Pieza %d colocada correctamente" % (i + 1))
-		else:
-			condiciones[i] = false
-	#endregion
+	##region condiciones del completado
+	#if not condiciones.has(false):  # Verifica que no haya ningún `false`
+		#print("¡Todas las condiciones son verdaderas!")
+		#complete()
+		#
+	##endregion
+	pass
 	
 func complete():
+	GameManager.mapa = true
+	SignalBus.zoom_item.emit(PUZLE_ATRACO,200,4,100)
+
+#comprueva si esta la pieza en su sitio
+func comprobarPosicion():
+	#region colocacion
+		#posiciona las piezzas en su sitio correspondiente
+		for i in piezas.size():
+			var pieza = piezas[i]
+			var marker = markers[i]
+			
+			
+			# Verifica si la pieza no está siendo presionada y está cerca del marcador
+			if not pieza.pesionando and pieza.global_position.distance_to(marker.global_position - (Vector2(pieza.size*pieza.scale / 2))) < distanciaDeInteraccion:
+				pieza.global_position = marker.global_position - (Vector2(pieza.size*pieza.scale / 2))
+				condiciones[i] = true
+				print("Pieza %d colocada correctamente" % (i + 1))
+				
+				#region condiciones del completado
+				if not condiciones.has(false):  # Verifica que no haya ningún `false`
+					print("¡Todas las condiciones son verdaderas!")
+					complete()
+					
+				#endregion
+			else:
+				condiciones[i] = false
+		#endregion
 	
-		SignalBus.zoom_item.emit(PUZLE_ATRACO,200,4,100)

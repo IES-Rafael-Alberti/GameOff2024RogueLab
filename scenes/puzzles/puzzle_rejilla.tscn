@@ -25,11 +25,13 @@ texture_normal = ExtResource("4_pf470")
 numero = "PASTILLAS"
 
 [node name="Rejilla-sin-tornillos" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(479, 272)
 scale = Vector2(4, 4)
 texture = ExtResource("5_tothm")
 
 [node name="tornillos" type="Node2D" parent="."]
+visible = false
 
 [node name="tornillo" parent="tornillos" instance=ExtResource("7_fxspc")]
 offset_left = 224.0
