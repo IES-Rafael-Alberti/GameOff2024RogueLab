@@ -1,7 +1,11 @@
 extends CanvasLayer
 
+@export var event_id = ""
+
 @export var distanciaDeInteraccion: float = 50
-@onready var mapa_completado = $mapaCompletado
+
+const PUZLE_ATRACO = preload("res://assets/sprites/Puzles/puzle_atraco/puzle_atraco.png")
+
 
 # Arrays para las piezas y sus marcadores correspondientes
 @onready var piezas: Array = [
@@ -40,7 +44,10 @@ func _process(delta: float) -> void:
 	#region condiciones del completado
 	if not condiciones.has(false):  # Verifica que no haya ningún `false`
 		print("¡Todas las condiciones son verdaderas!")
-		mapa_completado.visible = true
+		complete()
+		
+		
+		
 		
 	#endregion
 	
@@ -60,3 +67,7 @@ func _process(delta: float) -> void:
 		else:
 			condiciones[i] = false
 	#endregion
+	
+func complete():
+	
+		SignalBus.zoom_item.emit(PUZLE_ATRACO,200,4,100)

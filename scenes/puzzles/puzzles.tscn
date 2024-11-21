@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdtljaux3f3i1"]
+[gd_scene load_steps=6 format=3 uid="uid://cdtljaux3f3i1"]
 
 [ext_resource type="Script" path="res://scripts/puzzle/puzzles.gd" id="1_d3p88"]
 [ext_resource type="PackedScene" uid="uid://b7o2r2hgpxo7e" path="res://scenes/puzzles/puzzle_fotos_estanteria.tscn" id="1_jbvj8"]
@@ -19,6 +19,8 @@ event_id = "Ev_Screwdriver"
 
 [node name="puzzle_mapa_atraco" parent="." instance=ExtResource("4_4i0f0")]
 visible = false
+event_id = "TXT_TEST_3"
+
 [node name="Puzzle_caja_fuerte" parent="." instance=ExtResource("4_ugdwm")]
 visible = false
 event_id = "TXT_TEST_1"

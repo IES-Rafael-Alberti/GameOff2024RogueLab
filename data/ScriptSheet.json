@@ -15,6 +15,14 @@
 	"ES": "Sigue funcionando perfectamente",
 	"EN": "It's working"
 },
+ "TXT_TEST_3": {
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "PUZZLE",
+	"NEXT": "TXT_TEST_2",
+	"ES": "puzzle mapa atraco",
+	"EN": "It's working"
+},
   "Ev_01": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
