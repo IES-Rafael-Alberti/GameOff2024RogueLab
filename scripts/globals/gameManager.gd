@@ -2,6 +2,7 @@ extends Node
  
 var player:CharacterBody2D
 const JUGADOR = preload("res://scenes/jugador.tscn")
+const ENDING = preload("res://scenes/Prefabs/Ending.tscn")
 
 var initSpeed = 130
 var interactive:Node2D
@@ -132,7 +133,10 @@ func _on_input_recived():
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			key=true
 		elif interactive.event_id == "TXT_TEST_2" and key:
+			TransitionScreen.transition()
+			await SignalBus.on_transition_finished
 			print("Sal")
+			get_tree().change_scene_to_packed(ENDING)
 			pass
 		
 	pass
