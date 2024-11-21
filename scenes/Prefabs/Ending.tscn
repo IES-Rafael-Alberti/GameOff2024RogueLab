@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://jehepaj4kvcg"]
+[gd_scene load_steps=2 format=3 uid="uid://dqp3w3mh0bjad"]
 
-[ext_resource type="Script" path="res://scripts/dialogs_ui.gd" id="1_o7d2c"]
+[ext_resource type="Script" path="res://scenes/Prefabs/ending.gd" id="1_i3dou"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="EndingLayer" type="CanvasLayer"]
 layer = 10
-script = ExtResource("1_o7d2c")
+script = ExtResource("1_i3dou")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 12

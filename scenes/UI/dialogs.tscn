@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/dialogs_ui.gd" id="1_d7xkf"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="DialogsLayer" type="CanvasLayer"]
 layer = 10
+visible = false
 script = ExtResource("1_d7xkf")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

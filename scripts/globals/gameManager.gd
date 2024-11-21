@@ -2,7 +2,6 @@ extends Node
  
 var player:CharacterBody2D
 const JUGADOR = preload("res://scenes/jugador.tscn")
-const ENDING = preload("res://scenes/Prefabs/Ending.tscn")
 
 var initSpeed = 130
 var interactive:Node2D
@@ -12,7 +11,7 @@ var codigoCajaFuerte:String = "1234"
 
 #variables
 var evento
-
+var language:String = "ES"
 var ItemTexture
 var ItemMaxScale
 var ItemMinScale
@@ -62,6 +61,9 @@ func get_player():
 		player.position.y+=45
 	
 	return player
+	
+func get_key():
+	return self.key	
 
 func eventHandler():
 	get_event_from_interactive()
@@ -123,13 +125,15 @@ func _on_event_execute(event_id,aux):
 			SignalBus.execute_puzzle.emit(event_id)
 			
 			pass
-		
-		if aux:
-			var aux_event = get_event(event_id)
-			#Dependiendo del idioma ES o EN
-			SignalBus.execute_dialog.emit(aux_event["ES"])
-		else:
-			SignalBus.execute_dialog.emit(evento["ES"])
+		if event_id == "ENDING1" or event_id == "ENDING2":
+			SignalBus.execute_ending.emit(evento["ES"], event_id)
+		else:	
+			if aux:
+				var aux_event = get_event(event_id)
+				#Dependiendo del idioma ES o EN
+				SignalBus.execute_dialog.emit(aux_event["ES"], event_id)
+			else:	
+				SignalBus.execute_dialog.emit(evento["ES"], event_id)
 	pass
 
 func _on_input_recived():
@@ -156,11 +160,6 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			screwdriver=true
-		elif interactive.event_id == "TXT_TEST_2" and key:
-			TransitionScreen.transition()
-			await SignalBus.on_transition_finished
-			print("Sal")
-			get_tree().change_scene_to_packed(ENDING)
-			pass
+		pass
 		
 	pass
