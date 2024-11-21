@@ -11,16 +11,19 @@ script = ExtResource("1_d3p88")
 
 [node name="PuzzleFotosEstanteria" parent="." instance=ExtResource("1_jbvj8")]
 visible = false
-event_id = "Ev_Picture_01"
+event_id = "Ev_Shelve"
+event_id_foto_fran = "Ev_Picture_01"
+event_id_foto_mario = "Ev_Picture_02"
+event_id_foto_rota = "Ev_Picture_03"
 
 [node name="PuzzleRejilla" parent="." instance=ExtResource("3_b623p")]
 visible = false
-event_id = "Ev_Screwdriver"
+event_id = "Ev_Screwdriver_01"
 
 [node name="puzzle_mapa_atraco" parent="." instance=ExtResource("4_4i0f0")]
 visible = false
-event_id = "TXT_TEST_3"
+event_id = "Ev_Blueprint_01"
 
 [node name="Puzzle_caja_fuerte" parent="." instance=ExtResource("4_ugdwm")]
 visible = false
-event_id = "TXT_TEST_1"
+event_id = "Ev_FirstWardrobe"

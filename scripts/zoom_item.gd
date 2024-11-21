@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 func _zoom_item_execute(texture,textureMaxSize,textureMinSize,speed):
 	show()
 	GameManager.zoomItem=true
+	texture_item.texture = texture
 	self.textureMaxSize=textureMaxSize
 	self.textureMinSize=textureMinSize
 	self.texture_item.texture=texture

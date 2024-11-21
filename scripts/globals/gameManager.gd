@@ -126,7 +126,7 @@ func _on_input_recived():
 		pass
 	
 	if !zoomItem:
-		if interactive.event_id == "Ev_Corpse2":
+		if interactive.event_id == "Ev_Corpse_02":
 			print("Llave")
 			ItemTexture=preload( "res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png")
 			ItemMaxScale=64*3
