@@ -83,15 +83,15 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "Ev_Grill_02",
+	"NEXT": "",
 	"ES": "¿Quién habrá escondido unas pastillas ahí?",
 	"EN": "This key seems to be for the apartment entrance…"
   },
   "Ev_Grill_02": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "NONE",
-	"NEXT": "Ev_Grill_03",
+	"EVENT_CONDITION": "PUZZLE",
+	"NEXT": "Ev_Screwdriver_01",
 	"ES": "Necesito algo para poder abrirlo",
 	"EN": "I need something to open it..."
   },
@@ -187,7 +187,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "PUZZLE",
-	"NEXT": "Ev_Blueprint_02",
+	"NEXT": "",
 	"ES": "Parece que forma algún tipo de plano.",
 	"EN": "Looks like some kind of blueprint."
   },
@@ -202,8 +202,8 @@
   "Ev_Screwdriver_01": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "PUZZLE",
-	"NEXT": "",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_Grill_02",
 	"ES": "Que raro... parece que hay algo ahí... \nCreo que necesitaré un destornillador para esto.",
 	"EN": "That weird... seems that there is something... \nI think that I need a screwdriver for this"
   },

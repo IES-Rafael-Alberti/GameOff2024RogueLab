@@ -12,6 +12,10 @@ var canExit=true
 @export var event_id_foto_fran=""
 @export var event_id_foto_mario=""
 @export var event_id_foto_rota=""
+@export var event_id_foto_rota_trasera=""
+@export var event_id_recoger_foto1=""
+@export var event_id_recoger_foto2=""
+
 
 func _ready() -> void:
 	SignalBus.wait_input.connect(_on_input_recieved)
@@ -57,5 +61,5 @@ func _on_input_recieved():
 func _on_esquina_rota_pressed() -> void:
 	print("Rota trasera "+event_id)
 	SignalBus.zoom_item.emit(FOTO_ROTA_TRASERA,900,100,1000)
-	SignalBus.execute_event.emit(event_id_foto_rota,true)
+	SignalBus.execute_event.emit(event_id_foto_rota_trasera,true)
 	pass # Replace with function body.
