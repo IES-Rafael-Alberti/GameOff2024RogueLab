@@ -7,7 +7,6 @@ extends CanvasLayer
 const PUZLE_ATRACO = preload("res://assets/sprites/Puzles/puzle_atraco/puzle_atraco.png")
 
 
-@export var event_id=""
 
 # Arrays para las piezas y sus marcadores correspondientes
 @onready var piezas: Array = [

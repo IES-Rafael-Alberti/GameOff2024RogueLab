@@ -629,7 +629,7 @@ event_id = "Ev_FirstWardrobe"
 [node name="MapaAtraco" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(13, 71)
 scale = Vector2(0.459967, 1.21692)
-event_id = "TXT_TEST_3"
+event_id = "Ev_Blueprint_01"
 
 [node name="Corpse" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(360, 29)
