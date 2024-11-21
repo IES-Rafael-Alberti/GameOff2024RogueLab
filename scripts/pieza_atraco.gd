@@ -22,7 +22,8 @@ func _process(delta: float) -> void:
 
 func _on_button_up() -> void:
 	pesionando = false
-	puzzle_mapa_atraco.comprobarPosicion()
+	var marcador = puzzle_mapa_atraco.comprobarMarcador(self)
+	puzzle_mapa_atraco.comprobarPosicion(self, marcador)
 	print("_on_button_up()")
 
 
