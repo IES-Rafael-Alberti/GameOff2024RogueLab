@@ -21,7 +21,7 @@ func _ready():
 	
 	#conecto la señal creada en SignalBus.gd a la funcion _on__pressed
 	SignalBus.input_rejilla.connect(_on__pressed) 
-	
+	SignalBus.wait_input.connect(_on_input_recived)
 
 
 #funcion para cada tecla
@@ -32,8 +32,14 @@ func _on__pressed(character):
 		GameManager.rejilla = true
 		SignalBus.zoom_item.emit(PASTILLAS_64X_64,200,4,100)
 		
-	
 
+func _on_input_recived():
+	print("input recieved")
+	if GameManager.puzzleLayer==self :
+		if !GameManager.DialogVisible and !GameManager.zoomItem:
+			SignalBus.puzzle_exit.emit(self)
+	pass
+	
 func comprobarTornillos():
 	if tornillosQuitados == 4:
 		rejilla_sin_tornillos.queue_free()
