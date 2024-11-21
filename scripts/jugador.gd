@@ -2,6 +2,7 @@ extends CharacterBody2D
 # variables
 
 var required
+var estado:String = ""
 
 # variables para diseñador
 @export var SPEED = 130
@@ -22,21 +23,20 @@ func _physics_process(delta):
 	#region menu de pausa
 	
 	if Input.is_action_just_pressed("escape"):
-		if OptionManager.flagMenuPausa:
-			OptionManager.flagMenuPausa = false
+		if CanvasManager.inPause:
+			CanvasManager.inPause = false
 			CanvasManager.play_resume_pause_menu()
-			print("MenuPausa: " + str(OptionManager.flagMenuPausa) )
+			print("MenuPausa: " + str(CanvasManager.inPause) )
 		else:
-			OptionManager.flagMenuPausa = true
-			GameManager.positionPlayer=position
+			CanvasManager.inPause = true
 			CanvasManager.play_pause_menu()
-			print("MenuPausa: " + str(OptionManager.flagMenuPausa))
+			print("MenuPausa: " + str(CanvasManager.inPause))
 
 	#endregion
 
 	#region interaccion
 		
-	if Input.is_action_just_pressed("interaccion"):	
+	if !CanvasManager.inPause and Input.is_action_just_pressed("interaccion"):	
 		
 		if required:
 			required=false
@@ -76,8 +76,10 @@ func _physics_process(delta):
 			if direccionHorizontal != 0:
 				if direccionHorizontal > 0: #el if este esta implementado por el movimiento con el joistic
 					velocity.x = 1 * SPEED
+					estado = ""
 				else:
 					velocity.x = -1 * SPEED
+					estado = ""
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 			# Desacelera el eje Y para mantener solo el movimiento en X
@@ -86,10 +88,13 @@ func _physics_process(delta):
 		elif ultima_direccion == "vertical":
 			# Si la última entrada fue vertical, mueve solo en el eje Y
 			if directionVertical != 0:
+				print(directionVertical)
 				if directionVertical > 0: #el if este esta implementado por el movimiento con el joistic
 					velocity.y = 1 * SPEED
+					estado = ""
 				else:
 					velocity.y = -1 * SPEED
+					estado = "UP"
 			else:
 				velocity.y = move_toward(velocity.y, 0, SPEED)
 			
@@ -106,7 +111,10 @@ func _physics_process(delta):
 		#region control de animaciones de movimiento
 		
 		if directionVertical == 0 and direccionHorizontal == 0:
-			animated_sprite_2d.play("idle")
+			if estado == "UP":
+				animated_sprite_2d.play("idleUp")
+			else:
+				animated_sprite_2d.play("idle")
 		elif ultima_direccion == "horizontal":
 			animated_sprite_2d.play("walk")
 			# Cambia la dirección del sprite según la dirección que toma el personaje
@@ -116,10 +124,8 @@ func _physics_process(delta):
 				animated_sprite_2d.flip_h = false  # Voltear el sprite horizontalmente
 		
 		elif ultima_direccion == "vertical":
-			if directionVertical > 0:
-				animated_sprite_2d.play("walkFront")
-			elif directionVertical < 0:
-				animated_sprite_2d.play("WalkUp")
+			animated_sprite_2d.play("walkFront")
+		
 		
 		#endregion
 		

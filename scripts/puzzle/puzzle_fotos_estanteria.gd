@@ -4,7 +4,7 @@ const FOTO_MARIO_PEQUE_O = preload("res://assets/sprites/Puzles/puzle4_fotos/fot
 const FOTO_ROTA = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_rota.png")
 const FOTO_FRAN_PEQUE_O = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_fran_pequeño.png")
 
-var canExit
+var canExit=true
 
 @export var event_id=""
 
@@ -25,7 +25,7 @@ func _on_zoom_out(texture):
 func _on_francesco_foto_button_pressed() -> void:
 	print("Francesco")
 	SignalBus.zoom_item.emit(FOTO_FRAN_PEQUE_O,900,100,1000)
-	SignalBus.execute_event.emit(event_id_foto_fran)
+	SignalBus.execute_event.emit(event_id_foto_fran,true)
 	pass 
 
 
@@ -33,21 +33,21 @@ func _on_francesco_foto_button_pressed() -> void:
 func _on_mario_foto_button_pressed() -> void:
 	print("Mario")
 	SignalBus.zoom_item.emit(FOTO_MARIO_PEQUE_O,900,100,1000)
-	SignalBus.execute_event.emit(event_id_foto_mario)
+	SignalBus.execute_event.emit(event_id_foto_mario,true)
 	pass 
 
 
 
 func _on_foto_rota_button_pressed() -> void:
-	print("Rota")
+	print("Rota "+event_id)
 	SignalBus.zoom_item.emit(FOTO_ROTA,900,100,1000)
-	SignalBus.execute_event.emit(event_id_foto_rota)
-	#SignalBus.execute_event.emit(DataManager.scriptData.get(event_id)["NEXT"])
+	SignalBus.execute_event.emit(event_id_foto_rota,true)
+	#SignalBus.execute_event.emit(DataManager.scriptData.get(event_id_foto_rota)["NEXT"])
 	
 	pass 
 
 func _on_input_recieved():
-	if GameManager.puzzleLayer==self and canExit:
+	if GameManager.puzzleLayer==self :
 		if !GameManager.DialogVisible and !GameManager.zoomItem:
 			SignalBus.puzzle_exit.emit(self)
 	pass

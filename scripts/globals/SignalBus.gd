@@ -1,5 +1,5 @@
 extends Node
-signal execute_event(event_id:String)
+signal execute_event(event_id:String,aux:bool)
 signal event_waiting(event_id:String)
 signal execute_dialog(text:String)
 signal execute_canvas_option(canvas_options:String)

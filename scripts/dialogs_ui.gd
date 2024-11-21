@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 
 
 func _on_execute_dialog(text:String):
-	#print("Dialogo: "+text)
+	print("Dialogo: "+text)
 	lines = text.split("\n")
 	label.text=lines[0]
 	label.lines_skipped=0
