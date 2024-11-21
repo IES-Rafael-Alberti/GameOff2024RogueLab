@@ -113,7 +113,7 @@ func _physics_process(delta):
 		
 		if directionVertical == 0 and direccionHorizontal == 0:
 			if estado == "UP":
-				animated_sprite_2d.play("walk")
+				animated_sprite_2d.play("idleUp")
 			else:
 				animated_sprite_2d.play("idle")
 		elif ultima_direccion == "horizontal":
