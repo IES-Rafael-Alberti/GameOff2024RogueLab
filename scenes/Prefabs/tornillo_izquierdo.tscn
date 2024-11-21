@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfdrof1bnnufs"]
 
-[ext_resource type="Texture2D" uid="uid://dohj0kbnoqrc1" path="res://assets/sprites/Puzles/puzle2-rejilla/tornillo-izquierda.png" id="1_bkmn5"]
+[ext_resource type="Texture2D" uid="uid://c1kemxf7hr6y6" path="res://assets/sprites/Puzles/puzle2-rejilla/tornillo-izquierda.png" id="1_bkmn5"]
 [ext_resource type="Script" path="res://scripts/tornillos.gd" id="2_3fuiu"]
 
 [sub_resource type="Animation" id="Animation_4rhqy"]
