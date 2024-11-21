@@ -13,6 +13,7 @@ func _ready() -> void:
 	
 	
 func _on_puzzle_execute(event_id):
+	print(event_id)
 	if(GameManager.puzzleLayer==null):
 		for child in childrens:
 			if child.event_id == event_id:

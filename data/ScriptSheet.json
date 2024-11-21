@@ -2,345 +2,345 @@
   "TXT_TEST_1": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "PUZZLE",
-	"NEXT": "TXT_TEST_1",
-	"ES": "Hola esto es una prueba de si funciona ahora esto es un texto largo para poder comprobar si al pasar de linea funciona \ncorrectamente aunque estoy seguro de que si porque soy un crack",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "TXT_TEST_2",
+	"ES": "Hola esto es una prueba de si funciona",
 	"EN": "Hello this is a test"
   },
   "TXT_TEST_2": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "TXT_TEST_2",
+	"NEXT": "",
 	"ES": "Sigue funcionando perfectamente",
 	"EN": "It's working"
-},
+  },
   "Ev_01": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "TRIGGER",
-    "NEXT": "Ev_02",
-    "ES": "Ahh, estoy hecho mierda... Necesito algo para este dolor de cabeza... \n...\n¿Dónde coño estoy?",
-    "EN": "Ahh, I feel like shit... I need something for this headache... \n...\nWhere the hell am I?"
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "TRIGGER",
+	"NEXT": "Ev_02",
+	"ES": "Ahh, estoy hecho mierda... Necesito algo para este dolor de cabeza... \n...\n¿Dónde coño estoy?",
+	"EN": "Ahh, I feel like shit... I need something for this headache... \n...\nWhere the hell am I?"
   },
   "Ev_02": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "¿Qué mierda?... ¿Qué esto? ¿Un cadáver?…",
-    "EN": "Damn?! What is this? is a corpse?…"
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "¿Qué mierda?... ¿Qué esto? ¿Un cadáver?…",
+	"EN": "Damn?! What is this? is a corpse?…"
   },
   "Ev_02_TV_01": {
-    "SHADER_OPTIONS": "TV",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "TRIGGER",
-    "NEXT": "Ev_02_TV_02",
-    "ES": "¿Qué es ese ruido?",
-    "EN": "What is that noise?"
+	"SHADER_OPTIONS": "TV",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "TRIGGER",
+	"NEXT": "Ev_02_TV_02",
+	"ES": "¿Qué es ese ruido?",
+	"EN": "What is that noise?"
   },
   "Ev_02_TV_02": {
-    "SHADER_OPTIONS": "TV",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "Ev_02_TV_02",
-    "ES": "Siguen las búsquedas de los 2 atracadores a los que se les relaciona con 15 asesinatos... estas son las imágenes que nos ha proporcionado el departamento de policía…",
-    "EN": "The search continues for the two robbers linked to 15 murders... these are the images provided to us by the departament police..."
+	"SHADER_OPTIONS": "TV",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_02_TV_02",
+	"ES": "Siguen las búsquedas de los 2 atracadores a los que se les relaciona con 15 asesinatos... estas son las imágenes que nos ha proporcionado el departamento de policía…",
+	"EN": "The search continues for the two robbers linked to 15 murders... these are the images provided to us by the departament police..."
   },
   "Ev_02_TV_03": {
-    "SHADER_OPTIONS": "TV",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Me van a cargar el muerto si me encuentran aquí…",
-    "EN": "They'll pin the blame on me if they find me here…"
+	"SHADER_OPTIONS": "TV",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Me van a cargar el muerto si me encuentran aquí…",
+	"EN": "They'll pin the blame on me if they find me here…"
   },
   "Ev_Corpse_01": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "Ev_Corpse_02",
-    "ES": "El cuerpo tiene algo...",
-    "EN": "The corpse has something..."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_Corpse_02",
+	"ES": "El cuerpo tiene algo...",
+	"EN": "The corpse has something..."
   },
   "Ev_Corpse_02": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "Ev_Corpse_03",
-    "ES": "No es nada personal...",
-    "EN": "It's nothing personal"
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_Corpse_03",
+	"ES": "No es nada personal...",
+	"EN": "It's nothing personal"
   },
   "Ev_Corpse_03": {
-    "SHADER_OPTIONS": "VIGNETTE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Parece de la entrada del piso.",
-    "EN": "Look like flat’s entrance..."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Parece de la entrada del piso.",
+	"EN": "Look like flat’s entrance..."
   },
   "Ev_Grill_01": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "PUZZLE",
-    "NEXT": "Ev_Grill_02",
-    "ES": "¿Quién habrá escondido unas pastillas ahí?",
-    "EN": "This key seems to be for the apartment entrance…"
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_Grill_02",
+	"ES": "¿Quién habrá escondido unas pastillas ahí?",
+	"EN": "This key seems to be for the apartment entrance…"
   },
   "Ev_Grill_02": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "PUZZLE",
-    "NEXT": "Ev_Grill_03",
-    "ES": "Necesito algo para poder abrirlo",
-    "EN": "I need something to open it..."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_Grill_03",
+	"ES": "Necesito algo para poder abrirlo",
+	"EN": "I need something to open it..."
   },
   "Ev_Grill_03": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "PUZZLE",
-    "NEXT": "",
-    "ES": "Necesito callar las voces...",
-    "EN": "I need to silence the voices..."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Necesito callar las voces...",
+	"EN": "I need to silence the voices..."
   },
   "Ev_Shelve": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "TRIGGER",
-    "NEXT": "Ev_Picture_01",
-    "ES": "Que raro, me suenan sus caras...",
-    "EN": "That's weird… These faces look familiar to me."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "PUZZLE",
+	"NEXT": "Ev_Picture_01",
+	"ES": "Que raro, me suenan sus caras...",
+	"EN": "That's weird… These faces look familiar to me."
   },
   "Ev_Picture_01": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "PUZZLE",
-    "NEXT": "Ev_Picture_02",
-    "ES": "Se le ven tan feliz…",
-    "EN": "He looks so happy…"
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Se le ven tan feliz…",
+	"EN": "He looks so happy…"
   },
   "Ev_Picture_02": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "Ev_Picture_03",
+	"NEXT": "",
 	"ES": "A este en cambio se le ve triste…",
 	"EN": "This one, on the other hand, looks sad…"
   },
   "Ev_Picture_03": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "PUZZLE",
-    "NEXT": "Ev_Picture_04",
-    "ES": "Este está roto...",
-    "EN": "This is broken…"
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Este está roto...",
+	"EN": "This is broken…"
   },
   "Ev_Picture_04": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "PUZZLE",
-    "NEXT": "",
-    "ES": "¿Qué es eso que asoma?",
-    "EN": "What’s that sticking out?"
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "¿Qué es eso que asoma?",
+	"EN": "What’s that sticking out?"
   },
   "Ev_FirstBrokenPicture_01": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "TRIGGER",
-    "NEXT": "Ev_FirstBrokenPicture_02",
-    "ES": "Parece que alguien la ha roto por la mitad.",
-    "EN": "It looks like someone broke it in two."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_FirstBrokenPicture_02",
+	"ES": "Parece que alguien la ha roto por la mitad.",
+	"EN": "It looks like someone broke it in two."
   },
   "Ev_FirstBrokenPicture_02": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "La otra mitad debe estar por aquí.",
-    "EN": "The other half must be around here somewhere."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "La otra mitad debe estar por aquí.",
+	"EN": "The other half must be around here somewhere."
   },
   "Ev_SecondBrokenPicture_01": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "TRIGGER",
-    "NEXT": "Ev_SecondBrokenPicture_02",
-    "ES": "Esta parece la otra mitad de la foto.",
-    "EN": "This seems to be the other half of the picture."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_SecondBrokenPicture_02",
+	"ES": "Esta parece la otra mitad de la foto.",
+	"EN": "This seems to be the other half of the picture."
   },
   "Ev_SecondBrokenPicture_02": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "Ev_SecondBrokenPicture_03",
-    "ES": "Ese tal Mario, lleva la misma ropa que yo...",
-    "EN": "That guy, Mario… He’s wearing the same clothes as me"
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_SecondBrokenPicture_03",
+	"ES": "Ese tal Mario, lleva la misma ropa que yo...",
+	"EN": "That guy, Mario… He’s wearing the same clothes as me"
   },
   "Ev_SecondBrokenPicture_03": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Francesco y él… parecen cercanos.",
-    "EN": "Francesco and he… seem close."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Francesco y él… parecen cercanos.",
+	"EN": "Francesco and he… seem close."
   },
   "Ev_Blueprint_01": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "PUZZLE",
-    "NEXT": "Ev_Blueprint_02",
-    "ES": "Parece que forma algún tipo de plano.",
-    "EN": "Looks like some kind of blueprint."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "PUZZLE",
+	"NEXT": "Ev_Blueprint_02",
+	"ES": "Parece que forma algún tipo de plano.",
+	"EN": "Looks like some kind of blueprint."
   },
   "Ev_Blueprint_02": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "PUZZLE",
-    "NEXT": "",
-    "ES": "Parecen los planos de un robo.",
-    "EN": "Looks like the thieves' plan."
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Parecen los planos de un robo.",
+	"EN": "Looks like the thieves' plan."
   },
   "Ev_Screwdriver_01": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "PUZZLE",
-    "NEXT": "",
-    "ES": "Que raro... parece que hay algo ahí... \nCreo que necesitaré un destornillador para esto.",
-    "EN": "That weird... seems that there is something... \nI think that I need a screwdriver for this"
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "PUZZLE",
+	"NEXT": "",
+	"ES": "Que raro... parece que hay algo ahí... \nCreo que necesitaré un destornillador para esto.",
+	"EN": "That weird... seems that there is something... \nI think that I need a screwdriver for this"
   },
   "Ev_Screwdriver_02": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Con esto puede que consiga abrir la rejilla.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Con esto puede que consiga abrir la rejilla.",
+	"EN": ""
   },
   "Ev_Door_01": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "Ev_Door_02",
-    "ES": "La puerta parece que está cerrada. La llave debe de estar por algún lado.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_Door_02",
+	"ES": "La puerta parece que está cerrada. La llave debe de estar por algún lado.",
+	"EN": ""
   },
   "Ev_Door_02": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Por mucho que lo intente... sigue cerrada.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Por mucho que lo intente... sigue cerrada.",
+	"EN": ""
   },
   "Ev_FirstWardrobe": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "¿Y esto...? Parece ser una caja fuerte...\nNecesitaré un código para abrirla.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "PUZZLE",
+	"NEXT": "",
+	"ES": "¿Y esto...? Parece ser una caja fuerte...\nNecesitaré un código para abrirla.",
+	"EN": ""
   },
   "Ev_SecondWardrobe": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Parece que aquí puede ir el código.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Parece que aquí puede ir el código.",
+	"EN": ""
   },
   "Ev_FirstCode": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Un papel con números... Tal vez pueda servirme de algo.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Un papel con números... Tal vez pueda servirme de algo.",
+	"EN": ""
   },
   "Ev_SecondCode": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Parece que encontré la clave para abrir esa cajita de metal.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Parece que encontré la clave para abrir esa cajita de metal.",
+	"EN": ""
   },
   "Ev_VaultSuccess": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "¡Bingo! Espera, ¿qué?... \n¿Son... las joyas robadas que han mencionado en las noticias?",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "¡Bingo! Espera, ¿qué?... \n¿Son... las joyas robadas que han mencionado en las noticias?",
+	"EN": ""
   },
   "Ev_VaultFailure": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Mierda... Así no sirve...",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Mierda... Así no sirve...",
+	"EN": ""
   },
   "Ev_DNIBefore": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Parece un DNI. ¿Tal vez sea de este tío?",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Parece un DNI. ¿Tal vez sea de este tío?",
+	"EN": ""
   },
   "Ev_DNIAfter": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Así que te llamas Francesco... La foto no parece legible, pero por los cuadros de antes parece ser que eres tú...",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Así que te llamas Francesco... La foto no parece legible, pero por los cuadros de antes parece ser que eres tú...",
+	"EN": ""
   },
   "Ev_Sofa": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Que asco de sofá.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Que asco de sofá.",
+	"EN": ""
   },
   "Ev_Sink": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Alguien no ha limpiado los platos.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Alguien no ha limpiado los platos.",
+	"EN": ""
   },
   "Ev_WC": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "Esperaré a un váter más limpio.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Esperaré a un váter más limpio.",
+	"EN": ""
   },
   "Ev_Fridge": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "No es momento de tomarse una energética.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "No es momento de tomarse una energética.",
+	"EN": ""
   },
   "Ev_TV": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "La tele vuelve a no tener señal.",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "La tele vuelve a no tener señal.",
+	"EN": ""
   },
   "Ev_Mirror": {
-    "SHADER_OPTIONS": "NONE",
-    "CAMERA_OPTIONS": "NONE",
-    "EVENT_CONDITION": "NONE",
-    "NEXT": "",
-    "ES": "¿Quién soy yo?",
-    "EN": ""
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "¿Quién soy yo?",
+	"EN": ""
   }
 }

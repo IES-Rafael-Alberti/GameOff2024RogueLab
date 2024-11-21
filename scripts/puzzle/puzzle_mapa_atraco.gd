@@ -3,6 +3,8 @@ extends CanvasLayer
 @export var distanciaDeInteraccion: float = 50
 @onready var mapa_completado = $mapaCompletado
 
+@export var event_id=""
+
 # Arrays para las piezas y sus marcadores correspondientes
 @onready var piezas: Array = [
 	$piezas/EsquinaSuperiorHizquierda,

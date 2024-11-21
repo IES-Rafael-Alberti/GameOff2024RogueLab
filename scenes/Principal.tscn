@@ -624,12 +624,12 @@ event_id = "TXT_TEST_2"
 [node name="CajaFuerte" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(385, 91)
 scale = Vector2(2.38952, 2.19651)
-event_id = "TXT_TEST_1"
+event_id = "Ev_FirstWardrobe"
 
 [node name="Corpse" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(360, 29)
 scale = Vector2(2.48689, 2.65507)
-event_id = "Ev_Corpse1"
+event_id = "Ev_Corpse_01"
 
 [node name="Pictures" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(-47, 8)
@@ -639,7 +639,7 @@ event_id = "Ev_Shelve"
 [node name="Rejilla" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(257, -4)
 scale = Vector2(1.43894, 0.921395)
-event_id = "Ev_Screwdriver"
+event_id = "Ev_Screwdriver_01"
 
 [node name="Shaders" type="CanvasLayer" parent="."]
 layer = 11
