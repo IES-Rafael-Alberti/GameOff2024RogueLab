@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7o2r2hgpxo7e"]
+[gd_scene load_steps=16 format=3 uid="uid://b7o2r2hgpxo7e"]
 
 [ext_resource type="Texture2D" uid="uid://deydup4oa6ss1" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_vacia_240x135.png" id="1_5h2ek"]
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_fotos_estanteria.gd" id="1_vdajd"]
@@ -25,6 +25,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1ra2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vroj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt1ii"]
 
 [node name="PuzzleFotosEstanteria" type="CanvasLayer"]
 script = ExtResource("1_vdajd")
@@ -113,6 +115,19 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_uske8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y1ra2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1vroj")
 
+[node name="EsquinaRota" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 920.0
+offset_top = 279.0
+offset_right = -2.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bt1ii")
+
 [connection signal="pressed" from="FrancescoFotoButton" to="." method="_on_francesco_foto_button_pressed"]
 [connection signal="pressed" from="MarioFotoButton" to="." method="_on_mario_foto_button_pressed"]
 [connection signal="pressed" from="FotoRotaButton" to="." method="_on_foto_rota_button_pressed"]
+[connection signal="pressed" from="EsquinaRota" to="." method="_on_esquina_rota_pressed"]
