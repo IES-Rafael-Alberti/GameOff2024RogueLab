@@ -602,10 +602,10 @@ expand_mode = 1
 [node name="BackgroundShader" type="TextureRect" parent="."]
 z_index = -14
 material = ExtResource("9_n7lhl")
-offset_left = -277.0
-offset_top = -213.0
-offset_right = 693.0
-offset_bottom = 298.0
+offset_left = -224.0
+offset_top = -110.0
+offset_right = 746.0
+offset_bottom = 401.0
 texture = ExtResource("7_1dy4f")
 expand_mode = 1
 
@@ -632,8 +632,8 @@ scale = Vector2(2.38952, 2.19651)
 event_id = "Ev_FirstWardrobe"
 
 [node name="MapaAtraco" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(13, 71)
-scale = Vector2(0.459967, 1.21692)
+position = Vector2(-7, 71)
+scale = Vector2(2.77997, 1.21692)
 event_id = "Ev_Blueprint_01"
 
 [node name="Corpse" parent="Triggers" instance=ExtResource("5_omke0")]
@@ -650,6 +650,43 @@ event_id = "Ev_Shelve"
 position = Vector2(257, -4)
 scale = Vector2(1.43894, 0.921395)
 event_id = "Ev_Screwdriver_01"
+
+[node name="Elements_Interactive" type="Node2D" parent="."]
+
+[node name="DNI" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
+position = Vector2(320, 10)
+scale = Vector2(1.12916, -0.803552)
+event_id = "Ev_DNI"
+
+[node name="Sofa" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
+position = Vector2(-52, 75)
+scale = Vector2(1.275, 3.3257)
+event_id = "Ev_Sofa"
+
+[node name="Fregadero" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
+position = Vector2(144, 2)
+scale = Vector2(1.62562, 2.70025)
+event_id = "Ev_Sink"
+
+[node name="Vater" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
+position = Vector2(285, 9)
+scale = Vector2(1.21078, 2.17106)
+event_id = "Ev_WC"
+
+[node name="Nevera" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
+position = Vector2(110, 11)
+scale = Vector2(1.626, 3.27352)
+event_id = "Ev_Fridge"
+
+[node name="Television" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
+position = Vector2(5, 3)
+scale = Vector2(2.33078, 2.17106)
+event_id = "Ev_TV"
+
+[node name="Espejo" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
+position = Vector2(225, -7)
+scale = Vector2(1.21078, 2.17106)
+event_id = "Ev_Mirror"
 
 [node name="Shaders" type="CanvasLayer" parent="."]
 layer = 11
