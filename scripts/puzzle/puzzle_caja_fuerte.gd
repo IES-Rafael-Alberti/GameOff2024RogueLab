@@ -1,11 +1,13 @@
 extends CanvasLayer
 @onready var pistola = $pistola
+const PISTOLA_DINERO = preload("res://assets/sprites/Puzles/caja fuerte/pistola_dinero.png")
+
 @export var event_id = ""
 @onready var CFpistola = $cajaFuerteAbierta/pistola
 @onready var caja_fuerte_abierta = $cajaFuerteAbierta
 @onready var resultado = $resultado
 @export var tamanioCodigo: int = 4
-var codigo: String = "1234" #cambiar por codigo de game manager
+var codigo: String = GameManager.codigoCajaFuerte
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,7 +33,7 @@ func _on__pressed(character):
 		comprobarCodigo(resultado.text)
 	elif character == "PISTOLA":#interactua con la pistola
 		CFpistola.queue_free()#eliminamos el boton
-		SignalBus.zoom_item.emit(preload("res://icon.svg"),200,4,100)
+		SignalBus.zoom_item.emit(PISTOLA_DINERO,200,4,100)
 		#pistola.visible = true#muestra la puistola obtenida
 		##fin de scene
 	elif resultado.text.length() >= tamanioCodigo:#comprueva k no supere el limite
