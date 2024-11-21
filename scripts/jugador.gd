@@ -124,8 +124,10 @@ func _physics_process(delta):
 				animated_sprite_2d.flip_h = false  # Voltear el sprite horizontalmente
 		
 		elif ultima_direccion == "vertical":
-			animated_sprite_2d.play("walkFront")
-		
+			if directionVertical > 0:
+				animated_sprite_2d.play("walkFront")
+			elif directionVertical < 0:
+				animated_sprite_2d.play("WalkUp")
 		
 		#endregion
 		
