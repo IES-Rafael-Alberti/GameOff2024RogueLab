@@ -1,7 +1,8 @@
 extends CanvasLayer
+@onready var rejilla_sin_pastis: Sprite2D = $"Rejilla-sin-pastis"
 
 @onready var rejilla_sin_tornillos = $"Rejilla-sin-tornillos"
-
+@onready var pastillasButton = $"Rejilla-sin-pastis/pastillas"
 @onready var rejilla_sin_rejilla = $"Rejilla-sin-rejilla"
 @onready var panel_container = $PanelContainer
 const PASTILLAS_64X_64 = preload("res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png")
@@ -28,6 +29,7 @@ func _ready():
 func _on__pressed(character):
 	print(character)
 	if character == "PASTILLAS":#recarga el resultado
+		pastillasButton.queue_free()
 		GameManager.rejilla = true
 		SignalBus.zoom_item.emit(PASTILLAS_64X_64,200,4,100)
 		
@@ -35,6 +37,7 @@ func _on__pressed(character):
 
 func comprobarTornillos():
 	if tornillosQuitados == 4:
+		rejilla_sin_pastis.visible = true
 		rejilla_sin_tornillos.queue_free()
 		#rejilla_sin_tornillos_existe = false
 		#print("rejilla_sin_tornillos: " + str(rejilla_sin_tornillos_existe))

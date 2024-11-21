@@ -3,6 +3,7 @@ extends CanvasLayer
 const FOTO_MARIO_PEQUE_O = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_mario_pequeño.png")
 const FOTO_ROTA = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_rota.png")
 const FOTO_FRAN_PEQUE_O = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_fran_pequeño.png")
+const FOTO_ROTA_TRASERA = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_rota_trasera.png")
 
 var canExit=true
 
@@ -51,3 +52,10 @@ func _on_input_recieved():
 		if !GameManager.DialogVisible and !GameManager.zoomItem:
 			SignalBus.puzzle_exit.emit(self)
 	pass
+
+
+func _on_esquina_rota_pressed() -> void:
+	print("Rota trasera "+event_id)
+	SignalBus.zoom_item.emit(FOTO_ROTA_TRASERA,900,100,1000)
+	SignalBus.execute_event.emit(event_id_foto_rota,true)
+	pass # Replace with function body.
