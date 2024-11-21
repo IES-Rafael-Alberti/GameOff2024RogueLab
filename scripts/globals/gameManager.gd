@@ -25,7 +25,14 @@ var puzzleLayer:CanvasLayer=null
 #variables objetos
 var key:bool=false
 var screwdriver:bool=false
+var dni:bool
 
+#variable de puzzles
+var rejilla:bool
+var foto_encimera:bool
+var foto_estanteria:bool
+var mapa:bool
+var caja_fuerte:bool
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -134,6 +141,14 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			key=true
+		elif interactive.event_id == "Ev_Screwdriver_02":
+			print("Destornillador")
+			ItemTexture=preload("res://assets/sprites/Puzles/destornillador.png")
+			ItemMaxScale=64*3
+			ItemMinScale=64
+			ItemSpeed=150
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			screwdriver=true
 		elif interactive.event_id == "TXT_TEST_2" and key:
 			print("Sal")
 			pass
