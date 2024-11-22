@@ -66,6 +66,5 @@ func check_endings():
 		TransitionScreen.transition()
 		await SignalBus.on_transition_finished
 		print("Sal")
-		get_tree().change_scene_to_packed(ENDING)
-		SignalBus.execute_event.emit("ENDING1", true)
+		SignalBus.ending_info.emit("ENDING1")
 	pass	
