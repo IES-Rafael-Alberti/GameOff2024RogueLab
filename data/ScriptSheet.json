@@ -235,7 +235,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "PUZZLE",
-	"NEXT": "",
+	"NEXT": "Ev_FirstWardrobe",
 	"ES": "¿Y esto...? Parece ser una caja fuerte...\nNecesitaré un código para abrirla.",
 	"EN": "What is this?... It like and safe box.\nI will need the code to open it."
   },

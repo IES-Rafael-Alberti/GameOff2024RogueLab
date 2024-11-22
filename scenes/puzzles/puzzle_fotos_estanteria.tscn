@@ -135,7 +135,6 @@ texture = ExtResource("1_5h2ek")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 visible = false
-anchors_preset = -1
 offset_left = 301.0
 offset_top = 41.0
 offset_right = 550.78
