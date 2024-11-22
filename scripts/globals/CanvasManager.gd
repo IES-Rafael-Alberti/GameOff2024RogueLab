@@ -13,12 +13,14 @@ var pause_menu
 var option_menu
 var main_scene
 var dialog_canvas
+var ending_canvas
 
 const MAIN_MENU = preload("res://scenes/UI/main_menu.tscn")
 const PAUSE_MENU = preload("res://scenes/UI/pause_menu.tscn")
 const OPTION_MENU = preload("res://scenes/UI/option_menu.tscn")
 
 const DIALOGS = preload("res://scenes/UI/dialogs.tscn")
+const ENDING = preload("res://scenes/Prefabs/Ending.tscn")
 
 const MAIN_SCENE= preload("res://scenes/Principal.tscn")
 
@@ -40,10 +42,14 @@ func set_black_and_white_effect(action:bool):
 	pass
 
 func _ready() -> void:
-	play_main_menu()
+	#play_main_menu()
 	pass
 
 func play_main_menu():
+	call_deferred("changeScene")
+	pass
+
+func changeScene():
 	get_tree().change_scene_to_packed(MAIN_MENU)
 	pass
 
@@ -64,6 +70,13 @@ func instanciate_dialog():
 		get_tree().current_scene.add_child(dialog_canvas)
 		pass
 	dialog_canvas.hide()
+	
+func instantiate_ending():
+	if ending_canvas == null:
+		ending_canvas = ENDING.instantiate()
+		get_tree().current_scene.add_child(ending_canvas)
+		pass
+	ending_canvas.hide()
 
 func play_resume_pause_menu():
 	pause_menu.visible=false 

@@ -1,9 +1,8 @@
 extends CharacterBody2D
 # variables
-var interactionObject #objeto que se recive
-var flagInteractuando = false #indicador si se esta interactuando o no
 
-
+var required
+var estado:String = ""
 
 # variables para diseñador
 @export var SPEED = 130
@@ -24,32 +23,38 @@ func _physics_process(delta):
 	#region menu de pausa
 	
 	if Input.is_action_just_pressed("escape"):
-		CanvasManager.alternate_pause()
+		if CanvasManager.inPause:
+			CanvasManager.inPause = false
+			CanvasManager.play_resume_pause_menu()
+			print("MenuPausa: " + str(CanvasManager.inPause) )
+		else:
+			CanvasManager.inPause = true
+			CanvasManager.play_pause_menu()
+			print("MenuPausa: " + str(CanvasManager.inPause))
 
 	#endregion
 
 	#region interaccion
 		
-	if GameManager.interactive != null:
-		if Input.is_action_just_pressed("interaccion"):
-			if flagInteractuando == true:
-				SignalBus.wait_input.emit()
-				flagInteractuando = false
-				pass
-			else:
-				GameManager.interactive.on_triggered()
-				pass
-			pass
+	if !CanvasManager.inPause and Input.is_action_just_pressed("interaccion"):	
+		
+		if required:
+			required=false
+			SignalBus.wait_input.emit()
+		pass
 	
 	#endregion
 
 	#region movimiento
 
-	if flagInteractuando:
+	if (GameManager.puzzleLayer!=null or GameManager.DialogVisible) or CanvasManager.inPause:
+		velocity.x=0
+		velocity.y=0
 		pass
 	
 	else :
 		
+			
 		# Obtiene la dirección de entrada y maneja el movimiento/desaceleración
 		var direccionHorizontal = Input.get_axis("left", "right")
 		var directionVertical = Input.get_axis("up", "down")
@@ -71,8 +76,10 @@ func _physics_process(delta):
 			if direccionHorizontal != 0:
 				if direccionHorizontal > 0: #el if este esta implementado por el movimiento con el joistic
 					velocity.x = 1 * SPEED
+					estado = ""
 				else:
 					velocity.x = -1 * SPEED
+					estado = ""
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 			# Desacelera el eje Y para mantener solo el movimiento en X
@@ -81,10 +88,13 @@ func _physics_process(delta):
 		elif ultima_direccion == "vertical":
 			# Si la última entrada fue vertical, mueve solo en el eje Y
 			if directionVertical != 0:
+				#print(directionVertical)
 				if directionVertical > 0: #el if este esta implementado por el movimiento con el joistic
 					velocity.y = 1 * SPEED
+					estado = ""
 				else:
 					velocity.y = -1 * SPEED
+					estado = "UP"
 			else:
 				velocity.y = move_toward(velocity.y, 0, SPEED)
 			
@@ -101,7 +111,10 @@ func _physics_process(delta):
 		#region control de animaciones de movimiento
 		
 		if directionVertical == 0 and direccionHorizontal == 0:
-			animated_sprite_2d.play("idle")
+			if estado == "UP":
+				animated_sprite_2d.play("idleUp")
+			else:
+				animated_sprite_2d.play("idle")
 		elif ultima_direccion == "horizontal":
 			animated_sprite_2d.play("walk")
 			# Cambia la dirección del sprite según la dirección que toma el personaje
@@ -111,8 +124,10 @@ func _physics_process(delta):
 				animated_sprite_2d.flip_h = false  # Voltear el sprite horizontalmente
 		
 		elif ultima_direccion == "vertical":
-			animated_sprite_2d.play("walkFront")
-		
+			if directionVertical > 0:
+				animated_sprite_2d.play("walkFront")
+			elif directionVertical < 0:
+				animated_sprite_2d.play("WalkUp")
 		
 		#endregion
 		
@@ -121,15 +136,10 @@ func _physics_process(delta):
 	#endregion
 	
 	
-	
-	
-	
-	
-	
 	# Mueve al personaje usando la física
 	move_and_slide()
 
 
 func  _on_input_required():
-	flagInteractuando=true
+	required=true
 	pass

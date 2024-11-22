@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdtljaux3f3i1"]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzles.gd" id="1_d3p88"]
+[ext_resource type="PackedScene" uid="uid://b7o2r2hgpxo7e" path="res://scenes/puzzles/puzzle_fotos_estanteria.tscn" id="1_jbvj8"]
+[ext_resource type="PackedScene" uid="uid://dhs180cnfuqmr" path="res://scenes/puzzles/puzzle_rejilla.tscn" id="3_b623p"]
+[ext_resource type="PackedScene" uid="uid://e6vos4yr7bpq" path="res://scenes/puzzles/puzzle_mapa_atraco.tscn" id="4_4i0f0"]
+[ext_resource type="PackedScene" uid="uid://dqm6q0g8uqrjn" path="res://scenes/puzzles/puzzle_caja_fuerte.tscn" id="4_ugdwm"]
+
+[node name="Puzzles" type="Node"]
+script = ExtResource("1_d3p88")
+
+[node name="PuzzleFotosEstanteria" parent="." instance=ExtResource("1_jbvj8")]
+visible = false
+event_id = "Ev_Shelve"
+event_id_foto_fran = "Ev_Picture_01"
+event_id_foto_mario = "Ev_Picture_02"
+event_id_foto_rota = "Ev_Picture_03"
+
+[node name="PuzzleRejilla" parent="." instance=ExtResource("3_b623p")]
+visible = false
+event_id = "Ev_Grill_02"
+event_id_screwdriver = "Ev_Grill_01"
+event_id_pastillas = "Ev_Grill_03"
+
+[node name="puzzle_mapa_atraco" parent="." instance=ExtResource("4_4i0f0")]
+visible = false
+event_id = "Ev_Blueprint_01"
+event_id_atraco = "Ev_Blueprint_02"
+
+[node name="Puzzle_caja_fuerte" parent="." instance=ExtResource("4_ugdwm")]
+visible = false
+event_id = "Ev_FirstWardrobe"
+event_id_success = "Ev_VaultSuccess"
+event_id_failure = "Ev_VaultFailure"

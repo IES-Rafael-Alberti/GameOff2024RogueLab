@@ -34,11 +34,13 @@ GameManager="*res://scripts/globals/gameManager.gd"
 OptionManager="*res://scripts/globals/optionManager.gd"
 CanvasManager="*res://scripts/globals/CanvasManager.gd"
 DataManager="*res://scripts/globals/DataManager.gd"
+TransitionScreen="*res://scenes/UI/TransitionScreen.tscn"
 
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

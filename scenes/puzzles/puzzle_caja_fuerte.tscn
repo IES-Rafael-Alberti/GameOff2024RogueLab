@@ -1,0 +1,166 @@
+[gd_scene load_steps=18 format=3 uid="uid://dqm6q0g8uqrjn"]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_caja_fuerte.gd" id="1_7dboa"]
+[ext_resource type="Texture2D" uid="uid://c0f4w82r8i16a" path="res://assets/sprites/Puzles/caja fuerte/caja_fuerte.png" id="1_73d0e"]
+[ext_resource type="PackedScene" uid="uid://bfb3rby1lilfu" path="res://scenes/Prefabs/button.tscn" id="3_m2iiv"]
+[ext_resource type="Texture2D" uid="uid://djn2nrodw742b" path="res://assets/sprites/Puzles/caja fuerte/0.png" id="4_4sq3f"]
+[ext_resource type="Texture2D" uid="uid://dvoqj3xo30q3p" path="res://assets/sprites/Puzles/caja fuerte/1.png" id="5_u808u"]
+[ext_resource type="Texture2D" uid="uid://yhxxy21n8ol4" path="res://assets/sprites/Puzles/caja fuerte/2.png" id="6_wcmy3"]
+[ext_resource type="Texture2D" uid="uid://cn0uf15q4x7sx" path="res://assets/sprites/Puzles/caja fuerte/3.png" id="7_jna3r"]
+[ext_resource type="Texture2D" uid="uid://b0cbw7u7yib8i" path="res://assets/sprites/Puzles/caja fuerte/4.png" id="8_5u5lo"]
+[ext_resource type="Texture2D" uid="uid://c3svm87clv1pt" path="res://assets/sprites/Puzles/caja fuerte/5.png" id="9_mx5vi"]
+[ext_resource type="Texture2D" uid="uid://dyeo1pcegame8" path="res://assets/sprites/Puzles/caja fuerte/6.png" id="10_7bo4p"]
+[ext_resource type="Texture2D" uid="uid://0x31jcilx2wt" path="res://assets/sprites/Puzles/caja fuerte/7.png" id="11_x6s0y"]
+[ext_resource type="Texture2D" uid="uid://bnekf1imch2ad" path="res://assets/sprites/Puzles/caja fuerte/8.png" id="12_3craj"]
+[ext_resource type="Texture2D" uid="uid://colnrs6j4nrak" path="res://assets/sprites/Puzles/caja fuerte/borrar.png" id="12_t33hh"]
+[ext_resource type="Texture2D" uid="uid://xv7ayq4ghika" path="res://assets/sprites/Puzles/caja fuerte/enter.png" id="13_8j640"]
+[ext_resource type="Texture2D" uid="uid://cvdfcghob2tf8" path="res://assets/sprites/Puzles/caja fuerte/9.png" id="13_dqnmf"]
+[ext_resource type="Texture2D" uid="uid://m46joef1s360" path="res://assets/sprites/Puzles/caja fuerte/caja_fuerte_abierta_sin_nada.png" id="16_qtd77"]
+[ext_resource type="Texture2D" uid="uid://v4dpneacccuk" path="res://assets/sprites/Puzles/caja fuerte/pistola_dinero.png" id="17_e31n1"]
+
+[node name="Puzzle_caja_fuerte" type="CanvasLayer"]
+script = ExtResource("1_7dboa")
+
+[node name="cajaFuerteCerrada" type="Sprite2D" parent="."]
+position = Vector2(479.938, 268.09)
+scale = Vector2(4.00885, 3.96904)
+texture = ExtResource("1_73d0e")
+
+[node name="botones" type="Node2D" parent="."]
+
+[node name="0" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 568.0
+offset_top = 449.0
+offset_right = 577.0
+offset_bottom = 459.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_4sq3f")
+numero = "0"
+
+[node name="1" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 504.0
+offset_top = 270.0
+offset_right = 513.0
+offset_bottom = 280.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("5_u808u")
+numero = "1"
+
+[node name="2" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 568.0
+offset_top = 270.0
+offset_right = 577.0
+offset_bottom = 280.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("6_wcmy3")
+numero = "2"
+
+[node name="3" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 632.0
+offset_top = 270.0
+offset_right = 641.0
+offset_bottom = 280.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("7_jna3r")
+numero = "3"
+
+[node name="4" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 504.0
+offset_top = 329.0
+offset_right = 513.0
+offset_bottom = 339.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("8_5u5lo")
+numero = "4"
+
+[node name="5" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 568.0
+offset_top = 329.0
+offset_right = 577.0
+offset_bottom = 339.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("9_mx5vi")
+numero = "5"
+
+[node name="6" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 632.0
+offset_top = 329.0
+offset_right = 641.0
+offset_bottom = 339.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("10_7bo4p")
+numero = "6"
+
+[node name="7" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 504.0
+offset_top = 389.0
+offset_right = 513.0
+offset_bottom = 399.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("11_x6s0y")
+numero = "7"
+
+[node name="8" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 568.0
+offset_top = 389.0
+offset_right = 577.0
+offset_bottom = 399.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("12_3craj")
+numero = "8"
+
+[node name="9" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 632.0
+offset_top = 389.0
+offset_right = 641.0
+offset_bottom = 399.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("13_dqnmf")
+numero = "9"
+
+[node name="E" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 504.0
+offset_top = 448.0
+offset_right = 513.0
+offset_bottom = 458.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("12_t33hh")
+numero = "EXIT"
+
+[node name="ENTER" parent="botones" instance=ExtResource("3_m2iiv")]
+offset_left = 632.0
+offset_top = 448.0
+offset_right = 641.0
+offset_bottom = 458.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("13_8j640")
+numero = "ENTER"
+
+[node name="resultado" type="Label" parent="."]
+offset_left = 521.0
+offset_top = 218.0
+offset_right = 592.0
+offset_bottom = 262.0
+scale = Vector2(1.79249, 0.710957)
+theme_override_font_sizes/font_size = 31
+uppercase = true
+
+[node name="cajaFuerteAbierta" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(479.938, 268.09)
+scale = Vector2(4.00885, 3.96904)
+texture = ExtResource("16_qtd77")
+
+[node name="pistola" parent="cajaFuerteAbierta" instance=ExtResource("3_m2iiv")]
+offset_left = -42.6402
+offset_top = 19.1255
+offset_right = 45.3598
+offset_bottom = 66.1255
+texture_normal = ExtResource("17_e31n1")
+numero = "PISTOLA"
+
+[node name="pistola" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(475, 284)
+scale = Vector2(4.00885, 3.96904)
+texture = ExtResource("17_e31n1")
