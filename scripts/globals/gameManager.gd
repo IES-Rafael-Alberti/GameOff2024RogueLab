@@ -167,12 +167,22 @@ func _on_input_recived():
 			postIt=true
 		elif interactive.event_id == "Ev_DNI":
 			print("DNI")
+			#if atraco y foto (si: dniAfter)
+			if mapa and foto_encimera and foto_estanteria:
+				evento["NEXT"] = "Ev_DNIAfter"
+				
+			else:
+				evento["NEXT"] = "Ev_DNIBefore"
+				
+		elif interactive.event_id == "Ev_DNIAfter":
+			print("Ev_DNIAfter")
 			ItemTexture=preload("res://assets/sprites/Escenario/DNI.png")
 			ItemMaxScale=64*3
 			ItemMinScale=64
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			dni=true
+		
 		
 		elif interactive.event_id == "TXT_TEST_2" and key:
 			print("Sal")

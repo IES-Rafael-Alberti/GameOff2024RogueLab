@@ -622,8 +622,8 @@ scale = Vector2(2.38952, 2.19651)
 event_id = "TXT_TEST_2"
 
 [node name="Screwdriver" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(182, 12)
-scale = Vector2(1.74952, 1.19651)
+position = Vector2(173, 8)
+scale = Vector2(1.13896, 0.992406)
 event_id = "Ev_Screwdriver_02"
 
 [node name="PostIt" parent="Triggers" instance=ExtResource("5_omke0")]
@@ -656,12 +656,17 @@ position = Vector2(257, -4)
 scale = Vector2(1.43894, 0.921395)
 event_id = "Ev_Screwdriver_01"
 
-[node name="Elements_Interactive" type="Node2D" parent="."]
-
-[node name="DNI" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
+[node name="DNI" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(320, 10)
 scale = Vector2(1.12916, -0.803552)
 event_id = "Ev_DNI"
+
+[node name="FotoEncimera" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(186, 28)
+scale = Vector2(0.415767, -0.958219)
+event_id = "Ev_SecondBrokenPicture_01"
+
+[node name="Elements_Interactive" type="Node2D" parent="."]
 
 [node name="Sofa" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
 position = Vector2(-52, 75)
