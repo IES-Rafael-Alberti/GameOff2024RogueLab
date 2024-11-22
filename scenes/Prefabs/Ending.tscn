@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqp3w3mh0bjad"]
+
+[ext_resource type="Script" path="res://scripts/ending.gd" id="1_i3dou"]
+
+[node name="EndingLayer" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_i3dou")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -541.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_stretch_ratio = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 17
+text = "La puerta se abrió, como era de esperar, así que decidí salir del apartamento.
+		Vi la policía subir las escaleras, y uno a lo lejos me preguntó sobre que había visto de extraño
+		recientemente en el recinto. Pasé de largo y decidí bajar el edificio, no me sentía nada bien
+		y quería salir rápidamente de ese lugar, encontrar otro tipo de ayuda... Tras unos cinco minutos, varios
+		cuerpos me reducieron y fui arrestrado por ser el principal sospechoso de ese asesinato.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 10
+visible_characters_behavior = 1
+
+[node name="MenuButton" type="MenuButton" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -90.0
+offset_right = 58.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.671337, 0.78665, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0392157, 0.356863, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "Back to menu"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

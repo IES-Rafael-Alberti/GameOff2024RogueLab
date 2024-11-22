@@ -7,11 +7,10 @@ var initSpeed = 130
 var interactive:Node2D
 var isTrigger:bool
 
-var codigoCajaFuerte:String = "1234"
+var codigoCajaFuerte:String = "1904"
 
 #variables
 var evento
-
 var ItemTexture
 var ItemMaxScale
 var ItemMinScale
@@ -25,7 +24,8 @@ var puzzleLayer:CanvasLayer=null
 #variables objetos
 var key:bool=false
 var screwdriver:bool=false
-var dni:bool
+var dni:bool=false
+var postIt:bool=false
 
 #variable de puzzles
 var rejilla:bool
@@ -61,6 +61,9 @@ func get_player():
 		player.position.y+=45
 	
 	return player
+	
+func get_key():
+	return self.key	
 
 func eventHandler():
 	get_event_from_interactive()
@@ -119,16 +122,19 @@ func _on_event_execute(event_id,aux):
 		#Si es puzzle ejecutar puzzle
 		if evento["EVENT_CONDITION"] == "PUZZLE":
 			print("puzzle entrando")
+			player.required=true
 			SignalBus.execute_puzzle.emit(event_id)
 			
 			pass
-		
-		if aux:
-			var aux_event = get_event(event_id)
-			#Dependiendo del idioma ES o EN
-			SignalBus.execute_dialog.emit(aux_event["ES"])
-		else:
-			SignalBus.execute_dialog.emit(evento["ES"])
+		if event_id == "ENDING1" or event_id == "ENDING2":
+			SignalBus.execute_ending.emit(evento["ES"], event_id)
+		else:	
+			if aux:
+				var aux_event = get_event(event_id)
+				#Dependiendo del idioma ES o EN
+				SignalBus.execute_dialog.emit(aux_event["ES"], event_id)
+			else:	
+				SignalBus.execute_dialog.emit(evento["ES"], event_id)
 	pass
 
 func _on_input_recived():
@@ -155,6 +161,35 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			screwdriver=true
+		elif interactive.event_id == "Ev_FirstCode":
+			print("PostIt")
+			ItemTexture=preload("res://assets/sprites/Puzles/caja fuerte/post-it.png")
+			ItemMaxScale=64*3
+			ItemMinScale=64
+			ItemSpeed=150
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			postIt=true
+		elif interactive.event_id == "Ev_DNI":
+			print("DNI")
+			#if atraco y foto (si: dniAfter)
+			if mapa and foto_encimera and foto_estanteria:
+				evento["NEXT"] = "Ev_DNIAfter"
+				
+			else:
+				evento["NEXT"] = "Ev_DNIBefore"
+				
+		elif interactive.event_id == "Ev_DNIAfter":
+			print("Ev_DNIAfter")
+			ItemTexture=preload("res://assets/sprites/Escenario/DNI.png")
+			ItemMaxScale=64*3
+			ItemMinScale=64
+			ItemSpeed=150
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			dni=true
+		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
+			print("Ev_SecondBrokenPicture_01")
+			
+		
 		elif interactive.event_id == "TXT_TEST_2" and key:
 			print("Sal")
 			pass

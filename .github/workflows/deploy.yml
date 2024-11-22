@@ -1,12 +1,15 @@
 name: Deploy to Itch.io
 
 # Manually trigger by going to this workflow in the repository actions tab
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
 
 env:
   BUTLER_API_KEY: ${{secrets.ITCHIO_API_KEY}} # Repository Settings -> Secrets and variables -> Actions -> New repository secret
   ITCHIO_USERNAME: ${{secrets.ITCHIO_USERNAME}}
-  PROJECT_NAME: "github-godot4-itchio" # See README.md about project, channel, and export file naming conventions
+  PROJECT_NAME: "fragmented-memory" # See README.md about project, channel, and export file naming conventions
 
 jobs:
   Build:
@@ -43,16 +46,15 @@ jobs:
 
       - name: Zip HTML Export
         run: |
-          cd exports/html
+          cd build/web
           zip $PROJECT_NAME-html.zip -r -m *
-          mv $PROJECT_NAME-html.zip ..
           cd -
 
       - name: Save Artifacts for Next Job
         uses: actions/upload-artifact@v4
         with:
           name: exports
-          path: exports
+          path: build
 
   Publish:
     needs: Build
@@ -62,7 +64,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: exports
-          path: exports
+          path: build
 
       - name: Download Butler
         run: |
@@ -76,6 +78,6 @@ jobs:
 
       - name: Push To Itch
         run: |
-          ./butler push ./exports/$PROJECT_NAME-html.zip $ITCHIO_USERNAME/$PROJECT_NAME:html
-          ./butler push ./exports/$PROJECT_NAME-linux.zip $ITCHIO_USERNAME/$PROJECT_NAME:linux
-          ./butler push ./exports/$PROJECT_NAME-windows.exe $ITCHIO_USERNAME/$PROJECT_NAME:windows
+          ./butler push ./build/web/$PROJECT_NAME-html.zip $ITCHIO_USERNAME/$PROJECT_NAME:html
+          ./butler push ./build/linux/$PROJECT_NAME-linux.zip $ITCHIO_USERNAME/$PROJECT_NAME:linux
+          ./butler push ./build/windows/$PROJECT_NAME-windows.exe $ITCHIO_USERNAME/$PROJECT_NAME:windows

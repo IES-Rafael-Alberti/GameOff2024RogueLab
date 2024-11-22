@@ -88,7 +88,7 @@ func _physics_process(delta):
 		elif ultima_direccion == "vertical":
 			# Si la última entrada fue vertical, mueve solo en el eje Y
 			if directionVertical != 0:
-				print(directionVertical)
+				#print(directionVertical)
 				if directionVertical > 0: #el if este esta implementado por el movimiento con el joistic
 					velocity.y = 1 * SPEED
 					estado = ""

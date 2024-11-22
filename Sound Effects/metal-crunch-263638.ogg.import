@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c03ww5e05drxc"
+path="res://.godot/imported/metal-crunch-263638.ogg-8a8a6c790c487d506ee011600fd5ca71.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/metal-crunch-263638.ogg"
+dest_files=["res://.godot/imported/metal-crunch-263638.ogg-8a8a6c790c487d506ee011600fd5ca71.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

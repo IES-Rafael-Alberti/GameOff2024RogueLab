@@ -6,7 +6,7 @@ uniform vec3 vignette_color = vec3(0.0, 0.0, 0.0); // Color de la viñeta (puede
 
 void fragment() {
     // Obtener las coordenadas de píxel normalizadas
-    vec2 uv = FRAGCOORD.xy / SCREEN_PIXEL_SIZE.xy; 
+    vec2 uv = FRAGCOORD.xy / SCREEN_PIXEL_SIZE.xy;
 
     // Calcular la distancia del centro
     float dist = distance(uv, vec2(0.5, 0.5)); // Distancia desde el centro de la pantalla (0.5, 0.5)

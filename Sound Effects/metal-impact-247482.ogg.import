@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dc4wxj3e5eyib"
+path="res://.godot/imported/metal-impact-247482.ogg-14369271a611afa1f5c4c760bfbfa4cb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/metal-impact-247482.ogg"
+dest_files=["res://.godot/imported/metal-impact-247482.ogg-14369271a611afa1f5c4c760bfbfa4cb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
