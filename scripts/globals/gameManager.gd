@@ -165,6 +165,14 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			postIt=true
+		elif interactive.event_id == "Ev_DNI":
+			print("DNI")
+			ItemTexture=preload("res://assets/sprites/Escenario/DNI.png")
+			ItemMaxScale=64*3
+			ItemMinScale=64
+			ItemSpeed=150
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			dni=true
 		
 		elif interactive.event_id == "TXT_TEST_2" and key:
 			print("Sal")
