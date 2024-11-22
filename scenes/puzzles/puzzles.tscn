@@ -30,3 +30,5 @@ event_id_atraco = "Ev_Blueprint_02"
 [node name="Puzzle_caja_fuerte" parent="." instance=ExtResource("4_ugdwm")]
 visible = false
 event_id = "Ev_FirstWardrobe"
+event_id_success = "Ev_VaultSuccess"
+event_id_failure = "Ev_VaultFailure"

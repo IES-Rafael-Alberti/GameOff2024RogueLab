@@ -7,6 +7,11 @@ const FOTO_ROTA_TRASERA = preload("res://assets/sprites/Puzles/puzle4_fotos/foto
 
 var canExit=true
 
+@onready var fotos_estanterias_vacia: TextureRect = $FotosEstanteriasVacia240x135
+@onready var trasera_button: TextureButton = $TraseraButton
+
+
+
 @export var event_id=""
 
 @export var event_id_foto_fran=""
@@ -20,6 +25,8 @@ var canExit=true
 func _ready() -> void:
 	SignalBus.wait_input.connect(_on_input_recieved)
 	SignalBus.exit_zoom_item.connect(_on_zoom_out)
+	trasera_button.hide()
+	fotos_estanterias_vacia.hide()
 	pass 
 
 func _on_zoom_out(texture):
@@ -61,5 +68,13 @@ func _on_input_recieved():
 func _on_esquina_rota_pressed() -> void:
 	print("Rota trasera "+event_id)
 	SignalBus.zoom_item.emit(FOTO_ROTA_TRASERA,900,100,1000)
-	SignalBus.execute_event.emit(event_id_foto_rota_trasera,true)
+	SignalBus.execute_event.emit(event_id_foto_rota,true)
+	
+	trasera_button.show()
+	fotos_estanterias_vacia.show()
+	
+	pass # Replace with function body.
+
+
+func _on_trasera_button_pressed() -> void:
 	pass # Replace with function body.
