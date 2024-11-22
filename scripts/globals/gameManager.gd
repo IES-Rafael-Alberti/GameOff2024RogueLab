@@ -182,7 +182,9 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			dni=true
-		
+		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
+			print("Ev_SecondBrokenPicture_01")
+			
 		
 		elif interactive.event_id == "TXT_TEST_2" and key:
 			print("Sal")
