@@ -25,7 +25,8 @@ var puzzleLayer:CanvasLayer=null
 #variables objetos
 var key:bool=false
 var screwdriver:bool=false
-var dni:bool
+var dni:bool=false
+var postIt:bool=false
 
 #variable de puzzles
 var rejilla:bool
@@ -156,6 +157,15 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			screwdriver=true
+		elif interactive.event_id == "Ev_FirstCode":
+			print("PostIt")
+			ItemTexture=preload("res://assets/sprites/Puzles/caja fuerte/post-it.png")
+			ItemMaxScale=64*3
+			ItemMinScale=64
+			ItemSpeed=150
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			postIt=true
+		
 		elif interactive.event_id == "TXT_TEST_2" and key:
 			print("Sal")
 			pass

@@ -626,6 +626,11 @@ position = Vector2(182, 12)
 scale = Vector2(1.74952, 1.19651)
 event_id = "Ev_Screwdriver_02"
 
+[node name="PostIt" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(400, 9)
+scale = Vector2(1.06951, 1.19651)
+event_id = "Ev_FirstCode"
+
 [node name="CajaFuerte" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(385, 91)
 scale = Vector2(2.38952, 2.19651)
