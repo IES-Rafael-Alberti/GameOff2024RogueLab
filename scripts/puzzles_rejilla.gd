@@ -3,8 +3,6 @@ extends CanvasLayer
 
 @onready var rejilla_sin_tornillos = $"Rejilla-sin-tornillos"
 @onready var pastillasButton = $"Rejilla-sin-pastis/pastillas"
-@onready var rejilla_sin_rejilla = $"Rejilla-sin-rejilla"
-@onready var panel_container = $PanelContainer
 const PASTILLAS_64X_64 = preload("res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png")
 
 @export var event_id=""
