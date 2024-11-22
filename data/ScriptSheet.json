@@ -347,7 +347,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "Ev_DNI",
+	"NEXT": "",
 	"ES": "¿Qué es esto?",
 	"EN": "What is this?"
   }
