@@ -38,13 +38,23 @@ func _on_puzzle_enter(puzzleLayer):
 	
 	pass
 
-func _on__pressed(character):
-	print(character)
-	if character == "PASTILLAS":#recarga el resultado
-		pastillasButton.queue_free()
-		GameManager.rejilla = true
-		SignalBus.zoom_item.emit(PASTILLAS_64X_64,200,4,100)
-		SignalBus.execute_event.emit(event_id_pastillas,true)
+func _on__pressed():
+	#print(character)
+	pastillasButton.queue_free()
+	GameManager.rejilla = true
+	SignalBus.zoom_item.emit(PASTILLAS_64X_64,200,4,100)
+	SignalBus.execute_event.emit(event_id_pastillas,true)
+	
+	
+	
+	#if character == "PASTILLAS":#recarga el resultado
+	#if pastillasButton == null:
+		#pass
+	#else character == "PASTILLAS":#recarga el resultado
+		#pastillasButton.queue_free()
+		#GameManager.rejilla = true
+		#SignalBus.zoom_item.emit(PASTILLAS_64X_64,200,4,100)
+		#SignalBus.execute_event.emit(event_id_pastillas,true)
 
 func _on_input_recived():
 	if GameManager.puzzleLayer==self :

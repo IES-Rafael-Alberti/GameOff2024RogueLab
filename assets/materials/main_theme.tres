@@ -1,6 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ctp12ftleux8w"]
-
-[ext_resource type="Texture2D" uid="uid://b4af5poev0k0j" path="res://assets/sprites/Menu/LETRAS_MENU.png" id="1_cp74w"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ctp12ftleux8w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5dax"]
 bg_color = Color(0.144063, 0.144063, 0.144062, 1)
@@ -10,11 +8,9 @@ expand_margin_right = 25.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbh58"]
-atlas = ExtResource("1_cp74w")
 region = Rect2(4, 148, 20, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7uxdn"]
-atlas = ExtResource("1_cp74w")
 region = Rect2(24, 148, 24, 12)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vuwdi"]
