@@ -7,7 +7,7 @@ var initSpeed = 130
 var interactive:Node2D
 var isTrigger:bool
 
-var codigoCajaFuerte:String = "1234"
+var codigoCajaFuerte:String = "1904"
 
 #variables
 var evento
