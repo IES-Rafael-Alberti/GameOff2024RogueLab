@@ -3,6 +3,7 @@ extends Node
 var busNameMaster = "Master"
 var busNameMusic = "Music"
 var busNameSFX = "SFX"
+var language:String = "ES"
 
 var busIndexMaster = AudioServer.get_bus_index("Master")
 

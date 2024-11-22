@@ -34,6 +34,7 @@ GameManager="*res://scripts/globals/gameManager.gd"
 OptionManager="*res://scripts/globals/optionManager.gd"
 CanvasManager="*res://scripts/globals/CanvasManager.gd"
 DataManager="*res://scripts/globals/DataManager.gd"
+TransitionScreen="*res://scenes/UI/TransitionScreen.tscn"
 
 [display]
 

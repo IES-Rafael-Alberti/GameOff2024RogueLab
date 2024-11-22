@@ -38,10 +38,10 @@ func _zoom_item_execute(texture,textureMaxSize,textureMinSize,speed):
 	pass
 
 func _on_input_recieved():
-	if GameManager.zoomItem and !GameManager.DialogVisible and waiting:
-		if texture_item.custom_minimum_size.x >= textureMaxSize:
-			GameManager.zoomItem=false
-			hide()
-			GameManager.player.required=true
-			SignalBus.exit_zoom_item.emit(texture_item.texture)
-	pass
+	if GameManager.zoomItem :
+		if GameManager.DialogVisible and waiting:
+			if texture_item.custom_minimum_size.x >= textureMaxSize:
+				GameManager.zoomItem=false
+				hide()
+				GameManager.player.required=true
+				SignalBus.exit_zoom_item.emit(texture_item.texture)

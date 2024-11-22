@@ -18,12 +18,17 @@ event_id_foto_rota = "Ev_Picture_03"
 
 [node name="PuzzleRejilla" parent="." instance=ExtResource("3_b623p")]
 visible = false
-event_id = "Ev_Screwdriver_01"
+event_id = "Ev_Grill_02"
+event_id_screwdriver = "Ev_Grill_01"
+event_id_pastillas = "Ev_Grill_03"
 
 [node name="puzzle_mapa_atraco" parent="." instance=ExtResource("4_4i0f0")]
 visible = false
 event_id = "Ev_Blueprint_01"
+event_id_atraco = "Ev_Blueprint_02"
 
 [node name="Puzzle_caja_fuerte" parent="." instance=ExtResource("4_ugdwm")]
 visible = false
 event_id = "Ev_FirstWardrobe"
+event_id_success = "Ev_VaultSuccess"
+event_id_failure = "Ev_VaultFailure"

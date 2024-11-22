@@ -7,11 +7,10 @@ var initSpeed = 130
 var interactive:Node2D
 var isTrigger:bool
 
-var codigoCajaFuerte:String = "1234"
+var codigoCajaFuerte:String = "1904"
 
 #variables
 var evento
-
 var ItemTexture
 var ItemMaxScale
 var ItemMinScale
@@ -25,7 +24,15 @@ var puzzleLayer:CanvasLayer=null
 #variables objetos
 var key:bool=false
 var screwdriver:bool=false
+var dni:bool=false
+var postIt:bool=false
 
+#variable de puzzles
+var rejilla:bool
+var foto_encimera:bool
+var foto_estanteria:bool
+var mapa:bool
+var caja_fuerte:bool
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -51,9 +58,12 @@ func get_player():
 	if(player == null):
 		player = JUGADOR.instantiate()
 		player.SPEED = initSpeed
-		player.position.y+=50
+		player.position.y+=45
 	
 	return player
+	
+func get_key():
+	return self.key	
 
 func eventHandler():
 	get_event_from_interactive()
@@ -93,14 +103,17 @@ func get_event_from_interactive():
 	
 	pass
 	
+func get_event(event_id):
+	return DataManager.scriptData.get(event_id)
+	pass
+
 func go_to_next():
 	SignalBus.event_waiting.emit(evento["NEXT"])
 	if evento["NEXT"]!="":
 		eventHandler()
 	
 	
-func _on_event_execute(event_id):
-	
+func _on_event_execute(event_id,aux):
 	if !DialogVisible:
 
 		print("Ejecutando evento: "+event_id)
@@ -109,13 +122,19 @@ func _on_event_execute(event_id):
 		#Si es puzzle ejecutar puzzle
 		if evento["EVENT_CONDITION"] == "PUZZLE":
 			print("puzzle entrando")
+			player.required=true
 			SignalBus.execute_puzzle.emit(event_id)
 			
 			pass
-			
-		#Dependiendo del idioma ES o EN
-		SignalBus.execute_dialog.emit(evento["ES"])
-	
+		if event_id == "ENDING1" or event_id == "ENDING2":
+			SignalBus.execute_ending.emit(evento["ES"], event_id)
+		else:	
+			if aux:
+				var aux_event = get_event(event_id)
+				#Dependiendo del idioma ES o EN
+				SignalBus.execute_dialog.emit(aux_event["ES"], event_id)
+			else:	
+				SignalBus.execute_dialog.emit(evento["ES"], event_id)
 	pass
 
 func _on_input_recived():
@@ -125,7 +144,7 @@ func _on_input_recived():
 			pass
 		pass
 	
-	if !zoomItem:
+	if !zoomItem and interactive!=null and interactive.event_id!="":
 		if interactive.event_id == "Ev_Corpse_02":
 			print("Llave")
 			ItemTexture=preload( "res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png")
@@ -134,6 +153,43 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			key=true
+		elif interactive.event_id == "Ev_Screwdriver_02":
+			print("Destornillador")
+			ItemTexture=preload("res://assets/sprites/Puzles/destornillador.png")
+			ItemMaxScale=64*3
+			ItemMinScale=64
+			ItemSpeed=150
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			screwdriver=true
+		elif interactive.event_id == "Ev_FirstCode":
+			print("PostIt")
+			ItemTexture=preload("res://assets/sprites/Puzles/caja fuerte/post-it.png")
+			ItemMaxScale=64*3
+			ItemMinScale=64
+			ItemSpeed=150
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			postIt=true
+		elif interactive.event_id == "Ev_DNI":
+			print("DNI")
+			#if atraco y foto (si: dniAfter)
+			if mapa and foto_encimera and foto_estanteria:
+				evento["NEXT"] = "Ev_DNIAfter"
+				
+			else:
+				evento["NEXT"] = "Ev_DNIBefore"
+				
+		elif interactive.event_id == "Ev_DNIAfter":
+			print("Ev_DNIAfter")
+			ItemTexture=preload("res://assets/sprites/Escenario/DNI.png")
+			ItemMaxScale=64*3
+			ItemMinScale=64
+			ItemSpeed=150
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			dni=true
+		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
+			print("Ev_SecondBrokenPicture_01")
+			
+		
 		elif interactive.event_id == "TXT_TEST_2" and key:
 			print("Sal")
 			pass

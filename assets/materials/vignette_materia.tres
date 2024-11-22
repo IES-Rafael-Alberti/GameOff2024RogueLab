@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dvrclko8um8kj"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b04543apja7w8"]
 
 [ext_resource type="Shader" uid="uid://da4xq4yvnmigh" path="res://assets/materials/vignette.tres" id="1_bqu14"]
 
