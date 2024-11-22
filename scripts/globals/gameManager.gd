@@ -11,7 +11,6 @@ var codigoCajaFuerte:String = "1234"
 
 #variables
 var evento
-var language:String = "ES"
 var ItemTexture
 var ItemMaxScale
 var ItemMinScale

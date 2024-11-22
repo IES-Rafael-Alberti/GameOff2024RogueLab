@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqp3w3mh0bjad"]
 
-[ext_resource type="Script" path="res://scenes/Prefabs/ending.gd" id="1_i3dou"]
+[ext_resource type="Script" path="res://scripts/ending.gd" id="1_i3dou"]
 
 [node name="EndingLayer" type="CanvasLayer"]
 layer = 10
@@ -11,13 +11,17 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 41.0
-offset_top = -499.0
-offset_right = -47.0
-offset_bottom = -71.0
+offset_left = -1.0
+offset_top = -541.0
+offset_right = 2.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_stretch_ratio = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -28,22 +32,35 @@ theme_override_constants/margin_right = 50
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 22
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a ornare nisl. Maecenas sapien eros, gravida vel sem sit amet, semper cursus dolor. Fusce scelerisque nec turpis a elementum. Ut volutpat felis diam, eu congue libero gravida non. In at est ut enim finibus fringilla. Etiam ac accumsan libero. Quisque interdum, odio ac sollicitudin faucibus, nisi dolor volutpat nisl, nec rutrum turpis urna nec nisl. Proin rhoncus augue quis erat dictum, sed tristique quam interdum. Aliquam tempor rutrum vulputate. Morbi in nisi in ex laoreet fringilla. Phasellus ornare rutrum ante sed tristique. Aliquam mattis fringilla viverra.
-
-Cras tempor elit sit amet lorem facilisis, id tincidunt ex vehicula. Ut luctus tellus lectus. Pellentesque efficitur libero leo, in tincidunt lorem vestibulum id. Morbi elit libero, eleifend sit amet vestibulum a, sagittis iaculis velit. Morbi ut ante at sapien iaculis vulputate elementum ut diam. Aenean vitae nisl nec neque convallis mattis elementum quis massa. Nullam maximus orci at nibh pellentesque sodales. Morbi at blandit neque. Duis posuere lacus vitae erat euismod dictum. Morbi accumsan ex id justo pharetra faucibus. Etiam accumsan ligula elit, sit amet aliquet nunc congue a. Mauris volutpat nunc ut scelerisque interdum. Sed sit amet nisl nec leo malesuada tempor. Maecenas eu porttitor massa. Vivamus venenatis lacus nibh, blandit auctor metus interdum id. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-
-Suspendisse eget purus a ligula porttitor pulvinar. Vivamus ac ex pretium nunc euismod consequat interdum lacinia est. Maecenas fringilla ultrices turpis id vestibulum. Duis non ligula in neque faucibus iaculis nec at dui. Cras ac consequat ligula. Integer ut eros ipsum. Sed elit elit, pharetra non mauris vel, suscipit interdum libero. Etiam a libero urna. Integer cursus porta felis in tempus. Sed sollicitudin nisi vel tincidunt vehicula. Duis ut rutrum ante, non hendrerit justo. Proin vitae felis tincidunt, maximus enim ut, ultricies est. Phasellus porttitor arcu arcu, sit amet tincidunt ante consequat quis. Suspendisse potenti. Cras lacinia dolor et lorem feugiat consequat.
-
-Donec ultrices libero sit amet sapien pretium, vel congue mauris laoreet. Ut justo justo, venenatis at iaculis sed, dapibus id massa. In euismod est vel metus tempus, in eleifend velit iaculis. Nulla accumsan sodales placerat. Vivamus posuere convallis libero id tempus. Nunc sed auctor nibh. Duis bibendum tempus sapien consectetur dictum. Curabitur efficitur dolor sit amet nisi pharetra aliquam.
-
-Cras imperdiet, nisl pulvinar cursus volutpat, enim eros rhoncus urna, non efficitur risus nibh vitae ligula. Donec ullamcorper lacus ut ipsum elementum volutpat. Suspendisse accumsan lorem sed enim vehicula, sit amet rutrum nunc elementum. Fusce eleifend urna ut vehicula laoreet. Nullam sodales bibendum nisi, ac cursus sem consequat non. Nullam porttitor eros in feugiat rhoncus. Phasellus eu tincidunt quam. Phasellus ac justo dapibus, consectetur ipsum eu, condimentum mauris. Nulla facilisis tristique nisi viverra hendrerit. Donec pretium, lorem ac tincidunt pellentesque, libero eros condimentum diam, eu placerat augue urna eget nulla.
-
+theme_override_font_sizes/font_size = 17
+text = "La puerta se abrió, como era de esperar, así que decidí salir del apartamento.
+		Vi la policía subir las escaleras, y uno a lo lejos me preguntó sobre que había visto de extraño
+		recientemente en el recinto. Pasé de largo y decidí bajar el edificio, no me sentía nada bien
+		y quería salir rápidamente de ese lugar, encontrar otro tipo de ayuda... Tras unos cinco minutos, varios
+		cuerpos me reducieron y fui arrestrado por ser el principal sospechoso de ese asesinato.
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-max_lines_visible = 7
+max_lines_visible = 10
 visible_characters_behavior = 1
 
+[node name="MenuButton" type="MenuButton" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -90.0
+offset_right = 58.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.671337, 0.78665, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0392157, 0.356863, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "Back to menu"
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
