@@ -47,6 +47,10 @@ pivot_offset = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("1_akwsm")
+texture_pressed = ExtResource("1_akwsm")
+texture_hover = ExtResource("1_akwsm")
+texture_disabled = ExtResource("1_akwsm")
+texture_focused = ExtResource("1_akwsm")
 script = ExtResource("2_xd6a6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
