@@ -1,22 +1,100 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbr2fn21jjgan"]
+[gd_scene load_steps=19 format=3 uid="uid://bbr2fn21jjgan"]
 
 [ext_resource type="Script" path="res://scripts/menus/option_menu.gd" id="1_58sjs"]
 [ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_p15js"]
+[ext_resource type="Texture2D" uid="uid://ckrbxddivwppw" path="res://assets/sprites/Menu/TELE_MENU.png" id="2_rm6cb"]
+[ext_resource type="Texture2D" uid="uid://b4af5poev0k0j" path="res://assets/sprites/Menu/LETRAS_MENU.png" id="4_ql66u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkdmj"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwnpg"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(240, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iy3f"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(480, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p1gm"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(720, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7t8j"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(960, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r48ia"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(1200, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4pxk"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(1440, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cqn1"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(1680, 0, 240, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rbbjd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkdmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwnpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iy3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p1gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7t8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r48ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4pxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cqn1")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 7.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bedsi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywque"]
+atlas = ExtResource("4_ql66u")
+region = Rect2(48, 168, 64, 16)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e64n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6k82"]
+atlas = ExtResource("4_ql66u")
+region = Rect2(4, 116, 48, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw6a7"]
+atlas = ExtResource("4_ql66u")
+region = Rect2(128, 116, 48, 12)
 
 [node name="OptionMenu" type="CanvasLayer"]
 layer = 25
 script = ExtResource("1_58sjs")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 1, 0, 1)
+[node name="ColorRect" type="AnimatedSprite2D" parent="."]
+position = Vector2(483, 272)
+scale = Vector2(4.09699, 4.09699)
+sprite_frames = SubResource("SpriteFrames_rbbjd")
+animation = &"new_animation"
+autoplay = "new_animation"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 8
@@ -33,6 +111,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_p15js")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bedsi")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -105,28 +184,34 @@ value = 1.0
 [node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VSyncLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-size_flags_stretch_ratio = 2.0
-text = "VSync"
+[node name="VSyncLabel" type="Sprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+z_index = 1
+position = Vector2(83, 10)
+scale = Vector2(2.48777, 2.48777)
+texture = SubResource("AtlasTexture_ywque")
 
 [node name="VSyncCheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
 theme = ExtResource("2_p15js")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4e64n")
+alignment = 1
+icon_alignment = 1
 
 [node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(640, 30)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="BackButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Back"
+texture_normal = SubResource("AtlasTexture_m6k82")
+texture_hover = SubResource("AtlasTexture_lw6a7")
+stretch_mode = 5
 
 [connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VolumeMasterSlider" to="." method="_on_volume_master_slider_ready"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VolumeMasterSlider" to="." method="_on_volume_master_slider_value_changed"]
