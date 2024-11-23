@@ -301,7 +301,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 
 [node name="BackButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 30)
+custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = SubResource("AtlasTexture_m6k82")
