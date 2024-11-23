@@ -700,11 +700,10 @@ scale = Vector2(1.21078, 2.17106)
 event_id = "Ev_Mirror"
 
 [node name="Shaders" type="CanvasLayer" parent="."]
-layer = 11
+layer = 10
 script = ExtResource("6_31grw")
 
 [node name="VIGNETTE" type="TextureRect" parent="Shaders"]
-visible = false
 material = ExtResource("6_pug0m")
 anchors_preset = 15
 anchor_right = 1.0
