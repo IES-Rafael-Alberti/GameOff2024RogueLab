@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://obr06lo21w0y"]
 
 [ext_resource type="Script" path="res://scripts/dialogs_ui.gd" id="1_d7xkf"]
-[ext_resource type="FontFile" uid="uid://c1rf6rq6ggj61" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_wkvmh"]
+[ext_resource type="FontFile" uid="uid://c1rf6rq6ggj61" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_egnvx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3m6rq"]
-font = ExtResource("2_wkvmh")
+font = ExtResource("2_egnvx")
 
 [node name="DialogsLayer" type="CanvasLayer"]
 layer = 10
