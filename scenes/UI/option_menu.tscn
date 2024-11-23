@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bbr2fn21jjgan"]
+[gd_scene load_steps=37 format=3 uid="uid://bbr2fn21jjgan"]
 
 [ext_resource type="Script" path="res://scripts/menus/option_menu.gd" id="1_58sjs"]
 [ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_p15js"]
@@ -74,6 +74,10 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bedsi"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7ysu"]
+atlas = ExtResource("4_clidc")
+region = Rect2(4, 185, 239, 12)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4b8kt"]
 atlas = ExtResource("4_clidc")
 region = Rect2(79, 153, 12, 12)
@@ -92,6 +96,10 @@ texture = ExtResource("5_2h4kb")
 texture_margin_top = 5.0
 texture_margin_bottom = 3.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_02ma8"]
+atlas = ExtResource("4_clidc")
+region = Rect2(4, 201, 239, 12)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_r10rf"]
 atlas = ExtResource("4_clidc")
 region = Rect2(79, 153, 12, 12)
@@ -105,6 +113,10 @@ texture_margin_bottom = 3.0
 texture = ExtResource("5_2h4kb")
 texture_margin_top = 5.0
 texture_margin_bottom = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvlvs"]
+atlas = ExtResource("4_clidc")
+region = Rect2(4, 217, 239, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7aws"]
 atlas = ExtResource("4_clidc")
@@ -120,9 +132,9 @@ texture = ExtResource("5_2h4kb")
 texture_margin_top = 5.0
 texture_margin_bottom = 3.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ywque"]
-atlas = ExtResource("4_ql66u")
-region = Rect2(48, 168, 64, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaagl"]
+atlas = ExtResource("4_clidc")
+region = Rect2(4, 233, 239, 12)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e64n"]
 
@@ -159,10 +171,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -59.0
-offset_top = -20.0
-offset_right = 59.0
-offset_bottom = 20.0
+offset_left = -445.0
+offset_top = -217.0
+offset_right = 445.0
+offset_bottom = 217.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -186,12 +198,14 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VolumeMasterLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VolumeMasterLabel" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
-text = "Volume Master"
+texture_normal = SubResource("AtlasTexture_s7ysu")
+stretch_mode = 5
 
 [node name="VolumeMasterSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -210,12 +224,14 @@ value = 1.0
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VolumeMusicLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VolumeMusicLabel" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
-text = "Volume Music"
+texture_normal = SubResource("AtlasTexture_02ma8")
+stretch_mode = 5
 
 [node name="VolumeMusicSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -233,12 +249,13 @@ value = 1.0
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VolumeSFXLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="VolumeSFXLabel" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
 size_flags_stretch_ratio = 2.0
-text = "Volume SFX"
+texture_normal = SubResource("AtlasTexture_gvlvs")
+stretch_mode = 5
 
 [node name="VolumeSFXSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
@@ -256,16 +273,19 @@ value = 1.0
 [node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VSyncLabel" type="Sprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-z_index = 1
-position = Vector2(83, 10)
-scale = Vector2(2.48777, 2.48777)
-texture = SubResource("AtlasTexture_ywque")
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+texture_normal = SubResource("AtlasTexture_eaagl")
+stretch_mode = 5
 
 [node name="VSyncCheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_horizontal = 10
-size_flags_stretch_ratio = 20.0
+size_flags_vertical = 4
 theme = ExtResource("2_p15js")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4e64n")
 theme_override_icons/checked = SubResource("AtlasTexture_ywtln")
