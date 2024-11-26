@@ -92,9 +92,11 @@ func setInteractive(body:Node2D):
 	if body==null:
 		player.required=false
 		interactive=null
+		player.hideHUD()
 	else:
 		interactive=body
 		eventHandler()
+		player.showHUD()
 	
 func get_event_from_interactive():
 	

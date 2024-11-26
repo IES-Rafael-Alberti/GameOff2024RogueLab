@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 
 
 func _on_execute_dialog(text:String, event_id:String):
-	print("Dialogo: "+text)
+	#print("Dialogo: "+text)
 	self.event_id = event_id
 	lines = text.split("\n")
 	label.text=lines[0]

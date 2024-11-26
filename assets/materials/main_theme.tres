@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ctp12ftleux8w"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ctp12ftleux8w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5dax"]
 bg_color = Color(0.144063, 0.144063, 0.144062, 1)
@@ -7,11 +7,19 @@ expand_margin_top = 5.0
 expand_margin_right = 25.0
 expand_margin_bottom = 5.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbh58"]
+region = Rect2(4, 148, 20, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uxdn"]
+region = Rect2(24, 148, 24, 12)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vuwdi"]
 
 [resource]
 Button/font_sizes/font_size = 18
 Button/styles/normal = SubResource("StyleBoxFlat_h5dax")
+CheckButton/icons/checked = SubResource("AtlasTexture_bbh58")
+CheckButton/icons/unchecked = SubResource("AtlasTexture_7uxdn")
 Label/font_sizes/font_size = 35
 checkButtonVariant/base_type = &"CheckButton"
 checkButtonVariant/styles/normal = SubResource("StyleBoxEmpty_vuwdi")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bumaujc3plt5v"]
+[gd_scene load_steps=40 format=3 uid="uid://bumaujc3plt5v"]
 
 [ext_resource type="Script" path="res://scripts/jugador.gd" id="1_iaisd"]
 [ext_resource type="Texture2D" uid="uid://dglmitv2urhpu" path="res://assets/sprites/Player/player-32-64-back-walk.png" id="2_ikbc8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b2qihulvh2wpm" path="res://assets/assets/Player/player_move_mario.png" id="3_fgnj0"]
 [ext_resource type="Texture2D" uid="uid://4f1y0exfvp1p" path="res://assets/assets/Player/player-32-64-front-walk.png" id="4_ee2q4"]
 [ext_resource type="Texture2D" uid="uid://dquc683bj426q" path="res://assets/sprites/Player/player_idle_up.png" id="4_i2ohi"]
+[ext_resource type="Texture2D" uid="uid://bygl47t1n0umj" path="res://assets/sprites/Player/ojo.png" id="7_gr1gw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlnoj"]
 atlas = ExtResource("2_ikbc8")
@@ -257,8 +258,16 @@ position = Vector2(-3, -18)
 sprite_frames = SubResource("SpriteFrames_tr3ah")
 animation = &"idleUp"
 autoplay = "idle"
-frame_progress = 0.780234
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 8)
 shape = SubResource("CircleShape2D_im3by")
+
+[node name="HUD" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(-9.925, -70)
+texture = ExtResource("7_gr1gw")

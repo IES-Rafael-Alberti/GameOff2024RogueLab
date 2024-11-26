@@ -1,10 +1,10 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b04543apja7w8"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dc7hpj2ikl847"]
 
-[ext_resource type="Shader" uid="uid://da4xq4yvnmigh" path="res://assets/materials/vignette.tres" id="1_bqu14"]
+[ext_resource type="Shader" uid="uid://x85fjtny8s4h" path="res://assets/materials/vignette.tres" id="1_bqu14"]
 
 [resource]
 shader = ExtResource("1_bqu14")
 shader_parameter/blood_color = Color(0, 0, 0.0941176, 1)
-shader_parameter/blood_intensity = 0.465
-shader_parameter/internal_limit = 0.05
-shader_parameter/external_limit = 0.651
+shader_parameter/blood_intensity = 0.787
+shader_parameter/internal_limit = 0.0
+shader_parameter/external_limit = 0.179

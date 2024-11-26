@@ -19,7 +19,6 @@ func _ready() -> void:
 
 func _on_input_recived():
 	if GameManager.puzzleLayer== self :
-		print("piripi")
 		if !GameManager.DialogVisible and !GameManager.zoomItem:
 			SignalBus.puzzle_exit.emit(self)
 	pass
