@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhs180cnfuqmr"]
+[gd_scene load_steps=9 format=3 uid="uid://dhs180cnfuqmr"]
 
 [ext_resource type="Script" path="res://scripts/puzzles_rejilla.gd" id="1_se3rp"]
 [ext_resource type="Texture2D" uid="uid://clbi4qkjf8o6n" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-pastis.png" id="2_wa4i2"]
 [ext_resource type="PackedScene" uid="uid://bfb3rby1lilfu" path="res://scenes/Prefabs/button.tscn" id="3_ptbyf"]
 [ext_resource type="Texture2D" uid="uid://dgxe0ans3vsxh" path="res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png" id="4_pf470"]
 [ext_resource type="Texture2D" uid="uid://dixpu7d04o707" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-tornillos.png" id="5_tothm"]
+[ext_resource type="Texture2D" uid="uid://bavsowsg54hvg" path="res://assets/sprites/Puzles/destornillador.png" id="7_3ye2u"]
 [ext_resource type="PackedScene" uid="uid://2jvwv2uig8ff" path="res://scenes/Prefabs/tornillo.tscn" id="7_fxspc"]
+[ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="8_5i5cx"]
 
 [node name="PuzzleRejilla" type="CanvasLayer"]
 script = ExtResource("1_se3rp")
@@ -59,3 +61,14 @@ offset_top = 135.0
 offset_right = 746.0
 offset_bottom = 145.0
 scale = Vector2(4, 4)
+
+[node name="screwdriver" type="Sprite2D" parent="."]
+position = Vector2(-161, 275)
+rotation = 2.52668
+scale = Vector2(1.62078, 1.3153)
+texture = ExtResource("7_3ye2u")
+
+[node name="mano" type="Sprite2D" parent="."]
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("8_5i5cx")

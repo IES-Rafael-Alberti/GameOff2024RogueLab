@@ -13,6 +13,7 @@ var canExit=true
 @onready var foto_oculta = $FotoOculta
 @onready var esquina_rota = $EsquinaRota
 @onready var foto_rota_button = $FotoRotaButton
+@onready var mano: Sprite2D = $mano
 
 
 
@@ -31,6 +32,11 @@ func _ready() -> void:
 	SignalBus.wait_input.connect(_on_input_recieved)
 	SignalBus.exit_zoom_item.connect(_on_zoom_out)
 	pass 
+
+func _process(delta: float) -> void:
+
+	mano.global_position = get_viewport().get_mouse_position()
+
 
 func _on_zoom_out(texture):
 	canExit=true

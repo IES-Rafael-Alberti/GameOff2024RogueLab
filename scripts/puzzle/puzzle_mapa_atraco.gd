@@ -10,12 +10,15 @@ extends CanvasLayer
 @export var event_id_atraco=""
 
 const PUZLE_ATRACO = preload("res://assets/sprites/Puzles/puzle_atraco/puzle_atraco.png")
+@onready var mano: Sprite2D = $mano
 
 func _ready() -> void:
 	
 	SignalBus.wait_input.connect(_on_input_recived)
 	
 	pass
+
+
 
 func _on_input_recived():
 	if GameManager.puzzleLayer== self :
@@ -54,6 +57,17 @@ var condiciones: Array = [
 	false,
 	false
 ]
+
+
+func _process(delta: float) -> void:
+
+	mano.global_position = get_viewport().get_mouse_position()
+
+
+
+
+
+
 
 #se ejecuta cuando se completa el puzzle
 func complete():

@@ -5,6 +5,10 @@ extends CanvasLayer
 @onready var pastillasButton = $"Rejilla-sin-pastis/pastillas"
 @onready var rejilla_sin_rejilla = $"Rejilla-sin-rejilla"
 @onready var panel_container = $PanelContainer
+@onready var screwdriver2D: Sprite2D = $screwdriver
+@onready var mano: Sprite2D = $mano
+
+var screwdriverMouse = false
 const PASTILLAS_64X_64 = preload("res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png")
 
 @export var event_id=""
@@ -64,6 +68,7 @@ func _on_input_recived():
 	
 func comprobarTornillos():
 	if tornillosQuitados == 4:
+		screwdriverMouse  = false
 		rejilla_sin_pastis.visible = true
 		rejilla_sin_tornillos.queue_free()
 		#rejilla_sin_tornillos_existe = false
@@ -75,6 +80,8 @@ func _process(delta: float) -> void:
 			if  !GameManager.zoomItem and !GameManager.DialogVisible  and mostrar1 :
 				
 				if GameManager.screwdriver:
+					screwdriverMouse  = true
+					comprobarTornillos()
 					SignalBus.execute_event.emit(event_id_screwdriver,true)
 				mostrar1=false
 			
@@ -85,3 +92,9 @@ func _process(delta: float) -> void:
 				
 				pass 
 		
+	if screwdriverMouse:
+		mano.global_position = Vector2(-50, -50)
+		screwdriver2D.global_position = get_viewport().get_mouse_position() + Vector2(25, -30)
+	else	:
+		screwdriver2D.global_position = Vector2(-50, -50)
+		mano.global_position = get_viewport().get_mouse_position()

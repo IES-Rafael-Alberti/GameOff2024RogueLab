@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://e6vos4yr7bpq"]
+[gd_scene load_steps=14 format=3 uid="uid://e6vos4yr7bpq"]
 
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_mapa_atraco.gd" id="1_4km8f"]
 [ext_resource type="PackedScene" uid="uid://cqeulcfun6yx7" path="res://scenes/Prefabs/pieza_mapa_atraco.tscn" id="1_hp64i"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cf2au71lpyvo" path="res://assets/sprites/Puzles/puzle_atraco/trozo 6.png" id="7_ukur3"]
 [ext_resource type="Texture2D" uid="uid://ccmrnx5ksw77p" path="res://assets/sprites/Puzles/puzle_atraco/trozo 3.png" id="8_jgt2d"]
 [ext_resource type="Texture2D" uid="uid://02iycftkhajx" path="res://assets/sprites/Puzles/puzle_atraco/trozo 7.png" id="9_o403j"]
+[ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="13_34fwo"]
 
 [node name="puzzle_mapa_atraco" type="CanvasLayer"]
 script = ExtResource("1_4km8f")
@@ -147,3 +148,8 @@ visible = false
 position = Vector2(481, 272.5)
 scale = Vector2(4, 4.02222)
 texture = ExtResource("5_oudsq")
+
+[node name="mano" type="Sprite2D" parent="."]
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("13_34fwo")

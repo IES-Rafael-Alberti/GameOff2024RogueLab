@@ -1,5 +1,7 @@
 extends CanvasLayer
 @onready var pistola = $pistola
+@onready var mano: Sprite2D = $mano
+
 const PISTOLA_DINERO = preload("res://assets/sprites/Puzles/caja fuerte/pistola_dinero.png")
 
 @export var event_id = ""
@@ -23,11 +25,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	mano.global_position = get_viewport().get_mouse_position()
+	
 	if GameManager.puzzleLayer==self:
 		if !GameManager.DialogVisible and !GameManager.zoomItem and !onceProcess:
 			onceProcess=true
 			SignalBus.input_required.emit()
-	pass
+	
+	
+
 
 func _on_input_recived():
 	if GameManager.puzzleLayer==self:
