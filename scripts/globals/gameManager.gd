@@ -191,26 +191,32 @@ func _on_input_recived():
 			print("Ev_BrokenPicture")
 			if !foto_encimera and !foto_estanteria:
 				evento["NEXT"] = "Ev_FirstBrokenPicture_01"
+				#foto_encimera = true
 			else:
 				evento["NEXT"] = "Ev_SecondBrokenPicture_01"
+				#foto_encimera = true
 		
 		elif interactive.event_id == "Ev_FirstBrokenPicture_01":
 			print("Ev_FirstBrokenPicture_01")
 			ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_francesco.png")
-			ItemMaxScale=64*3
-			ItemMinScale=64
-			ItemSpeed=150
+			ItemMaxScale=900
+			ItemMinScale=100
+			ItemSpeed=1000
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
-			dni=true
-		
+			foto_encimera = true
+			print("foto_encimera: " + str(foto_encimera))
+			print("foto_estanteria: " + str(foto_estanteria))
 		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
 			print("Ev_SecondBrokenPicture_01")
 			ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_mario.png")
-			ItemMaxScale=64*3
-			ItemMinScale=64
-			ItemSpeed=150
+			ItemMaxScale=900
+			ItemMinScale=100
+			ItemSpeed=1000
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
-			dni=true
+			foto_estanteria = true
+			print("foto_encimera: " + str(foto_encimera))
+			print("foto_estanteria: " + str(foto_estanteria))
+			
 		
 		
 		

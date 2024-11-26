@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://x0qiakbruusr" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_240x135.png" id="2_ht76q"]
 [ext_resource type="Texture2D" uid="uid://brbcsir8t2aeu" path="res://assets/sprites/Puzles/puzle4_fotos/foto_rota_trasera.png" id="4_mqfyw"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt1ii"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d8k48"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64x2g"]
@@ -27,8 +29,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vroj"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt1ii"]
-
 [node name="PuzzleFotosEstanteria" type="CanvasLayer"]
 script = ExtResource("1_vdajd")
 event_id = "Ev_Shelve"
@@ -46,6 +46,18 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ht76q")
+
+[node name="EsquinaRota" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 920.0
+offset_top = 279.0
+offset_right = -2.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bt1ii")
 
 [node name="FotosEstanteriasVacia240x135" type="TextureRect" parent="."]
 visible = false
@@ -157,20 +169,8 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_uske8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y1ra2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1vroj")
 
-[node name="EsquinaRota" type="Button" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 920.0
-offset_top = 279.0
-offset_right = -2.0
-offset_bottom = -50.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_bt1ii")
-
+[connection signal="pressed" from="EsquinaRota" to="." method="_on_esquina_rota_pressed"]
 [connection signal="pressed" from="FrancescoFotoButton" to="." method="_on_francesco_foto_button_pressed"]
 [connection signal="pressed" from="MarioFotoButton" to="." method="_on_mario_foto_button_pressed"]
 [connection signal="pressed" from="FotoRotaButton" to="." method="_on_foto_rota_button_pressed"]
 [connection signal="pressed" from="FotoOculta" to="." method="_on_foto_oculta_pressed"]
-[connection signal="pressed" from="EsquinaRota" to="." method="_on_esquina_rota_pressed"]
