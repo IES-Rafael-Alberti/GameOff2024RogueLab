@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bpx8f5144dqgg"]
+
+[node name="Ending3" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

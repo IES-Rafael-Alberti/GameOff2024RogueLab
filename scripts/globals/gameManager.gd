@@ -173,7 +173,6 @@ func _on_input_recived():
 			postIt=true
 		elif interactive.event_id == "Ev_DNI":
 			print("DNI")
-			#if atraco y foto (si: dniAfter)
 			if mapa and foto_encimera and foto_estanteria:
 				evento["NEXT"] = "Ev_DNIAfter"
 				
@@ -188,8 +187,43 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			dni=true
+		elif interactive.event_id == "Ev_BrokenPicture":
+			print("Ev_BrokenPicture")
+			if !foto_encimera and !foto_estanteria:
+				evento["NEXT"] = "Ev_FirstBrokenPicture_01"
+				#foto_encimera = true
+			else:
+				evento["NEXT"] = "Ev_SecondBrokenPicture_01"
+				#foto_encimera = true
+		
+		elif interactive.event_id == "Ev_FirstBrokenPicture_01":
+			print("Ev_FirstBrokenPicture_01")
+			ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_francesco.png")
+			ItemMaxScale=900
+			ItemMinScale=100
+			ItemSpeed=1000
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			foto_encimera = true
+			print("foto_encimera: " + str(foto_encimera))
+			print("foto_estanteria: " + str(foto_estanteria))
 		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
 			print("Ev_SecondBrokenPicture_01")
+			ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_mario.png")
+			ItemMaxScale=900
+			ItemMinScale=100
+			ItemSpeed=1000
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			foto_estanteria = true
+			print("foto_encimera: " + str(foto_encimera))
+			print("foto_estanteria: " + str(foto_estanteria))
+			
+		
+		
+		
+		
+		
+		elif interactive.event_id == "TXT_TEST_2" and key:
+			print("Sal")
 			pass
 		elif interactive.event_id == "Ev_Closet":
 			if GameManager.dni:

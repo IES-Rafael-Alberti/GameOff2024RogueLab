@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ehvobrwbanxk"
+path="res://.godot/imported/Hover.ogg-e347bf6e2f2a1ce4daa9e672449c0009.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/Hover.ogg"
+dest_files=["res://.godot/imported/Hover.ogg-e347bf6e2f2a1ce4daa9e672449c0009.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
