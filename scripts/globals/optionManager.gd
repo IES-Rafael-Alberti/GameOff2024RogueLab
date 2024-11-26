@@ -3,8 +3,19 @@ extends Node
 var busNameMaster = "Master"
 var busNameMusic = "Music"
 var busNameSFX = "SFX"
-var language:String = "ES"
-
+var language:String = "EN"
+var languageId:int = 1:
+		get:
+			return languageId
+		set(value):
+			languageId = value
+			if languageId == 1:
+				language = "EN"
+			elif languageId == 0:
+				language = "ES"
+			print(language)
+			SignalBus.languageChange.emit()
+			
 var busIndexMaster = AudioServer.get_bus_index("Master")
 
 var busIndexMusic = AudioServer.get_bus_index("Music")
@@ -36,6 +47,8 @@ var vsync: bool:
 	set(value):
 		vsync = value
 		onChangeVSync()
+		
+
 
 func _ready() -> void:
 	

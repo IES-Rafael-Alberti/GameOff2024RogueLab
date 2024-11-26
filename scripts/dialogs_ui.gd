@@ -15,9 +15,20 @@ var event_id:String
 func _ready() -> void:
 	SignalBus.execute_dialog.connect(_on_execute_dialog)
 	SignalBus.wait_input.connect(_on_input_recived)
+	SignalBus.languageChange.connect(languageChange)
 	pass # Replace with function body.
 
-
+func languageChange():
+	waiting_input = false
+	lines = GameManager.get_event(event_id)[OptionManager.language].split("\n")
+	label.text=lines[0]
+	label.lines_skipped=0
+	label.visible_characters=1
+	currentLine=0
+	show()
+	GameManager.DialogVisible=true
+	
+	pass
 func _process(delta: float) -> void:
 	if GameManager.DialogVisible and !waiting_input:
 		if currentLine < lines.size():
@@ -35,7 +46,8 @@ func _process(delta: float) -> void:
 func _on_execute_dialog(text:String, event_id:String):
 	#print("Dialogo: "+text)
 	self.event_id = event_id
-	lines = text.split("\n")
+	#GameManager.get_event(event_id)[OptionManager.language]
+	lines = GameManager.get_event(event_id)[OptionManager.language].split("\n")
 	label.text=lines[0]
 	label.lines_skipped=0
 	label.visible_characters=1

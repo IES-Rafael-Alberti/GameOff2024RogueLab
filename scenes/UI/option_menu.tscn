@@ -353,7 +353,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="MenuBar" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+[node name="LanguageMenu" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
 custom_minimum_size = Vector2(215.995, 0)
 layout_mode = 2
 theme = SubResource("Theme_tn06u")
@@ -411,6 +411,7 @@ stretch_mode = 5
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VolumeMusicSlider" to="." method="_on_volume_music_slider_value_changed"]
 [connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/VolumeSFXSlider" to="." method="_on_volume_sfx_slider_ready"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/VolumeSFXSlider" to="." method="_on_volume_sfx_slider_value_changed"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/LanguageMenu" to="." method="_on_lenguage_menu_item_selected"]
 [connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VSyncCheckButton" to="." method="_on_v_sync_check_button_ready"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VSyncCheckButton" to="." method="_on_v_sync_check_button_toggled"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
