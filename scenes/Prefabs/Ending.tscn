@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqp3w3mh0bjad"]
+[gd_scene load_steps=7 format=3 uid="uid://dqp3w3mh0bjad"]
 
 [ext_resource type="Script" path="res://scripts/ending.gd" id="1_i3dou"]
+[ext_resource type="FontFile" uid="uid://c1rf6rq6ggj61" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_ak1bp"]
+[ext_resource type="Texture2D" uid="uid://buyu3xjc7qfwa" path="res://assets/sprites/Menu/LETRAS_MENU_002.png" id="3_xocm0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3t7w"]
+font = ExtResource("2_ak1bp")
+font_size = 15
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs1vj"]
+atlas = ExtResource("3_xocm0")
+region = Rect2(96, 138, 142, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hytx2"]
+atlas = ExtResource("3_xocm0")
+region = Rect2(96, 154, 142, 12)
 
 [node name="EndingLayer" type="CanvasLayer"]
 layer = 10
@@ -38,29 +52,31 @@ text = "La puerta se abrió, como era de esperar, así que decidí salir del apa
 		recientemente en el recinto. Pasé de largo y decidí bajar el edificio, no me sentía nada bien
 		y quería salir rápidamente de ese lugar, encontrar otro tipo de ayuda... Tras unos cinco minutos, varios
 		cuerpos me reducieron y fui arrestrado por ser el principal sospechoso de ese asesinato.
+
+Final 500
 "
+label_settings = SubResource("LabelSettings_g3t7w")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-max_lines_visible = 10
+max_lines_visible = 16
 visible_characters_behavior = 1
 
-[node name="MenuButton" type="MenuButton" parent="."]
+[node name="MenuButton" type="TextureButton" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -57.0
-offset_top = -90.0
-offset_right = 58.0
-offset_bottom = -59.0
+offset_left = -174.0
+offset_top = -135.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_hover_color = Color(0.671337, 0.78665, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.0392157, 0.356863, 1, 1)
-theme_override_font_sizes/font_size = 25
-text = "Back to menu"
+scale = Vector2(2, 2)
+texture_normal = SubResource("AtlasTexture_rs1vj")
+texture_hover = SubResource("AtlasTexture_hytx2")
+stretch_mode = 5
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

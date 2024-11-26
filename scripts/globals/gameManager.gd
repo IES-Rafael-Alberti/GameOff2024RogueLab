@@ -190,10 +190,6 @@ func _on_input_recived():
 			dni=true
 		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
 			print("Ev_SecondBrokenPicture_01")
-			
-		
-		elif interactive.event_id == "TXT_TEST_2" and key:
-			print("Sal")
 			pass
 		
 	pass
