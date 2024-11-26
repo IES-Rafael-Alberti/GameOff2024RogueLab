@@ -1,9 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://duy3qiitluf1l"]
+[gd_scene load_steps=25 format=3 uid="uid://duy3qiitluf1l"]
 
 [ext_resource type="Script" path="res://scripts/menus/pause_menu.gd" id="1_w0y23"]
 [ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_pq523"]
 [ext_resource type="Texture2D" uid="uid://gnhkj2j64dxu" path="res://assets/sprites/Menu/TELE_MENU.png" id="2_pt43i"]
+[ext_resource type="Shader" path="res://scripts/shaders/distorsion.gdshader" id="3_1sr0w"]
+[ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="4_jvfns"]
 [ext_resource type="Texture2D" uid="uid://b4af5poev0k0j" path="res://assets/sprites/Menu/LETRAS_MENU.png" id="4_qxapb"]
+[ext_resource type="Texture2D" uid="uid://c7yj803e7nhni" path="res://assets/sprites/Menu/TELE_VACIA.png" id="5_s135s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_snscf"]
 atlas = ExtResource("2_pt43i")
@@ -69,6 +72,13 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfil4"]
+shader = ExtResource("3_1sr0w")
+shader_parameter/scanline_intensity = 0.468
+shader_parameter/noise_intensity = 0.194
+shader_parameter/distortion = 0.025
+shader_parameter/time = null
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_61svx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjogt"]
@@ -105,6 +115,22 @@ position = Vector2(483, 272)
 scale = Vector2(4.097, 4.097)
 sprite_frames = SubResource("SpriteFrames_htv2s")
 autoplay = "default"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_wfil4")
+offset_left = 196.0
+offset_top = 106.0
+offset_right = 233.0
+offset_bottom = 143.0
+scale = Vector2(11.7431, 10.1901)
+texture = ExtResource("4_jvfns")
+expand_mode = 1
+
+[node name="ColorRect2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(483, 272)
+scale = Vector2(4.097, 4.168)
+texture = ExtResource("5_s135s")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 8
