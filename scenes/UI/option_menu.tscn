@@ -1,11 +1,14 @@
-[gd_scene load_steps=37 format=3 uid="uid://bbr2fn21jjgan"]
+[gd_scene load_steps=41 format=3 uid="uid://bbr2fn21jjgan"]
 
 [ext_resource type="Script" path="res://scripts/menus/option_menu.gd" id="1_58sjs"]
 [ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_p15js"]
 [ext_resource type="Texture2D" uid="uid://gnhkj2j64dxu" path="res://assets/sprites/Menu/TELE_MENU.png" id="2_rm6cb"]
+[ext_resource type="Shader" path="res://scripts/shaders/distorsion.gdshader" id="3_gn0hn"]
 [ext_resource type="Texture2D" uid="uid://buyu3xjc7qfwa" path="res://assets/sprites/Menu/LETRAS_MENU_002.png" id="4_clidc"]
+[ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="4_f02ag"]
 [ext_resource type="Texture2D" uid="uid://b4af5poev0k0j" path="res://assets/sprites/Menu/LETRAS_MENU.png" id="4_ql66u"]
 [ext_resource type="Texture2D" uid="uid://3vc5tmf5x2r2" path="res://assets/sprites/Menu/Sprite-0002.png" id="5_2h4kb"]
+[ext_resource type="Texture2D" uid="uid://c7yj803e7nhni" path="res://assets/sprites/Menu/TELE_VACIA.png" id="5_8et4v"]
 [ext_resource type="Texture2D" uid="uid://cm0qgshct46h8" path="res://assets/sprites/Menu/Sprite-0003.png" id="6_ouqid"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkdmj"]
@@ -71,6 +74,13 @@ animations = [{
 "name": &"new_animation",
 "speed": 7.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j1j6b"]
+shader = ExtResource("3_gn0hn")
+shader_parameter/scanline_intensity = 0.468
+shader_parameter/noise_intensity = 0.194
+shader_parameter/distortion = 0.025
+shader_parameter/time = null
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bedsi"]
 
@@ -164,6 +174,22 @@ scale = Vector2(4.09699, 4.09699)
 sprite_frames = SubResource("SpriteFrames_rbbjd")
 animation = &"new_animation"
 autoplay = "new_animation"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_j1j6b")
+offset_left = 196.0
+offset_top = 106.0
+offset_right = 233.0
+offset_bottom = 143.0
+scale = Vector2(11.7431, 10.1901)
+texture = ExtResource("4_f02ag")
+expand_mode = 1
+
+[node name="ColorRect2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(483, 272)
+scale = Vector2(4.097, 4.168)
+texture = ExtResource("5_8et4v")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(-4.65, 0)
