@@ -1,9 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://c81cochri1mrt"]
+[gd_scene load_steps=25 format=3 uid="uid://c81cochri1mrt"]
 
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="2_au0p8"]
 [ext_resource type="Texture2D" uid="uid://gnhkj2j64dxu" path="res://assets/sprites/Menu/TELE_MENU.png" id="2_sdqvj"]
 [ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_ucl2a"]
 [ext_resource type="Texture2D" uid="uid://b4af5poev0k0j" path="res://assets/sprites/Menu/LETRAS_MENU.png" id="3_xiy1e"]
+[ext_resource type="AudioStream" uid="uid://n5oknt8qfeko" path="res://Sound Effects/Pressed.ogg" id="5_5wj1f"]
+[ext_resource type="AudioStream" uid="uid://c6igu062inf5j" path="res://Sound Effects/Opening Ambience.ogg" id="5_t6hdu"]
+[ext_resource type="AudioStream" uid="uid://ehvobrwbanxk" path="res://Sound Effects/Hover.ogg" id="6_0gtqq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tq4n2"]
 atlas = ExtResource("3_xiy1e")
@@ -174,6 +177,22 @@ texture_normal = SubResource("AtlasTexture_f2yd7")
 texture_hover = SubResource("AtlasTexture_vqiah")
 stretch_mode = 5
 
+[node name="Pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5wj1f")
+bus = &"SFX"
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_0gtqq")
+bus = &"SFX"
+
+[node name="Opening" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_t6hdu")
+autoplay = true
+bus = &"Music"
+
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
