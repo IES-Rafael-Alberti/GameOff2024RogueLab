@@ -358,5 +358,13 @@
 	"NEXT": "Ev_DNI",
 	"ES": "¿Qué es esto?",
 	"EN": "What is this?"
+  },
+  "Ev_Final_03": {
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "PUZZLE",
+	"NEXT": "",
+	"ES": "accediste al final3",
+	"EN": ""
   }
 }

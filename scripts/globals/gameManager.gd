@@ -217,8 +217,8 @@ func _on_input_recived():
 			print("foto_encimera: " + str(foto_encimera))
 			print("foto_estanteria: " + str(foto_estanteria))
 			
-		
-		
+		elif interactive.event_id == "Ev_Mirror":
+			evento["NEXT"] = "Ev_Final_03"
 		
 		
 		
