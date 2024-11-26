@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var volume_music_slider: HSlider = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VolumeMusicSlider
 @onready var volume_sfx_slider: HSlider = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/VolumeSFXSlider
 @onready var v_sync_check_button: CheckButton = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VSyncCheckButton
-@onready var language_menu: OptionButton = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/LenguageMenu
+@onready var language_menu: OptionButton = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/LanguageMenu
 
 func _on_back_button_pressed() -> void:
 	CanvasManager.back_options_menu()
@@ -35,7 +35,7 @@ func _ready() -> void:
 	volume_master_slider.value=OptionManager.volumeMaster
 	volume_music_slider.value=OptionManager.volumeMusic
 	volume_sfx_slider.value=OptionManager.volumeSFX
-	language_menu.selected=OptionManager.languageId
+	language_menu.select(OptionManager.languageId)
 	v_sync_check_button.flat=OptionManager.vsync
 	
 	pass

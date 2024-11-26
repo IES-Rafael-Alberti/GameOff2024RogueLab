@@ -129,14 +129,14 @@ func _on_event_execute(event_id,aux):
 			
 			pass
 		if event_id == "ENDING1" or event_id == "ENDING2":
-			SignalBus.execute_ending.emit(evento["ES"], event_id)
+			SignalBus.execute_ending.emit(evento[OptionManager.language], event_id)
 		else:	
 			if aux:
 				var aux_event = get_event(event_id)
 				#Dependiendo del idioma ES o EN
-				SignalBus.execute_dialog.emit(aux_event["ES"], event_id)
+				SignalBus.execute_dialog.emit(aux_event[OptionManager.language], event_id)
 			else:	
-				SignalBus.execute_dialog.emit(evento["ES"], event_id)
+				SignalBus.execute_dialog.emit(evento[OptionManager.language], event_id)
 	pass
 
 func _on_input_recived():

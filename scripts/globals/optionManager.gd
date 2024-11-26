@@ -13,6 +13,7 @@ var languageId:int = 1:
 				language = "EN"
 			elif languageId == 0:
 				language = "ES"
+			print(language)
 			
 var busIndexMaster = AudioServer.get_bus_index("Master")
 
