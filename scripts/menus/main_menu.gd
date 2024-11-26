@@ -4,7 +4,7 @@ func _on_play_button_pressed() -> void:
 	TransitionScreen.transition()
 	$Pressed.play()
 	await SignalBus.on_transition_finished
-	CanvasManager.play_main_scene()
+	CanvasManager.play_opening()
 	pass
 
 
