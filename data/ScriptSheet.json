@@ -143,6 +143,14 @@
 	"ES": "¿Qué es eso que asoma?",
 	"EN": "What’s that sticking out?"
   },
+  "Ev_BrokenPicture": {
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Que es esto de de aki?",
+	"EN": ""
+  },
   "Ev_FirstBrokenPicture_01": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
@@ -251,7 +259,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "",
+	"NEXT": "Ev_FirstCode",
 	"ES": "Un papel con números... Tal vez pueda servirme de algo.",
 	"EN": "A piece of paper with numbres... Maybe they can serve me later."
   },
@@ -347,7 +355,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "",
+	"NEXT": "Ev_DNI",
 	"ES": "¿Qué es esto?",
 	"EN": "What is this?"
   }
