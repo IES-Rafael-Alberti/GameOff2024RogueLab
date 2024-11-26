@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dhs180cnfuqmr" path="res://scenes/puzzles/puzzle_rejilla.tscn" id="3_b623p"]
 [ext_resource type="PackedScene" uid="uid://e6vos4yr7bpq" path="res://scenes/puzzles/puzzle_mapa_atraco.tscn" id="4_4i0f0"]
 [ext_resource type="PackedScene" uid="uid://dqm6q0g8uqrjn" path="res://scenes/puzzles/puzzle_caja_fuerte.tscn" id="4_ugdwm"]
-[ext_resource type="PackedScene" path="res://scenes/ending_3.tscn" id="6_fgqp6"]
+[ext_resource type="PackedScene" uid="uid://bpx8f5144dqgg" path="res://scenes/ending_3.tscn" id="6_fgqp6"]
 
 [node name="Puzzles" type="Node"]
 script = ExtResource("1_d3p88")

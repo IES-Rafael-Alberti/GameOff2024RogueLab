@@ -611,7 +611,6 @@ texture = ExtResource("7_1dy4f")
 expand_mode = 1
 
 [node name="Triggers" type="Node2D" parent="."]
-texture_repeat = 0
 
 [node name="TriggerInicio" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(-10, 54)
@@ -669,7 +668,6 @@ scale = Vector2(0.261314, -0.535602)
 event_id = "Ev_SecondBrokenPicture_01"
 
 [node name="Elements_Interactive" type="Node2D" parent="."]
-texture_repeat = 0
 
 [node name="Sofa" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
 position = Vector2(-52, 75)
