@@ -264,6 +264,7 @@ position = Vector2(-2, 8)
 shape = SubResource("CircleShape2D_im3by")
 
 [node name="HUD" type="TextureRect" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.25, 0.25)
