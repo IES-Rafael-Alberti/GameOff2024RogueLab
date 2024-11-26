@@ -80,9 +80,11 @@ func _on_input_recived():
 	pass
 	
 func check_endings():
-	if event_id == "TXT_TEST_2" and GameManager.get_key:
+	var next_event_id = GameManager.get_event(event_id)["NEXT"]
+	if next_event_id == "Ev_Ending_01":
+		GameManager.setInteractive(null)
+		GameManager.evento=null
 		TransitionScreen.transition()
 		await SignalBus.on_transition_finished
-		print("Sal")
-		SignalBus.ending_info.emit("ENDING1")
+		SignalBus.ending_info.emit(GameManager.get_event(next_event_id)[OptionManager.language])
 	pass	

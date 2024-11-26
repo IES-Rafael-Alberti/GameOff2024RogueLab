@@ -61,9 +61,6 @@ func get_player():
 		player.position.y+=45
 	
 	return player
-	
-func get_key():
-	return self.key	
 
 func eventHandler():
 	get_event_from_interactive()
@@ -222,10 +219,6 @@ func _on_input_recived():
 		elif interactive.event_id == "Ev_Table":
 			if key:
 				evento["NEXT"] = "Ev_Blueprint_01"
-		
-		elif interactive.event_id == "TXT_TEST_2" and key:
-			print("Sal")
-			pass
 		elif interactive.event_id == "Ev_Closet":
 			if GameManager.dni:
 				evento["NEXT"] = "Ev_FirstWardrobe"
@@ -238,4 +231,8 @@ func _on_input_recived():
 		elif interactive.event_id == "Ev_Shelve_02":
 			if GameManager.key:
 				evento["NEXT"]="Ev_Shelve"
+		elif interactive.event_id == "TXT_TEST_2":
+			if GameManager.key:
+				evento["NEXT"]="Ev_Ending_01"
+			
 	pass
