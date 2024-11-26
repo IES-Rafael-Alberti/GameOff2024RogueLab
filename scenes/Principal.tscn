@@ -635,7 +635,7 @@ event_id = "Ev_FirstCode"
 [node name="CajaFuerte" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(385, 91)
 scale = Vector2(2.38952, 2.19651)
-event_id = "Ev_FirstWardrobe"
+event_id = "Ev_Closet"
 
 [node name="MapaAtraco" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(-7, 71)
