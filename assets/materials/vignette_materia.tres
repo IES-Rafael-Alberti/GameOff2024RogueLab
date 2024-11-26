@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b77whno3d8l2w"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dc7hpj2ikl847"]
 
-[ext_resource type="Shader" uid="uid://wc3l4tvmjhbg" path="res://assets/materials/vignette.tres" id="1_bqu14"]
+[ext_resource type="Shader" uid="uid://x85fjtny8s4h" path="res://assets/materials/vignette.tres" id="1_bqu14"]
 
 [resource]
 shader = ExtResource("1_bqu14")

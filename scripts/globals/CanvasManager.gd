@@ -23,6 +23,7 @@ const DIALOGS = preload("res://scenes/UI/dialogs.tscn")
 const ENDING = preload("res://scenes/Prefabs/Ending.tscn")
 
 const MAIN_SCENE= preload("res://scenes/Principal.tscn")
+const OPENING = preload("res://scenes/opening.tscn")
 
 func set_glitch_effect(action:bool):
 	glitch_tv_effect=action
@@ -107,6 +108,10 @@ func back_options_menu():
 			get_tree().get_first_node_in_group("MainMenu").visible = true
 		pass
 	
+
+func play_opening():
+	get_tree().change_scene_to_packed(OPENING)
+	pass
 
 func play_main_scene():
 	var player = GameManager.get_player()
