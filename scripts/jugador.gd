@@ -76,10 +76,10 @@ func _physics_process(delta):
 			if direccionHorizontal != 0:
 				if direccionHorizontal > 0: #el if este esta implementado por el movimiento con el joistic
 					velocity.x = 1 * SPEED
-					estado = ""
+					estado = "Right"
 				else:
 					velocity.x = -1 * SPEED
-					estado = ""
+					estado = "Left"
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 			# Desacelera el eje Y para mantener solo el movimiento en X
@@ -91,7 +91,7 @@ func _physics_process(delta):
 				print(directionVertical)
 				if directionVertical > 0: #el if este esta implementado por el movimiento con el joistic
 					velocity.y = 1 * SPEED
-					estado = ""
+					estado = "Down" 
 				else:
 					velocity.y = -1 * SPEED
 					estado = "UP"
@@ -113,8 +113,14 @@ func _physics_process(delta):
 		if directionVertical == 0 and direccionHorizontal == 0:
 			if estado == "UP":
 				animated_sprite_2d.play("idleUp")
+			elif estado ==  "Down":
+				animated_sprite_2d.play("idleDown")
+			elif estado ==  "Right":
+				animated_sprite_2d.play("idleRight")
+			elif estado ==  "Left":
+				animated_sprite_2d.play("idleLeft")
 			else:
-				animated_sprite_2d.play("idle")
+				animated_sprite_2d.play("idleDown")
 		elif ultima_direccion == "horizontal":
 			animated_sprite_2d.play("walk")
 			# Cambia la dirección del sprite según la dirección que toma el personaje
