@@ -665,7 +665,7 @@ event_id = "Ev_DNI"
 [node name="FotoEncimera" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(186, 29)
 scale = Vector2(0.261314, -0.535602)
-event_id = "Ev_SecondBrokenPicture_01"
+event_id = "Ev_BrokenPicture"
 
 [node name="Elements_Interactive" type="Node2D" parent="."]
 
