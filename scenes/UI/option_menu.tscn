@@ -225,7 +225,7 @@ expand_mode = 1
 [node name="ColorRect2" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(483, 272)
-scale = Vector2(4.097, 4.168)
+scale = Vector2(4.097, 4.097)
 texture = ExtResource("5_8et4v")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
