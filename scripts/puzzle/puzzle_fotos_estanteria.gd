@@ -9,6 +9,7 @@ var canExit=true
 
 @onready var fotos_estanterias_vacia: TextureRect = $FotosEstanteriasVacia240x135
 @onready var trasera_button: TextureButton = $TextureButton
+@onready var foto_oculta = $FotoOculta
 
 
 
@@ -69,12 +70,17 @@ func _on_esquina_rota_pressed() -> void:
 	SignalBus.zoom_item.emit(FOTO_ROTA_TRASERA,900,100,1000)
 	SignalBus.execute_event.emit(event_id_foto_rota,true)
 	
-	trasera_button.show()
+	#trasera_button.show()
+	foto_oculta.show()
 	fotos_estanterias_vacia.show()
 	
 	pass # Replace with function body.
 
 
 func _on_trasera_button_pressed() -> void:
-	
-	pass # Replace with function body.
+	pass
+
+func _on_foto_oculta_pressed() -> void:
+	print("Nueva foto obtenida "+event_id_foto_rota_trasera)
+	#SignalBus.zoom_item.emit(FOTO_ROTA_TRASERA,900,100,1000)
+	SignalBus.execute_event.emit(event_id_foto_rota_trasera,true)
