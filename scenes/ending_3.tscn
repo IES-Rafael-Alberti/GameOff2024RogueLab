@@ -130,4 +130,5 @@ script = ExtResource("1_24223")
 position = Vector2(479.5, 271.75)
 scale = Vector2(3.99583, 4.0037)
 sprite_frames = SubResource("SpriteFrames_fva04")
-frame_progress = 0.140463
+autoplay = "default"
+frame_progress = 0.87257
