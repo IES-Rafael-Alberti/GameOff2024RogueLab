@@ -1,7 +1,7 @@
 extends Control
 
 var glitch_tv_effect:bool 
-var vignet_effect:bool
+var vignet_effect:bool=true
 var vignet_effect_amount:int
 var glow_effect:bool
 var black_and_white_effect:bool
