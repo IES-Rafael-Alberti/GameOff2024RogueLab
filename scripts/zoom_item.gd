@@ -14,17 +14,16 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	if GameManager.zoomItem and !waiting:
+	if GameManager.zoomItem:
 		if texture_item.custom_minimum_size.x < textureMaxSize:
 			texture_item.custom_minimum_size.x+=delta*speed
 			texture_item.custom_minimum_size.y+=delta*speed
+			
 		else :
-			SignalBus.input_required.emit()
 			print("animationFinished")
-			waiting=true
-	elif GameManager.zoomItem and waiting:
-		GameManager.zoomItem=false
-		hide()
+	#elif GameManager.zoomItem and waiting:
+	#	GameManager.zoomItem=false
+	#	hide()
 	pass
 
 func _zoom_item_execute(texture,textureMaxSize,textureMinSize,speed):
@@ -42,7 +41,7 @@ func _zoom_item_execute(texture,textureMaxSize,textureMinSize,speed):
 
 func _on_input_recieved():
 	if GameManager.zoomItem :
-		if GameManager.DialogVisible and waiting:
+		if !GameManager.DialogVisible:
 			if texture_item.custom_minimum_size.x >= textureMaxSize:
 				GameManager.zoomItem=false
 				hide()

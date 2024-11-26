@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ilp3hdc66mxl"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b0wmofx38qqu2"]
 
-[ext_resource type="Shader" uid="uid://cl4igyhj8ycde" path="res://assets/materials/blood.tres" id="1_r3lh1"]
+[ext_resource type="Shader" uid="uid://e4ipqobkp8oq" path="res://assets/materials/blood.tres" id="1_r3lh1"]
 
 [resource]
 shader = ExtResource("1_r3lh1")
