@@ -11,6 +11,9 @@ var estado:String = ""
 # Variables para nodos
 @onready var animated_sprite_2d = $AnimatedSprite2D  # Nodo para el sprite animado del personaje
 
+@onready var hud: TextureRect = $HUD
+
+
 func _ready() -> void:
 	
 	SignalBus.input_required.connect(_on_input_required)
@@ -38,10 +41,14 @@ func _physics_process(delta):
 		
 	if !CanvasManager.inPause and Input.is_action_just_pressed("interaccion"):	
 		
-		if required:
-			required=false
+		
+		if GameManager.DialogVisible or GameManager.puzzleLayer!=null or GameManager.zoomItem or required:
 			SignalBus.wait_input.emit()
-		pass
+		
+		#if required:
+		#	required=false
+		#	SignalBus.wait_input.emit()
+		#pass
 	
 	#endregion
 
@@ -88,7 +95,7 @@ func _physics_process(delta):
 		elif ultima_direccion == "vertical":
 			# Si la última entrada fue vertical, mueve solo en el eje Y
 			if directionVertical != 0:
-				print(directionVertical)
+				#print(directionVertical)
 				if directionVertical > 0: #el if este esta implementado por el movimiento con el joistic
 					velocity.y = 1 * SPEED
 					estado = "Down" 
@@ -148,4 +155,16 @@ func _physics_process(delta):
 
 func  _on_input_required():
 	required=true
+	pass
+	
+func hideHUD():
+	
+	hud.hide()
+	
+	pass	
+	
+func showHUD():
+	
+	hud.show()
+	
 	pass

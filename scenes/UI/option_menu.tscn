@@ -1,38 +1,251 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbr2fn21jjgan"]
+[gd_scene load_steps=49 format=3 uid="uid://bbr2fn21jjgan"]
 
 [ext_resource type="Script" path="res://scripts/menus/option_menu.gd" id="1_58sjs"]
 [ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_p15js"]
+[ext_resource type="Texture2D" uid="uid://gnhkj2j64dxu" path="res://assets/sprites/Menu/TELE_MENU.png" id="2_rm6cb"]
+[ext_resource type="Shader" path="res://scripts/shaders/distorsion.gdshader" id="3_gn0hn"]
+[ext_resource type="Texture2D" uid="uid://buyu3xjc7qfwa" path="res://assets/sprites/Menu/LETRAS_MENU_002.png" id="4_clidc"]
+[ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="4_f02ag"]
+[ext_resource type="Texture2D" uid="uid://b4af5poev0k0j" path="res://assets/sprites/Menu/LETRAS_MENU.png" id="4_ql66u"]
+[ext_resource type="Texture2D" uid="uid://3vc5tmf5x2r2" path="res://assets/sprites/Menu/Sprite-0002.png" id="5_2h4kb"]
+[ext_resource type="Texture2D" uid="uid://c7yj803e7nhni" path="res://assets/sprites/Menu/TELE_VACIA.png" id="5_8et4v"]
+[ext_resource type="Texture2D" uid="uid://cm0qgshct46h8" path="res://assets/sprites/Menu/Sprite-0003.png" id="6_ouqid"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkdmj"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwnpg"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(240, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iy3f"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(480, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p1gm"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(720, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7t8j"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(960, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r48ia"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(1200, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4pxk"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(1440, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cqn1"]
+atlas = ExtResource("2_rm6cb")
+region = Rect2(1680, 0, 240, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rbbjd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkdmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwnpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iy3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p1gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7t8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r48ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4pxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cqn1")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 7.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j1j6b"]
+shader = ExtResource("3_gn0hn")
+shader_parameter/scanline_intensity = 0.468
+shader_parameter/noise_intensity = 0.194
+shader_parameter/distortion = 0.025
+shader_parameter/time = null
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bedsi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7ysu"]
+atlas = ExtResource("4_clidc")
+region = Rect2(4, 185, 239, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b8kt"]
+atlas = ExtResource("4_clidc")
+region = Rect2(79, 153, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpkrk"]
+atlas = ExtResource("4_clidc")
+region = Rect2(79, 139, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5u23"]
+texture = ExtResource("6_ouqid")
+texture_margin_top = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ex1rn"]
+texture = ExtResource("5_2h4kb")
+texture_margin_top = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02ma8"]
+atlas = ExtResource("4_clidc")
+region = Rect2(4, 201, 239, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r10rf"]
+atlas = ExtResource("4_clidc")
+region = Rect2(79, 153, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5qnh"]
+texture = ExtResource("6_ouqid")
+texture_margin_top = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eyy0d"]
+texture = ExtResource("5_2h4kb")
+texture_margin_top = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvlvs"]
+atlas = ExtResource("4_clidc")
+region = Rect2(4, 217, 239, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7aws"]
+atlas = ExtResource("4_clidc")
+region = Rect2(79, 153, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jcw83"]
+texture = ExtResource("6_ouqid")
+texture_margin_top = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vipes"]
+texture = ExtResource("5_2h4kb")
+texture_margin_top = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q7tj"]
+atlas = ExtResource("4_clidc")
+region = Rect2(5, 4, 94, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qr5pr"]
+texture = ExtResource("6_ouqid")
+texture_margin_left = 10.0
+texture_margin_top = 5.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_tn06u"]
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_qr5pr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rh5pa"]
+texture = ExtResource("6_ouqid")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxbuw"]
+texture = ExtResource("5_2h4kb")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfid3"]
+atlas = ExtResource("4_ql66u")
+region = Rect2(55, 116, 16, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdrek"]
+atlas = ExtResource("4_clidc")
+region = Rect2(5, 82, 82, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrtnh"]
+atlas = ExtResource("4_clidc")
+region = Rect2(5, 98, 74, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaagl"]
+atlas = ExtResource("4_clidc")
+region = Rect2(4, 233, 239, 12)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e64n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywtln"]
+atlas = ExtResource("4_ql66u")
+region = Rect2(4, 149, 20, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7naq"]
+atlas = ExtResource("4_ql66u")
+region = Rect2(27, 149, 20, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6k82"]
+atlas = ExtResource("4_ql66u")
+region = Rect2(4, 116, 48, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw6a7"]
+atlas = ExtResource("4_ql66u")
+region = Rect2(128, 116, 48, 12)
 
 [node name="OptionMenu" type="CanvasLayer"]
 layer = 25
 script = ExtResource("1_58sjs")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 1, 0, 1)
+[node name="ColorRect" type="AnimatedSprite2D" parent="."]
+position = Vector2(483, 272)
+scale = Vector2(4.09699, 4.09699)
+sprite_frames = SubResource("SpriteFrames_rbbjd")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_j1j6b")
+offset_left = 196.0
+offset_top = 106.0
+offset_right = 233.0
+offset_bottom = 143.0
+scale = Vector2(11.7431, 10.1901)
+texture = ExtResource("4_f02ag")
+expand_mode = 1
+
+[node name="ColorRect2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(483, 272)
+scale = Vector2(4.097, 4.097)
+texture = ExtResource("5_8et4v")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(-4.65, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -59.0
-offset_top = -20.0
-offset_right = 59.0
-offset_bottom = 20.0
+offset_left = -354.0
+offset_top = -107.0
+offset_right = 536.0
+offset_bottom = 308.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.65, 0.65)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_p15js")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bedsi")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -50,17 +263,24 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VolumeMasterLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VolumeMasterLabel" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
-text = "Volume Master"
+texture_normal = SubResource("AtlasTexture_s7ysu")
+stretch_mode = 5
 
 [node name="VolumeMasterSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_icons/grabber = SubResource("AtlasTexture_4b8kt")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_gpkrk")
+theme_override_styles/slider = SubResource("StyleBoxTexture_w5u23")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_ex1rn")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_ex1rn")
 max_value = 1.0
 step = 0.001
 value = 1.0
@@ -69,17 +289,24 @@ value = 1.0
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VolumeMusicLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VolumeMusicLabel" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
-text = "Volume Music"
+texture_normal = SubResource("AtlasTexture_02ma8")
+stretch_mode = 5
 
 [node name="VolumeMusicSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_icons/grabber = SubResource("AtlasTexture_r10rf")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_r10rf")
+theme_override_styles/slider = SubResource("StyleBoxTexture_r5qnh")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_eyy0d")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_eyy0d")
 max_value = 1.0
 step = 0.001
 value = 1.0
@@ -87,46 +314,96 @@ value = 1.0
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VolumeSFXLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="VolumeSFXLabel" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
 size_flags_stretch_ratio = 2.0
-text = "Volume SFX"
+texture_normal = SubResource("AtlasTexture_gvlvs")
+stretch_mode = 5
 
 [node name="VolumeSFXSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_icons/grabber = SubResource("AtlasTexture_g7aws")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_g7aws")
+theme_override_styles/slider = SubResource("StyleBoxTexture_jcw83")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_vipes")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_vipes")
 max_value = 1.0
 step = 0.001
 value = 1.0
 
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Lenguage" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(0, 21)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+texture_normal = SubResource("AtlasTexture_8q7tj")
+stretch_mode = 5
+
+[node name="blank" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(255, 21)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="LanguageMenu" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(215.995, 0)
+layout_mode = 2
+theme = SubResource("Theme_tn06u")
+theme_override_styles/focus = SubResource("StyleBoxTexture_rh5pa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_rh5pa")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rh5pa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rh5pa")
+theme_override_styles/normal = SubResource("StyleBoxTexture_uxbuw")
+theme_override_icons/arrow = SubResource("AtlasTexture_tfid3")
+selected = 0
+item_count = 2
+popup/item_0/icon = SubResource("AtlasTexture_vdrek")
+popup/item_1/icon = SubResource("AtlasTexture_jrtnh")
+popup/item_1/id = 1
+
 [node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VSyncLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
 size_flags_stretch_ratio = 2.0
-text = "VSync"
+texture_normal = SubResource("AtlasTexture_eaagl")
+stretch_mode = 5
 
 [node name="VSyncCheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
+size_flags_vertical = 4
 theme = ExtResource("2_p15js")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4e64n")
+theme_override_icons/checked = SubResource("AtlasTexture_ywtln")
+theme_override_icons/unchecked = SubResource("AtlasTexture_t7naq")
+alignment = 1
+icon_alignment = 1
 
 [node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(640, 30)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="BackButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Back"
+texture_normal = SubResource("AtlasTexture_m6k82")
+texture_hover = SubResource("AtlasTexture_lw6a7")
+stretch_mode = 5
 
 [connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VolumeMasterSlider" to="." method="_on_volume_master_slider_ready"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VolumeMasterSlider" to="." method="_on_volume_master_slider_value_changed"]
@@ -134,6 +411,7 @@ text = "Back"
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VolumeMusicSlider" to="." method="_on_volume_music_slider_value_changed"]
 [connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/VolumeSFXSlider" to="." method="_on_volume_sfx_slider_ready"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/VolumeSFXSlider" to="." method="_on_volume_sfx_slider_value_changed"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/LanguageMenu" to="." method="_on_lenguage_menu_item_selected"]
 [connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VSyncCheckButton" to="." method="_on_v_sync_check_button_ready"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VSyncCheckButton" to="." method="_on_v_sync_check_button_toggled"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

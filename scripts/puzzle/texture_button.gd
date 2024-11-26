@@ -17,6 +17,9 @@ func _process(delta):
 
 func _on_pressed():
 	#emito la señal input_caja_fuerte creada en SignalBus y le mando un String
-	SignalBus.input_caja_fuerte.emit(numero)
-	SignalBus.input_rejilla.emit(numero)
+	if numero == "PASTILLAS":
+		SignalBus.input_rejilla.emit()
+	else:
+		SignalBus.input_caja_fuerte.emit(numero)
+	
 	pass # Replace with function body.

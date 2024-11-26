@@ -1,8 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://b7o2r2hgpxo7e"]
+[gd_scene load_steps=17 format=3 uid="uid://b7o2r2hgpxo7e"]
 
 [ext_resource type="Texture2D" uid="uid://deydup4oa6ss1" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_vacia_240x135.png" id="1_5h2ek"]
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_fotos_estanteria.gd" id="1_vdajd"]
 [ext_resource type="Texture2D" uid="uid://x0qiakbruusr" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_240x135.png" id="2_ht76q"]
+[ext_resource type="Texture2D" uid="uid://brbcsir8t2aeu" path="res://assets/sprites/Puzles/puzle4_fotos/foto_rota_trasera.png" id="4_mqfyw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt1ii"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d8k48"]
 
@@ -26,18 +29,13 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vroj"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt1ii"]
-
 [node name="PuzzleFotosEstanteria" type="CanvasLayer"]
 script = ExtResource("1_vdajd")
-
-[node name="FotosEstanteriasVacia240x135" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_5h2ek")
+event_id = "Ev_Shelve"
+event_id_foto_fran = "Ev_Picture_01"
+event_id_foto_mario = "Ev_Picture_02"
+event_id_foto_rota = "Ev_Picture_03"
+event_id_foto_rota_trasera = "Ev_BrokenPicture"
 
 [node name="FotosEstanterias240x135" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -48,6 +46,39 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ht76q")
+
+[node name="EsquinaRota" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 920.0
+offset_top = 279.0
+offset_right = -2.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bt1ii")
+
+[node name="FotosEstanteriasVacia240x135" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 660.0
+offset_top = 1.0
+offset_right = 660.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.313642, 1)
+texture = ExtResource("1_5h2ek")
+
+[node name="Sprite2D" type="Sprite2D" parent="FotosEstanteriasVacia240x135"]
+position = Vector2(376.225, 319)
+scale = Vector2(12.4545, 3.925)
+texture = ExtResource("4_mqfyw")
+region_enabled = true
+region_rect = Rect2(72, 32, 80, 80)
 
 [node name="FrancescoFotoButton" type="Button" parent="."]
 anchors_preset = 15
@@ -115,19 +146,31 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_uske8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y1ra2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1vroj")
 
-[node name="EsquinaRota" type="Button" parent="."]
+[node name="FotoOculta" type="Button" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 920.0
-offset_top = 279.0
-offset_right = -2.0
-offset_bottom = -50.0
+offset_left = 660.0
+offset_top = 177.0
+offset_right = -40.0
+offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_bt1ii")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d8k48")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_64x2g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_b2a6n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_p8qk0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6rapp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_exc0r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2eljc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0n7y4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uske8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y1ra2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1vroj")
 
+[connection signal="pressed" from="EsquinaRota" to="." method="_on_esquina_rota_pressed"]
 [connection signal="pressed" from="FrancescoFotoButton" to="." method="_on_francesco_foto_button_pressed"]
 [connection signal="pressed" from="MarioFotoButton" to="." method="_on_mario_foto_button_pressed"]
 [connection signal="pressed" from="FotoRotaButton" to="." method="_on_foto_rota_button_pressed"]
-[connection signal="pressed" from="EsquinaRota" to="." method="_on_esquina_rota_pressed"]
+[connection signal="pressed" from="FotoOculta" to="." method="_on_foto_oculta_pressed"]

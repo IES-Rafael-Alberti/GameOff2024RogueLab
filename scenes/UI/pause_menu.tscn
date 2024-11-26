@@ -1,11 +1,136 @@
-[gd_scene load_steps=3 format=3 uid="uid://duy3qiitluf1l"]
+[gd_scene load_steps=25 format=3 uid="uid://duy3qiitluf1l"]
 
 [ext_resource type="Script" path="res://scripts/menus/pause_menu.gd" id="1_w0y23"]
 [ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_pq523"]
+[ext_resource type="Texture2D" uid="uid://gnhkj2j64dxu" path="res://assets/sprites/Menu/TELE_MENU.png" id="2_pt43i"]
+[ext_resource type="Shader" path="res://scripts/shaders/distorsion.gdshader" id="3_1sr0w"]
+[ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="4_jvfns"]
+[ext_resource type="Texture2D" uid="uid://b4af5poev0k0j" path="res://assets/sprites/Menu/LETRAS_MENU.png" id="4_qxapb"]
+[ext_resource type="Texture2D" uid="uid://c7yj803e7nhni" path="res://assets/sprites/Menu/TELE_VACIA.png" id="5_s135s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snscf"]
+atlas = ExtResource("2_pt43i")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u61v0"]
+atlas = ExtResource("2_pt43i")
+region = Rect2(240, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sde8y"]
+atlas = ExtResource("2_pt43i")
+region = Rect2(480, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrkj1"]
+atlas = ExtResource("2_pt43i")
+region = Rect2(720, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io6dn"]
+atlas = ExtResource("2_pt43i")
+region = Rect2(960, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouaev"]
+atlas = ExtResource("2_pt43i")
+region = Rect2(1200, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3pp0"]
+atlas = ExtResource("2_pt43i")
+region = Rect2(1440, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86mfn"]
+atlas = ExtResource("2_pt43i")
+region = Rect2(1680, 0, 240, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_htv2s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snscf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u61v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sde8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrkj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io6dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouaev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3pp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86mfn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfil4"]
+shader = ExtResource("3_1sr0w")
+shader_parameter/scanline_intensity = 0.468
+shader_parameter/noise_intensity = 0.194
+shader_parameter/distortion = 0.025
+shader_parameter/time = null
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_61svx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjogt"]
+atlas = ExtResource("4_qxapb")
+region = Rect2(4, 68, 76, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f4u5"]
+atlas = ExtResource("4_qxapb")
+region = Rect2(128, 68, 72, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy0hk"]
+atlas = ExtResource("4_qxapb")
+region = Rect2(4, 52, 76, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l5ni"]
+atlas = ExtResource("4_qxapb")
+region = Rect2(128, 52, 76, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krmi8"]
+atlas = ExtResource("4_qxapb")
+region = Rect2(4, 36, 44, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y55e"]
+atlas = ExtResource("4_qxapb")
+region = Rect2(128, 36, 40, 12)
 
 [node name="PauseMenu" type="CanvasLayer"]
 layer = 20
 script = ExtResource("1_w0y23")
+
+[node name="ColorRect" type="AnimatedSprite2D" parent="."]
+z_index = -10
+position = Vector2(483, 272)
+scale = Vector2(4.097, 4.097)
+sprite_frames = SubResource("SpriteFrames_htv2s")
+autoplay = "default"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_wfil4")
+offset_left = 196.0
+offset_top = 106.0
+offset_right = 233.0
+offset_bottom = 143.0
+scale = Vector2(11.7431, 10.1901)
+texture = ExtResource("4_jvfns")
+expand_mode = 1
+
+[node name="ColorRect2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(483, 272)
+scale = Vector2(4.097, 4.097)
+texture = ExtResource("5_s135s")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 8
@@ -13,10 +138,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -77.5
-offset_top = -95.5
-offset_right = 77.5
-offset_bottom = 95.5
+offset_left = -551.0
+offset_top = -166.5
+offset_right = 434.0
+offset_bottom = 213.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
@@ -24,33 +149,45 @@ size_flags_vertical = 6
 theme = ExtResource("2_pq523")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_61svx")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 125
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 125
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_constants/separation = 25
 alignment = 1
 
-[node name="ResumeButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ResumeButton" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Resume"
+texture_normal = SubResource("AtlasTexture_xjogt")
+texture_hover = SubResource("AtlasTexture_5f4u5")
+stretch_mode = 5
 
-[node name="OptionsButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="OptionsButton" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Options"
+texture_normal = SubResource("AtlasTexture_cy0hk")
+texture_hover = SubResource("AtlasTexture_1l5ni")
+stretch_mode = 5
 
-[node name="QuitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-text = "Quit"
+texture_normal = SubResource("AtlasTexture_krmi8")
+texture_hover = SubResource("AtlasTexture_5y55e")
+stretch_mode = 5
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

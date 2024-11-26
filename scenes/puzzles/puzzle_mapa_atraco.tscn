@@ -21,6 +21,13 @@ position = Vector2(483, 273)
 scale = Vector2(4.00417, 4.04815)
 texture = ExtResource("2_qsfei")
 
+[node name="Panel" type="Panel" parent="."]
+offset_left = 117.0
+offset_top = 70.0
+offset_right = 157.0
+offset_bottom = 110.0
+scale = Vector2(16.9315, 9.55039)
+
 [node name="piezas" type="Node2D" parent="."]
 
 [node name="Superior" parent="piezas" instance=ExtResource("1_hp64i")]

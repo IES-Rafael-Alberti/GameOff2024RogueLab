@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bxbji4skbpx4j"
+path="res://.godot/imported/paper-245786_1.ogg-c1c9deb2feda3176878bde1ac2759ed7.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/paper-245786_1.ogg"
+dest_files=["res://.godot/imported/paper-245786_1.ogg-c1c9deb2feda3176878bde1ac2759ed7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

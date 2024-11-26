@@ -10,18 +10,21 @@ var waiting
 func _ready() -> void:
 	
 	SignalBus.zoom_item.connect(_zoom_item_execute)
-	SignalBus.wait_input.connect(_on_input_recieved)
+	#SignalBus.wait_input.connect(_on_input_recieved)
+	SignalBus.exit_zoom_item.connect(_on_exit_zoom_item)
 	pass
 
 func _process(delta: float) -> void:
-	if GameManager.zoomItem and !waiting:
+	if GameManager.zoomItem:
 		if texture_item.custom_minimum_size.x < textureMaxSize:
 			texture_item.custom_minimum_size.x+=delta*speed
 			texture_item.custom_minimum_size.y+=delta*speed
-		else :
-			SignalBus.input_required.emit()
-			print("animationFinished")
-			waiting=true
+			
+		#else :
+			#print("animationFinished")
+	#elif GameManager.zoomItem and waiting:
+	#	GameManager.zoomItem=false
+	#	hide()
 	pass
 
 func _zoom_item_execute(texture,textureMaxSize,textureMinSize,speed):
@@ -34,14 +37,20 @@ func _zoom_item_execute(texture,textureMaxSize,textureMinSize,speed):
 	self.texture_item.custom_minimum_size.x = textureMinSize
 	self.texture_item.custom_minimum_size.y = textureMinSize
 	self.speed=speed
-	waiting=false
 	pass
 
-func _on_input_recieved():
-	if GameManager.zoomItem :
-		if GameManager.DialogVisible and waiting:
-			if texture_item.custom_minimum_size.x >= textureMaxSize:
-				GameManager.zoomItem=false
-				hide()
-				GameManager.player.required=true
-				SignalBus.exit_zoom_item.emit(texture_item.texture)
+
+func _on_exit_zoom_item():
+	print("exit zoom item")
+	GameManager.zoomItem=false
+	hide()
+	
+	pass
+
+#func _on_input_recieved():
+	#if GameManager.zoomItem :
+		#if GameManager.DialogVisible:
+			#if texture_item.custom_minimum_size.x >= textureMaxSize:
+				
+				#GameManager.player.required=true
+				#SignalBus.exit_zoom_item.emit(texture_item.texture)

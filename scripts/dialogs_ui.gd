@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var label: Label = $PanelContainer/MarginContainer/Label
+const ENDING = preload("res://scenes/Prefabs/Ending.tscn")
 
 var currentLine: int = 0
 var lines: Array = []
@@ -8,14 +9,28 @@ var visibleCharacters:int
 
 var puzzleLayer: CanvasLayer
 var waiting_input:bool
+var event_id:String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.execute_dialog.connect(_on_execute_dialog)
 	SignalBus.wait_input.connect(_on_input_recived)
+	SignalBus.languageChange.connect(languageChange)
 	pass # Replace with function body.
 
-
+func languageChange():
+	
+	if GameManager.DialogVisible:
+		waiting_input = false
+		lines = GameManager.get_event(event_id)[OptionManager.language].split("\n")
+		label.text=lines[0]
+		label.lines_skipped=0
+		label.visible_characters=1
+		currentLine=0
+		show()
+		GameManager.DialogVisible=true
+		
+	pass
 func _process(delta: float) -> void:
 	if GameManager.DialogVisible and !waiting_input:
 		if currentLine < lines.size():
@@ -30,9 +45,11 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_execute_dialog(text:String):
-	print("Dialogo: "+text)
-	lines = text.split("\n")
+func _on_execute_dialog(text:String, event_id:String):
+	#print("Dialogo: "+text)
+	self.event_id = event_id
+	#GameManager.get_event(event_id)[OptionManager.language]
+	lines = GameManager.get_event(event_id)[OptionManager.language].split("\n")
 	label.text=lines[0]
 	label.lines_skipped=0
 	label.visible_characters=1
@@ -49,11 +66,23 @@ func _on_input_recived():
 			visibleCharacters = 0  # Reinicia los caracteres visibles para la nueva línea
 			
 			if currentLine >=lines.size():
-				#print("Fin del diálogo.")
+				
+				if GameManager.zoomItem:
+					SignalBus.exit_zoom_item.emit()
+				
+				print("Fin del diálogo.")
 				hide()
 				GameManager.DialogVisible = false
 				GameManager.go_to_next()
-				
+				check_endings()
 			pass
 		
 	pass
+	
+func check_endings():
+	if event_id == "TXT_TEST_2" and GameManager.get_key:
+		TransitionScreen.transition()
+		await SignalBus.on_transition_finished
+		print("Sal")
+		SignalBus.ending_info.emit("ENDING1")
+	pass	

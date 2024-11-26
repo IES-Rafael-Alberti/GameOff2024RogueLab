@@ -1,7 +1,7 @@
 extends Control
 
 var glitch_tv_effect:bool 
-var vignet_effect:bool
+var vignet_effect:bool=true
 var vignet_effect_amount:int
 var glow_effect:bool
 var black_and_white_effect:bool
@@ -13,14 +13,17 @@ var pause_menu
 var option_menu
 var main_scene
 var dialog_canvas
+var ending_canvas
 
 const MAIN_MENU = preload("res://scenes/UI/main_menu.tscn")
 const PAUSE_MENU = preload("res://scenes/UI/pause_menu.tscn")
 const OPTION_MENU = preload("res://scenes/UI/option_menu.tscn")
 
 const DIALOGS = preload("res://scenes/UI/dialogs.tscn")
+const ENDING = preload("res://scenes/Prefabs/Ending.tscn")
 
 const MAIN_SCENE= preload("res://scenes/Principal.tscn")
+const OPENING = preload("res://scenes/opening.tscn")
 
 func set_glitch_effect(action:bool):
 	glitch_tv_effect=action
@@ -68,6 +71,13 @@ func instanciate_dialog():
 		get_tree().current_scene.add_child(dialog_canvas)
 		pass
 	dialog_canvas.hide()
+	
+func instantiate_ending():
+	if ending_canvas == null:
+		ending_canvas = ENDING.instantiate()
+		get_tree().current_scene.add_child(ending_canvas)
+		pass
+	ending_canvas.hide()
 
 func play_resume_pause_menu():
 	pause_menu.visible=false 
@@ -98,6 +108,10 @@ func back_options_menu():
 			get_tree().get_first_node_in_group("MainMenu").visible = true
 		pass
 	
+
+func play_opening():
+	get_tree().change_scene_to_packed(OPENING)
+	pass
 
 func play_main_scene():
 	var player = GameManager.get_player()
