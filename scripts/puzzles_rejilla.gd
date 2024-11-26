@@ -70,7 +70,10 @@ func comprobarTornillos():
 	if tornillosQuitados == 4:
 		screwdriverMouse  = false
 		rejilla_sin_pastis.visible = true
-		rejilla_sin_tornillos.queue_free()
+		if rejilla_sin_tornillos == null:
+			pass
+		else:
+			rejilla_sin_tornillos.queue_free()
 		#rejilla_sin_tornillos_existe = false
 		#print("rejilla_sin_tornillos: " + str(rejilla_sin_tornillos_existe))
 		
@@ -94,7 +97,7 @@ func _process(delta: float) -> void:
 		
 	if screwdriverMouse:
 		mano.global_position = Vector2(-50, -50)
-		screwdriver2D.global_position = get_viewport().get_mouse_position() + Vector2(25, -30)
+		screwdriver2D.global_position = get_viewport().get_mouse_position() + Vector2(25, -40)
 	else	:
 		screwdriver2D.global_position = Vector2(-50, -50)
 		mano.global_position = get_viewport().get_mouse_position()
