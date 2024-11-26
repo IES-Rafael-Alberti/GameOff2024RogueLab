@@ -171,14 +171,13 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
 			postIt=true
-		elif interactive.event_id == "Ev_DNI":
+		elif interactive.event_id == "Ev_DNI" or interactive.event_id == "Ev_DNIBefore":
 			print("DNI")
 			if mapa and foto_encimera and foto_estanteria:
 				evento["NEXT"] = "Ev_DNIAfter"
 				
 			else:
 				evento["NEXT"] = "Ev_DNIBefore"
-				
 		elif interactive.event_id == "Ev_DNIAfter":
 			print("Ev_DNIAfter")
 			ItemTexture=preload("res://assets/sprites/Escenario/DNI.png")
@@ -220,7 +219,9 @@ func _on_input_recived():
 		elif interactive.event_id == "Ev_Mirror":
 			evento["NEXT"] = "Ev_Final_03"
 		
-		
+		elif interactive.event_id == "Ev_Table":
+			if key:
+				evento["NEXT"] = "Ev_Blueprint_01"
 		
 		elif interactive.event_id == "TXT_TEST_2" and key:
 			print("Sal")
@@ -230,4 +231,11 @@ func _on_input_recived():
 				evento["NEXT"] = "Ev_FirstWardrobe"
 			else:
 				evento["NEXT"] = "Ev_Closet"
+				
+		elif interactive.event_id == "Ev_Drawer":
+			if GameManager.caja_fuerte:
+				evento["NEXT"]="Ev_Screwdriver_02"
+		elif interactive.event_id == "Ev_Shelve_02":
+			if GameManager.key:
+				evento["NEXT"]="Ev_Shelve"
 	pass

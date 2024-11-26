@@ -19,15 +19,17 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func languageChange():
-	waiting_input = false
-	lines = GameManager.get_event(event_id)[OptionManager.language].split("\n")
-	label.text=lines[0]
-	label.lines_skipped=0
-	label.visible_characters=1
-	currentLine=0
-	show()
-	GameManager.DialogVisible=true
 	
+	if GameManager.DialogVisible:
+		waiting_input = false
+		lines = GameManager.get_event(event_id)[OptionManager.language].split("\n")
+		label.text=lines[0]
+		label.lines_skipped=0
+		label.visible_characters=1
+		currentLine=0
+		show()
+		GameManager.DialogVisible=true
+		
 	pass
 func _process(delta: float) -> void:
 	if GameManager.DialogVisible and !waiting_input:
