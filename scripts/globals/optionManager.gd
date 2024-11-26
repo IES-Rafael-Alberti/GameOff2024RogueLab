@@ -14,6 +14,7 @@ var languageId:int = 1:
 			elif languageId == 0:
 				language = "ES"
 			print(language)
+			SignalBus.languageChange.emit()
 			
 var busIndexMaster = AudioServer.get_bus_index("Master")
 
