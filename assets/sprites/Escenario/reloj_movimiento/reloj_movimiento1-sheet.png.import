@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://144hl2ne7wof"
-path="res://.godot/imported/TV Animation.png-947e131c399e444bfc4d17d381e9c4f9.ctex"
+uid="uid://65k2bpu74wjy"
+path="res://.godot/imported/reloj_movimiento1-sheet.png-f5228e53d0393c2531898badd3692c4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Escenario/TV Animation.png"
-dest_files=["res://.godot/imported/TV Animation.png-947e131c399e444bfc4d17d381e9c4f9.ctex"]
+source_file="res://assets/sprites/Escenario/reloj_movimiento/reloj_movimiento1-sheet.png"
+dest_files=["res://.godot/imported/reloj_movimiento1-sheet.png-f5228e53d0393c2531898badd3692c4e.ctex"]
 
 [params]
 

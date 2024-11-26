@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://144hl2ne7wof"
-path="res://.godot/imported/TV Animation.png-947e131c399e444bfc4d17d381e9c4f9.ctex"
+uid="uid://dawnexp56yble"
+path="res://.godot/imported/noticias.png-f1a04fb933e23d344c3c33d688b3e5d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Escenario/TV Animation.png"
-dest_files=["res://.godot/imported/TV Animation.png-947e131c399e444bfc4d17d381e9c4f9.ctex"]
+source_file="res://assets/sprites/Escenario/tele_noticias/noticias.png"
+dest_files=["res://.godot/imported/noticias.png-f1a04fb933e23d344c3c33d688b3e5d7.ctex"]
 
 [params]
 
