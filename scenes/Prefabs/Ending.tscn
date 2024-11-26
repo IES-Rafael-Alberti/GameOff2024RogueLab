@@ -52,12 +52,14 @@ text = "La puerta se abrió, como era de esperar, así que decidí salir del apa
 		recientemente en el recinto. Pasé de largo y decidí bajar el edificio, no me sentía nada bien
 		y quería salir rápidamente de ese lugar, encontrar otro tipo de ayuda... Tras unos cinco minutos, varios
 		cuerpos me reducieron y fui arrestrado por ser el principal sospechoso de ese asesinato.
+
+Final 500
 "
 label_settings = SubResource("LabelSettings_g3t7w")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-max_lines_visible = 10
+max_lines_visible = 16
 visible_characters_behavior = 1
 
 [node name="MenuButton" type="TextureButton" parent="."]
