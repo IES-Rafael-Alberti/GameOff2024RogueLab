@@ -225,5 +225,9 @@ func _on_input_recived():
 		elif interactive.event_id == "TXT_TEST_2" and key:
 			print("Sal")
 			pass
-		
+		elif interactive.event_id == "Ev_Closet":
+			if GameManager.dni:
+				evento["NEXT"] = "Ev_FirstWardrobe"
+			else:
+				evento["NEXT"] = "Ev_Closet"
 	pass
