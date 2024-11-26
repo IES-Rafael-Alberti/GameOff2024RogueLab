@@ -729,6 +729,7 @@ texture = ExtResource("7_1dy4f")
 expand_mode = 1
 
 [node name="ZoomItem" parent="." instance=ExtResource("6_youc5")]
+layer = 12
 visible = false
 
 [node name="Puzzles" parent="." instance=ExtResource("12_c3sp8")]
