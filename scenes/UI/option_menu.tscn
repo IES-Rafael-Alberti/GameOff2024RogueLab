@@ -164,7 +164,7 @@ texture_margin_bottom = 10.0
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxbuw"]
 texture = ExtResource("5_2h4kb")
 texture_margin_left = 10.0
-texture_margin_top = 5.0
+texture_margin_top = 10.0
 texture_margin_bottom = 10.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tfid3"]

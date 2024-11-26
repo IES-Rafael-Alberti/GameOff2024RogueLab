@@ -7,7 +7,8 @@
 font = ExtResource("2_egnvx")
 
 [node name="DialogsLayer" type="CanvasLayer"]
-layer = 10
+layer = 13
+visible = false
 script = ExtResource("1_d7xkf")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
