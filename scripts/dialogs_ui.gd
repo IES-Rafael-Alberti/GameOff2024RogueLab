@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var label: Label = $PanelContainer/MarginContainer/Label
 const ENDING = preload("res://scenes/Prefabs/Ending.tscn")
+@onready var typing: AudioStreamPlayer2D = $Typing
 
 var currentLine: int = 0
 var lines: Array = []
@@ -28,6 +29,7 @@ func languageChange():
 		label.visible_characters=1
 		currentLine=0
 		show()
+		typing.play()
 		GameManager.DialogVisible=true
 		
 	pass
@@ -39,6 +41,7 @@ func _process(delta: float) -> void:
 				label.text = lines[currentLine]
 				label.visible_characters=visibleCharacters
 			else:
+				typing.stop()
 				SignalBus.input_required.emit()
 				waiting_input=true
 
@@ -55,22 +58,24 @@ func _on_execute_dialog(text:String, event_id:String):
 	label.visible_characters=1
 	currentLine=0
 	show()
+	typing.play()
 	GameManager.DialogVisible=true
 	pass
 
 func _on_input_recived():
 	if GameManager.DialogVisible and waiting_input:
 		waiting_input=false
+		typing.play()
 		if currentLine < lines.size():
 			currentLine += 1  # Avanza a la siguiente línea
 			visibleCharacters = 0  # Reinicia los caracteres visibles para la nueva línea
 			
 			if currentLine >=lines.size():
-				
 				if GameManager.zoomItem:
 					SignalBus.exit_zoom_item.emit(GameManager.zoomItemName)
 				
 				print("Fin del diálogo.")
+				typing.stop()
 				hide()
 				GameManager.DialogVisible = false
 				GameManager.go_to_next()

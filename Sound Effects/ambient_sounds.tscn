@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://ebb4a4po85tm"]
+[gd_scene load_steps=2 format=3 uid="uid://cbl5idi84fny7"]
 
 [ext_resource type="Script" path="res://scripts/ambient_loop_list.gd" id="1_qgx8q"]
 
