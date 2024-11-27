@@ -29,6 +29,7 @@ var postIt:bool=false
 #variable de puzzles
 var rejilla:bool
 var foto_encimera:bool
+
 var foto_estanteria:bool
 var mapa:bool
 var caja_fuerte:bool
@@ -42,6 +43,8 @@ func _ready() -> void:
 	SignalBus.wait_input.connect(_on_input_recived)
 	SignalBus.puzzle_enter.connect(_setPuzzleLayer)
 	SignalBus.puzzle_exit.connect(_exitPuzzle)
+	
+	
 	pass
 
 func _setPuzzleLayer(puzzleLayer: CanvasLayer):
@@ -184,16 +187,21 @@ func _on_input_recived():
 			dni=true
 		elif interactive.event_id == "Ev_BrokenPicture":
 			print("Ev_BrokenPicture")
-			if !foto_encimera and !foto_estanteria:
-				evento["NEXT"] = "Ev_FirstBrokenPicture_01"
-				#foto_encimera = true
-			else:
-				evento["NEXT"] = "Ev_SecondBrokenPicture_01"
-				#foto_encimera = true
+			if GameManager.key:
+				
+				if !foto_encimera and !foto_estanteria:
+					evento["NEXT"] = "Ev_FirstBrokenPicture_01"
+					print("next: Ev_FirstBrokenPicture_01")
+					#foto_encimera = true
+				else:
+					evento["NEXT"] = "Ev_SecondBrokenPicture_01"
+					print("next: Ev_SecondBrokenPicture_01")
+					#foto_encimera = true
 		
 		elif interactive.event_id == "Ev_FirstBrokenPicture_01":
 			print("Ev_FirstBrokenPicture_01")
 			#ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_francesco.png")
+			SignalBus.BrokenPicture.emit()
 			ItemMaxScale=900
 			ItemMinScale=100
 			ItemSpeed=1000
@@ -204,6 +212,7 @@ func _on_input_recived():
 		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
 			print("Ev_SecondBrokenPicture_01")
 			#ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_mario.png")
+			SignalBus.BrokenPicture.emit()
 			ItemMaxScale=900
 			ItemMinScale=100
 			ItemSpeed=1000
@@ -211,6 +220,22 @@ func _on_input_recived():
 			foto_estanteria = true
 			print("foto_encimera: " + str(foto_encimera))
 			print("foto_estanteria: " + str(foto_estanteria))
+		elif interactive.event_id == "Ev_SecondBrokenPicture_03":
+			print("Ev_SecondBrokenPicture_03")
+			
+			SignalBus.BrokenPicture.emit()
+			#ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_completar.png")
+			ItemMaxScale=900
+			ItemMinScale=100
+			ItemSpeed=1000
+			SignalBus.zoom_item.emit("Foto_Juntos",ItemMaxScale,ItemMinScale,ItemSpeed)
+			foto_estanteria = true
+			print("foto_encimera: " + str(foto_encimera))
+			print("foto_estanteria: " + str(foto_estanteria))
+		
+		elif interactive.event_id == "Ev_Mirror":
+			evento["NEXT"] = "Ev_Final_03"
+		
 		elif interactive.event_id == "Ev_Table":
 			if key:
 				evento["NEXT"] = "Ev_Blueprint_01"

@@ -73,6 +73,7 @@ func _process(delta: float) -> void:
 func complete():
 	GameManager.mapa = true
 	SignalBus.zoom_item.emit("Mapa_Atraco",animTamanioMax,animTamanioMin,animVelocidad)
+	SignalBus.mapaMesa.emit()
 	SignalBus.execute_event.emit(event_id_atraco,true)
 
 #te debuelve el marcador correspondiente a la piezza
