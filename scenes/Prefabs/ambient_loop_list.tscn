@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpt6dpd1ktrdm"]
+
+[ext_resource type="Script" path="res://scripts/ambient_loop_list.gd" id="1_1cie4"]
+
+[node name="AmbientLoopList" type="Node"]
+script = ExtResource("1_1cie4")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

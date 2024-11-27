@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cr7bx5q5u5vwr"
+path="res://.godot/imported/wall-hit-3-48114.ogg-8fb20d8b58061495fa5125445ed733cb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/wall-hit-3-48114.ogg"
+dest_files=["res://.godot/imported/wall-hit-3-48114.ogg-8fb20d8b58061495fa5125445ed733cb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

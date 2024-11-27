@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=22 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://ckvo3swqqy43q" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
 [ext_resource type="Texture2D" uid="uid://cynq8fhvk5sgd" path="res://assets/assets/mariofinal.png" id="3_fqhnc"]
-[ext_resource type="Script" path="res://scenes/bath_room_light.gd" id="4_4yf2j"]
 [ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/Prefabs/trigger.tscn" id="5_omke0"]
 [ext_resource type="Script" path="res://scenes/shaders_control.gd" id="6_31grw"]
 [ext_resource type="Material" uid="uid://dc7hpj2ikl847" path="res://assets/materials/vignette_materia.tres" id="6_pug0m"]
@@ -13,6 +12,13 @@
 [ext_resource type="Material" uid="uid://qm4tflob2hed" path="res://assets/materials/bathroom_shader.tres" id="9_n7lhl"]
 [ext_resource type="PackedScene" uid="uid://cdtljaux3f3i1" path="res://scenes/puzzles/puzzles.tscn" id="12_c3sp8"]
 [ext_resource type="PackedScene" uid="uid://dqp3w3mh0bjad" path="res://scenes/Prefabs/Ending.tscn" id="13_1osdi"]
+[ext_resource type="AudioStream" uid="uid://cyntonlupdg3y" path="res://Sound Effects/rain-on-window-29298.ogg" id="13_sb8lj"]
+[ext_resource type="PackedScene" uid="uid://cpt6dpd1ktrdm" path="res://scenes/Prefabs/ambient_loop_list.tscn" id="14_wa15g"]
+[ext_resource type="AudioStream" uid="uid://csxn6dfgb1nn4" path="res://Sound Effects/car-passing-suburb-14689.ogg" id="15_7c16w"]
+[ext_resource type="AudioStream" uid="uid://2d7mte3j0r3k" path="res://Sound Effects/wall-hit-1-100717.ogg" id="16_ebovn"]
+[ext_resource type="AudioStream" uid="uid://cr7bx5q5u5vwr" path="res://Sound Effects/wall-hit-3-48114.ogg" id="17_vcxjg"]
+[ext_resource type="AudioStream" uid="uid://dd8uvhhlr70d" path="res://Sound Effects/wall-hit-2-48113.ogg" id="18_g33q4"]
+[ext_resource type="AudioStream" uid="uid://cbcy15tffajem" path="res://Sound Effects/door-knocking-and-opening-240831.ogg" id="19_2o51t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntdln"]
 texture = ExtResource("1_c4xtu")
@@ -536,9 +542,6 @@ texture = ExtResource("1_c4xtu")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ntdln")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8dvn"]
-size = Vector2(124.948, 141.909)
-
 [node name="TileMap" type="TileMap"]
 position = Vector2(64, -112)
 tile_set = SubResource("TileSet_10sko")
@@ -572,33 +575,12 @@ layer_8/z_index = -1
 layer_8/tile_data = PackedInt32Array(262159, 458753, 1342177294, 196623, 393217, 1342177294, 262160, 458753, 1342177293, 196624, 393217, 1342177293, 262161, 458753, 1342177292, 196625, 393217, 1342177292, 262162, 458753, 1342177291, 196626, 393217, 1342177291, 524284, 393217, 1610612746, 458748, 458753, 1610612746, 524285, 393217, 1610612747, 458749, 458753, 1610612747, 524286, 393217, 1610612748, 458750, 458753, 1610612748, 524287, 393217, 1610612749, 458751, 458753, 1610612749, 458752, 393217, 1610612750, 393216, 458753, 1610612750, 458753, 393217, 1610612746, 393217, 458753, 1610612746, 458754, 393217, 1610612747, 393218, 458753, 1610612747, 458755, 393217, 1610612748, 393219, 458753, 1610612748, 458756, 393217, 1610612749, 393220, 458753, 1610612749, 458757, 393217, 1610612746, 393221, 458753, 1610612746, 458758, 393217, 1610612747, 393222, 458753, 1610612747, 458759, 393217, 1610612748, 393223, 458753, 1610612748, 458760, 393217, 1610612749, 393224, 458753, 1610612749, 458761, 393217, 1610612750, 393225, 458753, 1610612750, 458762, 393217, 1610612746, 393226, 458753, 1610612746, 458763, 393217, 1610612747, 393227, 458753, 1610612747, 458764, 393217, 1610612748, 393228, 458753, 1610612748, 458765, 393217, 1610612749, 393229, 458753, 1610612749, 458766, 393217, 1610612746, 393230, 458753, 1610612746, 458767, 393217, 1610612747, 393231, 458753, 1610612747, 458768, 393217, 1610612748, 393232, 458753, 1610612748, 458769, 393217, 1610612749, 393233, 458753, 1610612749, 458770, 393217, 1610612750, 393234, 458753, 1610612750, 458771, 393217, 1610612746, 393235, 458753, 1610612746, 458772, 393217, 1610612747, 393236, 458753, 1610612747, 458773, 393217, 1610612746, 393237, 458753, 1610612746, 458774, 393217, 1610612747, 393238, 458753, 1610612747, 458775, 393217, 1610612748, 393239, 458753, 1610612748, 458776, 393217, 1610612749, 393240, 458753, 1610612749, 458777, 393217, 1610612750, 393241, 458753, 1610612750)
 layer_9/name = "Columnas v"
 layer_9/z_index = -1
-layer_9/tile_data = PackedInt32Array(-327668, 393217, 10, -262132, 393217, 11, -196596, 393217, 12, -131060, 393217, 13, -65524, 393217, 14, -327667, 458753, 10, -262131, 458753, 11, -196595, 458753, 12, -131059, 458753, 13, -65523, 458753, 14, 12, 393217, 10, 65548, 393217, 11, 131084, 393217, 12, 196620, 393217, 13, 13, 458753, 10, 65549, 458753, 11, 131085, 458753, 12, 196621, 458753, 13, -65518, 393217, 14, 18, 393217, 11, 65554, 393217, 12, -65517, 458753, 14, 19, 458753, 11, 65555, 458753, 12, 131091, 458753, 13, 196627, 458753, 14, -327662, 393217, 10, -262126, 393217, 11, -196590, 393217, 12, -131054, 393217, 13, -327661, 458753, 10, -262125, 458753, 11, -196589, 458753, 12, -131053, 458753, 13, 262163, 458753, 14, -327655, 393217, 10, -262119, 393217, 11, -196583, 393217, 12, -131047, 393217, 13, -65511, 393217, 14, -327654, 458753, 10, -262118, 458753, 11, -196582, 458753, 12, -131046, 458753, 13, -65510, 458753, 14, 25, 393217, 10, 65561, 393217, 11, 131097, 393217, 10, 196633, 393217, 11, 262169, 393217, 12, 26, 458753, 10, 65562, 458753, 11, 131098, 458753, 10, 196634, 458753, 11, 262170, 458753, 12, 327705, 393217, 13, 393241, 393217, 14, 327706, 458753, 13, 393242, 458753, 14, 196603, 393217, 10, 262139, 393217, 11, 327675, 393217, 12, 393211, 393217, 13, 458747, 393217, 14, 196604, 458753, 10, 262140, 458753, 11, 327676, 458753, 12, 393212, 458753, 13, 458748, 458753, 14, -131077, 393217, 12, -65541, 393217, 13, -5, 393217, 14, 65531, 393217, 13, 131067, 393217, 14, -131076, 458753, 12, -65540, 458753, 13, -4, 458753, 14, 65532, 458753, 13, 131068, 458753, 14, -262149, 393217, 10, -196613, 393217, 11, -262148, 458753, 10, -196612, 458753, 11)
+layer_9/tile_data = PackedInt32Array(-327668, 393217, 10, -262132, 393217, 11, -196596, 393217, 12, -131060, 393217, 13, -65524, 393217, 14, -327667, 458753, 10, -262131, 458753, 11, -196595, 458753, 12, -131059, 458753, 13, -65523, 458753, 14, 12, 393217, 10, 65548, 393217, 11, 131084, 393217, 12, 196620, 393217, 13, 13, 458753, 10, 65549, 458753, 11, 131085, 458753, 12, 196621, 458753, 13, -65518, 393217, 14, 18, 393217, 11, 65554, 393217, 12, -65517, 458753, 14, 19, 458753, 11, 65555, 458753, 12, 131091, 458753, 13, 196627, 458753, 14, -327662, 393217, 10, -262126, 393217, 11, -196590, 393217, 12, -131054, 393217, 13, -327661, 458753, 10, -262125, 458753, 11, -196589, 458753, 12, -131053, 458753, 13, 262163, 458753, 14, -327655, 393217, 10, -262119, 393217, 11, -196583, 393217, 12, -131047, 393217, 13, -65511, 393217, 14, -327654, 458753, 10, -262118, 458753, 11, -196582, 458753, 12, -131046, 458753, 13, -65510, 458753, 14, 25, 393217, 10, 65561, 393217, 11, 131097, 393217, 10, 196633, 393217, 11, 262169, 393217, 12, 26, 458753, 10, 65562, 458753, 11, 131098, 458753, 10, 196634, 458753, 11, 262170, 458753, 12, 327705, 393217, 13, 393241, 393217, 14, 327706, 458753, 13, 393242, 458753, 14, 196603, 393217, 10, 262139, 393217, 11, 327675, 393217, 12, 393211, 393217, 13, 458747, 393217, 14, 196604, 458753, 10, 262140, 458753, 11, 327676, 458753, 12, 393212, 458753, 13, 458748, 458753, 14, -131077, 393217, 12, -65541, 393217, 13, -5, 393217, 14, 65531, 393217, 13, 131067, 393217, 14, -131076, 458753, 12, -65540, 458753, 13, -4, 458753, 14, 65532, 458753, 13, 131068, 458753, 14, -262149, 393217, 10, -196613, 393217, 11, -262148, 458753, 10, -196612, 458753, 11, 131090, 393217, 14)
 script = ExtResource("2_iqy1m")
 
 [node name="Mariofinal" type="Sprite2D" parent="."]
 position = Vector2(360, 21)
 texture = ExtResource("3_fqhnc")
-
-[node name="BathRoomLight" type="Node" parent="."]
-script = ExtResource("4_4yf2j")
-
-[node name="Area2D" type="Area2D" parent="BathRoomLight"]
-position = Vector2(274, -241)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BathRoomLight/Area2D"]
-position = Vector2(45.5312, 158.22)
-scale = Vector2(0.727806, 0.44)
-shape = SubResource("RectangleShape2D_x8dvn")
-
-[node name="BathRoomShader" type="TextureRect" parent="BathRoomLight"]
-z_index = 1
-material = ExtResource("9_n7lhl")
-offset_left = 274.0
-offset_top = -241.0
-offset_right = 367.0
-offset_bottom = -48.0
-texture = ExtResource("7_1dy4f")
-expand_mode = 1
 
 [node name="BackgroundShader" type="TextureRect" parent="."]
 z_index = -14
@@ -625,7 +607,7 @@ event_id = "TXT_TEST_1"
 [node name="Screwdriver" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(172, 7)
 scale = Vector2(1.12684, 0.992406)
-event_id = "Ev_Drawer"
+event_id = "Ev_Screwdriver_02"
 
 [node name="PostIt" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(400, 9)
@@ -635,12 +617,12 @@ event_id = "Ev_FirstCode"
 [node name="CajaFuerte" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(385, 91)
 scale = Vector2(2.38952, 2.19651)
-event_id = "Ev_Closet"
+event_id = "Ev_FirstWardrobe"
 
 [node name="MapaAtraco" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(-7, 71)
 scale = Vector2(2.77997, 1.21692)
-event_id = "Ev_Table"
+event_id = "Ev_Blueprint_01"
 
 [node name="Corpse" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(360, 29)
@@ -650,7 +632,7 @@ event_id = "Ev_Corpse_01"
 [node name="Pictures" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(-47, 8)
 scale = Vector2(1.76689, 1.61507)
-event_id = "Ev_Shelve_02"
+event_id = "Ev_Shelve"
 
 [node name="Rejilla" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(257, -4)
@@ -737,5 +719,12 @@ visible = false
 [node name="EndingLayer" parent="." instance=ExtResource("13_1osdi")]
 visible = false
 
-[connection signal="body_entered" from="BathRoomLight/Area2D" to="BathRoomLight" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="BathRoomLight/Area2D" to="BathRoomLight" method="_on_area_2d_body_exited"]
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Ambience" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("13_sb8lj")
+autoplay = true
+
+[node name="AmbientLoopList" parent="Sounds" instance=ExtResource("14_wa15g")]
+limits = Vector2(0, 10)
+sounds = Array[AudioStreamOggVorbis]([ExtResource("15_7c16w"), ExtResource("19_2o51t"), ExtResource("16_ebovn"), ExtResource("18_g33q4"), ExtResource("17_vcxjg")])
