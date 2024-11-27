@@ -68,7 +68,7 @@ func _on_input_recived():
 			if currentLine >=lines.size():
 				
 				if GameManager.zoomItem:
-					SignalBus.exit_zoom_item.emit()
+					SignalBus.exit_zoom_item.emit(GameManager.zoomItemName)
 				
 				print("Fin del diálogo.")
 				hide()

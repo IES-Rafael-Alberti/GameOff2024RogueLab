@@ -147,7 +147,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "",
+	"NEXT": "Ev_BrokenPicture",
 	"ES": "Que es esto de de aki?",
 	"EN": ""
   },
@@ -375,13 +375,13 @@
 	"ES": "Esto es un cajon, parece que esta atascado",
 	"EN": "This is a drawer,it seems to be stuck"
   },
-  "Ev_Final_03": {
+  "Ev_Pills": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "PUZZLE",
 	"NEXT": "",
 	"ES": "accediste al final3",
-	"EN": ""
+	"EN": "sdljfsldfkljksdjkldsjkfsdjkkjfd"
   },
   "Ev_Table": {
 	"SHADER_OPTIONS": "NONE",
@@ -404,7 +404,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "La puerta se abrió, como era de esperar, así que decidí salir del apartamento. Vi la policía subir las escaleras, y uno a lo lejos me preguntó sobre que había visto de extraño recientemente en el recinto. Pasé de largo y decidí bajar el edificio, no me sentía nada bien y quería salir rápidamente de ese lugar, encontrar otro tipo de ayuda... Tras unos cinco minutos, varios cuerpos me reducieron y fui arrestado por ser el principal sospechoso de ese asesinato.\n\nFinal 1/3",
+	"ES": "La puerta se abrió, como era de esperar, así que decidí salir del apartamento.\n                        Vi la policía subir las escaleras, y uno a lo lejos me preguntó sobre que había visto de extraño\n                        recientemente en el recinto. Pasé de largo y decidí bajar el edificio, no me sentía nada bien\n                        y quería salir rápidamente de ese lugar, encontrar otro tipo de ayuda... Tras unos cinco minutos, varios\n                        cuerpos me reducieron y fui arrestado por ser el principal sospechoso de ese asesinato.\n                        \n                        Final 1/3",
 	"EN": ""
   },
   "Ev_Ending_02": {
@@ -414,5 +414,13 @@
 	"NEXT": "",
 	"ES": "Este es el ending 2",
 	"EN": ""
+  },
+  "Ev_Ending_03": {
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "Este es el ending 3",
+	"EN": "sjfsdjfsdkfjksdfjsdkfjdskjfsdfkj"
   }
 }

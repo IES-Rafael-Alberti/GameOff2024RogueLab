@@ -9,7 +9,7 @@ extends CanvasLayer
 
 @export var event_id_atraco=""
 
-const PUZLE_ATRACO = preload("res://assets/sprites/Puzles/puzle_atraco/puzle_atraco.png")
+#const PUZLE_ATRACO = preload("res://assets/sprites/Puzles/puzle_atraco/puzle_atraco.png")
 @onready var mano: Sprite2D = $mano
 
 func _ready() -> void:
@@ -72,7 +72,8 @@ func _process(delta: float) -> void:
 #se ejecuta cuando se completa el puzzle
 func complete():
 	GameManager.mapa = true
-	SignalBus.zoom_item.emit(PUZLE_ATRACO,animTamanioMax,animTamanioMin,animVelocidad)
+	SignalBus.zoom_item.emit("Mapa_Atraco",animTamanioMax,animTamanioMin,animVelocidad)
+	SignalBus.mapaMesa.emit()
 	SignalBus.execute_event.emit(event_id_atraco,true)
 
 #te debuelve el marcador correspondiente a la piezza

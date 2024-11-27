@@ -20,6 +20,7 @@ visible = false
 event_id = "Ev_Grill_02"
 event_id_screwdriver = "Ev_Grill_01"
 event_id_pastillas = "Ev_Grill_03"
+event_ending_3 = "Ev_Pills"
 
 [node name="puzzle_mapa_atraco" parent="." instance=ExtResource("4_4i0f0")]
 layer = 11
@@ -37,4 +38,4 @@ event_id_failure = "Ev_VaultFailure"
 [node name="Ending3" parent="." instance=ExtResource("6_fgqp6")]
 layer = 11
 visible = false
-event_id = "Ev_Final_03"
+event_id = "Ev_Pills"

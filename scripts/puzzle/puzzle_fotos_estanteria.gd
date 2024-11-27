@@ -1,11 +1,11 @@
 extends CanvasLayer
 
-const FOTO_MARIO_PEQUE_O = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_mario_pequeño.png")
-const FOTO_ROTA = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_rota.png")
-const FOTO_FRAN_PEQUE_O = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_fran_pequeño.png")
-const FOTO_ROTA_TRASERA = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_rota_trasera.png")
-const FOTO_PERSONAJES_DISUMINADA_MARIO = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_mario.png")
-const FOTO_PERSONAJES_DISUMINADA_FRANCESCO = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_francesco.png")
+#const FOTO_MARIO_PEQUE_O = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_mario_pequeño.png")
+#const FOTO_ROTA = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_rota.png")
+#const FOTO_FRAN_PEQUE_O = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_fran_pequeño.png")
+#const FOTO_ROTA_TRASERA = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_rota_trasera.png")
+#const FOTO_PERSONAJES_DISUMINADA_MARIO = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_mario.png")
+#const FOTO_PERSONAJES_DISUMINADA_FRANCESCO = preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_francesco.png")
 var canExit=true
 
 @onready var fotos_estanterias_vacia: TextureRect = $FotosEstanteriasVacia240x135
@@ -45,7 +45,7 @@ func _on_zoom_out(texture):
 
 func _on_francesco_foto_button_pressed() -> void:
 	print("Francesco")
-	SignalBus.zoom_item.emit(FOTO_FRAN_PEQUE_O,900,100,1000)
+	SignalBus.zoom_item.emit("Cuadro_Fran",900,100,1000)
 	SignalBus.execute_event.emit(event_id_foto_fran,true)
 	pass 
 
@@ -53,7 +53,7 @@ func _on_francesco_foto_button_pressed() -> void:
 
 func _on_mario_foto_button_pressed() -> void:
 	print("Mario")
-	SignalBus.zoom_item.emit(FOTO_MARIO_PEQUE_O,900,100,1000)
+	SignalBus.zoom_item.emit("Cuadro_Mario",900,100,1000)
 	SignalBus.execute_event.emit(event_id_foto_mario,true)
 	pass 
 
@@ -61,7 +61,7 @@ func _on_mario_foto_button_pressed() -> void:
 
 func _on_foto_rota_button_pressed() -> void:
 	print("Rota "+event_id)
-	SignalBus.zoom_item.emit(FOTO_ROTA,900,100,1000)
+	SignalBus.zoom_item.emit("Cuadro_Roto",900,100,1000)
 	SignalBus.execute_event.emit(event_id_foto_rota,true)
 	#SignalBus.execute_event.emit(DataManager.scriptData.get(event_id_foto_rota)["NEXT"])
 	
@@ -76,7 +76,7 @@ func _on_input_recieved():
 
 func _on_esquina_rota_pressed() -> void:
 	print("Rota trasera "+event_id)
-	SignalBus.zoom_item.emit(FOTO_ROTA_TRASERA,900,100,1000)
+	SignalBus.zoom_item.emit("Cuadro_Atras",900,100,1000)
 	SignalBus.execute_event.emit(event_id_foto_rota,true)
 	
 	#trasera_button.show()
@@ -95,14 +95,14 @@ func _on_foto_oculta_pressed() -> void:
 	#SignalBus.zoom_item.emit(FOTO_ROTA_TRASERA,900,100,1000)
 	
 	if !GameManager.foto_encimera and !GameManager.foto_estanteria:
-		SignalBus.zoom_item.emit(FOTO_PERSONAJES_DISUMINADA_FRANCESCO,900,100,1000)
+		SignalBus.zoom_item.emit("Foto_1",900,100,1000)
 		event_id_foto_rota_trasera = "Ev_FirstBrokenPicture_01"
 		GameManager.foto_encimera = true
 		print("foto_encimera: " + str(GameManager.foto_encimera))
 		print("foto_estanteria: " + str(GameManager.foto_estanteria))
 		foto_oculta.visible = false
 	else:
-		SignalBus.zoom_item.emit(FOTO_PERSONAJES_DISUMINADA_MARIO,900,100,1000)
+		SignalBus.zoom_item.emit("Foto_2",900,100,1000)
 		event_id_foto_rota_trasera = "Ev_SecondBrokenPicture_01"
 		GameManager.foto_estanteria = true
 		foto_oculta.visible = false

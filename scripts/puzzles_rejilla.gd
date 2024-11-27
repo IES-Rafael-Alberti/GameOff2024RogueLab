@@ -9,11 +9,12 @@ extends CanvasLayer
 @onready var mano: Sprite2D = $mano
 
 var screwdriverMouse = false
-const PASTILLAS_64X_64 = preload("res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png")
+#const PASTILLAS_64X_64 = preload("res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png")
 
 @export var event_id=""
 @export var event_id_screwdriver=""
 @export var	event_id_pastillas=""
+@export var event_ending_3=""
 
 var mostrar1=true
 
@@ -33,8 +34,23 @@ func _ready():
 	SignalBus.input_rejilla.connect(_on__pressed) 
 	SignalBus.wait_input.connect(_on_input_recived)
 	SignalBus.puzzle_enter.connect(_on_puzzle_enter)
+	SignalBus.exit_zoom_item.connect(_on_zoom_item_exit)
 #funcion para cada tecla
 
+func _on_zoom_item_exit(zoomItemName):
+	
+	if GameManager.rejilla and zoomItemName == "Pastillas":
+		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+		SignalBus.puzzle_exit.emit(self)
+		TransitionScreen.transition()
+		await SignalBus.on_transition_finished
+		SignalBus.execute_event.emit(event_ending_3,true)
+		print("Tas pasao el juego crack")
+		#print(GameManager.evento)
+		#print(GameManager.interactive.event_id)
+		pass
+	
+	pass
 
 func _on_puzzle_enter(puzzleLayer):
 	if puzzleLayer==self:
@@ -46,7 +62,7 @@ func _on__pressed():
 	#print(character)
 	pastillasButton.queue_free()
 	GameManager.rejilla = true
-	SignalBus.zoom_item.emit(PASTILLAS_64X_64,200,4,100)
+	SignalBus.zoom_item.emit("Pastillas",200,4,100)
 	SignalBus.execute_event.emit(event_id_pastillas,true)
 	
 	
@@ -63,6 +79,7 @@ func _on__pressed():
 func _on_input_recived():
 	if GameManager.puzzleLayer==self :
 		if !GameManager.DialogVisible and !GameManager.zoomItem:
+			DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 			SignalBus.puzzle_exit.emit(self)
 	pass
 	
@@ -79,6 +96,7 @@ func comprobarTornillos():
 		
 func _process(delta: float) -> void:
 	if GameManager.puzzleLayer == self:
+		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 		if !GameManager.rejilla:
 			if  !GameManager.zoomItem and !GameManager.DialogVisible  and mostrar1 :
 				
@@ -86,7 +104,7 @@ func _process(delta: float) -> void:
 					screwdriverMouse  = true
 					comprobarTornillos()
 					SignalBus.execute_event.emit(event_id_screwdriver,true)
-				mostrar1=false
+					mostrar1=false
 			
 			pass
 			if !GameManager.DialogVisible and !GameManager.zoomItem:
@@ -97,7 +115,7 @@ func _process(delta: float) -> void:
 		
 	if screwdriverMouse:
 		mano.global_position = Vector2(-50, -50)
-		screwdriver2D.global_position = get_viewport().get_mouse_position() + Vector2(25, -40)
+		screwdriver2D.global_position = get_viewport().get_mouse_position() + Vector2(40, -30)
 	else	:
 		screwdriver2D.global_position = Vector2(-50, -50)
 		mano.global_position = get_viewport().get_mouse_position()
