@@ -24,7 +24,9 @@ resources_spreadsheet_view/fold_docks=false
 config/name="SecretsProject"
 run/main_scene="res://scenes/UI/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/image="res://splash.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=5000
 
 [autoload]
 
