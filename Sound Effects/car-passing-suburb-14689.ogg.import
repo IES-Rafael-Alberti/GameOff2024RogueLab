@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://csxn6dfgb1nn4"
+path="res://.godot/imported/car-passing-suburb-14689.ogg-ee73fc79cb05ebdc83a7dc765943673a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/car-passing-suburb-14689.ogg"
+dest_files=["res://.godot/imported/car-passing-suburb-14689.ogg-ee73fc79cb05ebdc83a7dc765943673a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
