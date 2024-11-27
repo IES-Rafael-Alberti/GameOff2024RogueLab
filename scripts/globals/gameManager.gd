@@ -30,6 +30,7 @@ var postIt:bool=false
 #variable de puzzles
 var rejilla:bool
 var foto_encimera:bool
+
 var foto_estanteria:bool
 var mapa:bool
 var caja_fuerte:bool
@@ -43,6 +44,8 @@ func _ready() -> void:
 	SignalBus.wait_input.connect(_on_input_recived)
 	SignalBus.puzzle_enter.connect(_setPuzzleLayer)
 	SignalBus.puzzle_exit.connect(_exitPuzzle)
+	
+	
 	pass
 
 func _setPuzzleLayer(puzzleLayer: CanvasLayer):
@@ -198,6 +201,8 @@ func _on_input_recived():
 		
 		elif interactive.event_id == "Ev_FirstBrokenPicture_01":
 			print("Ev_FirstBrokenPicture_01")
+			
+			SignalBus.BrokenPicture.emit()
 			ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_francesco.png")
 			ItemMaxScale=900
 			ItemMinScale=100
@@ -208,6 +213,8 @@ func _on_input_recived():
 			print("foto_estanteria: " + str(foto_estanteria))
 		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
 			print("Ev_SecondBrokenPicture_01")
+			
+			SignalBus.BrokenPicture.emit()
 			ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_mario.png")
 			ItemMaxScale=900
 			ItemMinScale=100

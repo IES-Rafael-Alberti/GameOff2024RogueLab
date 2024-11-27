@@ -72,6 +72,7 @@ func _process(delta: float) -> void:
 #se ejecuta cuando se completa el puzzle
 func complete():
 	GameManager.mapa = true
+	SignalBus.mapaMesa.emit()
 	SignalBus.zoom_item.emit(PUZLE_ATRACO,animTamanioMax,animTamanioMin,animVelocidad)
 	SignalBus.execute_event.emit(event_id_atraco,true)
 
