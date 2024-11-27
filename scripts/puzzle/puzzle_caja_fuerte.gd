@@ -2,7 +2,7 @@ extends CanvasLayer
 @onready var pistola = $pistola
 @onready var mano: Sprite2D = $mano
 
-const PISTOLA_DINERO = preload("res://assets/sprites/Puzles/caja fuerte/pistola_dinero.png")
+#const PISTOLA_DINERO = preload("res://assets/sprites/Puzles/caja fuerte/pistola_dinero.png")
 
 @export var event_id = ""
 @onready var CFpistola = $cajaFuerteAbierta/pistola
@@ -55,7 +55,7 @@ func _on__pressed(character):
 		CFpistola.queue_free()#eliminamos el boton
 		GameManager.caja_fuerte = true
 		onceProcess=false
-		SignalBus.zoom_item.emit(PISTOLA_DINERO,200,4,100)
+		SignalBus.zoom_item.emit("Pistola",200,4,100)
 		#pistola.visible = true#muestra la puistola obtenida
 		##fin de scene
 	elif resultado.text.length() >= tamanioCodigo:#comprueva k no supere el limite

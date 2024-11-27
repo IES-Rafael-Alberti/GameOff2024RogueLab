@@ -4,7 +4,7 @@
 
 [resource]
 shader = ExtResource("1_bqu14")
-shader_parameter/blood_color = Color(0, 0, 0.0941176, 1)
-shader_parameter/blood_intensity = 0.787
-shader_parameter/internal_limit = 0.0
-shader_parameter/external_limit = 0.179
+shader_parameter/blood_color = Color(0, 0, 0.027451, 1)
+shader_parameter/blood_intensity = 0.82
+shader_parameter/internal_limit = 0.022
+shader_parameter/external_limit = 0.245

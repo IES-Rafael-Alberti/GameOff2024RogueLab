@@ -9,11 +9,12 @@ extends CanvasLayer
 @onready var mano: Sprite2D = $mano
 
 var screwdriverMouse = false
-const PASTILLAS_64X_64 = preload("res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png")
+#const PASTILLAS_64X_64 = preload("res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png")
 
 @export var event_id=""
 @export var event_id_screwdriver=""
 @export var	event_id_pastillas=""
+@export var event_ending_3=""
 
 var mostrar1=true
 
@@ -33,8 +34,19 @@ func _ready():
 	SignalBus.input_rejilla.connect(_on__pressed) 
 	SignalBus.wait_input.connect(_on_input_recived)
 	SignalBus.puzzle_enter.connect(_on_puzzle_enter)
+	SignalBus.exit_zoom_item.connect(_on_zoom_item_exit)
 #funcion para cada tecla
 
+func _on_zoom_item_exit(zoomItemName):
+	
+	if GameManager.rejilla and zoomItemName == "Pastillas":
+		TransitionScreen.transition()
+		await SignalBus.on_transition_finished
+		SignalBus.execute_event.emit(event_ending_3,true)
+		print("Tas pasao el juego crack")
+		pass
+	
+	pass
 
 func _on_puzzle_enter(puzzleLayer):
 	if puzzleLayer==self:
@@ -46,7 +58,7 @@ func _on__pressed():
 	#print(character)
 	pastillasButton.queue_free()
 	GameManager.rejilla = true
-	SignalBus.zoom_item.emit(PASTILLAS_64X_64,200,4,100)
+	SignalBus.zoom_item.emit("Pastillas",200,4,100)
 	SignalBus.execute_event.emit(event_id_pastillas,true)
 	
 	
