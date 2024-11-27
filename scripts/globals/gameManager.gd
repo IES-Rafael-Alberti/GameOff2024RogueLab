@@ -236,10 +236,7 @@ func _on_input_recived():
 			
 			SignalBus.BrokenPicture.emit()
 			#ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_completar.png")
-			ItemMaxScale=900
-			ItemMinScale=100
-			ItemSpeed=1000
-			SignalBus.zoom_item.emit("Foto_Juntos",ItemMaxScale,ItemMinScale,ItemSpeed)
+			
 			foto_estanteria = true
 			print("foto_encimera: " + str(foto_encimera))
 			print("foto_estanteria: " + str(foto_estanteria))
