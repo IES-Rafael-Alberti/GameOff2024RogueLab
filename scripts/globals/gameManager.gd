@@ -185,12 +185,16 @@ func _on_input_recived():
 			dni=true
 		elif interactive.event_id == "Ev_BrokenPicture":
 			print("Ev_BrokenPicture")
-			if !foto_encimera and !foto_estanteria:
-				evento["NEXT"] = "Ev_FirstBrokenPicture_01"
-				#foto_encimera = true
-			else:
-				evento["NEXT"] = "Ev_SecondBrokenPicture_01"
-				#foto_encimera = true
+			if GameManager.key:
+				
+				if !foto_encimera and !foto_estanteria:
+					evento["NEXT"] = "Ev_FirstBrokenPicture_01"
+					print("next: Ev_FirstBrokenPicture_01")
+					#foto_encimera = true
+				else:
+					evento["NEXT"] = "Ev_SecondBrokenPicture_01"
+					print("next: Ev_SecondBrokenPicture_01")
+					#foto_encimera = true
 		
 		elif interactive.event_id == "Ev_FirstBrokenPicture_01":
 			print("Ev_FirstBrokenPicture_01")
