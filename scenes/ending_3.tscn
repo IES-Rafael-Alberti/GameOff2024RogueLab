@@ -132,3 +132,56 @@ scale = Vector2(3.99583, 4.0037)
 sprite_frames = SubResource("SpriteFrames_fva04")
 autoplay = "default"
 frame_progress = 0.87257
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "jasdjajdajdjasjdjasdja
+asdasdasd
+asdas
+dasd
+asd
+asd
+as
+das
+d
+asd
+as
+dasdasdasd
+asdas
+das
+d
+asdas
+d
+as
+das
+das
+d
+asdas
+d
+asd
+asd
+as
+das
+das
+d
+as
+das
+d
+ad
+sada
+sd
+asda
+sd
+as
+da
+sd
+asd
+as
+d"
+horizontal_alignment = 1
+vertical_alignment = 1

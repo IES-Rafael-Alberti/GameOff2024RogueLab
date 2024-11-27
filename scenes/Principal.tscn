@@ -1,10 +1,9 @@
-[gd_scene load_steps=87 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=85 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://ckvo3swqqy43q" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
 [ext_resource type="Texture2D" uid="uid://hdvqwl8git67" path="res://assets/sprites/Escenario/reloj_movimiento/reloj_movimiento1-sheet.png" id="3_eymhg"]
 [ext_resource type="Texture2D" uid="uid://cynq8fhvk5sgd" path="res://assets/assets/mariofinal.png" id="3_fqhnc"]
-[ext_resource type="Script" path="res://scenes/bath_room_light.gd" id="4_4yf2j"]
 [ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/Prefabs/trigger.tscn" id="5_omke0"]
 [ext_resource type="Script" path="res://scenes/shaders_control.gd" id="6_31grw"]
 [ext_resource type="Material" uid="uid://dc7hpj2ikl847" path="res://assets/materials/vignette_materia.tres" id="6_pug0m"]
@@ -1003,9 +1002,6 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8dvn"]
-size = Vector2(124.948, 141.909)
-
 [node name="TileMap" type="TileMap"]
 position = Vector2(64, -112)
 tile_set = SubResource("TileSet_10sko")
@@ -1067,27 +1063,6 @@ z_index = 1
 position = Vector2(6, 67)
 scale = Vector2(0.95353, 1.21692)
 texture = ExtResource("9_hxb3b")
-
-[node name="BathRoomLight" type="Node" parent="."]
-script = ExtResource("4_4yf2j")
-
-[node name="Area2D" type="Area2D" parent="BathRoomLight"]
-position = Vector2(274, -241)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BathRoomLight/Area2D"]
-position = Vector2(45.5312, 158.22)
-scale = Vector2(0.727806, 0.44)
-shape = SubResource("RectangleShape2D_x8dvn")
-
-[node name="BathRoomShader" type="TextureRect" parent="BathRoomLight"]
-z_index = 1
-material = ExtResource("9_n7lhl")
-offset_left = 274.0
-offset_top = -241.0
-offset_right = 367.0
-offset_bottom = -48.0
-texture = ExtResource("7_1dy4f")
-expand_mode = 1
 
 [node name="BackgroundShader" type="TextureRect" parent="."]
 z_index = -14
@@ -1230,6 +1205,3 @@ visible = false
 
 [node name="EndingLayer" parent="." instance=ExtResource("13_1osdi")]
 visible = false
-
-[connection signal="body_entered" from="BathRoomLight/Area2D" to="BathRoomLight" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="BathRoomLight/Area2D" to="BathRoomLight" method="_on_area_2d_body_exited"]
