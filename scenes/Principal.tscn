@@ -1054,13 +1054,11 @@ texture = ExtResource("3_fqhnc")
 
 [node name="FotoRotaEncimera" type="Sprite2D" parent="."]
 position = Vector2(197, 17)
-scale = Vector2(1, 1)
 texture = ExtResource("10_ajm7l")
 
 [node name="MapaRoto" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(4, 68)
-scale = Vector2(1, 1)
 texture = ExtResource("8_rtbf3")
 
 [node name="MapaArreglado" type="Sprite2D" parent="."]

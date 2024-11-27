@@ -223,7 +223,19 @@ func _on_input_recived():
 			foto_estanteria = true
 			print("foto_encimera: " + str(foto_encimera))
 			print("foto_estanteria: " + str(foto_estanteria))
+		elif interactive.event_id == "Ev_SecondBrokenPicture_03":
+			print("Ev_SecondBrokenPicture_03")
 			
+			SignalBus.BrokenPicture.emit()
+			ItemTexture=preload("res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_completar.png")
+			ItemMaxScale=900
+			ItemMinScale=100
+			ItemSpeed=1000
+			SignalBus.zoom_item.emit(ItemTexture,ItemMaxScale,ItemMinScale,ItemSpeed)
+			foto_estanteria = true
+			print("foto_encimera: " + str(foto_encimera))
+			print("foto_estanteria: " + str(foto_estanteria))
+		
 		elif interactive.event_id == "Ev_Mirror":
 			evento["NEXT"] = "Ev_Final_03"
 		
