@@ -120,22 +120,33 @@ func _on_event_execute(event_id,aux):
 		print("Ejecutando evento: "+event_id)
 			#Configuracion Shaders y Camera
 			
-		#Si es puzzle ejecutar puzzle
-		if evento["EVENT_CONDITION"] == "PUZZLE":
-			print("puzzle entrando")
-			player.required=true
-			SignalBus.execute_puzzle.emit(event_id)
+		
 			
-			pass
-		if event_id == "ENDING1" or event_id == "ENDING2":
-			SignalBus.execute_ending.emit(evento[OptionManager.language], event_id)
+
+		if aux:
+			var aux_event = get_event(event_id)
+			#Dependiendo del idioma ES o EN
+			SignalBus.execute_dialog.emit(aux_event[OptionManager.language], event_id)
+			
+			if aux_event["EVENT_CONDITION"] == "PUZZLE":
+				print("puzzle entrando")
+				player.required=true
+				SignalBus.execute_puzzle.emit(event_id)
+				pass
+			
 		else:	
-			if aux:
-				var aux_event = get_event(event_id)
-				#Dependiendo del idioma ES o EN
-				SignalBus.execute_dialog.emit(aux_event[OptionManager.language], event_id)
-			else:	
-				SignalBus.execute_dialog.emit(evento[OptionManager.language], event_id)
+				#Si es puzzle ejecutar puzzle
+			if evento["EVENT_CONDITION"] == "PUZZLE":
+				print("puzzle entrando")
+				player.required=true
+				SignalBus.execute_puzzle.emit(event_id)
+				pass
+			
+			SignalBus.execute_dialog.emit(evento[OptionManager.language], event_id)
+			
+		
+		
+		
 	pass
 
 func _on_input_recived():
@@ -232,10 +243,6 @@ func _on_input_recived():
 			foto_estanteria = true
 			print("foto_encimera: " + str(foto_encimera))
 			print("foto_estanteria: " + str(foto_estanteria))
-		
-		elif interactive.event_id == "Ev_Mirror":
-			evento["NEXT"] = "Ev_Final_03"
-		
 		elif interactive.event_id == "Ev_Table":
 			if key:
 				evento["NEXT"] = "Ev_Blueprint_01"

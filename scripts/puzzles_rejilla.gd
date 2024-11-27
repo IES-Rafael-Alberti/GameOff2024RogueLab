@@ -40,10 +40,14 @@ func _ready():
 func _on_zoom_item_exit(zoomItemName):
 	
 	if GameManager.rejilla and zoomItemName == "Pastillas":
+		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+		SignalBus.puzzle_exit.emit(self)
 		TransitionScreen.transition()
 		await SignalBus.on_transition_finished
 		SignalBus.execute_event.emit(event_ending_3,true)
 		print("Tas pasao el juego crack")
+		#print(GameManager.evento)
+		#print(GameManager.interactive.event_id)
 		pass
 	
 	pass
@@ -75,6 +79,7 @@ func _on__pressed():
 func _on_input_recived():
 	if GameManager.puzzleLayer==self :
 		if !GameManager.DialogVisible and !GameManager.zoomItem:
+			DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 			SignalBus.puzzle_exit.emit(self)
 	pass
 	
@@ -91,6 +96,7 @@ func comprobarTornillos():
 		
 func _process(delta: float) -> void:
 	if GameManager.puzzleLayer == self:
+		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 		if !GameManager.rejilla:
 			if  !GameManager.zoomItem and !GameManager.DialogVisible  and mostrar1 :
 				
@@ -98,7 +104,7 @@ func _process(delta: float) -> void:
 					screwdriverMouse  = true
 					comprobarTornillos()
 					SignalBus.execute_event.emit(event_id_screwdriver,true)
-				mostrar1=false
+					mostrar1=false
 			
 			pass
 			if !GameManager.DialogVisible and !GameManager.zoomItem:
@@ -109,7 +115,7 @@ func _process(delta: float) -> void:
 		
 	if screwdriverMouse:
 		mano.global_position = Vector2(-50, -50)
-		screwdriver2D.global_position = get_viewport().get_mouse_position() + Vector2(25, -40)
+		screwdriver2D.global_position = get_viewport().get_mouse_position() + Vector2(40, -30)
 	else	:
 		screwdriver2D.global_position = Vector2(-50, -50)
 		mano.global_position = get_viewport().get_mouse_position()
