@@ -31,6 +31,7 @@ var canExit=true
 func _ready() -> void:
 	SignalBus.wait_input.connect(_on_input_recieved)
 	SignalBus.exit_zoom_item.connect(_on_zoom_out)
+	SignalBus.exit_zoom_item.connect(_on_zoom_item_exit)
 	pass 
 
 func _process(delta: float) -> void:
@@ -42,6 +43,19 @@ func _on_zoom_out(texture):
 	canExit=true
 	
 	pass
+
+func _on_zoom_item_exit(zoomItemName):
+	
+	if GameManager.foto_encimera and GameManager.foto_estanteria and zoomItemName == "Foto_2":
+		#TransitionScreen.transition()
+		#await SignalBus.on_transition_finished
+		#SignalBus.execute_event.emit("Ev_SecondBrokenPicture_03",true)
+		print("mostrastes foto completa")
+		pass
+	
+	pass
+
+
 
 func _on_francesco_foto_button_pressed() -> void:
 	print("Francesco")
