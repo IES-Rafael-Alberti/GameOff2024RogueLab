@@ -21,15 +21,15 @@
 	"EVENT_CONDITION": "TRIGGER",
 	"NEXT": "",
 	"ES": "Ahh, estoy hecho mierda... Necesito algo para este dolor de cabeza... \n...\n¿Dónde coño estoy?\nVeré si en el dormitorio hay algo para el dolor.",
-	"EN": "Ahh, I feel like shit... I need something for this headache... \n...\nWhere the hell am I?\nI'll go to the bedroom"
+	"EN": "Ahh, I feel like shit... I need something for this headache... \n...\nWhere the hell am I?\nI'll go to the bedroom to settle the ache."
   },
   "Ev_02": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "TRIGGER",
 	"NEXT": "",
-	"ES": "¿Qué mierda?... ¿Qué esto? ¿Un cadáver?…",
-	"EN": "Damn?! What is this? is a corpse?…"
+	"ES": "¿Qué mierda?... ¿Qué es esto? ¿Un cadáver?…",
+	"EN": "Damn?!... What is this? is a corpse?…"
   },
   "Ev_02_TV_01": {
 	"SHADER_OPTIONS": "TV",
@@ -116,7 +116,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "Se le ven tan feliz…",
+	"ES": "Se le ve tan feliz…",
 	"EN": "He looks so happy…"
   },
   "Ev_Picture_02": {
@@ -124,8 +124,8 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "A este en cambio se le ve triste…",
-	"EN": "This one, on the other hand, looks sad…"
+	"ES": "Se le ve triste…",
+	"EN": "He looks so sad…"
   },
   "Ev_Picture_03": {
 	"SHADER_OPTIONS": "NONE",
@@ -140,15 +140,15 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "¿Qué es eso que asoma?",
-	"EN": "What’s that sticking out?"
+	"ES": "¿Qué hace ese papel ahí?",
+	"EN": "What's that piece of paper doing there?"
   },
   "Ev_BrokenPicture": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_BrokenPicture",
-	"ES": "Que es esto de de aqui?",
+	"ES": "¿Que es esto de de aqui?",
 	"EN": "What is this?"
   },
   "Ev_FirstBrokenPicture_01": {
@@ -276,15 +276,15 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "Parece que encontré la clave para abrir esa cajita de metal.",
-	"EN": "I think I found the code for that little metal box."
+	"ES": "Parece que encontré la clave para abrir la caja fuerte.",
+	"EN": "I think I found the code for that safe box."
   },
   "Ev_VaultSuccess": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "¡Bingo! Espera, ¿qué?... \n¿Son... las joyas robadas que han mencionado en las noticias?",
+	"ES": "¡Bingo! Espera, ¿qué?... \n¿Es... el dinero del robo que han mencionado en las noticias?",
 	"EN": "Jackpot! Wait, what?\nAren't this... the jewelry robbed that were mentioned in the news?"
   },
   "Ev_VaultFailure": {
@@ -308,8 +308,8 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "Así que te llamas Francesco... La foto no parece legible, pero por los cuadros de antes parece ser que eres tú...",
-	"EN": "So your name is Francesco... I can't distinguished the face, but thanks to the pictures it seem like this is you."
+	"ES": "Así que te llamas Francesco... No puede ser... eras tú desde el principio...\n¡TENGO QUE SALIR CUANTO ANTES!",
+	"EN": "So your name is Francesco... The photo isn’t very clear, but based on the previous pictures, it seems to be you."
   },
   "Ev_Sofa": {
 	"SHADER_OPTIONS": "NONE",
@@ -333,7 +333,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_WC",
 	"ES": "Esperaré a un váter más limpio.",
-	"EN": "I'll wait for another one more clean."
+	"EN": "I'll wait for a cleaner toilet."
   },
   "Ev_Fridge": {
 	"SHADER_OPTIONS": "NONE",
@@ -356,7 +356,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Mirror",
-	"ES": "¿Quién soy yo?",
+	"ES": "¿Quién soy?",
 	"EN": "Who am I?"
   },
   "Ev_DNI": {
@@ -397,7 +397,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Table",
 	"ES": "Menudo desorden tienen en la mesa.",
-	"EN": ""
+	"EN": "What a mess they have on the table."
   },
   "Ev_Shelve_02": {
 	"SHADER_OPTIONS": "NONE",
@@ -405,7 +405,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Shelve_02",
 	"ES": "No tengo tiempo para ponerme a leer libros.",
-	"EN": ""
+	"EN": "I dont' have time to read books."
   },
   "Ev_Ending_01": {
 	"SHADER_OPTIONS": "NONE",
@@ -420,8 +420,8 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "Este es el ending 2",
-	"EN": "Ending 2/3"
+	"ES": "Salí corriendo del apartamento, aterrado... confundido... Vi a la policía entrar al edificio; \nme ordenaron detenerme, pero no pude hacerlo. Dos de ellos me redujeron con fuerza, y cuando abrí los ojos... \nme encontré en una sala vacía, sin poder mover los brazos... sin entender qué había pasado con... Francesco...\n\nFinal 2/3",
+	"EN": "I ran out of the apartment, terrified... confused... I saw the police entering the building; \nthey ordered me to stop, but I couldn’t. Two of them forcibly subdued me, and when I opened my eyes... \nI found myself in an empty room, unable to move my arms... unable to understand what had happened to... \nFrancesco...\n\nEnding 2/3"
   },
   "Ev_Ending_03": {
 	"SHADER_OPTIONS": "NONE",

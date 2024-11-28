@@ -4,6 +4,7 @@
 
 [node name="AmbientLoopList" type="Node"]
 script = ExtResource("1_1cie4")
+limits = Vector2(45, 90)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
