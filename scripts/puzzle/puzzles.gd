@@ -17,13 +17,15 @@ func _on_puzzle_execute(event_id):
 	if(GameManager.puzzleLayer==null):
 		for child in childrens:
 			if child.event_id == event_id:
-				child.show()
-				print("Show Puzzle")
-				SignalBus.puzzle_enter.emit(child)
-				pass
+				enterPuzzle(child)
 			pass
 	pass
 	
 func _exit_puzzle(puzzleLayer):
 	puzzleLayer.hide()
 pass
+ 
+func enterPuzzle(child):
+	child.show()
+	print("Show Puzzle")
+	SignalBus.puzzle_enter.emit(child)
