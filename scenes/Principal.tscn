@@ -1,10 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=25 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://ckvo3swqqy43q" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
 [ext_resource type="Texture2D" uid="uid://cynq8fhvk5sgd" path="res://assets/assets/mariofinal.png" id="3_fqhnc"]
+[ext_resource type="Texture2D" uid="uid://bjsukwrayw5oa" path="res://assets/sprites/Escenario/foto_encimera.png" id="4_orpod"]
 [ext_resource type="PackedScene" uid="uid://j82vpwbejb38" path="res://scenes/Prefabs/trigger.tscn" id="5_omke0"]
+[ext_resource type="Texture2D" uid="uid://bjv6aylumu3vj" path="res://assets/sprites/Escenario/mapa_roto.png" id="5_sfjjl"]
 [ext_resource type="Script" path="res://scenes/shaders_control.gd" id="6_31grw"]
+[ext_resource type="Texture2D" uid="uid://mgu4wqoyn181" path="res://assets/sprites/Escenario/puzle_sin_romper.png" id="6_flovu"]
 [ext_resource type="Material" uid="uid://dc7hpj2ikl847" path="res://assets/materials/vignette_materia.tres" id="6_pug0m"]
 [ext_resource type="PackedScene" uid="uid://j2kel3e4mudp" path="res://scenes/Prefabs/zoom_item.tscn" id="6_youc5"]
 [ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="7_1dy4f"]
@@ -13,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cdtljaux3f3i1" path="res://scenes/puzzles/puzzles.tscn" id="12_c3sp8"]
 [ext_resource type="PackedScene" uid="uid://dqp3w3mh0bjad" path="res://scenes/Prefabs/Ending.tscn" id="13_1osdi"]
 [ext_resource type="AudioStream" uid="uid://cyntonlupdg3y" path="res://Sound Effects/rain-on-window-29298.ogg" id="13_sb8lj"]
-[ext_resource type="PackedScene" path="res://scenes/Prefabs/ambient_loop_list.tscn" id="14_wa15g"]
+[ext_resource type="PackedScene" uid="uid://cpt6dpd1ktrdm" path="res://scenes/Prefabs/ambient_loop_list.tscn" id="14_wa15g"]
 [ext_resource type="AudioStream" uid="uid://csxn6dfgb1nn4" path="res://Sound Effects/car-passing-suburb-14689.ogg" id="15_7c16w"]
 [ext_resource type="AudioStream" uid="uid://2d7mte3j0r3k" path="res://Sound Effects/wall-hit-1-100717.ogg" id="16_ebovn"]
 [ext_resource type="AudioStream" uid="uid://cr7bx5q5u5vwr" path="res://Sound Effects/wall-hit-3-48114.ogg" id="17_vcxjg"]
@@ -566,10 +569,9 @@ layer_5/z_index = 1
 layer_5/tile_data = PackedInt32Array(262145, 1245185, 9, 327681, 1245185, 10, 393217, 1245185, 11, 262146, 1310721, 9, 327682, 1310721, 10, 393218, 1310721, 11, 262142, 983041, 14, 327678, 983041, 15, 393214, 983041, 16, 262143, 1048577, 14, 327679, 1048577, 15, 393215, 1048577, 16, 196608, 1114113, 14, 262144, 1114113, 15, 327680, 1114113, 16, 262167, 1, 10, 327703, 1, 11, 393239, 1, 12, 262168, 65537, 10, 327704, 65537, 11, 393240, 65537, 12, 262169, 131073, 10, 327705, 131073, 11, 393241, 131073, 12)
 layer_6/name = "Detallitos"
 layer_6/z_index = -1
-layer_6/tile_data = PackedInt32Array(-327670, 1, 13, -262134, 1, 14, -327669, 65537, 13, -262133, 65537, 14, 12, 1376257, 0, 131084, 655361, 13, 196620, 655361, 14, -65511, 1310721, 0, -65516, 1179649, 0, -196585, 1048577, 4, -196584, 1114113, 4, -262143, 1114113, 5, -196606, 1114113, 6)
+layer_6/tile_data = PackedInt32Array(-327670, 1, 13, -262134, 1, 14, -327669, 65537, 13, -262133, 65537, 14, 131084, 655361, 13, 196620, 655361, 14, -65511, 1310721, 0, -65516, 1179649, 0, -196585, 1048577, 4, -196584, 1114113, 4, -262143, 1114113, 5, -196606, 1114113, 6)
 layer_7/name = "Detallitos (Delante)"
 layer_7/z_index = 1
-layer_7/tile_data = PackedInt32Array(327679, 851969, 15, 196608, 917505, 14, 262144, 917505, 15)
 layer_8/name = "Columnas h"
 layer_8/z_index = -1
 layer_8/tile_data = PackedInt32Array(262159, 458753, 1342177294, 196623, 393217, 1342177294, 262160, 458753, 1342177293, 196624, 393217, 1342177293, 262161, 458753, 1342177292, 196625, 393217, 1342177292, 262162, 458753, 1342177291, 196626, 393217, 1342177291, 524284, 393217, 1610612746, 458748, 458753, 1610612746, 524285, 393217, 1610612747, 458749, 458753, 1610612747, 524286, 393217, 1610612748, 458750, 458753, 1610612748, 524287, 393217, 1610612749, 458751, 458753, 1610612749, 458752, 393217, 1610612750, 393216, 458753, 1610612750, 458753, 393217, 1610612746, 393217, 458753, 1610612746, 458754, 393217, 1610612747, 393218, 458753, 1610612747, 458755, 393217, 1610612748, 393219, 458753, 1610612748, 458756, 393217, 1610612749, 393220, 458753, 1610612749, 458757, 393217, 1610612746, 393221, 458753, 1610612746, 458758, 393217, 1610612747, 393222, 458753, 1610612747, 458759, 393217, 1610612748, 393223, 458753, 1610612748, 458760, 393217, 1610612749, 393224, 458753, 1610612749, 458761, 393217, 1610612750, 393225, 458753, 1610612750, 458762, 393217, 1610612746, 393226, 458753, 1610612746, 458763, 393217, 1610612747, 393227, 458753, 1610612747, 458764, 393217, 1610612748, 393228, 458753, 1610612748, 458765, 393217, 1610612749, 393229, 458753, 1610612749, 458766, 393217, 1610612746, 393230, 458753, 1610612746, 458767, 393217, 1610612747, 393231, 458753, 1610612747, 458768, 393217, 1610612748, 393232, 458753, 1610612748, 458769, 393217, 1610612749, 393233, 458753, 1610612749, 458770, 393217, 1610612750, 393234, 458753, 1610612750, 458771, 393217, 1610612746, 393235, 458753, 1610612746, 458772, 393217, 1610612747, 393236, 458753, 1610612747, 458773, 393217, 1610612746, 393237, 458753, 1610612746, 458774, 393217, 1610612747, 393238, 458753, 1610612747, 458775, 393217, 1610612748, 393239, 458753, 1610612748, 458776, 393217, 1610612749, 393240, 458753, 1610612749, 458777, 393217, 1610612750, 393241, 458753, 1610612750)
@@ -581,6 +583,21 @@ script = ExtResource("2_iqy1m")
 [node name="Mariofinal" type="Sprite2D" parent="."]
 position = Vector2(360, 21)
 texture = ExtResource("3_fqhnc")
+
+[node name="FotoRotaEncimera" type="Sprite2D" parent="."]
+position = Vector2(197, 10)
+texture = ExtResource("4_orpod")
+
+[node name="MapaRoto" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(2, 68)
+texture = ExtResource("5_sfjjl")
+
+[node name="MapaArreglado" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(3, 67)
+texture = ExtResource("6_flovu")
 
 [node name="BackgroundShader" type="TextureRect" parent="."]
 z_index = -14
