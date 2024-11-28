@@ -71,13 +71,12 @@ func _on_input_recived():
 			visibleCharacters = 0  # Reinicia los caracteres visibles para la nueva línea
 			
 			if currentLine >=lines.size():
-				if GameManager.zoomItem:
-					SignalBus.exit_zoom_item.emit(GameManager.zoomItemName)
-				
 				print("Fin del diálogo.")
 				typing.stop()
 				hide()
 				GameManager.DialogVisible = false
+				if GameManager.zoomItem:
+					SignalBus.exit_zoom_item.emit(GameManager.zoomItemName)
 				GameManager.go_to_next()
 				check_endings()
 			pass

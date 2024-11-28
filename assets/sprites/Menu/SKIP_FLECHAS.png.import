@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://colnrs6j4nrak"
-path="res://.godot/imported/borrar.png-cc1e5f606c2d73b05fa52707c550ff5f.ctex"
+uid="uid://diq2gnorn8co"
+path="res://.godot/imported/SKIP_FLECHAS.png-31693eb19776bd39794731cf655bab77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/puzle_caja_fuerte/borrar.png"
-dest_files=["res://.godot/imported/borrar.png-cc1e5f606c2d73b05fa52707c550ff5f.ctex"]
+source_file="res://assets/sprites/Menu/SKIP_FLECHAS.png"
+dest_files=["res://.godot/imported/SKIP_FLECHAS.png-31693eb19776bd39794731cf655bab77.ctex"]
 
 [params]
 

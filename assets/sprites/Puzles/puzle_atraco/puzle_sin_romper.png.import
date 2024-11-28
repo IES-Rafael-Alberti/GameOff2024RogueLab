@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://colnrs6j4nrak"
-path="res://.godot/imported/borrar.png-cc1e5f606c2d73b05fa52707c550ff5f.ctex"
+uid="uid://q37gb3gschhd"
+path="res://.godot/imported/puzle_sin_romper.png-8be79b86cfd136b880369d59b44639ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/puzle_caja_fuerte/borrar.png"
-dest_files=["res://.godot/imported/borrar.png-cc1e5f606c2d73b05fa52707c550ff5f.ctex"]
+source_file="res://assets/sprites/Puzles/puzle_atraco/puzle_sin_romper.png"
+dest_files=["res://.godot/imported/puzle_sin_romper.png-8be79b86cfd136b880369d59b44639ed.ctex"]
 
 [params]
 

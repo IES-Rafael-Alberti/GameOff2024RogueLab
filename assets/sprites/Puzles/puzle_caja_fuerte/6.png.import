@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyeo1pcegame8"
-path="res://.godot/imported/6.png-bc5d1dcaf4f7b6c245e9c9f546be1945.ctex"
+path="res://.godot/imported/6.png-b77de0da037fa43ea830d5fcd8b3fdff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/caja fuerte/6.png"
-dest_files=["res://.godot/imported/6.png-bc5d1dcaf4f7b6c245e9c9f546be1945.ctex"]
+source_file="res://assets/sprites/Puzles/puzle_caja_fuerte/6.png"
+dest_files=["res://.godot/imported/6.png-b77de0da037fa43ea830d5fcd8b3fdff.ctex"]
 
 [params]
 

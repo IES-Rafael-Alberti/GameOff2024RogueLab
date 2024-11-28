@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdfob1jsulwxk"
-path="res://.godot/imported/mesa_dni.png-fe1b742d7291089e99c2fbe614a28108.ctex"
+path="res://.godot/imported/mesa_dni.png-d693f6998daee3f804becb7233605760.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/caja fuerte/mesa_dni.png"
-dest_files=["res://.godot/imported/mesa_dni.png-fe1b742d7291089e99c2fbe614a28108.ctex"]
+source_file="res://assets/sprites/Puzles/puzle_caja_fuerte/mesa_dni.png"
+dest_files=["res://.godot/imported/mesa_dni.png-d693f6998daee3f804becb7233605760.ctex"]
 
 [params]
 

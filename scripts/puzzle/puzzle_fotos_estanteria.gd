@@ -26,7 +26,7 @@ var canExit=true
 @export var event_id_foto_rota_trasera=""
 @export var event_id_recoger_foto1=""
 @export var event_id_recoger_foto2=""
-
+@export var event_id_fotos_juntas=""
 
 func _ready() -> void:
 	SignalBus.wait_input.connect(_on_input_recieved)
@@ -40,7 +40,6 @@ func _process(delta: float) -> void:
 
 func _on_zoom_out(texture):
 	canExit=true
-	
 	pass
 
 func _on_francesco_foto_button_pressed() -> void:
@@ -93,19 +92,13 @@ func _on_trasera_button_pressed() -> void:
 func _on_foto_oculta_pressed() -> void:
 	print("Nueva foto obtenida "+event_id_foto_rota_trasera)
 	#SignalBus.zoom_item.emit(FOTO_ROTA_TRASERA,900,100,1000)
-	
-	if !GameManager.foto_encimera and !GameManager.foto_estanteria:
+	if !GameManager.foto_encimera:
+		#Pimera
 		SignalBus.zoom_item.emit("Foto_1",900,100,1000)
-		event_id_foto_rota_trasera = "Ev_FirstBrokenPicture_01"
-		GameManager.foto_encimera = true
-		print("foto_encimera: " + str(GameManager.foto_encimera))
-		print("foto_estanteria: " + str(GameManager.foto_estanteria))
-		foto_oculta.visible = false
+		SignalBus.execute_event.emit(event_id_recoger_foto1,true)
 	else:
+		#Segunda
 		SignalBus.zoom_item.emit("Foto_2",900,100,1000)
-		event_id_foto_rota_trasera = "Ev_SecondBrokenPicture_01"
-		GameManager.foto_estanteria = true
-		foto_oculta.visible = false
-		print("foto_encimera: " + str(GameManager.foto_encimera))
-		print("foto_estanteria: " + str(GameManager.foto_estanteria))
-	SignalBus.execute_event.emit(event_id_foto_rota_trasera,true)
+		SignalBus.execute_event.emit(event_id_recoger_foto2,true)
+	foto_oculta.visible = false
+	GameManager.foto_estanteria = true

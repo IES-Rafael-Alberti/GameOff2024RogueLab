@@ -65,7 +65,7 @@ func _on_exit_zoom_item(zoomItemName):
 	GameManager.zoomItem=false
 	GameManager.zoomItemName=""
 	hide()
-	
+	SignalBus.zoom_item_closed.emit(zoomItemName)
 	pass
 
 #func _on_input_recieved():

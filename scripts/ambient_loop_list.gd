@@ -15,9 +15,9 @@ func _ready() -> void:
 
 func random_timer():
 	audio.stream = sounds[rng.randi_range(0, sounds.size()-1)]
-	print(audio.stream)
+	#print(audio.stream)
 	timer.wait_time = rng.randf_range(limits.x, limits.y)
-	print(timer.wait_time)
+	#print(timer.wait_time)
 	timer.start()
 
 

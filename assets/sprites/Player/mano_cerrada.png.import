@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://colnrs6j4nrak"
-path="res://.godot/imported/borrar.png-cc1e5f606c2d73b05fa52707c550ff5f.ctex"
+uid="uid://cambrtpkmmd6o"
+path="res://.godot/imported/mano_cerrada.png-a34e2ac31933e8c89d22df8dafb7cf6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/puzle_caja_fuerte/borrar.png"
-dest_files=["res://.godot/imported/borrar.png-cc1e5f606c2d73b05fa52707c550ff5f.ctex"]
+source_file="res://assets/sprites/Player/mano_cerrada.png"
+dest_files=["res://.godot/imported/mano_cerrada.png-a34e2ac31933e8c89d22df8dafb7cf6c.ctex"]
 
 [params]
 

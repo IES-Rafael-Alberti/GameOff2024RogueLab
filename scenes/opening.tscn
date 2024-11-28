@@ -1,8 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgtb8qvsd48rn"]
+[gd_scene load_steps=7 format=3 uid="uid://dgtb8qvsd48rn"]
 
 [ext_resource type="Script" path="res://scenes/opening.gd" id="1_cnrdt"]
 [ext_resource type="AudioStream" uid="uid://c8e3imduou5pi" path="res://Sound Effects/Opening Sounds.ogg" id="2_0cmi5"]
-[ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="3_fkn0b"]
+[ext_resource type="Texture2D" uid="uid://cvkt3sou10m81" path="res://assets/sprites/Menu/SKIP.png" id="3_v45f1"]
+[ext_resource type="Texture2D" uid="uid://bhtnfxk8k3ui3" path="res://assets/sprites/Menu/SKIP_1_FLECHA.png" id="4_8bpbl"]
+[ext_resource type="Texture2D" uid="uid://ck5ldxjll671t" path="res://assets/sprites/Menu/SKIP_2_FLECHA.png" id="5_edtsw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mvr16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v45f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8bpbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_edtsw")
+}],
+"loop": true,
+"name": &"skip",
+"speed": 2.0
+}]
 
 [node name="Opening" type="CanvasLayer"]
 script = ExtResource("1_cnrdt")
@@ -18,12 +37,19 @@ color = Color(0, 0, 0, 1)
 [node name="Opening_Sounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_0cmi5")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(827, 440)
+scale = Vector2(0.0935185, 0.0935185)
+sprite_frames = SubResource("SpriteFrames_mvr16")
+animation = &"skip"
+autoplay = "skip"
+frame_progress = 0.400454
+
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 781.0
-offset_top = 387.0
-offset_right = 889.0
-offset_bottom = 498.0
-texture_normal = ExtResource("3_fkn0b")
+offset_left = 745.0
+offset_top = 376.0
+offset_right = 911.0
+offset_bottom = 487.0
 ignore_texture_size = true
 stretch_mode = 4
 
