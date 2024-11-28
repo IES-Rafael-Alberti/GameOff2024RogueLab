@@ -27,7 +27,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "TRIGGER",
-	"NEXT": "",
+	"NEXT": "Ev_02_TV_01",
 	"ES": "¿Qué mierda?... ¿Qué es esto? ¿Un cadáver?…",
 	"EN": "Damn?!... What is this? is a corpse?…"
   },
@@ -42,15 +42,15 @@
   "Ev_02_TV_02": {
 	"SHADER_OPTIONS": "TV",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "NONE",
-	"NEXT": "Ev_02_TV_02",
-	"ES": "Siguen las búsquedas de los 2 atracadores a los que se les relaciona con 15 asesinatos... estas son las imágenes que nos ha proporcionado el departamento de policía…",
-	"EN": "The search continues for the two robbers linked to 15 murders... these are the images provided to us by the departament police..."
+	"EVENT_CONDITION": "TRIGGER",
+	"NEXT": "Ev_02_TV_03",
+	"ES": "Siguen las búsquedas de los 2 atracadores a los que se les relaciona con 15 asesinatos... \nestas son las imágenes que nos ha proporcionado el departamento de policía…",
+	"EN": "The search continues for the two robbers linked to 15 murders... \nthese are the images provided to us by the departament police..."
   },
   "Ev_02_TV_03": {
 	"SHADER_OPTIONS": "TV",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "NONE",
+	"EVENT_CONDITION": "TRIGGER",
 	"NEXT": "",
 	"ES": "Me van a cargar el muerto si me encuentran aquí…",
 	"EN": "They'll pin the blame on me if they find me here…"
@@ -148,7 +148,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_BrokenPicture",
-	"ES": "¿Que es esto de de aqui?",
+	"ES": "¿Qué es esto de de aqui?",
 	"EN": "What is this?"
   },
   "Ev_FirstBrokenPicture_01": {
@@ -235,7 +235,7 @@
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "",
+	"NEXT": "Ev_Door_02",
 	"ES": "Por mucho que lo intente... sigue cerrada.",
 	"EN": "Doesn't matter how many times I try... the door is locked."
   },
@@ -310,6 +310,14 @@
 	"NEXT": "",
 	"ES": "Así que te llamas Francesco... No puede ser... eras tú desde el principio...\n¡TENGO QUE SALIR CUANTO ANTES!",
 	"EN": "So your name is Francesco... The photo isn’t very clear, but based on the previous pictures, it seems to be you."
+  },
+  "Ev_Plant": {
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "Ev_Plant",
+	"ES": "Vaya planta de plastico mas fea.",
+	"EN": "What an ugly plastic plant."
   },
   "Ev_Sofa": {
 	"SHADER_OPTIONS": "NONE",

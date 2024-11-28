@@ -1089,7 +1089,8 @@ scale = Vector2(1.09295, 0.395017)
 event_id = "Ev_01"
 
 [node name="TriggerCadaver" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(332, 85)
+position = Vector2(332, 86)
+rotation = 0.773938
 scale = Vector2(-2.21902, 0.154397)
 event_id = "Ev_02"
 
@@ -1167,6 +1168,11 @@ event_id = "Ev_Fridge"
 
 [node name="FridgeSound" type="AudioStreamPlayer2D" parent="Elements_Interactive/Nevera"]
 stream = ExtResource("7_4wige")
+
+[node name="Planta" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
+position = Vector2(41, 101)
+scale = Vector2(0.665362, 1.15375)
+event_id = "Ev_Plant"
 
 [node name="Television" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
 position = Vector2(3, 10)
