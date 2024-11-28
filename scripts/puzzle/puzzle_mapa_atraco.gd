@@ -10,7 +10,8 @@ extends CanvasLayer
 @export var event_id_atraco=""
 
 #const PUZLE_ATRACO = preload("res://assets/sprites/Puzles/puzle_atraco/puzle_atraco.png")
-@onready var mano: Sprite2D = $mano
+@onready var mano_abierta = $manoAbierta
+@onready var mano_cerrada = $manoCerrada
 
 func _ready() -> void:
 	
@@ -60,9 +61,14 @@ var condiciones: Array = [
 
 
 func _process(delta: float) -> void:
-
-	mano.global_position = get_viewport().get_mouse_position()
-
+	
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		mano_cerrada.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
+		mano_abierta.global_position = Vector2(-50, -50)
+	else:
+		mano_cerrada.global_position = Vector2(-50, -50)
+		mano_abierta.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
+	
 
 
 

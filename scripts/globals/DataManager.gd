@@ -7,8 +7,13 @@ var scriptData= {}
 func _ready() -> void:
 	
 	scriptData =  load_json_data_from_path(ScriptDataPath)
-	
 	pass # Replace with function body.
+
+func reloadData():
+	
+	scriptData=load_json_data_from_path(ScriptDataPath)
+	
+	pass
 
 func load_json_data_from_path(path:String):
 	

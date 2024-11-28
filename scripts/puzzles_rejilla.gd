@@ -6,7 +6,8 @@ extends CanvasLayer
 @onready var rejilla_sin_rejilla = $"Rejilla-sin-rejilla"
 @onready var panel_container = $PanelContainer
 @onready var screwdriver2D: Sprite2D = $screwdriver
-@onready var mano: Sprite2D = $mano
+@onready var mano_abierta = $manoAbierta
+@onready var mano_cerrada = $manoCerrada
 
 var screwdriverMouse = false
 #const PASTILLAS_64X_64 = preload("res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png")
@@ -112,10 +113,20 @@ func _process(delta: float) -> void:
 				SignalBus.input_required.emit()
 				
 				pass 
-		
+	
+	
 	if screwdriverMouse:
-		mano.global_position = Vector2(-50, -50)
-		screwdriver2D.global_position = get_viewport().get_mouse_position() + Vector2(40, -30)
-	else	:
-		screwdriver2D.global_position = Vector2(-50, -50)
-		mano.global_position = get_viewport().get_mouse_position()
+			screwdriver2D.global_position = get_viewport().get_mouse_position() + Vector2(40, -30)
+			mano_abierta.global_position = Vector2(-50, -50)
+			mano_cerrada.global_position = Vector2(-50, -50)
+	else:
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			screwdriver2D.global_position = Vector2(-50, -50)
+			mano_cerrada.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
+			mano_abierta.global_position = Vector2(-50, -50)
+		else:
+			screwdriver2D.global_position = Vector2(-50, -50)
+			mano_cerrada.global_position = Vector2(-50, -50)
+			mano_abierta.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
+	
+	

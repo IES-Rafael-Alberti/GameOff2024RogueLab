@@ -13,7 +13,8 @@ var canExit=true
 @onready var foto_oculta = $FotoOculta
 @onready var esquina_rota = $EsquinaRota
 @onready var foto_rota_button = $FotoRotaButton
-@onready var mano: Sprite2D = $mano
+@onready var mano_abierta = $manoAbierta
+@onready var mano_cerrada = $manoCerrada
 
 
 
@@ -31,16 +32,44 @@ var canExit=true
 func _ready() -> void:
 	SignalBus.wait_input.connect(_on_input_recieved)
 	SignalBus.exit_zoom_item.connect(_on_zoom_out)
+	SignalBus.exit_zoom_item.connect(_on_zoom_item_exit)
 	pass 
 
 func _process(delta: float) -> void:
 
-	mano.global_position = get_viewport().get_mouse_position()
-
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		mano_cerrada.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
+		mano_abierta.global_position = Vector2(-50, -50)
+	else:
+		mano_cerrada.global_position = Vector2(-50, -50)
+		mano_abierta.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
+	
 
 func _on_zoom_out(texture):
 	canExit=true
 	pass
+
+func _on_zoom_item_exit(zoomItemName):
+	
+	if GameManager.foto_encimera and GameManager.foto_estanteria and zoomItemName == "Foto_2":
+		SignalBus.puzzle_exit.emit(self)
+		
+		#TransitionScreen.transition()
+		#await SignalBus.on_transition_finished
+		SignalBus.execute_event.emit("Ev_SecondBrokenPicture_03",true)
+		#SignalBus.execute_event.emit("Ev_SecondBrokenPicture_03",false)
+		SignalBus.BrokenPicture.emit()
+		var ItemMaxScale=900
+		var ItemMinScale=100
+		var ItemSpeed=1000
+		SignalBus.zoom_item.emit("Foto_Juntos",ItemMaxScale,ItemMinScale,ItemSpeed)
+		GameManager.foto_estanteria = true
+		print("mostrastes foto completa")
+		pass
+	
+	pass
+
+
 
 func _on_francesco_foto_button_pressed() -> void:
 	print("Francesco")

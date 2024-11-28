@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7o2r2hgpxo7e"]
+[gd_scene load_steps=19 format=3 uid="uid://b7o2r2hgpxo7e"]
 
 [ext_resource type="Texture2D" uid="uid://deydup4oa6ss1" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_vacia_240x135.png" id="1_5h2ek"]
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_fotos_estanteria.gd" id="1_vdajd"]
 [ext_resource type="Texture2D" uid="uid://x0qiakbruusr" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_240x135.png" id="2_ht76q"]
 [ext_resource type="Texture2D" uid="uid://brbcsir8t2aeu" path="res://assets/sprites/Puzles/puzle4_fotos/foto_rota_trasera.png" id="4_mqfyw"]
 [ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="5_rlyw5"]
+[ext_resource type="Texture2D" uid="uid://njdbrj3qawwv" path="res://assets/sprites/Player/mano_cerrada.png" id="6_ds1pa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt1ii"]
 
@@ -173,10 +174,15 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_uske8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y1ra2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1vroj")
 
-[node name="mano" type="Sprite2D" parent="."]
+[node name="manoAbierta" type="Sprite2D" parent="."]
 position = Vector2(-50, -50)
 scale = Vector2(5, 5)
 texture = ExtResource("5_rlyw5")
+
+[node name="manoCerrada" type="Sprite2D" parent="."]
+position = Vector2(-50, -50)
+scale = Vector2(5, 5)
+texture = ExtResource("6_ds1pa")
 
 [connection signal="pressed" from="EsquinaRota" to="." method="_on_esquina_rota_pressed"]
 [connection signal="pressed" from="FrancescoFotoButton" to="." method="_on_francesco_foto_button_pressed"]

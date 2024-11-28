@@ -1,6 +1,7 @@
 extends CanvasLayer
 @onready var pistola = $pistola
-@onready var mano: Sprite2D = $mano
+@onready var mano_abierta = $manoAbierta
+@onready var mano_cerrada = $manoCerrada
 
 #const PISTOLA_DINERO = preload("res://assets/sprites/Puzles/caja fuerte/pistola_dinero.png")
 
@@ -26,7 +27,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	mano.global_position = get_viewport().get_mouse_position()
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		mano_cerrada.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
+		mano_abierta.global_position = Vector2(-50, -50)
+	else:
+		mano_cerrada.global_position = Vector2(-50, -50)
+		mano_abierta.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
 	
 	if GameManager.puzzleLayer==self:
 		if !GameManager.DialogVisible and !GameManager.zoomItem and !onceProcess:

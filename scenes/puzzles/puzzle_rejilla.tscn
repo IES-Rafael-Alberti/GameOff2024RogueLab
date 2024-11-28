@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhs180cnfuqmr"]
+[gd_scene load_steps=10 format=3 uid="uid://dhs180cnfuqmr"]
 
 [ext_resource type="Script" path="res://scripts/puzzles_rejilla.gd" id="1_se3rp"]
 [ext_resource type="Texture2D" uid="uid://clbi4qkjf8o6n" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-pastis.png" id="2_wa4i2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bavsowsg54hvg" path="res://assets/sprites/Puzles/destornillador.png" id="7_3ye2u"]
 [ext_resource type="PackedScene" uid="uid://2jvwv2uig8ff" path="res://scenes/Prefabs/tornillo.tscn" id="7_fxspc"]
 [ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="8_5i5cx"]
+[ext_resource type="Texture2D" uid="uid://njdbrj3qawwv" path="res://assets/sprites/Player/mano_cerrada.png" id="9_esdje"]
 
 [node name="PuzzleRejilla" type="CanvasLayer"]
 script = ExtResource("1_se3rp")
@@ -68,7 +69,12 @@ rotation = 2.52668
 scale = Vector2(1.62078, 1.3153)
 texture = ExtResource("7_3ye2u")
 
-[node name="mano" type="Sprite2D" parent="."]
+[node name="manoAbierta" type="Sprite2D" parent="."]
 position = Vector2(-44, -44)
 scale = Vector2(5, 5)
 texture = ExtResource("8_5i5cx")
+
+[node name="manoCerrada" type="Sprite2D" parent="."]
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("9_esdje")
