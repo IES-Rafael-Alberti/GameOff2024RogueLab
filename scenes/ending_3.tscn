@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpx8f5144dqgg"]
+[gd_scene load_steps=27 format=3 uid="uid://bpx8f5144dqgg"]
 
 [ext_resource type="Texture2D" uid="uid://bti5uqpshc6sg" path="res://assets/sprites/final3/Escena_espejo.png" id="1_3cq6d"]
 [ext_resource type="Script" path="res://scripts/ending_3.gd" id="1_24223"]
+[ext_resource type="FontFile" uid="uid://c1rf6rq6ggj61" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_6f46y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n813p"]
 atlas = ExtResource("1_3cq6d")
@@ -123,6 +124,56 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_7bv6g"]
+line_spacing = 4.0
+font = ExtResource("3_6f46y")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d23kg"]
+font = ExtResource("3_6f46y")
+font_size = 71
+font_color = Color(0.0687983, 0.0687983, 0.0687983, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fi6xq"]
+font = ExtResource("3_6f46y")
+font_size = 17
+
+[sub_resource type="Animation" id="Animation_if8hc"]
+resource_name = "Creditos"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 544.595), Vector2(0, -856)]
+}
+
+[sub_resource type="Animation" id="Animation_cavuc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 544.595)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ar11"]
+_data = {
+"Creditos": SubResource("Animation_if8hc"),
+"RESET": SubResource("Animation_cavuc")
+}
+
 [node name="Ending3" type="CanvasLayer"]
 script = ExtResource("1_24223")
 
@@ -137,51 +188,50 @@ frame_progress = 0.87257
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 544.595
+offset_bottom = 860.595
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "jasdjajdajdjasjdjasdja
-asdasdasd
-asdas
-dasd
-asd
-asd
-as
-das
-d
-asd
-as
-dasdasdasd
-asdas
-das
-d
-asdas
-d
-as
-das
-das
-d
-asdas
-d
-asd
-asd
-as
-das
-das
-d
-as
-das
-d
-ad
-sada
-sd
-asda
-sd
-as
-da
-sd
-asd
-as
-d"
+label_settings = SubResource("LabelSettings_7bv6g")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 90.0
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_d23kg")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Label/Label"]
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 0
+offset_top = 120.88
+offset_right = 960.0
+offset_bottom = 417.88
+text = "         Producer        Jairo Ocaña Romero
+
+         Designers       Yeray Muñoz Palacios
+                         Jose Luis Marcelo Garratón
+
+         Artists         Francesco Vicidomini Rodriguez
+                         Mario Cantero López
+                         Yeray Muñoz Palacios
+
+         Programmers     Manuel Lancharro Bayón
+                         Santiago Ojeda Arenas
+
+         Narrative       Jairo Ocaña Romero
+                         Yeray Muñoz Palacios
+                         Jose Luis Marcelo Garratón
+
+"
+label_settings = SubResource("LabelSettings_fi6xq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Label")
+libraries = {
+"": SubResource("AnimationLibrary_1ar11")
+}

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var event_id=""
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,4 +13,6 @@ func _process(delta):
 
 	pass
 
-	
+func animacion():
+	animation_player.play("Creditos")
+	pass
