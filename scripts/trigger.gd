@@ -10,7 +10,11 @@ func _ready() -> void:
 
 func on_triggered():
 	if(event_id!=""):
-		SignalBus.execute_event.emit(event_id,false)		
+		SignalBus.execute_event.emit(event_id,false)
+		if event_id == "Ev_Fridge":
+				print("Nevera")
+				$"../../Elements_Interactive/Nevera/FridgeSound".play()
+		pass
 	pass
 
 func _on_event_wating(event_id:String):

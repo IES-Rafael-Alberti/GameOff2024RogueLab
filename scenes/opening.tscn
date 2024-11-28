@@ -1,19 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgtb8qvsd48rn"]
+[gd_scene load_steps=6 format=3 uid="uid://dgtb8qvsd48rn"]
 
 [ext_resource type="Script" path="res://scenes/opening.gd" id="1_cnrdt"]
 [ext_resource type="AudioStream" uid="uid://c8e3imduou5pi" path="res://Sound Effects/Opening Sounds.ogg" id="2_0cmi5"]
+[ext_resource type="FontFile" uid="uid://c1rf6rq6ggj61" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_dvrri"]
 [ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="3_fkn0b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8q6g"]
+font = ExtResource("2_dvrri")
+font_size = 15
 
 [node name="Opening" type="CanvasLayer"]
 script = ExtResource("1_cnrdt")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -541.0
+offset_right = 2.0
+offset_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+size_flags_stretch_ratio = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+layout_mode = 2
 color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 17
+text = "La puerta se abrió, como era de esperar, así que decidí salir del apartamento.
+		Vi la policía subir las escaleras, y uno a lo lejos me preguntó sobre que había visto de extraño
+		recientemente en el recinto. Pasé de largo y decidí bajar el edificio, no me sentía nada bien
+		y quería salir rápidamente de ese lugar, encontrar otro tipo de ayuda... Tras unos cinco minutos, varios
+		cuerpos me reducieron y fui arrestrado por ser el principal sospechoso de ese asesinato.
+
+Final 500
+"
+label_settings = SubResource("LabelSettings_l8q6g")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 16
+visible_characters_behavior = 1
 
 [node name="Opening_Sounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_0cmi5")
