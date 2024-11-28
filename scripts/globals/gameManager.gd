@@ -36,7 +36,7 @@ var caja_fuerte:bool
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if GameManager.puzzleLayer != null:
+	if GameManager.puzzleLayer != null and !CanvasManager.inPause:
 		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	else:
 		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)

@@ -39,7 +39,6 @@ func _ready():
 func _on_zoom_item_exit(zoomItemName):
 	
 	if GameManager.rejilla and zoomItemName == "Pastillas":
-		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 		SignalBus.puzzle_exit.emit(self)
 		TransitionScreen.transition()
 		await SignalBus.on_transition_finished
@@ -78,7 +77,6 @@ func _on__pressed():
 func _on_input_recived():
 	if GameManager.puzzleLayer==self :
 		if !GameManager.DialogVisible and !GameManager.zoomItem:
-			DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 			SignalBus.puzzle_exit.emit(self)
 	pass
 	
@@ -95,7 +93,6 @@ func comprobarTornillos():
 		
 func _process(delta: float) -> void:
 	if GameManager.puzzleLayer == self:
-		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 		if !GameManager.rejilla:
 			if  !GameManager.zoomItem and !GameManager.DialogVisible  and mostrar1 :
 				

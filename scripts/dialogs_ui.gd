@@ -77,6 +77,11 @@ func _on_input_recived():
 				GameManager.DialogVisible = false
 				if GameManager.zoomItem:
 					SignalBus.exit_zoom_item.emit(GameManager.zoomItemName)
+				if event_id=="Ev_Pills":
+					
+					SignalBus.play_credits.emit()
+					
+					pass
 				GameManager.go_to_next()
 				check_endings()
 			pass

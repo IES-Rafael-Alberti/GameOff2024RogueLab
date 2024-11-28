@@ -235,3 +235,5 @@ root_node = NodePath("../Label")
 libraries = {
 "": SubResource("AnimationLibrary_1ar11")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
