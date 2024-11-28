@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://obr06lo21w0y"]
+[gd_scene load_steps=5 format=3 uid="uid://obr06lo21w0y"]
 
 [ext_resource type="Script" path="res://scripts/dialogs_ui.gd" id="1_d7xkf"]
 [ext_resource type="FontFile" uid="uid://c1rf6rq6ggj61" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_egnvx"]
+[ext_resource type="AudioStream" uid="uid://d1w8m7mcf6eqc" path="res://Sound Effects/medium-text-blip-14855.mp3" id="3_6bgp1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3m6rq"]
 font = ExtResource("2_egnvx")
@@ -37,5 +38,8 @@ label_settings = SubResource("LabelSettings_3m6rq")
 autowrap_mode = 2
 max_lines_visible = 2
 visible_characters_behavior = 1
+
+[node name="Typing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6bgp1")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
