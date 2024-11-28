@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=23 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://ckvo3swqqy43q" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://dc7hpj2ikl847" path="res://assets/materials/vignette_materia.tres" id="6_pug0m"]
 [ext_resource type="PackedScene" uid="uid://j2kel3e4mudp" path="res://scenes/Prefabs/zoom_item.tscn" id="6_youc5"]
 [ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="7_1dy4f"]
+[ext_resource type="AudioStream" uid="uid://dvpaib1q4n35g" path="res://Sound Effects/fridge-opening-and-closing-75650.ogg" id="7_4wige"]
 [ext_resource type="Material" uid="uid://ilp3hdc66mxl" path="res://assets/materials/blood_materia.tres" id="8_op68h"]
 [ext_resource type="Material" uid="uid://qm4tflob2hed" path="res://assets/materials/bathroom_shader.tres" id="9_n7lhl"]
 [ext_resource type="PackedScene" uid="uid://cdtljaux3f3i1" path="res://scenes/puzzles/puzzles.tscn" id="12_c3sp8"]
@@ -667,9 +668,12 @@ scale = Vector2(1.21078, 2.17106)
 event_id = "Ev_WC"
 
 [node name="Nevera" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
-position = Vector2(110, 11)
+position = Vector2(111, 2)
 scale = Vector2(1.626, 3.27352)
 event_id = "Ev_Fridge"
+
+[node name="FridgeSound" type="AudioStreamPlayer2D" parent="Elements_Interactive/Nevera"]
+stream = ExtResource("7_4wige")
 
 [node name="Television" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
 position = Vector2(5, 3)
