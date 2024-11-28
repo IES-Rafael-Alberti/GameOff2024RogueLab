@@ -36,10 +36,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 
-	#if GameManager.puzzleLayer == self:
-		#DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
-	#else:
-		#DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+	
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		mano_cerrada.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
