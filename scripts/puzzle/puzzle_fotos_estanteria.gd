@@ -9,7 +9,6 @@ extends CanvasLayer
 var canExit=true
 
 @onready var fotos_estanterias_vacia: TextureRect = $FotosEstanteriasVacia240x135
-@onready var trasera_button: TextureButton = $TextureButton
 @onready var foto_oculta = $FotoOculta
 @onready var esquina_rota = $EsquinaRota
 @onready var foto_rota_button = $FotoRotaButton
