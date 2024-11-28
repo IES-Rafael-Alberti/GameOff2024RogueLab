@@ -36,6 +36,10 @@ var caja_fuerte:bool
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if GameManager.puzzleLayer != null:
+		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
+	else:
+		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	pass
 
 func _ready() -> void:
@@ -249,9 +253,9 @@ func _on_input_recived():
 			if GameManager.key:
 				evento["NEXT"]="Ev_Shelve"
 		elif interactive.event_id == "TXT_TEST_2":
-			if GameManager.key and !caja_fuerte:
+			if GameManager.key and !dni:
 				evento["NEXT"]="Ev_Ending_01"
-			elif GameManager.key and caja_fuerte:
+			elif GameManager.key and dni:
 				evento["NEXT"]="Ev_Ending_02"
 			
 	pass

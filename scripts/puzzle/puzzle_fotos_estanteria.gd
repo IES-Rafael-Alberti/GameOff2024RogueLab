@@ -36,6 +36,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 
+	
+	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		mano_cerrada.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
 		mano_abierta.global_position = Vector2(-50, -50)

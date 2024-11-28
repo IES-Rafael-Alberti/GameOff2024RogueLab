@@ -13,6 +13,10 @@ extends CanvasLayer
 @onready var mano_abierta = $manoAbierta
 @onready var mano_cerrada = $manoCerrada
 
+@export var cursor_speed: float = 300.0  # Velocidad del cursor
+
+
+
 func _ready() -> void:
 	
 	SignalBus.wait_input.connect(_on_input_recived)
@@ -62,6 +66,8 @@ var condiciones: Array = [
 
 func _process(delta: float) -> void:
 	
+	
+
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		mano_cerrada.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
 		mano_abierta.global_position = Vector2(-50, -50)
@@ -69,9 +75,6 @@ func _process(delta: float) -> void:
 		mano_cerrada.global_position = Vector2(-50, -50)
 		mano_abierta.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
 	
-
-
-
 
 
 
