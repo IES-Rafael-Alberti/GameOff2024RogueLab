@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var foto_rota_encimera = $FotoRotaEncimera
-@onready var mapa_roto = $MapaRoto
-@onready var mapa_arreglado = $MapaArreglado
+#@onready var foto_rota_encimera = $FotoRotaEncimera
+#@onready var mapa_roto = $MapaRoto
+#@onready var mapa_arreglado = $MapaArreglado
 
 
 
@@ -14,13 +14,14 @@ func _ready() -> void:
 	CanvasManager.instanciate_dialog()
 	
 	
-	SignalBus.BrokenPicture.connect(eliminarFoto)
-	SignalBus.mapaMesa.connect(cambiarMapa)
+	#SignalBus.BrokenPicture.connect(eliminarFoto)
+	#SignalBus.mapaMesa.connect(cambiarMapa)
 	pass 
 
 func eliminarFoto():
-	foto_rota_encimera.hide()
-
+	#foto_rota_encimera.hide()
+	pass
 func cambiarMapa():
-	mapa_roto.hide()
-	mapa_arreglado.show()
+	#mapa_roto.hide()
+	#mapa_arreglado.show()
+	pass
