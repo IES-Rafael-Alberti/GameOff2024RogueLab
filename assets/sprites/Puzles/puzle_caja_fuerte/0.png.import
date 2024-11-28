@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0x31jcilx2wt"
-path="res://.godot/imported/7.png-bf60dd3144409ae50a4229f63468c778.ctex"
+uid="uid://djn2nrodw742b"
+path="res://.godot/imported/0.png-00f64256240c4e9b63d7dbe844e2c7d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/caja fuerte/7.png"
-dest_files=["res://.godot/imported/7.png-bf60dd3144409ae50a4229f63468c778.ctex"]
+source_file="res://assets/sprites/Puzles/puzle_caja_fuerte/0.png"
+dest_files=["res://.godot/imported/0.png-00f64256240c4e9b63d7dbe844e2c7d5.ctex"]
 
 [params]
 

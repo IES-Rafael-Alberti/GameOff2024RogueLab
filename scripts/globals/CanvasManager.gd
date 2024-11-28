@@ -91,7 +91,7 @@ func play_options_menu():
 	option_menu.visible = true
 	
 	if(inGame):
-		if(pause_menu.visible):
+		if(pause_menu!=null and  pause_menu.visible):
 			pause_menu.visible = false
 	else:
 		get_tree().get_first_node_in_group("MainMenu").visible = false

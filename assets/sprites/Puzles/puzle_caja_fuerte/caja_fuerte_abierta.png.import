@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v4dpneacccuk"
-path="res://.godot/imported/pistola_dinero.png-257cb097caae539a394a38cafc563ec0.ctex"
+uid="uid://b7otmavrlv3af"
+path="res://.godot/imported/caja_fuerte_abierta.png-2d0143d19dd8c826d51b2b914f8861c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/caja fuerte/pistola_dinero.png"
-dest_files=["res://.godot/imported/pistola_dinero.png-257cb097caae539a394a38cafc563ec0.ctex"]
+source_file="res://assets/sprites/Puzles/puzle_caja_fuerte/caja_fuerte_abierta.png"
+dest_files=["res://.godot/imported/caja_fuerte_abierta.png-2d0143d19dd8c826d51b2b914f8861c2.ctex"]
 
 [params]
 

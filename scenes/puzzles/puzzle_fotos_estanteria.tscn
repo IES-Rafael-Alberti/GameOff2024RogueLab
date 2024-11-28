@@ -38,6 +38,9 @@ event_id_foto_fran = "Ev_Picture_01"
 event_id_foto_mario = "Ev_Picture_02"
 event_id_foto_rota = "Ev_Picture_03"
 event_id_foto_rota_trasera = "Ev_BrokenPicture"
+event_id_recoger_foto1 = "Ev_FirstBrokenPicture_01"
+event_id_recoger_foto2 = "Ev_SecondBrokenPicture_01"
+event_id_fotos_juntas = "Ev_SecondBrokenPicture_03"
 
 [node name="FotosEstanterias240x135" type="TextureRect" parent="."]
 anchors_preset = 15

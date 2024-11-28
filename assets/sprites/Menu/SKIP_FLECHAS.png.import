@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsj68vi0r4vvt"
-path="res://.godot/imported/post-it.png-0c19e14c0b83bff89247641f99412dbe.ctex"
+uid="uid://diq2gnorn8co"
+path="res://.godot/imported/SKIP_FLECHAS.png-31693eb19776bd39794731cf655bab77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/caja fuerte/post-it.png"
-dest_files=["res://.godot/imported/post-it.png-0c19e14c0b83bff89247641f99412dbe.ctex"]
+source_file="res://assets/sprites/Menu/SKIP_FLECHAS.png"
+dest_files=["res://.godot/imported/SKIP_FLECHAS.png-31693eb19776bd39794731cf655bab77.ctex"]
 
 [params]
 

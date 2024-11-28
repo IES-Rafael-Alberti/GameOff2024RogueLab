@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyeo1pcegame8"
-path="res://.godot/imported/6.png-bc5d1dcaf4f7b6c245e9c9f546be1945.ctex"
+uid="uid://tclqbs1uhs45"
+path="res://.godot/imported/destornillador.png-0e43e20ca07049278b618cda3c96b49c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/caja fuerte/6.png"
-dest_files=["res://.godot/imported/6.png-bc5d1dcaf4f7b6c245e9c9f546be1945.ctex"]
+source_file="res://assets/sprites/Puzles/puzle2-rejilla/destornillador.png"
+dest_files=["res://.godot/imported/destornillador.png-0e43e20ca07049278b618cda3c96b49c.ctex"]
 
 [params]
 

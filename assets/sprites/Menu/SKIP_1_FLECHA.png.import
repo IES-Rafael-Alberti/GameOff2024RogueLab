@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7otmavrlv3af"
-path="res://.godot/imported/caja_fuerte_abierta.png-aa6f17aa14157c7597613491ce471023.ctex"
+uid="uid://bhtnfxk8k3ui3"
+path="res://.godot/imported/SKIP_1_FLECHA.png-b49387693a7beefebbe4ce398e5eefe1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/caja fuerte/caja_fuerte_abierta.png"
-dest_files=["res://.godot/imported/caja_fuerte_abierta.png-aa6f17aa14157c7597613491ce471023.ctex"]
+source_file="res://assets/sprites/Menu/SKIP_1_FLECHA.png"
+dest_files=["res://.godot/imported/SKIP_1_FLECHA.png-b49387693a7beefebbe4ce398e5eefe1.ctex"]
 
 [params]
 

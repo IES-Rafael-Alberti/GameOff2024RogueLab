@@ -3,8 +3,6 @@ extends CanvasLayer
 
 @onready var rejilla_sin_tornillos = $"Rejilla-sin-tornillos"
 @onready var pastillasButton = $"Rejilla-sin-pastis/pastillas"
-@onready var rejilla_sin_rejilla = $"Rejilla-sin-rejilla"
-@onready var panel_container = $PanelContainer
 @onready var screwdriver2D: Sprite2D = $screwdriver
 @onready var mano_abierta = $manoAbierta
 @onready var mano_cerrada = $manoCerrada

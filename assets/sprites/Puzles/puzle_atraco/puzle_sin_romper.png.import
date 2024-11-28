@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m46joef1s360"
-path="res://.godot/imported/caja_fuerte_abierta_sin_nada.png-b57959fd2171a62251c31a21ef7392b4.ctex"
+uid="uid://q37gb3gschhd"
+path="res://.godot/imported/puzle_sin_romper.png-8be79b86cfd136b880369d59b44639ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Puzles/caja fuerte/caja_fuerte_abierta_sin_nada.png"
-dest_files=["res://.godot/imported/caja_fuerte_abierta_sin_nada.png-b57959fd2171a62251c31a21ef7392b4.ctex"]
+source_file="res://assets/sprites/Puzles/puzle_atraco/puzle_sin_romper.png"
+dest_files=["res://.godot/imported/puzle_sin_romper.png-8be79b86cfd136b880369d59b44639ed.ctex"]
 
 [params]
 
