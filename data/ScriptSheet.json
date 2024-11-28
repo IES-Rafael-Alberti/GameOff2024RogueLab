@@ -20,8 +20,8 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "TRIGGER",
 	"NEXT": "",
-	"ES": "Ahh, estoy hecho mierda... Necesito algo para este dolor de cabeza... \n...\n¿Dónde coño estoy?",
-	"EN": "Ahh, I feel like shit... I need something for this headache... \n...\nWhere the hell am I?"
+	"ES": "Ahh, estoy hecho mierda... Necesito algo para este dolor de cabeza... \n...\n¿Dónde coño estoy?\nVeré si en el dormitorio hay algo para el dolor.",
+	"EN": "Ahh, I feel like shit... I need something for this headache... \n...\nWhere the hell am I?\nI'll go to the bedroom"
   },
   "Ev_02": {
 	"SHADER_OPTIONS": "NONE",
@@ -148,40 +148,40 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_BrokenPicture",
-	"ES": "Que es esto de de aki?",
-	"EN": ""
+	"ES": "Que es esto de de aqui?",
+	"EN": "What is this?"
   },
   "Ev_FirstBrokenPicture_01": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "Ev_FirstBrokenPicture_02",
-	"ES": "Parece que alguien la ha roto por la mitad.",
-	"EN": "It looks like someone broke it in two."
+	"NEXT": "",
+	"ES": "Parece que alguien la ha roto por la mitad.\nLa otra mitad debe estar por aquí.",
+	"EN": "It looks like someone broke it in two.\nThe other half must be around here somewhere."
   },
   "Ev_FirstBrokenPicture_02": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "La otra mitad debe estar por aquí.",
-	"EN": "The other half must be around here somewhere."
+	"ES": "Evento en Desuso",
+	"EN": ""
   },
   "Ev_SecondBrokenPicture_01": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "Ev_SecondBrokenPicture_02",
-	"ES": "Esta parece la otra mitad de la foto.",
-	"EN": "This seems to be the other half of the picture."
+	"NEXT": "",
+	"ES": "Esta parece la otra mitad de la foto.\nEse tal Mario, lleva la misma ropa que yo...",
+	"EN": "This seems to be the other half of the picture.\nThat guy, Mario… He’s wearing the same clothes as me."
   },
   "Ev_SecondBrokenPicture_02": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
-	"NEXT": "Ev_SecondBrokenPicture_03",
-	"ES": "Ese tal Mario, lleva la misma ropa que yo...",
-	"EN": "That guy, Mario… He’s wearing the same clothes as me"
+	"NEXT": "",
+	"ES": "Evento en Desuso",
+	"EN": ""
   },
   "Ev_SecondBrokenPicture_03": {
 	"SHADER_OPTIONS": "NONE",
@@ -213,7 +213,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Grill_02",
 	"ES": "Que raro... parece que hay algo ahí... \nCreo que necesitaré un destornillador para esto.",
-	"EN": "That weird... seems that there is something... \nI think that I need a screwdriver for this"
+	"EN": "That's weird... it seems that there is something... \nI think that I need a screwdriver for this."
   },
   "Ev_Screwdriver_02": {
 	"SHADER_OPTIONS": "NONE",
@@ -221,7 +221,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
 	"ES": "Con esto puede que consiga abrir la rejilla.",
-	"EN": "With this meaby i can open the grid."
+	"EN": "With this maybe I can open the grid."
   },
   "Ev_Door_01": {
 	"SHADER_OPTIONS": "NONE",
@@ -229,7 +229,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Door_02",
 	"ES": "La puerta parece que está cerrada. La llave debe de estar por algún lado.",
-	"EN": "The door is locked. The key must be somewhere."
+	"EN": "The door is locked. The key has to be somewhere."
   },
   "Ev_Door_02": {
 	"SHADER_OPTIONS": "NONE",
@@ -237,7 +237,15 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
 	"ES": "Por mucho que lo intente... sigue cerrada.",
-	"EN": "Doesn't matter how many times I try... the door is loked."
+	"EN": "Doesn't matter how many times I try... the door is locked."
+  },
+  "Ev_Door_03": {
+	"SHADER_OPTIONS": "NONE",
+	"CAMERA_OPTIONS": "NONE",
+	"EVENT_CONDITION": "NONE",
+	"NEXT": "",
+	"ES": "La llave encaja perfectamente.",
+	"EN": "The key works perfectly."
   },
   "Ev_FirstWardrobe": {
 	"SHADER_OPTIONS": "NONE",
@@ -253,7 +261,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
 	"ES": "Parece que aquí puede ir el código.",
-	"EN": "It seem like i can use the code here."
+	"EN": "It seem like I can use the code here."
   },
   "Ev_FirstCode": {
 	"SHADER_OPTIONS": "NONE",
@@ -285,7 +293,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
 	"ES": "Mierda... Así no sirve...",
-	"EN": "Shit...This does't work"
+	"EN": "Shit...This doesn't work"
   },
   "Ev_DNIBefore": {
 	"SHADER_OPTIONS": "NONE",
@@ -293,7 +301,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
 	"ES": "Parece un DNI. ¿Tal vez sea de este tío?",
-	"EN": "It looks like an ID.  Can this be from that guy?"
+	"EN": "It looks like an ID.  Maybe this is from that guy?"
   },
   "Ev_DNIAfter": {
 	"SHADER_OPTIONS": "NONE",
@@ -317,7 +325,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Sink",
 	"ES": "Alguien no ha limpiado los platos.",
-	"EN": "Someone hasn't washed the dishes"
+	"EN": "Someone hasn't washed the dishes."
   },
   "Ev_WC": {
 	"SHADER_OPTIONS": "NONE",
@@ -325,7 +333,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_WC",
 	"ES": "Esperaré a un váter más limpio.",
-	"EN": "I'll wait for another one more cleaner."
+	"EN": "I'll wait for another one more clean."
   },
   "Ev_Fridge": {
 	"SHADER_OPTIONS": "NONE",
@@ -333,7 +341,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Fridge",
 	"ES": "No es momento de tomarse una energética.",
-	"EN": "There is no time for a drink."
+	"EN": "There is no time for an energy drink."
   },
   "Ev_TV": {
 	"SHADER_OPTIONS": "NONE",
@@ -341,7 +349,7 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_TV",
 	"ES": "La tele vuelve a no tener señal.",
-	"EN": "The tv is broken again."
+	"EN": "The TV is broken again."
   },
   "Ev_Mirror": {
 	"SHADER_OPTIONS": "NONE",
@@ -364,31 +372,31 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Closet",
-	"ES": "Esto es un armario, parece que esta atascado",
-	"EN": "This is a closet,it seems to be stuck"
+	"ES": "El armario parece estar atascado.",
+	"EN": "The closet seems to be stuck."
   },
   "Ev_Drawer": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Drawer",
-	"ES": "Esto es un cajon, parece que esta atascado",
-	"EN": "This is a drawer,it seems to be stuck"
+	"ES": "El cajón parece estar atasacado.",
+	"EN": "The drawer seems to be stuck."
   },
   "Ev_Pills": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "PUZZLE",
 	"NEXT": "",
-	"ES": "accediste al final3",
-	"EN": "sdljfsldfkljksdjkldsjkfsdjkkjfd"
+	"ES": "",
+	"EN": ""
   },
   "Ev_Table": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Table",
-	"ES": "Mesa",
+	"ES": "Menudo desorden tienen en la mesa.",
 	"EN": ""
   },
   "Ev_Shelve_02": {
@@ -396,7 +404,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Shelve_02",
-	"ES": "Estanteria",
+	"ES": "No tengo tiempo para ponerme a leer libros.",
 	"EN": ""
   },
   "Ev_Ending_01": {
@@ -404,8 +412,8 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "La puerta se abrió, como era de esperar, así que decidí salir del apartamento.\n                        Vi la policía subir las escaleras, y uno a lo lejos me preguntó sobre que había visto de extraño\n                        recientemente en el recinto. Pasé de largo y decidí bajar el edificio, no me sentía nada bien\n                        y quería salir rápidamente de ese lugar, encontrar otro tipo de ayuda... Tras unos cinco minutos, varios\n                        cuerpos me reducieron y fui arrestado por ser el principal sospechoso de ese asesinato.\n                        \n                        Final 1/3",
-	"EN": ""
+	"ES": "La puerta se abrió como era de esperar, así que decidí salir del apartamento. \nVi a la policía subir las escaleras y uno a lo lejos me preguntó que había visto de extraño recientemente en el recinto. \nPasé de largo y decidí bajar el edificio, no me sentía nada bien y quería salir rápidamente de ese lugar, encontrar \notro tipo de ayuda... Tras unos cinco minutos, varios cuerpos me redujeron y fui arrestado por ser el principal \nsospechoso de ese asesinato.\n                        \nFinal 1/3",
+	"EN": "The door opened as expected, so I decided to leave the apartment.\nAs I stepped into the hallwat, I saw police officers coming up the stairs. One of them, at a distance, \nasked me if I had noticed anything unusual in the compound recently. I ignored the question and \ncontinued down the building. I wasn't feelind well at all, and I just wanted to get out of that place quickly \nand seek another kind of help. About five minutes lates, several officers overpowered me, and \nI was arrested as the main suspect in the murder.\n\nEnding 1/3"
   },
   "Ev_Ending_02": {
 	"SHADER_OPTIONS": "NONE",
@@ -413,14 +421,14 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
 	"ES": "Este es el ending 2",
-	"EN": ""
+	"EN": "Ending 2/3"
   },
   "Ev_Ending_03": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "Este es el ending 3",
-	"EN": "sjfsdjfsdkfjksdfjsdkfjdskjfsdfkj"
+	"ES": "Final 3/3",
+	"EN": "Ending 3/3"
   }
 }
