@@ -259,7 +259,9 @@ func _on_input_recived():
 			if GameManager.key:
 				evento["NEXT"]="Ev_Shelve"
 		elif interactive.event_id == "TXT_TEST_2":
-			if GameManager.key:
+			if GameManager.key and !caja_fuerte:
 				evento["NEXT"]="Ev_Ending_01"
+			elif GameManager.key and caja_fuerte:
+				evento["NEXT"]="Ev_Ending_02"
 			
 	pass
