@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dqm6q0g8uqrjn"]
+[gd_scene load_steps=22 format=3 uid="uid://dqm6q0g8uqrjn"]
 
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_caja_fuerte.gd" id="1_7dboa"]
 [ext_resource type="Texture2D" uid="uid://c0f4w82r8i16a" path="res://assets/sprites/Puzles/puzle_caja_fuerte/caja_fuerte.png" id="1_73d0e"]
@@ -15,10 +15,16 @@
 [ext_resource type="Texture2D" uid="uid://colnrs6j4nrak" path="res://assets/sprites/Puzles/puzle_caja_fuerte/borrar.png" id="12_t33hh"]
 [ext_resource type="Texture2D" uid="uid://xv7ayq4ghika" path="res://assets/sprites/Puzles/puzle_caja_fuerte/enter.png" id="13_8j640"]
 [ext_resource type="Texture2D" uid="uid://cvdfcghob2tf8" path="res://assets/sprites/Puzles/puzle_caja_fuerte/9.png" id="13_dqnmf"]
+[ext_resource type="FontFile" uid="uid://c1rf6rq6ggj61" path="res://assets/fonts/PressStart2P-Regular.ttf" id="16_35n6e"]
 [ext_resource type="Texture2D" uid="uid://m46joef1s360" path="res://assets/sprites/Puzles/puzle_caja_fuerte/caja_fuerte_abierta_sin_nada.png" id="16_qtd77"]
 [ext_resource type="Texture2D" uid="uid://v4dpneacccuk" path="res://assets/sprites/Puzles/puzle_caja_fuerte/pistola_dinero.png" id="17_e31n1"]
 [ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="18_3m1lb"]
 [ext_resource type="Texture2D" uid="uid://njdbrj3qawwv" path="res://assets/sprites/Player/mano_cerrada.png" id="19_iq4b4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_um4u2"]
+line_spacing = 0.0
+font = ExtResource("16_35n6e")
+font_size = 22
 
 [node name="Puzzle_caja_fuerte" type="CanvasLayer"]
 script = ExtResource("1_7dboa")
@@ -139,12 +145,15 @@ texture_normal = ExtResource("13_8j640")
 numero = "ENTER"
 
 [node name="resultado" type="Label" parent="."]
-offset_left = 521.0
-offset_top = 218.0
-offset_right = 592.0
-offset_bottom = 262.0
+offset_left = 504.0
+offset_top = 219.0
+offset_right = 599.0
+offset_bottom = 265.0
 scale = Vector2(1.79249, 0.710957)
 theme_override_font_sizes/font_size = 31
+label_settings = SubResource("LabelSettings_um4u2")
+horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 
 [node name="cajaFuerteAbierta" type="Sprite2D" parent="."]

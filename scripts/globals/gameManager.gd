@@ -252,12 +252,14 @@ func _on_input_recived():
 		elif interactive.event_id == "Ev_Shelve_02":
 			if GameManager.key:
 				evento["NEXT"]="Ev_Shelve"
-		elif interactive.event_id == "TXT_TEST_2":
+		elif interactive.event_id == "Ev_Door_02":
+			if GameManager.key:
+				evento["NEXT"]="Ev_Door_03"
+		elif interactive.event_id == "Ev_Door_03":
 			if GameManager.key and !dni:
 				evento["NEXT"]="Ev_Ending_01"
 			elif GameManager.key and dni:
 				evento["NEXT"]="Ev_Ending_02"
-			
 	pass
 	
 func _on_zoom_out(texture):	

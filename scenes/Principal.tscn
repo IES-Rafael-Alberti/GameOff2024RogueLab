@@ -1007,7 +1007,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [node name="TileMap" type="TileMap"]
@@ -1054,7 +1054,7 @@ texture = ExtResource("3_fqhnc")
 position = Vector2(175, -63)
 sprite_frames = SubResource("SpriteFrames_gkmg8")
 autoplay = "default"
-frame_progress = 0.557758
+frame_progress = 0.285295
 
 [node name="FotoRotaEncimera" type="Sprite2D" parent="."]
 position = Vector2(197, 10)
@@ -1088,19 +1088,24 @@ position = Vector2(-10, 54)
 scale = Vector2(1.09295, 0.395017)
 event_id = "Ev_01"
 
+[node name="TriggerCadaver" parent="Triggers" instance=ExtResource("5_omke0")]
+position = Vector2(332, 85)
+scale = Vector2(-2.21902, 0.154397)
+event_id = "Ev_02"
+
 [node name="PuertaPruebas" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(67, -6)
-scale = Vector2(2.38952, 2.19651)
-event_id = "TXT_TEST_1"
+position = Vector2(66, -1)
+scale = Vector2(1.38952, 0.63651)
+event_id = "Ev_Door_01"
 
 [node name="Screwdriver" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(172, 7)
-scale = Vector2(1.12684, 0.992406)
+position = Vector2(172, 10)
+scale = Vector2(0.582859, -0.872323)
 event_id = "Ev_Drawer"
 
 [node name="PostIt" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(400, 9)
-scale = Vector2(1.06951, 1.19651)
+position = Vector2(405, 12)
+scale = Vector2(0.58951, 0.565019)
 event_id = "Ev_FirstCode"
 
 [node name="CajaFuerte" parent="Triggers" instance=ExtResource("5_omke0")]
@@ -1114,63 +1119,63 @@ scale = Vector2(2.77997, 1.21692)
 event_id = "Ev_Table"
 
 [node name="Corpse" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(360, 29)
-scale = Vector2(2.48689, 2.65507)
+position = Vector2(360, 34)
+scale = Vector2(2.32706, 2.19265)
 event_id = "Ev_Corpse_01"
 
 [node name="Pictures" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(-47, 8)
-scale = Vector2(1.76689, 1.61507)
+position = Vector2(-43, 11)
+scale = Vector2(0.841009, 0.93507)
 event_id = "Ev_Shelve_02"
 
 [node name="Rejilla" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(257, -4)
-scale = Vector2(1.43894, 0.921395)
+position = Vector2(256, -5)
+scale = Vector2(1.11894, 0.921395)
 event_id = "Ev_Screwdriver_01"
 
 [node name="DNI" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(320, 10)
-scale = Vector2(1.12916, -0.803552)
+position = Vector2(315, 9)
+scale = Vector2(0.64918, -0.803552)
 event_id = "Ev_DNI"
 
 [node name="FotoEncimera" parent="Triggers" instance=ExtResource("5_omke0")]
-position = Vector2(186, 29)
-scale = Vector2(0.261314, -0.535602)
+position = Vector2(184, 40)
+scale = Vector2(0.251686, -0.816058)
 event_id = "Ev_BrokenPicture"
 
 [node name="Elements_Interactive" type="Node2D" parent="."]
 
 [node name="Sofa" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
-position = Vector2(-52, 75)
-scale = Vector2(1.275, 3.3257)
+position = Vector2(-52, 54)
+scale = Vector2(0.755, 0.365699)
 event_id = "Ev_Sofa"
 
 [node name="Fregadero" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
-position = Vector2(144, 3)
-scale = Vector2(0.845591, 1.43631)
+position = Vector2(145, 16)
+scale = Vector2(0.725591, 0.356308)
 event_id = "Ev_Sink"
 
 [node name="Vater" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
-position = Vector2(285, 9)
-scale = Vector2(1.21078, 2.17106)
+position = Vector2(285, 8)
+scale = Vector2(0.73078, 0.77106)
 event_id = "Ev_WC"
 
 [node name="Nevera" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
-position = Vector2(111, 2)
-scale = Vector2(1.626, 3.27352)
+position = Vector2(108, 21)
+scale = Vector2(1.13594, 0.87352)
 event_id = "Ev_Fridge"
 
 [node name="FridgeSound" type="AudioStreamPlayer2D" parent="Elements_Interactive/Nevera"]
 stream = ExtResource("7_4wige")
 
 [node name="Television" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
-position = Vector2(5, 3)
-scale = Vector2(2.33078, 2.17106)
+position = Vector2(3, 10)
+scale = Vector2(1.32602, 1.03318)
 event_id = "Ev_TV"
 
 [node name="Espejo" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
-position = Vector2(225, -7)
-scale = Vector2(1.21078, 2.17106)
+position = Vector2(224, 1)
+scale = Vector2(0.526306, 0.644294)
 event_id = "Ev_Mirror"
 
 [node name="Shaders" type="CanvasLayer" parent="."]
