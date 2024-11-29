@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bfb3rby1lilfu" path="res://scenes/Prefabs/button.tscn" id="3_ptbyf"]
 [ext_resource type="Texture2D" uid="uid://dgxe0ans3vsxh" path="res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png" id="4_pf470"]
 [ext_resource type="Texture2D" uid="uid://dixpu7d04o707" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-tornillos.png" id="5_tothm"]
-[ext_resource type="Texture2D" uid="uid://bavsowsg54hvg" path="res://assets/sprites/Puzles/destornillador.png" id="7_3ye2u"]
 [ext_resource type="PackedScene" uid="uid://2jvwv2uig8ff" path="res://scenes/Prefabs/tornillo.tscn" id="7_fxspc"]
+[ext_resource type="Texture2D" uid="uid://tclqbs1uhs45" path="res://assets/sprites/Puzles/puzle2-rejilla/destornillador.png" id="7_t88nb"]
 [ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="8_5i5cx"]
 [ext_resource type="Texture2D" uid="uid://njdbrj3qawwv" path="res://assets/sprites/Player/mano_cerrada.png" id="9_esdje"]
 
@@ -67,7 +67,7 @@ scale = Vector2(4, 4)
 position = Vector2(-161, 275)
 rotation = 2.52668
 scale = Vector2(1.62078, 1.3153)
-texture = ExtResource("7_3ye2u")
+texture = ExtResource("7_t88nb")
 
 [node name="manoAbierta" type="Sprite2D" parent="."]
 position = Vector2(-44, -44)

@@ -4,9 +4,6 @@ extends Node2D
 @onready var mapa_roto = $MapaRoto
 @onready var mapa_arreglado = $MapaArreglado
 
-
-
-
 func _ready() -> void:
 	var player=GameManager.get_player()
 	

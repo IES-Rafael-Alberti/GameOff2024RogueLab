@@ -60,7 +60,7 @@ func _on__pressed():
 	#print(character)
 	pastillasButton.queue_free()
 	GameManager.rejilla = true
-	SignalBus.zoom_item.emit("Pastillas",200,4,100)
+	SignalBus.zoom_item.emit("Pastillas",300,60,300)
 	SignalBus.execute_event.emit(event_id_pastillas,true)
 	
 	
