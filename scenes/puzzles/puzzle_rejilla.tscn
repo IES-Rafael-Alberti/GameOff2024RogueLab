@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dhs180cnfuqmr"]
 
 [ext_resource type="Script" path="res://scripts/puzzles_rejilla.gd" id="1_se3rp"]
-[ext_resource type="Texture2D" uid="uid://clbi4qkjf8o6n" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-pastis.png" id="2_wa4i2"]
+[ext_resource type="Texture2D" uid="uid://bckl6lgjdgmb1" path="res://assets/sprites/Puzles/puzle2-rejilla/rejilla-sin-pastis.png" id="2_uiscf"]
 [ext_resource type="PackedScene" uid="uid://bfb3rby1lilfu" path="res://scenes/Prefabs/button.tscn" id="3_ptbyf"]
 [ext_resource type="Texture2D" uid="uid://dgxe0ans3vsxh" path="res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png" id="4_pf470"]
 [ext_resource type="Texture2D" uid="uid://dixpu7d04o707" path="res://assets/assets/Puzles/puzle2-rejilla/rejilla-sin-tornillos.png" id="5_tothm"]
@@ -14,10 +14,9 @@
 script = ExtResource("1_se3rp")
 
 [node name="Rejilla-sin-pastis" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(481, 273)
 scale = Vector2(4, 4)
-texture = ExtResource("2_wa4i2")
+texture = ExtResource("2_uiscf")
 
 [node name="pastillas" parent="Rejilla-sin-pastis" instance=ExtResource("3_ptbyf")]
 offset_left = -38.5
