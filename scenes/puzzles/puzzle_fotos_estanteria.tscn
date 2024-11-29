@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7o2r2hgpxo7e"]
+[gd_scene load_steps=20 format=3 uid="uid://b7o2r2hgpxo7e"]
 
 [ext_resource type="Texture2D" uid="uid://deydup4oa6ss1" path="res://assets/sprites/Puzles/puzle4_fotos/fotos_estanterias_vacia_240x135.png" id="1_5h2ek"]
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_fotos_estanteria.gd" id="1_vdajd"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://brbcsir8t2aeu" path="res://assets/sprites/Puzles/puzle4_fotos/foto_rota_trasera.png" id="4_mqfyw"]
 [ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="5_rlyw5"]
 [ext_resource type="Texture2D" uid="uid://njdbrj3qawwv" path="res://assets/sprites/Player/mano_cerrada.png" id="6_ds1pa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10frn"]
+bg_color = Color(0, 0, 0, 0.215686)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt1ii"]
 
@@ -57,11 +60,12 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 920.0
-offset_top = 279.0
+offset_top = 329.0
 offset_right = -2.0
-offset_bottom = -50.0
+offset_bottom = -87.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_10frn")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bt1ii")
 
 [node name="FotosEstanteriasVacia240x135" type="TextureRect" parent="."]
