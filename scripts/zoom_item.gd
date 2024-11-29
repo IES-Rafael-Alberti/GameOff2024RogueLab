@@ -9,7 +9,7 @@ var textures = {
 	"Cuadro_Mario":"res://assets/sprites/Puzles/puzle4_fotos/foto_mario_pequeño.png",
 	"Cuadro_Roto":"res://assets/sprites/Puzles/puzle4_fotos/foto_rota.png",
 	"Cuadro_Atras":"res://assets/sprites/Puzles/puzle4_fotos/foto_rota_trasera.png",
-	"Foto_Juntos":"res://assets/sprites/Puzles/puzle3-foto/foto_personajes.png",
+	"Foto_Juntos":"res://assets/sprites/Puzles/puzle4_fotos/foto_personajes_disuminada_completar.png",
 	"Mapa_Atraco":"res://assets/sprites/Puzles/puzle_atraco/puzle_atraco.png",
 	"Llave":"res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png",
 	"DNI":"res://assets/sprites/Escenario/DNI.png",
