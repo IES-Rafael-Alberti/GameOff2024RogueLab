@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crmtd70pnf2qf"
+path="res://.godot/imported/tv-glitch-6245.ogg-17da1e3e2195c5beed612a28bb08f82a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/tv-glitch-6245.ogg"
+dest_files=["res://.godot/imported/tv-glitch-6245.ogg-17da1e3e2195c5beed612a28bb08f82a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

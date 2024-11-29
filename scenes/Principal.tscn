@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=101 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://ckvo3swqqy43q" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
@@ -22,8 +22,16 @@
 [ext_resource type="AudioStream" uid="uid://csxn6dfgb1nn4" path="res://Sound Effects/car-passing-suburb-14689.ogg" id="15_7c16w"]
 [ext_resource type="AudioStream" uid="uid://2d7mte3j0r3k" path="res://Sound Effects/wall-hit-1-100717.ogg" id="16_ebovn"]
 [ext_resource type="AudioStream" uid="uid://cr7bx5q5u5vwr" path="res://Sound Effects/wall-hit-3-48114.ogg" id="17_vcxjg"]
+[ext_resource type="AudioStream" uid="uid://fbjt2n7vmkyn" path="res://Sound Effects/intense-horror-music-01-14890.ogg" id="18_0ki86"]
 [ext_resource type="AudioStream" uid="uid://dd8uvhhlr70d" path="res://Sound Effects/wall-hit-2-48113.ogg" id="18_g33q4"]
 [ext_resource type="AudioStream" uid="uid://cbcy15tffajem" path="res://Sound Effects/door-knocking-and-opening-240831.ogg" id="19_2o51t"]
+[ext_resource type="AudioStream" uid="uid://bjgk8jiy6o4mp" path="res://Sound Effects/key-get-39925.ogg" id="24_ko5sy"]
+[ext_resource type="AudioStream" uid="uid://crmtd70pnf2qf" path="res://Sound Effects/tv-glitch-6245.ogg" id="25_77j0h"]
+[ext_resource type="AudioStream" uid="uid://lwii01o68bb1" path="res://Sound Effects/jump-scare-sound-2-82831.ogg" id="26_r26jp"]
+[ext_resource type="AudioStream" uid="uid://ddes51e1q68nl" path="res://Sound Effects/breaking-news-in-2029-5994.ogg" id="27_14bjq"]
+[ext_resource type="AudioStream" uid="uid://b3v5d5sx7k744" path="res://Sound Effects/open-doors-114615.ogg" id="29_hii2l"]
+[ext_resource type="AudioStream" uid="uid://bxbji4skbpx4j" path="res://Sound Effects/paper-245786_1.ogg" id="31_eaoy3"]
+[ext_resource type="AudioStream" uid="uid://csl3wjx6cjxjq" path="res://Sound Effects/whispers-14814.ogg" id="32_mfak8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntdln"]
 texture = ExtResource("1_c4xtu")
@@ -1094,7 +1102,7 @@ rotation = 0.773938
 scale = Vector2(-2.21902, 0.154397)
 event_id = "Ev_02"
 
-[node name="PuertaPruebas" parent="Triggers" instance=ExtResource("5_omke0")]
+[node name="Door" parent="Triggers" instance=ExtResource("5_omke0")]
 position = Vector2(66, -1)
 scale = Vector2(1.38952, 0.63651)
 event_id = "Ev_Door_01"
@@ -1166,9 +1174,6 @@ position = Vector2(108, 21)
 scale = Vector2(1.13594, 0.87352)
 event_id = "Ev_Fridge"
 
-[node name="FridgeSound" type="AudioStreamPlayer2D" parent="Elements_Interactive/Nevera"]
-stream = ExtResource("7_4wige")
-
 [node name="Planta" parent="Elements_Interactive" instance=ExtResource("5_omke0")]
 position = Vector2(41, 101)
 scale = Vector2(0.665362, 1.15375)
@@ -1228,6 +1233,40 @@ visible = false
 stream = ExtResource("13_sb8lj")
 autoplay = true
 
+[node name="Horror" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("18_0ki86")
+
 [node name="AmbientLoopList" parent="Sounds" instance=ExtResource("14_wa15g")]
 limits = Vector2(0, 10)
-sounds = Array[AudioStreamOggVorbis]([ExtResource("15_7c16w"), ExtResource("19_2o51t"), ExtResource("16_ebovn"), ExtResource("18_g33q4"), ExtResource("17_vcxjg")])
+sounds = Array[AudioStreamOggVorbis]([ExtResource("15_7c16w"), ExtResource("16_ebovn"), ExtResource("18_g33q4"), ExtResource("17_vcxjg")])
+
+[node name="Effects" type="Node" parent="Sounds"]
+
+[node name="Key" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("24_ko5sy")
+
+[node name="TV" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("25_77j0h")
+
+[node name="Jumpscare" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("26_r26jp")
+
+[node name="Breaking News" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("27_14bjq")
+
+[node name="FridgeSound" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+position = Vector2(172, -91)
+scale = Vector2(1.13594, 0.87352)
+stream = ExtResource("7_4wige")
+
+[node name="Knock" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("19_2o51t")
+
+[node name="Open door" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("29_hii2l")
+
+[node name="Paper" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("31_eaoy3")
+
+[node name="Whisper" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("32_mfak8")
