@@ -11,10 +11,12 @@ func _ready():
 func _on_animation_finished(anim_name):
 	if anim_name == "fade_in":
 		SignalBus.on_transition_finished.emit()
+		GameManager.transicion=false
 		animation_player.play("fade_out")
 	elif anim_name == "fade_out":
 		color_rect.visible = false
 	
 func transition():
+	GameManager.transicion=true
 	color_rect.visible = true
 	animation_player.play("fade_in")

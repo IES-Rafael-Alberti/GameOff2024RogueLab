@@ -14,6 +14,7 @@
 script = ExtResource("1_se3rp")
 
 [node name="Rejilla-sin-pastis" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(481, 273)
 scale = Vector2(4, 4)
 texture = ExtResource("2_uiscf")

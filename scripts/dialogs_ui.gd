@@ -93,6 +93,7 @@ func check_endings():
 	if next_event_id == "Ev_Ending_01" or next_event_id == "Ev_Ending_02":
 		GameManager.setInteractive(null)
 		GameManager.evento=null
+		GameManager.ending=true
 		TransitionScreen.transition()
 		await SignalBus.on_transition_finished
 		SignalBus.ending_info.emit(GameManager.get_event(next_event_id)[OptionManager.language])

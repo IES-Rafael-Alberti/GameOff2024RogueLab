@@ -21,7 +21,7 @@ func _on_puzzle_execute(event_id):
 			pass
 	pass
 	
-func _exit_puzzle(puzzleLayer):
+func _exit_puzzle(puzzleLayer,clean):
 	puzzleLayer.hide()
 pass
  

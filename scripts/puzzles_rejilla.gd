@@ -39,7 +39,7 @@ func _ready():
 func _on_zoom_item_exit(zoomItemName):
 	
 	if GameManager.rejilla and zoomItemName == "Pastillas":
-		SignalBus.puzzle_exit.emit(self)
+		SignalBus.puzzle_exit.emit(self,true)
 		TransitionScreen.transition()
 		await SignalBus.on_transition_finished
 		SignalBus.execute_event.emit(event_ending_3,true)
@@ -77,7 +77,7 @@ func _on__pressed():
 func _on_input_recived():
 	if GameManager.puzzleLayer==self :
 		if !GameManager.DialogVisible and !GameManager.zoomItem:
-			SignalBus.puzzle_exit.emit(self)
+			SignalBus.puzzle_exit.emit(self,false)
 	pass
 	
 func comprobarTornillos():

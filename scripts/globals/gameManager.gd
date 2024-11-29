@@ -36,6 +36,9 @@ var foto_estanteria:bool
 var mapa:bool
 var caja_fuerte:bool
 
+var ending:bool
+var transicion:bool
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if GameManager.puzzleLayer != null and !CanvasManager.inPause:
@@ -60,9 +63,10 @@ func _setPuzzleLayer(puzzleLayer: CanvasLayer):
 	self.puzzleLayer = puzzleLayer
 	pass
 	
-func _exitPuzzle(puzzleLayer):
+func _exitPuzzle(puzzleLayer, clean):
 	if self.puzzleLayer==puzzleLayer:
 		self.puzzleLayer=null
+		
 	pass
 
 func get_player():
@@ -107,9 +111,9 @@ func setInteractive(body:Node2D):
 		player.showHUD()
 	
 func get_event_from_interactive():
-	
-	#Buscar evento en csv
-	evento = DataManager.scriptData.get(interactive.event_id)
+	if interactive != null:
+		#Buscar evento en csv
+		evento = DataManager.scriptData.get(interactive.event_id)
 	
 	pass
 	
@@ -121,7 +125,7 @@ func go_to_next():
 	SignalBus.event_waiting.emit(evento["NEXT"])
 	if evento["NEXT"]!="":
 		eventHandler()
-	
+		
 	
 func _on_event_execute(event_id,aux):
 	if !DialogVisible:
@@ -155,7 +159,6 @@ func _on_event_execute(event_id,aux):
 			
 		
 		
-		
 	pass
 
 func restartVariables():
@@ -171,6 +174,8 @@ func restartVariables():
 	mapa=false
 	caja_fuerte=false
 	puzzleLayer=null
+	transicion=false
+	ending=false
 	setInteractive(null)
 	DataManager.reloadData()
 	print("Resetear variables")
@@ -240,6 +245,7 @@ func _on_input_recived():
 					print("Foto whisper")
 					whisper.play()
 				foto_encimera=true
+				SignalBus.BrokenPicture.emit()
 		elif interactive.event_id == "Ev_FirstBrokenPicture_01":
 			SignalBus.zoom_item.emit("Foto_1",ItemMaxScale,ItemMinScale,ItemSpeed)
 		elif interactive.event_id == "Ev_SecondBrokenPicture_01":

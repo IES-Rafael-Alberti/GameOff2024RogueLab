@@ -42,7 +42,7 @@ func _physics_process(delta):
 
 	#region interaccion
 		
-	if !CanvasManager.inPause and Input.is_action_just_pressed("interaccion"):	
+	if !CanvasManager.inPause and !GameManager.ending and !GameManager.transicion and Input.is_action_just_pressed("interaccion"):	
 		
 		
 		if GameManager.DialogVisible or GameManager.puzzleLayer!=null or GameManager.zoomItem or required:

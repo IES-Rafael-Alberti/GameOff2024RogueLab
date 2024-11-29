@@ -53,13 +53,12 @@ func _on_zoom_out(texture):
 func _on_zoom_item_exit(zoomItemName):
 	
 	if GameManager.foto_encimera and GameManager.foto_estanteria and zoomItemName == "Foto_2":
-		SignalBus.puzzle_exit.emit(self)
+		SignalBus.puzzle_exit.emit(self,false)
 		
 		#TransitionScreen.transition()
 		#await SignalBus.on_transition_finished
 		SignalBus.execute_event.emit("Ev_SecondBrokenPicture_03",true)
 		#SignalBus.execute_event.emit("Ev_SecondBrokenPicture_03",false)
-		SignalBus.BrokenPicture.emit()
 		var ItemMaxScale=900
 		var ItemMinScale=100
 		var ItemSpeed=1000
@@ -99,7 +98,7 @@ func _on_foto_rota_button_pressed() -> void:
 func _on_input_recieved():
 	if GameManager.puzzleLayer==self :
 		if !GameManager.DialogVisible and !GameManager.zoomItem:
-			SignalBus.puzzle_exit.emit(self)
+			SignalBus.puzzle_exit.emit(self,false)
 	pass
 
 

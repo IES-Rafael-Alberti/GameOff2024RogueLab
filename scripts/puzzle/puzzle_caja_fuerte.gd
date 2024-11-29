@@ -46,7 +46,7 @@ func _process(delta):
 func _on_input_recived():
 	if GameManager.puzzleLayer==self:
 		if !GameManager.DialogVisible and !GameManager.zoomItem:
-			SignalBus.puzzle_exit.emit(self)
+			SignalBus.puzzle_exit.emit(self,false)
 	pass
 
 

@@ -28,7 +28,7 @@ func _ready() -> void:
 func _on_input_recived():
 	if GameManager.puzzleLayer== self :
 		if !GameManager.DialogVisible and !GameManager.zoomItem:
-			SignalBus.puzzle_exit.emit(self)
+			SignalBus.puzzle_exit.emit(self,false)
 	pass
 
 # Arrays para las piezas y sus marcadores correspondientes
@@ -118,4 +118,4 @@ func comprobarPosicion(body: TextureButton, num: int):
 			condiciones[num] = false
 			#endregion
 	else:
-		SignalBus.puzzle_exit.emit(self)
+		SignalBus.puzzle_exit.emit(self,false)
