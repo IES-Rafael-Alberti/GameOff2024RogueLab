@@ -62,7 +62,7 @@ func _on__pressed(character):
 		CFpistola.queue_free()#eliminamos el boton
 		GameManager.caja_fuerte = true
 		onceProcess=false
-		SignalBus.zoom_item.emit("Pistola",200,4,100)
+		SignalBus.zoom_item.emit("Pistola",400,60,300)
 		#pistola.visible = true#muestra la puistola obtenida
 		##fin de scene
 	elif resultado.text.length() >= tamanioCodigo:#comprueva k no supere el limite

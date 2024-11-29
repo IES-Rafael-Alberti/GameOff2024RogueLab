@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bpx8f5144dqgg"]
+[gd_scene load_steps=26 format=3 uid="uid://bpx8f5144dqgg"]
 
 [ext_resource type="Texture2D" uid="uid://bti5uqpshc6sg" path="res://assets/sprites/final3/Escena_espejo.png" id="1_3cq6d"]
 [ext_resource type="Script" path="res://scripts/ending_3.gd" id="1_24223"]
@@ -124,34 +124,15 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_7bv6g"]
-line_spacing = 4.0
-font = ExtResource("3_6f46y")
-
 [sub_resource type="LabelSettings" id="LabelSettings_d23kg"]
 font = ExtResource("3_6f46y")
 font_size = 71
 font_color = Color(0.0687983, 0.0687983, 0.0687983, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fi6xq"]
+line_spacing = 10.0
 font = ExtResource("3_6f46y")
-font_size = 17
-
-[sub_resource type="Animation" id="Animation_if8hc"]
-resource_name = "Creditos"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 544.595), Vector2(0, -856)]
-}
+font_size = 22
 
 [sub_resource type="Animation" id="Animation_cavuc"]
 length = 0.001
@@ -168,10 +149,26 @@ tracks/0/keys = {
 "values": [Vector2(0, 544.595)]
 }
 
+[sub_resource type="Animation" id="Animation_ijdpb"]
+resource_name = "creditos"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 765), Vector2(0, -1229)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ar11"]
 _data = {
-"Creditos": SubResource("Animation_if8hc"),
-"RESET": SubResource("Animation_cavuc")
+"RESET": SubResource("Animation_cavuc"),
+"creditos": SubResource("Animation_ijdpb")
 }
 
 [node name="Ending3" type="CanvasLayer"]
@@ -184,20 +181,18 @@ sprite_frames = SubResource("SpriteFrames_fva04")
 autoplay = "default"
 frame_progress = 0.87257
 
-[node name="Label" type="Label" parent="."]
+[node name="Creditos" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 544.595
-offset_bottom = 860.595
+offset_bottom = 1140.59
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-label_settings = SubResource("LabelSettings_7bv6g")
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Label"]
+[node name="Titulo" type="Label" parent="Creditos"]
 layout_mode = 0
 offset_right = 960.0
 offset_bottom = 90.0
@@ -205,33 +200,54 @@ text = "CREDITS"
 label_settings = SubResource("LabelSettings_d23kg")
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="Label/Label"]
+[node name="Creditos" type="Label" parent="Creditos"]
 custom_minimum_size = Vector2(960, 0)
 layout_mode = 0
-offset_top = 120.88
+offset_top = 121.0
 offset_right = 960.0
-offset_bottom = 417.88
-text = "         Producer        Jairo Ocaña Romero
+offset_bottom = 1199.0
+text = "Producer
+Jairo Ocaña Romero
 
-         Designers       Yeray Muñoz Palacios
-                         Jose Luis Marcelo Garratón
+Head Designer
+Yeray Muñoz Palacios
 
-         Artists         Francesco Vicidomini Rodriguez
-                         Mario Cantero López
-                         Yeray Muñoz Palacios
+Designer
+Jose Luis Marcelo Garratón
 
-         Programmers     Manuel Lancharro Bayón
-                         Santiago Ojeda Arenas
+Head Artist
+Francesco Vicidomini Rodriguez
 
-         Narrative       Jairo Ocaña Romero
-                         Yeray Muñoz Palacios
-                         Jose Luis Marcelo Garratón
+Artist
+Mario Cantero López
+
+Assistant Artist
+Yeray Muñoz Palacios
+
+Director of Programming
+Manuel Lancharro Bayón
+
+Programmers
+Santiago Ojeda Arenas
+
+Assistant Programmer
+Jairo Ocaña Romero
+
+Narrative
+Jairo Ocaña Romero
+Yeray Muñoz Palacios
+Jose Luis Marcelo Garratón
+
+
 
 "
 label_settings = SubResource("LabelSettings_fi6xq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Label")
+root_node = NodePath("../Creditos")
 libraries = {
 "": SubResource("AnimationLibrary_1ar11")
 }

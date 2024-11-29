@@ -17,6 +17,9 @@
 
 [node name="puzzle_mapa_atraco" type="CanvasLayer"]
 script = ExtResource("1_4km8f")
+animTamanioMax = 900
+animTamanioMin = 100
+animVelocidad = 1000
 
 [node name="Mesa" type="Sprite2D" parent="."]
 position = Vector2(483, 273)

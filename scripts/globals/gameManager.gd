@@ -218,17 +218,17 @@ func _on_input_recived():
 		elif interactive.event_id == "Ev_DNIAfter":
 			print("Ev_DNIAfter")
 			#ItemTexture=preload("res://assets/sprites/Escenario/DNI.png")
-			ItemMaxScale=64*3
-			ItemMinScale=64
+			ItemMaxScale=90*3
+			ItemMinScale=90
 			ItemSpeed=150
 			SignalBus.zoom_item.emit("DNI",ItemMaxScale,ItemMinScale,ItemSpeed)
 			dni=true
 		elif interactive.event_id == "Ev_BrokenPicture":
 			print("Ev_BrokenPicture")
 			if GameManager.key and !GameManager.foto_encimera:
-				ItemMaxScale=64*3
-				ItemMinScale=64
-				ItemSpeed=150
+				ItemMaxScale=700
+				ItemMinScale=90
+				ItemSpeed=800
 				#Evento de encimera
 				if !foto_estanteria:
 					#Primera
