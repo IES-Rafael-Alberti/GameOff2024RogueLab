@@ -9,7 +9,6 @@ func _ready() -> void:
 	CanvasManager.play_main_scene()
 	pass # Replace with function body.
 
-
 func _on_texture_button_pressed() -> void:
 	TransitionScreen.transition()
 	await SignalBus.on_transition_finished

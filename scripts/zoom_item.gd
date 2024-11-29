@@ -14,7 +14,7 @@ var textures = {
 	"Llave":"res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png",
 	"DNI":"res://assets/sprites/Escenario/DNI.png",
 	"Pistola":"res://assets/sprites/Puzles/puzle_caja_fuerte/pistola_dinero.png",
-	"Destornillador":"res://assets/sprites/Puzles/destornillador.png",
+	"Destornillador":"res://assets/sprites/Puzles/puzle2-rejilla/destornillador.png",
 	"Codigo":"res://assets/sprites/Puzles/puzle_caja_fuerte/post-it.png",
 	"Pastillas":"res://assets/sprites/Puzles/puzle2-rejilla/pastillas64x64.png"
 }
