@@ -14,7 +14,7 @@ func _process(delta):
 	pass
 
 func animacion():
-	animation_player.play("Creditos")
+	animation_player.play("creditos")
 	pass
 
 
