@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ddes51e1q68nl"
+path="res://.godot/imported/breaking-news-in-2029-5994.ogg-6a347d5da6dedf00369c7e0600dcc9ab.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/breaking-news-in-2029-5994.ogg"
+dest_files=["res://.godot/imported/breaking-news-in-2029-5994.ogg-6a347d5da6dedf00369c7e0600dcc9ab.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

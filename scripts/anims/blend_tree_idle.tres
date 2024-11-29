@@ -1,0 +1,24 @@
+[gd_resource type="AnimationNodeBlendSpace2D" load_steps=5 format=3 uid="uid://d3boa14wjioxs"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4dml8"]
+animation = &"player_idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4m58j"]
+animation = &"player_idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hk4jd"]
+animation = &"player_idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b8hla"]
+animation = &"player_idle_left"
+
+[resource]
+blend_point_0/node = SubResource("AnimationNodeAnimation_4dml8")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_4m58j")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_hk4jd")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_b8hla")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1

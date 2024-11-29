@@ -1,0 +1,11 @@
+[gd_resource type="AnimationNodeBlendSpace1D" load_steps=3 format=3 uid="uid://c3vf5y8w00xvl"]
+
+[ext_resource type="AnimationNodeBlendSpace2D" uid="uid://q2o2pq10vjjj" path="res://scripts/anims/blend_tree_walk.tres" id="1_wyaqo"]
+[ext_resource type="AnimationNodeBlendSpace2D" uid="uid://d3boa14wjioxs" path="res://scripts/anims/blend_tree_idle.tres" id="2_xdirg"]
+
+[resource]
+blend_point_0/node = ExtResource("1_wyaqo")
+blend_point_0/pos = -1.0
+blend_point_1/node = ExtResource("2_xdirg")
+blend_point_1/pos = 1.0
+blend_mode = 1

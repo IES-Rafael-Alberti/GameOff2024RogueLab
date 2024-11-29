@@ -2,6 +2,8 @@ extends Node
  
 var player:CharacterBody2D
 const JUGADOR = preload("res://scenes/jugador.tscn")
+var soundWhisper: AudioStreamOggVorbis = load("res://Sound Effects/whispers-14814.ogg")
+var whisper: AudioStreamPlayer2D
 
 var initSpeed = 130
 var interactive:Node2D
@@ -49,6 +51,9 @@ func _ready() -> void:
 	SignalBus.puzzle_exit.connect(_exitPuzzle)
 	SignalBus.zoom_item_closed.connect(_on_zoom_out)
 	
+	whisper = AudioStreamPlayer2D.new()
+	whisper.stream = soundWhisper
+	add_child(whisper)
 	pass
 
 func _setPuzzleLayer(puzzleLayer: CanvasLayer):
@@ -232,11 +237,15 @@ func _on_input_recived():
 					#Segunda
 					evento["NEXT"] = "Ev_SecondBrokenPicture_01"
 					SignalBus.zoom_item.emit("Foto_2",ItemMaxScale,ItemMinScale,ItemSpeed)
+					print("Foto whisper")
+					whisper.play()
 				foto_encimera=true
 		elif interactive.event_id == "Ev_FirstBrokenPicture_01":
 			SignalBus.zoom_item.emit("Foto_1",ItemMaxScale,ItemMinScale,ItemSpeed)
 		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
 			SignalBus.zoom_item.emit("Foto_2",ItemMaxScale,ItemMinScale,ItemSpeed)
+			print("Foto whisper")
+			whisper.play()
 		elif interactive.event_id == "Ev_Table":
 			if key:
 				evento["NEXT"] = "Ev_Blueprint_01"

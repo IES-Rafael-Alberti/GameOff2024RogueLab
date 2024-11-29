@@ -14,6 +14,9 @@ var estado:String = ""
 @onready var hud: TextureRect = $HUD
 
 
+@onready var animation_tree: AnimationTree
+
+
 func _ready() -> void:
 	
 	SignalBus.input_required.connect(_on_input_required)

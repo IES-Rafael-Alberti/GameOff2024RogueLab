@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://lwii01o68bb1"
+path="res://.godot/imported/jump-scare-sound-2-82831.ogg-51cb9630da4460aac890197089197d05.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/jump-scare-sound-2-82831.ogg"
+dest_files=["res://.godot/imported/jump-scare-sound-2-82831.ogg-51cb9630da4460aac890197089197d05.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
