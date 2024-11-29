@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://scripts/shaders/sangre.gdshader" id="1_4ylk4"]
 [ext_resource type="Script" path="res://scripts/puzzle/puzzle_mapa_atraco.gd" id="1_rjcyk"]
 [ext_resource type="Texture2D" uid="uid://dpgfyd6v8ifd0" path="res://assets/materials/white-background.png" id="2_bfdec"]
-[ext_resource type="Texture2D" uid="uid://dio3acuttcete" path="res://assets/assets/Inside_C.png" id="3_xo6g8"]
+[ext_resource type="Texture2D" uid="uid://bdswbbgn63syl" path="res://assets/assets/Inside_C.png" id="3_xo6g8"]
 [ext_resource type="Texture2D" uid="uid://bo5oocg3ulo6y" path="res://icon.svg" id="4_enplm"]
 [ext_resource type="PackedScene" uid="uid://cqeulcfun6yx7" path="res://scenes/Prefabs/pieza_mapa_atraco.tscn" id="6_vcpju"]
 

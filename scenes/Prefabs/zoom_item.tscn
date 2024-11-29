@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://j2kel3e4mudp"]
 
 [ext_resource type="Script" path="res://scripts/zoom_item.gd" id="1_nxx0g"]
-[ext_resource type="Texture2D" uid="uid://bp41vka7ixgl7" path="res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png" id="2_opchv"]
+[ext_resource type="Texture2D" uid="uid://ddck81tv1f2b4" path="res://assets/sprites/Puzles/Puzle1-llave/llave-puzle-1.png" id="2_opchv"]
 
 [node name="ZoomItem" type="CanvasLayer"]
 layer = 9
