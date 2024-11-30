@@ -41,13 +41,14 @@ var transicion:bool
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if GameManager.puzzleLayer != null and !CanvasManager.inPause:
-		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
-	else:
-		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+	#if GameManager.puzzleLayer != null or CanvasManager.inPause or !CanvasManager.inGame:
+	#	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
+	#else:
+	#	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	pass
 
 func _ready() -> void:
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	SignalBus.execute_event.connect(_on_event_execute)
 	SignalBus.wait_input.connect(_on_input_recived)
 	SignalBus.puzzle_enter.connect(_setPuzzleLayer)

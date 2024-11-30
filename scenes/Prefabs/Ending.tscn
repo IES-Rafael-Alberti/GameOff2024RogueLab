@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqp3w3mh0bjad"]
+[gd_scene load_steps=9 format=3 uid="uid://dqp3w3mh0bjad"]
 
 [ext_resource type="Script" path="res://scripts/ending.gd" id="1_i3dou"]
 [ext_resource type="FontFile" uid="uid://c1rf6rq6ggj61" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_ak1bp"]
 [ext_resource type="Texture2D" uid="uid://buyu3xjc7qfwa" path="res://assets/sprites/Menu/LETRAS_MENU_002.png" id="3_xocm0"]
+[ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="4_ps8qs"]
+[ext_resource type="Texture2D" uid="uid://njdbrj3qawwv" path="res://assets/sprites/Player/mano_cerrada.png" id="5_wtjvp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g3t7w"]
 font = ExtResource("2_ak1bp")
@@ -77,6 +79,18 @@ scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_rs1vj")
 texture_hover = SubResource("AtlasTexture_hytx2")
 stretch_mode = 5
+
+[node name="manoAbierta" type="Sprite2D" parent="."]
+z_index = 1180
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("4_ps8qs")
+
+[node name="manoCerrada" type="Sprite2D" parent="."]
+z_index = 1165
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("5_wtjvp")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

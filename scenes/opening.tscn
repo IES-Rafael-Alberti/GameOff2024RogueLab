@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgtb8qvsd48rn"]
+[gd_scene load_steps=9 format=3 uid="uid://dgtb8qvsd48rn"]
 
 [ext_resource type="Script" path="res://scenes/opening.gd" id="1_cnrdt"]
 [ext_resource type="AudioStream" uid="uid://b284imayhrv7" path="res://Sound Effects/Opening Sounds.ogg" id="2_0cmi5"]
 [ext_resource type="Texture2D" uid="uid://cvkt3sou10m81" path="res://assets/sprites/Menu/SKIP.png" id="3_v45f1"]
 [ext_resource type="Texture2D" uid="uid://bhtnfxk8k3ui3" path="res://assets/sprites/Menu/SKIP_1_FLECHA.png" id="4_8bpbl"]
 [ext_resource type="Texture2D" uid="uid://ck5ldxjll671t" path="res://assets/sprites/Menu/SKIP_2_FLECHA.png" id="5_edtsw"]
+[ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="6_t6xp3"]
+[ext_resource type="Texture2D" uid="uid://njdbrj3qawwv" path="res://assets/sprites/Player/mano_cerrada.png" id="7_1twwc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mvr16"]
 animations = [{
@@ -52,5 +54,17 @@ offset_right = 911.0
 offset_bottom = 487.0
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="manoAbierta" type="Sprite2D" parent="."]
+z_index = 1180
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("6_t6xp3")
+
+[node name="manoCerrada" type="Sprite2D" parent="."]
+z_index = 1165
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("7_1twwc")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
