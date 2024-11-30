@@ -2,7 +2,7 @@ extends CharacterBody2D
 # variables
 
 var required
-var estado:String = ""
+var estado:String = "Down"
 
 # variables para diseñador
 @export var SPEED = 130

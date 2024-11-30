@@ -87,6 +87,7 @@ func eventHandler():
 			player.required=false
 			interactive.on_triggered()
 			#go_to_next()
+			
 			pass
 		#Si no es trigger, esperar interaccion
 		elif evento["EVENT_CONDITION"] == "NONE" or evento["EVENT_CONDITION"] == "PUZZLE":
@@ -214,11 +215,14 @@ func _on_input_recived():
 			ItemSpeed=150
 			SignalBus.zoom_item.emit("Codigo",ItemMaxScale,ItemMinScale,ItemSpeed)
 			postIt=true
-		elif interactive.event_id == "Ev_DNI" or interactive.event_id == "Ev_DNIBefore":
-			print("DNI")
+		elif interactive.event_id == "Ev_DNI":
 			if mapa and foto_encimera and foto_estanteria:
 				evento["NEXT"] = "Ev_DNIAfter"
-				
+			else:
+				evento["NEXT"] = "Ev_DNIBefore"
+		elif interactive.event_id == "Ev_DNIBefore":
+			if mapa and foto_encimera and foto_estanteria:
+				evento["NEXT"] = "Ev_DNIAfter"
 			else:
 				evento["NEXT"] = "Ev_DNIBefore"
 		elif interactive.event_id == "Ev_DNIAfter":
@@ -268,6 +272,9 @@ func _on_input_recived():
 		elif interactive.event_id == "Ev_Shelve_02":
 			if GameManager.key:
 				evento["NEXT"]="Ev_Shelve"
+		elif interactive.event_id == "Ev_Door_01":
+			if GameManager.key:
+				evento["NEXT"]="Ev_Door_03"
 		elif interactive.event_id == "Ev_Door_02":
 			if GameManager.key:
 				evento["NEXT"]="Ev_Door_03"

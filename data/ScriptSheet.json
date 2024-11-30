@@ -242,7 +242,7 @@
   "Ev_Door_03": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
-	"EVENT_CONDITION": "NONE",
+	"EVENT_CONDITION": "TRIGGER",
 	"NEXT": "",
 	"ES": "La llave encaja perfectamente.",
 	"EN": "The key works perfectly."
