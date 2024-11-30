@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bi7l3rjhqxgm2"]
+[gd_scene load_steps=17 format=3 uid="uid://bi7l3rjhqxgm2"]
 
 [ext_resource type="Script" path="res://scenes/opening.gd" id="1_cnrdt"]
 [ext_resource type="AudioStream" uid="uid://b284imayhrv7" path="res://Sound Effects/Opening Sounds.ogg" id="2_0cmi5"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://beu2xi88nhtq0" path="res://assets/sprites/opencs.png" id="5_h1w1h"]
 [ext_resource type="Texture2D" uid="uid://b2tgrohuhv15j" path="res://assets/sprites/reloadcs.png" id="6_1o77q"]
 [ext_resource type="Texture2D" uid="uid://boob6bve7p0ak" path="res://assets/sprites/shootcs.png" id="7_ly7c8"]
+[ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="11_gygpt"]
+[ext_resource type="Texture2D" uid="uid://njdbrj3qawwv" path="res://assets/sprites/Player/mano_cerrada.png" id="12_cipav"]
 
 [sub_resource type="Animation" id="Animation_br62a"]
 resource_name = "Cutscene"
@@ -235,12 +237,12 @@ stretch_mode = 4
 z_index = 1180
 position = Vector2(-44, -44)
 scale = Vector2(5, 5)
-texture = ExtResource("6_t6xp3")
+texture = ExtResource("11_gygpt")
 
 [node name="manoCerrada" type="Sprite2D" parent="."]
 z_index = 1165
 position = Vector2(-44, -44)
 scale = Vector2(5, 5)
-texture = ExtResource("7_1twwc")
+texture = ExtResource("12_cipav")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

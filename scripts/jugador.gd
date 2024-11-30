@@ -14,13 +14,13 @@ var estado:String = ""
 @onready var hud: TextureRect = $HUD
 
 
-@onready var animation_tree: AnimationTree
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 
 func _ready() -> void:
 	
 	SignalBus.input_required.connect(_on_input_required)
-	
+	animation_tree.active=true
 	pass
 
 #apartado de fisicas
@@ -120,30 +120,36 @@ func _physics_process(delta):
 		
 		#region control de animaciones de movimiento
 		
-		if directionVertical == 0 and direccionHorizontal == 0:
-			if estado == "UP":
-				animated_sprite_2d.play("idleUp")
-			elif estado ==  "Down":
-				animated_sprite_2d.play("idleDown")
-			elif estado ==  "Right":
-				animated_sprite_2d.play("idleRight")
-			elif estado ==  "Left":
-				animated_sprite_2d.play("idleLeft")
-			else:
-				animated_sprite_2d.play("idleDown")
-		elif ultima_direccion == "horizontal":
-			animated_sprite_2d.play("walk")
-			# Cambia la dirección del sprite según la dirección que toma el personaje
-			if direccionHorizontal > 0:
-				animated_sprite_2d.flip_h = true  # No voltear el sprite
-			elif direccionHorizontal < 0:
-				animated_sprite_2d.flip_h = false  # Voltear el sprite horizontalmente
+	update_state_animation()
 		
-		elif ultima_direccion == "vertical":
-			if directionVertical > 0:
-				animated_sprite_2d.play("walkFront")
-			elif directionVertical < 0:
-				animated_sprite_2d.play("WalkUp")
+		
+		#
+		#
+		#
+		#if directionVertical == 0 and direccionHorizontal == 0:
+			#if estado == "UP":
+				#animated_sprite_2d.play("idleUp")
+			#elif estado ==  "Down":
+				#animated_sprite_2d.play("idleDown")
+			#elif estado ==  "Right":
+				#animated_sprite_2d.play("idleRight")
+			#elif estado ==  "Left":
+				#animated_sprite_2d.play("idleLeft")
+			#else:
+				#animated_sprite_2d.play("idleDown")
+		#elif ultima_direccion == "horizontal":
+			#animated_sprite_2d.play("walk")
+			## Cambia la dirección del sprite según la dirección que toma el personaje
+			#if direccionHorizontal > 0:
+				#animated_sprite_2d.flip_h = true  # No voltear el sprite
+			#elif direccionHorizontal < 0:
+				#animated_sprite_2d.flip_h = false  # Voltear el sprite horizontalmente
+		#
+		#elif ultima_direccion == "vertical":
+			#if directionVertical > 0:
+				#animated_sprite_2d.play("walkFront")
+			#elif directionVertical < 0:
+				#animated_sprite_2d.play("WalkUp")
 		
 		#endregion
 		
@@ -155,6 +161,39 @@ func _physics_process(delta):
 	# Mueve al personaje usando la física
 	move_and_slide()
 
+func update_state_animation():
+	
+	if velocity == Vector2.ZERO:
+		#idle
+		animation_tree.set("parameters/blend_position",1)
+		update_direction_animation()
+	else:
+		#walk
+		animation_tree.set("parameters/blend_position",0)
+		update_direction_animation()
+		pass
+	
+	pass
+
+func update_direction_animation():
+	print(animation_tree.get("parameters/0/blend_position"))
+	if estado == "UP":
+		animation_tree.set("parameters/0/blend_position",Vector2.DOWN)
+		animation_tree.set("parameters/1/blend_position",Vector2.DOWN)
+		pass
+	elif estado == "Down":
+		animation_tree.set("parameters/0/blend_position",Vector2.UP)
+		animation_tree.set("parameters/1/blend_position",Vector2.UP)
+		pass
+	elif  estado == "Left":
+		animation_tree.set("parameters/0/blend_position",Vector2.LEFT)
+		animation_tree.set("parameters/1/blend_position",Vector2.LEFT)
+		pass
+	elif estado == "Right":
+		animation_tree.set("parameters/0/blend_position",Vector2.RIGHT)
+		animation_tree.set("parameters/1/blend_position",Vector2.RIGHT)
+		pass
+	pass
 
 func  _on_input_required():
 	required=true

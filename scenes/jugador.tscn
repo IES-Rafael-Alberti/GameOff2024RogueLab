@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d0rem6bvpoqrj" path="res://assets/sprites/Player/Player_idle_horizontal.png" id="4_fa0xx"]
 [ext_resource type="Texture2D" uid="uid://dquc683bj426q" path="res://assets/sprites/Player/player_idle_up.png" id="4_i2ohi"]
 [ext_resource type="Texture2D" uid="uid://bygl47t1n0umj" path="res://assets/sprites/Player/ojo.png" id="7_gr1gw"]
-[ext_resource type="AnimationNodeBlendSpace2D" uid="uid://d3boa14wjioxs" path="res://scripts/anims/blend_tree_idle.tres" id="9_21x5k"]
+[ext_resource type="AnimationNodeBlendSpace1D" uid="uid://c3vf5y8w00xvl" path="res://scripts/anims/player_blend_tree.tres" id="9_2fwxc"]
 [ext_resource type="Texture2D" uid="uid://c5gt66hqlr6a5" path="res://assets/sprites/Player/player_sprite_sheet.png" id="10_1lp6d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlnoj"]
@@ -531,6 +531,7 @@ motion_mode = 1
 script = ExtResource("1_iaisd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-3, -18)
 sprite_frames = SubResource("SpriteFrames_tr3ah")
 animation = &"idleLeft"
@@ -550,12 +551,13 @@ pivot_offset = Vector2(-9.925, -70)
 texture = ExtResource("7_gr1gw")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = ExtResource("9_21x5k")
+tree_root = ExtResource("9_2fwxc")
 anim_player = NodePath("../AnimationPlayer")
-parameters/blend_position = Vector2(-0.0027855, 1)
+parameters/blend_position = -0.998301
+parameters/0/blend_position = Vector2(0, 0)
+parameters/1/blend_position = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-1, -18)
 texture = ExtResource("10_1lp6d")
 hframes = 7
