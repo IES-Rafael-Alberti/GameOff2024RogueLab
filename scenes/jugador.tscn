@@ -379,6 +379,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_s6ycl"]
 resource_name = "player_idle_down"
 length = 1.2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -553,7 +554,7 @@ texture = ExtResource("7_gr1gw")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = ExtResource("9_2fwxc")
 anim_player = NodePath("../AnimationPlayer")
-parameters/blend_position = -0.998301
+parameters/blend_position = Vector2(0.00273967, -0.959044)
 parameters/0/blend_position = Vector2(0, 0)
 parameters/1/blend_position = Vector2(0, 0)
 
