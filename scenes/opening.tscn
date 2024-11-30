@@ -231,4 +231,16 @@ offset_bottom = 487.0
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="manoAbierta" type="Sprite2D" parent="."]
+z_index = 1180
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("6_t6xp3")
+
+[node name="manoCerrada" type="Sprite2D" parent="."]
+z_index = 1165
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("7_1twwc")
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

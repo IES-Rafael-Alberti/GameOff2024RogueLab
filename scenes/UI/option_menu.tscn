@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bbr2fn21jjgan"]
+[gd_scene load_steps=51 format=3 uid="uid://bbr2fn21jjgan"]
 
 [ext_resource type="Script" path="res://scripts/menus/option_menu.gd" id="1_58sjs"]
 [ext_resource type="Theme" uid="uid://ctp12ftleux8w" path="res://assets/materials/main_theme.tres" id="2_p15js"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://3vc5tmf5x2r2" path="res://assets/sprites/Menu/Sprite-0002.png" id="5_2h4kb"]
 [ext_resource type="Texture2D" uid="uid://c7yj803e7nhni" path="res://assets/sprites/Menu/TELE_VACIA.png" id="5_8et4v"]
 [ext_resource type="Texture2D" uid="uid://cm0qgshct46h8" path="res://assets/sprites/Menu/Sprite-0003.png" id="6_ouqid"]
+[ext_resource type="Texture2D" uid="uid://dqcce8bumubgx" path="res://assets/sprites/Player/mano.png" id="11_ep46q"]
+[ext_resource type="Texture2D" uid="uid://njdbrj3qawwv" path="res://assets/sprites/Player/mano_cerrada.png" id="12_vaf4u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkdmj"]
 atlas = ExtResource("2_rm6cb")
@@ -404,6 +406,18 @@ size_flags_horizontal = 4
 texture_normal = SubResource("AtlasTexture_m6k82")
 texture_hover = SubResource("AtlasTexture_lw6a7")
 stretch_mode = 5
+
+[node name="manoAbierta" type="Sprite2D" parent="."]
+z_index = 1180
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("11_ep46q")
+
+[node name="manoCerrada" type="Sprite2D" parent="."]
+z_index = 1165
+position = Vector2(-44, -44)
+scale = Vector2(5, 5)
+texture = ExtResource("12_vaf4u")
 
 [connection signal="ready" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VolumeMasterSlider" to="." method="_on_volume_master_slider_ready"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VolumeMasterSlider" to="." method="_on_volume_master_slider_value_changed"]

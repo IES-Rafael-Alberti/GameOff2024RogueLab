@@ -6,6 +6,21 @@ extends CanvasLayer
 @onready var v_sync_check_button: CheckButton = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VSyncCheckButton
 @onready var language_menu: OptionButton = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/LanguageMenu
 
+@onready var mano_abierta: Sprite2D = $manoAbierta
+@onready var mano_cerrada: Sprite2D = $manoCerrada
+
+func _process(delta: float) -> void:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		mano_cerrada.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
+		mano_abierta.global_position = Vector2(-50, -50)
+	else:
+		mano_cerrada.global_position = Vector2(-50, -50)
+		mano_abierta.global_position = get_viewport().get_mouse_position() + Vector2(10, 10)
+	
+	
+	pass
+
+
 func _on_back_button_pressed() -> void:
 	CanvasManager.back_options_menu()
 	pass # Replace with function body.
