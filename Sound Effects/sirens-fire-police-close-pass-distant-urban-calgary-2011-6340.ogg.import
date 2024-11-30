@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxrhm1a5sqo6j"
+path="res://.godot/imported/sirens-fire-police-close-pass-distant-urban-calgary-2011-6340.ogg-2f10acfaa232be2e1d35ef42b9e1f23a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Effects/sirens-fire-police-close-pass-distant-urban-calgary-2011-6340.ogg"
+dest_files=["res://.godot/imported/sirens-fire-police-close-pass-distant-urban-calgary-2011-6340.ogg-2f10acfaa232be2e1d35ef42b9e1f23a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

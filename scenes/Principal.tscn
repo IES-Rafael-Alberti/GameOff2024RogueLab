@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=104 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://ckvo3swqqy43q" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cdtljaux3f3i1" path="res://scenes/puzzles/puzzles.tscn" id="12_c3sp8"]
 [ext_resource type="PackedScene" uid="uid://dqp3w3mh0bjad" path="res://scenes/Prefabs/Ending.tscn" id="13_1osdi"]
 [ext_resource type="AudioStream" uid="uid://cyntonlupdg3y" path="res://Sound Effects/rain-on-window-29298.ogg" id="13_sb8lj"]
-[ext_resource type="PackedScene" uid="uid://cpt6dpd1ktrdm" path="res://scenes/Prefabs/ambient_loop_list.tscn" id="14_wa15g"]
+[ext_resource type="PackedScene" uid="uid://bq4wt2tpbk78b" path="res://scenes/Prefabs/ambient_loop_list.tscn" id="14_wa15g"]
 [ext_resource type="AudioStream" uid="uid://csxn6dfgb1nn4" path="res://Sound Effects/car-passing-suburb-14689.ogg" id="15_7c16w"]
 [ext_resource type="AudioStream" uid="uid://2d7mte3j0r3k" path="res://Sound Effects/wall-hit-1-100717.ogg" id="16_ebovn"]
 [ext_resource type="AudioStream" uid="uid://cr7bx5q5u5vwr" path="res://Sound Effects/wall-hit-3-48114.ogg" id="17_vcxjg"]
@@ -32,6 +32,9 @@
 [ext_resource type="AudioStream" uid="uid://b3v5d5sx7k744" path="res://Sound Effects/open-doors-114615.ogg" id="29_hii2l"]
 [ext_resource type="AudioStream" uid="uid://bxbji4skbpx4j" path="res://Sound Effects/paper-245786_1.ogg" id="31_eaoy3"]
 [ext_resource type="AudioStream" uid="uid://csl3wjx6cjxjq" path="res://Sound Effects/whispers-14814.ogg" id="32_mfak8"]
+[ext_resource type="AudioStream" uid="uid://cxrhm1a5sqo6j" path="res://Sound Effects/sirens-fire-police-close-pass-distant-urban-calgary-2011-6340.ogg" id="33_yf5x7"]
+[ext_resource type="AudioStream" uid="uid://dhykel13yuxsa" path="res://Sound Effects/news.ogg" id="34_72tex"]
+[ext_resource type="AudioStream" uid="uid://bjps61s4qtv7x" path="res://Sound Effects/submachine-gun-79846.ogg" id="35_vaeqs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntdln"]
 texture = ExtResource("1_c4xtu")
@@ -1270,3 +1273,12 @@ stream = ExtResource("31_eaoy3")
 
 [node name="Whisper" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
 stream = ExtResource("32_mfak8")
+
+[node name="Siren" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("33_yf5x7")
+
+[node name="News Voice" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("34_72tex")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="Sounds/Effects"]
+stream = ExtResource("35_vaeqs")

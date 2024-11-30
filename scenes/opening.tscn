@@ -1,10 +1,148 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgtb8qvsd48rn"]
+[gd_scene load_steps=15 format=3 uid="uid://bi7l3rjhqxgm2"]
 
 [ext_resource type="Script" path="res://scenes/opening.gd" id="1_cnrdt"]
 [ext_resource type="AudioStream" uid="uid://b284imayhrv7" path="res://Sound Effects/Opening Sounds.ogg" id="2_0cmi5"]
+[ext_resource type="Texture2D" uid="uid://dd723wcbdrjer" path="res://assets/sprites/carcs.png" id="3_t4wp8"]
 [ext_resource type="Texture2D" uid="uid://cvkt3sou10m81" path="res://assets/sprites/Menu/SKIP.png" id="3_v45f1"]
 [ext_resource type="Texture2D" uid="uid://bhtnfxk8k3ui3" path="res://assets/sprites/Menu/SKIP_1_FLECHA.png" id="4_8bpbl"]
+[ext_resource type="Texture2D" uid="uid://dugtlqym5cgpg" path="res://assets/sprites/entrancecs.png" id="4_padwk"]
 [ext_resource type="Texture2D" uid="uid://ck5ldxjll671t" path="res://assets/sprites/Menu/SKIP_2_FLECHA.png" id="5_edtsw"]
+[ext_resource type="Texture2D" uid="uid://beu2xi88nhtq0" path="res://assets/sprites/opencs.png" id="5_h1w1h"]
+[ext_resource type="Texture2D" uid="uid://b2tgrohuhv15j" path="res://assets/sprites/reloadcs.png" id="6_1o77q"]
+[ext_resource type="Texture2D" uid="uid://boob6bve7p0ak" path="res://assets/sprites/shootcs.png" id="7_ly7c8"]
+
+[sub_resource type="Animation" id="Animation_br62a"]
+resource_name = "Cutscene"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene/Car:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscene/Entrance:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscene/Open:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 9, 14.7333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscene/Reload:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 14.7333, 18),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene/Shoot:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 18, 19.5333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_26j6j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene/Car:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscene/Entrance:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscene/Open:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscene/Reload:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene/Shoot:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bttd2"]
+_data = {
+"Cutscene": SubResource("Animation_br62a"),
+"RESET": SubResource("Animation_26j6j")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mvr16"]
 animations = [{
@@ -36,6 +174,46 @@ color = Color(0, 0, 0, 1)
 
 [node name="Opening_Sounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_0cmi5")
+
+[node name="Cutscene" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bttd2")
+}
+autoplay = "Cutscene"
+
+[node name="Car" type="TextureRect" parent="Cutscene"]
+offset_right = 1200.0
+offset_bottom = 679.0
+scale = Vector2(0.801488, 0.795847)
+texture = ExtResource("3_t4wp8")
+
+[node name="Entrance" type="TextureRect" parent="Cutscene"]
+visible = false
+offset_right = 1200.0
+offset_bottom = 679.0
+scale = Vector2(0.801488, 0.795847)
+texture = ExtResource("4_padwk")
+
+[node name="Open" type="TextureRect" parent="Cutscene"]
+visible = false
+offset_right = 1200.0
+offset_bottom = 679.0
+scale = Vector2(0.801488, 0.795847)
+texture = ExtResource("5_h1w1h")
+
+[node name="Reload" type="TextureRect" parent="Cutscene"]
+visible = false
+offset_right = 1200.0
+offset_bottom = 679.0
+scale = Vector2(0.801488, 0.795847)
+texture = ExtResource("6_1o77q")
+
+[node name="Shoot" type="TextureRect" parent="Cutscene"]
+visible = false
+offset_right = 1200.0
+offset_bottom = 679.0
+scale = Vector2(0.801488, 0.795847)
+texture = ExtResource("7_ly7c8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(827, 440)

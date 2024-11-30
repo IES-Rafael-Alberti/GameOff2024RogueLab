@@ -63,10 +63,15 @@ func sounds():
 			"Ev_02_TV_02":
 				print("News")
 				$"../../Sounds/Effects/TV".stop()
+				$"../../Sounds/Effects/News Voice".play()
 				$"../../Sounds/Effects/Breaking News".play()
+			"Ev_02_TV_03":
+				$"../../Sounds/Effects/News Voice".stop()
 			"Ev_Door_03":
 				print("Puerta abrir sonido")
 				$"../../Sounds/Effects/Open door".play()
+				$"../../Sounds/Ambience".stop()
+				$"../../Sounds/Effects/Siren".play()
 			"Ev_DNIAfter":
 				print("DNI Sound")
 				$"../../Sounds/Effects/Paper".play()
