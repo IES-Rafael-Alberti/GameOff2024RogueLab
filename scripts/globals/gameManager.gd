@@ -3,7 +3,8 @@ extends Node
 var player:CharacterBody2D
 const JUGADOR = preload("res://scenes/jugador.tscn")
 var soundWhisper: AudioStreamOggVorbis = load("res://Sound Effects/whispers-14814.ogg")
-var whisper: AudioStreamPlayer2D
+var shoot: AudioStreamOggVorbis = load("res://Sound Effects/submachine-gun-79846.ogg")
+var soundManager: AudioStreamPlayer2D
 
 var initSpeed = 130
 var interactive:Node2D
@@ -55,9 +56,9 @@ func _ready() -> void:
 	SignalBus.puzzle_exit.connect(_exitPuzzle)
 	SignalBus.zoom_item_closed.connect(_on_zoom_out)
 	
-	whisper = AudioStreamPlayer2D.new()
-	whisper.stream = soundWhisper
-	add_child(whisper)
+	soundManager = AudioStreamPlayer2D.new()
+	soundManager.stream = soundWhisper
+	add_child(soundManager)
 	pass
 
 func _setPuzzleLayer(puzzleLayer: CanvasLayer):
@@ -200,6 +201,8 @@ func _on_input_recived():
 			SignalBus.zoom_item.emit("Llave",ItemMaxScale,ItemMinScale,ItemSpeed)
 			key=true
 		elif interactive.event_id == "Ev_Screwdriver_02":
+			soundManager.stream = shoot
+			soundManager.play()
 			print("Destornillador")
 			#ItemTexture=preload("res://assets/sprites/Puzles/destornillador.png")
 			ItemMaxScale=64*3
@@ -248,7 +251,7 @@ func _on_input_recived():
 					evento["NEXT"] = "Ev_SecondBrokenPicture_01"
 					SignalBus.zoom_item.emit("Foto_2",ItemMaxScale,ItemMinScale,ItemSpeed)
 					print("Foto whisper")
-					whisper.play()
+					soundManager.play()
 				foto_encimera=true
 				SignalBus.BrokenPicture.emit()
 		elif interactive.event_id == "Ev_FirstBrokenPicture_01":
@@ -256,7 +259,7 @@ func _on_input_recived():
 		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
 			SignalBus.zoom_item.emit("Foto_2",ItemMaxScale,ItemMinScale,ItemSpeed)
 			print("Foto whisper")
-			whisper.play()
+			soundManager.play()
 		elif interactive.event_id == "Ev_Table":
 			if key:
 				evento["NEXT"] = "Ev_Blueprint_01"
