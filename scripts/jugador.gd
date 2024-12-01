@@ -176,7 +176,6 @@ func update_state_animation():
 	pass
 
 func update_direction_animation():
-	print(animation_tree.get("parameters/0/blend_position"))
 	if estado == "UP":
 		animation_tree.set("parameters/0/blend_position",Vector2.DOWN)
 		animation_tree.set("parameters/1/blend_position",Vector2.DOWN)

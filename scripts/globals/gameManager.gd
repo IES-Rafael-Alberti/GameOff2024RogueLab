@@ -250,16 +250,13 @@ func _on_input_recived():
 					#Segunda
 					evento["NEXT"] = "Ev_SecondBrokenPicture_01"
 					SignalBus.zoom_item.emit("Foto_2",ItemMaxScale,ItemMinScale,ItemSpeed)
-					print("Foto whisper")
-					soundManager.play()
 				foto_encimera=true
 				SignalBus.BrokenPicture.emit()
 		elif interactive.event_id == "Ev_FirstBrokenPicture_01":
 			SignalBus.zoom_item.emit("Foto_1",ItemMaxScale,ItemMinScale,ItemSpeed)
 		elif interactive.event_id == "Ev_SecondBrokenPicture_01":
 			SignalBus.zoom_item.emit("Foto_2",ItemMaxScale,ItemMinScale,ItemSpeed)
-			print("Foto whisper")
-			soundManager.play()
+
 		elif interactive.event_id == "Ev_Table":
 			if key:
 				evento["NEXT"] = "Ev_Blueprint_01"
@@ -293,5 +290,5 @@ func _on_zoom_out(texture):
 		print("Ya tienes las 2 fotos")
 		SignalBus.zoom_item.emit("Foto_Juntos",900,100,1000)
 		SignalBus.execute_event.emit("Ev_SecondBrokenPicture_03",true)
-		
+		soundManager.play()
 	pass

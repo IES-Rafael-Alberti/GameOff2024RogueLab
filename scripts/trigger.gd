@@ -77,7 +77,8 @@ func sounds():
 				$"../../Sounds/Effects/Paper".play()
 				await $"../../Sounds/Effects/Paper".finished
 				$"../../Sounds/Effects/Knock".play()
-				await $"../../Sounds/Effects/Knock".finished
 				$"../../Sounds/Horror".play()
+			"Ev_Pills":
+				$"../../Sounds/Ambience".stop()
 			_:
 				print("Not case")	
