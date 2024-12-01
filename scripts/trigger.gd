@@ -78,7 +78,10 @@ func sounds():
 				await $"../../Sounds/Effects/Paper".finished
 				$"../../Sounds/Effects/Knock".play()
 				$"../../Sounds/Horror".play()
-			"Ev_Pills":
-				$"../../Sounds/Ambience".stop()
+			"Ev_TV":
+				$"../../TV".show()
+				$"../../Sounds/Effects/TV".play()
+				await get_tree().create_timer(2.5).timeout
+				$"../../TV".hide()
 			_:
 				print("Not case")	

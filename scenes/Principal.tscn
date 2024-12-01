@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://dxig44e2l1d1l"]
+[gd_scene load_steps=111 format=3 uid="uid://dxig44e2l1d1l"]
 
 [ext_resource type="Texture2D" uid="uid://ckvo3swqqy43q" path="res://assets/sprites/Escenario/Tileset.png" id="1_c4xtu"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="2_iqy1m"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://j2kel3e4mudp" path="res://scenes/Prefabs/zoom_item.tscn" id="6_youc5"]
 [ext_resource type="Texture2D" uid="uid://bxelkdl102274" path="res://assets/materials/transparent-background.png" id="7_1dy4f"]
 [ext_resource type="AudioStream" uid="uid://dvpaib1q4n35g" path="res://Sound Effects/fridge-opening-and-closing-75650.ogg" id="7_4wige"]
+[ext_resource type="Texture2D" uid="uid://144hl2ne7wof" path="res://assets/sprites/Escenario/TV Animation.png" id="8_b4l53"]
 [ext_resource type="Material" uid="uid://ilp3hdc66mxl" path="res://assets/materials/blood_materia.tres" id="8_op68h"]
 [ext_resource type="Material" uid="uid://qm4tflob2hed" path="res://assets/materials/bathroom_shader.tres" id="9_n7lhl"]
 [ext_resource type="PackedScene" uid="uid://cdtljaux3f3i1" path="res://scenes/puzzles/puzzles.tscn" id="12_c3sp8"]
@@ -24,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://cr7bx5q5u5vwr" path="res://Sound Effects/wall-hit-3-48114.ogg" id="17_vcxjg"]
 [ext_resource type="AudioStream" uid="uid://fbjt2n7vmkyn" path="res://Sound Effects/intense-horror-music-01-14890.ogg" id="18_0ki86"]
 [ext_resource type="AudioStream" uid="uid://dd8uvhhlr70d" path="res://Sound Effects/wall-hit-2-48113.ogg" id="18_g33q4"]
+[ext_resource type="AudioStream" uid="uid://or64fwwia7gs" path="res://Sound Effects/horror-background-atmosphere-12-240871.ogg" id="18_yhw2n"]
 [ext_resource type="AudioStream" uid="uid://cbcy15tffajem" path="res://Sound Effects/door-knocking-and-opening-240831.ogg" id="19_2o51t"]
 [ext_resource type="AudioStream" uid="uid://bjgk8jiy6o4mp" path="res://Sound Effects/key-get-39925.ogg" id="24_ko5sy"]
 [ext_resource type="AudioStream" uid="uid://crmtd70pnf2qf" path="res://Sound Effects/tv-glitch-6245.ogg" id="25_77j0h"]
@@ -1021,6 +1023,42 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_daw5w"]
+atlas = ExtResource("8_b4l53")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4wnb"]
+atlas = ExtResource("8_b4l53")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ianyw"]
+atlas = ExtResource("8_b4l53")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q35n8"]
+atlas = ExtResource("8_b4l53")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0q5i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daw5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4wnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ianyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q35n8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="TileMap" type="TileMap"]
 position = Vector2(64, -112)
 tile_set = SubResource("TileSet_10sko")
@@ -1081,6 +1119,13 @@ visible = false
 z_index = 1
 position = Vector2(3, 67)
 texture = ExtResource("6_flovu")
+
+[node name="TV" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-2, -24)
+sprite_frames = SubResource("SpriteFrames_t0q5i")
+autoplay = "default"
+frame_progress = 0.226165
 
 [node name="BackgroundShader" type="TextureRect" parent="."]
 z_index = -14
@@ -1231,6 +1276,9 @@ visible = false
 visible = false
 
 [node name="Sounds" type="Node" parent="."]
+
+[node name="Ending music" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("18_yhw2n")
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("13_sb8lj")

@@ -179,9 +179,11 @@ func restartVariables():
 	puzzleLayer=null
 	transicion=false
 	ending=false
+	soundManager.stream = soundWhisper
 	setInteractive(null)
 	DataManager.reloadData()
 	print("Resetear variables")
+	
 	pass
 
 func _on_input_recived():

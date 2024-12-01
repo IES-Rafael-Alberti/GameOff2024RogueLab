@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://64kgx0ry64py"]
+
+[ext_resource type="Script" path="res://scripts/warning.gd" id="1_kksn7"]
+[ext_resource type="FontFile" uid="uid://b1sjn8mmm556s" path="res://Fonts_RogueLab/PressStart2P-Regular.ttf" id="2_3yf2r"]
+
+[node name="Warning" type="CanvasLayer"]
+script = ExtResource("1_kksn7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Warning" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -254.0
+offset_top = 36.0
+offset_right = -142.0
+offset_bottom = 59.0
+grow_horizontal = 2
+scale = Vector2(4.24, 4.24)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3yf2r")
+text = "WARNING"
+
+[node name="Warning" type="Label" parent="Warning"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.7736
+offset_top = 55.4245
+offset_right = 99.2264
+offset_bottom = 71.4245
+grow_horizontal = 2
+scale = Vector2(0.526669, 0.623513)
+theme_override_colors/font_color = Color(0.905311, 0.647053, 0, 1)
+theme_override_fonts/font = ExtResource("2_3yf2r")
+text = "Controls"
+
+[node name="Text" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -404.0
+offset_top = 140.0
+offset_right = 108.0
+offset_bottom = 177.0
+grow_horizontal = 2
+scale = Vector2(1.56329, 2.10056)
+theme_override_fonts/font = ExtResource("2_3yf2r")
+text = "We recommend to use headphones 
+for a more inmersive experience."
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Text"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -229.773
+offset_top = 104.734
+offset_right = 94.2267
+offset_bottom = 141.734
+grow_horizontal = 2
+scale = Vector2(1.35361, 1.2642)
+theme_override_fonts/font = ExtResource("2_3yf2r")
+text = "WASD → Movement
+E / Space → Interact"
+horizontal_alignment = 1

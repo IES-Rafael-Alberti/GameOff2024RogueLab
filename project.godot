@@ -22,7 +22,7 @@ resources_spreadsheet_view/fold_docks=false
 [application]
 
 config/name="SecretsProject"
-run/main_scene="res://scenes/UI/main_menu.tscn"
+run/main_scene="res://scenes/warning.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://splash.png"
 config/icon="res://icon.svg"
@@ -42,6 +42,8 @@ TransitionScreen="*res://scenes/UI/TransitionScreen.tscn"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

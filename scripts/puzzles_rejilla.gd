@@ -43,6 +43,10 @@ func _on_zoom_item_exit(zoomItemName):
 		TransitionScreen.transition()
 		await SignalBus.on_transition_finished
 		SignalBus.execute_event.emit(event_ending_3,true)
+		$"../../Sounds/Horror".stop()
+		$"../../Sounds/Ambience".stop()
+		$"../../Sounds/Ending music".play()
+		$"../../Sounds/AmbientLoopList".queue_free()
 		print("Tas pasao el juego crack")
 		#print(GameManager.evento)
 		#print(GameManager.interactive.event_id)

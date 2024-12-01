@@ -52,8 +52,9 @@ func play_main_menu():
 
 func changeScene():
 	get_tree().change_scene_to_packed(MAIN_MENU)
-	inGame=false
-	GameManager.restartVariables()
+	if inGame == true:
+		inGame=false
+		GameManager.restartVariables()
 	pass
 
 func play_pause_menu():

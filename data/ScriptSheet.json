@@ -20,7 +20,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "TRIGGER",
 	"NEXT": "",
-	"ES": "Ahh, estoy hecho mierda... Necesito algo para este dolor de cabeza... \n...\n¿Dónde diantres estoy?\nVeré si en el dormitorio hay algo para el dolor.",
+	"ES": "Ahh, estoy hecho mierda... Necesito algo para este dolor de cabeza... \n...\n¿Dónde coño estoy?\nVeré si en el dormitorio hay algo para el dolor.",
 	"EN": "Ahh, I feel like shit... I need something for this headache... \n...\nWhere the hell am I?\nI'll go to the bedroom to settle the ache."
   },
   "Ev_02": {
@@ -44,7 +44,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "TRIGGER",
 	"NEXT": "Ev_02_TV_03",
-	"ES": "Siguen las búsquedas de los 2 atracadores a los que se les relaciona con 15 asesinatos... \nestas son las imágenes que nos ha proporcionado el departamento de policía…",
+	"ES": "Siguen las búsquedas de los dos atracadores a los que se les relaciona con 15 asesinatos... \nestas son las imágenes que nos ha proporcionado el departamento de policía…",
 	"EN": "The search continues for the two robbers linked to 15 murders... \nthese are the images provided by the departament police..."
   },
   "Ev_02_TV_03": {
@@ -68,16 +68,16 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Corpse_03",
-	"ES": "No es nada personal...",
-	"EN": "It's nothing personal..."
+	"ES": "No es nada personal...\nParece que es la llave de la entrada. Podría irme ya, pero tal vez pueda explorar un poco más.",
+	"EN": "It's nothing personal...\nIt looks like the key to the entrance. I could go now, but maybe I should explore a little more."
   },
   "Ev_Corpse_03": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "Parece de la entrada del piso.",
-	"EN": "Look like the flat’s entrance..."
+	"ES": "Joder, sí que apesta.\n...\n¿Quién será?",
+	"EN": "Damn, that really stinks.\n...\nWho could it be?"
   },
   "Ev_Grill_01": {
 	"SHADER_OPTIONS": "NONE",
@@ -148,7 +148,7 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_BrokenPicture",
-	"ES": "¿Qué es esto de aqui?",
+	"ES": "¿Qué es esto de aquí?",
 	"EN": "What is this?"
   },
   "Ev_FirstBrokenPicture_01": {
@@ -284,8 +284,8 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
-	"ES": "¡Bingo! Espera, ¿qué?... \n¿Es... el dinero del robo que han mencionado en las noticias?",
-	"EN": "Jackpot! Wait, what?\nAren't this... the jewelry robbed that were mentioned in the news?"
+	"ES": "¡Bingo! Espera, ¿qué?... \n¿Es... el dinero del robo que han mencionado en las noticias?\nLa pistola... tal vez pueda forzar algo con esto.",
+	"EN": "Jackpot! Wait, what?\nAren't this... the jewelry robbed that were mentioned in the news?\nThe gun... maybe I can force something with this."
   },
   "Ev_VaultFailure": {
 	"SHADER_OPTIONS": "NONE",
@@ -309,14 +309,14 @@
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "",
 	"ES": "Así que te llamas Francesco... No puede ser... eras tú desde el principio...\n¡TENGO QUE SALIR CUANTO ANTES!",
-	"EN": "So your name is Francesco... The photo isn’t very clear, but based on the previous pictures, it seems to be you."
+	"EN": "So your name is Francesco... It can't be... It was you from the beginning...\nI HAVE TO GET OUT AS SOON AS POSSIBLE!"
   },
   "Ev_Plant": {
 	"SHADER_OPTIONS": "NONE",
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Plant",
-	"ES": "Vaya planta de plastico mas fea.",
+	"ES": "Vaya planta de plástico más fea.",
 	"EN": "What an ugly plastic plant."
   },
   "Ev_Sofa": {
@@ -380,8 +380,8 @@
 	"CAMERA_OPTIONS": "NONE",
 	"EVENT_CONDITION": "NONE",
 	"NEXT": "Ev_Closet",
-	"ES": "El armario parece estar atascado.",
-	"EN": "The closet seems to be stuck."
+	"ES": "El armario parece estar atascado.\nQuizás haya algo en el cuarto que pueda usar para abrirlo.",
+	"EN": "The closet seems to be stuck.\nMaybe there's something in the room I can use to open it."
   },
   "Ev_Drawer": {
 	"SHADER_OPTIONS": "NONE",
